@@ -1,6 +1,9 @@
-[Home](index.md)
-[Lunch specials](specials.md)
-[Contact](contact.md)
-[Guestbook](guestbook.md)
+# SWAT Docs
+[About](index.md)
+[Quick Start](index.md)
 
-[gimmick:theme](spacelab)
+[DSL Reference]()
+
+  * [Rules](quickstart.md)
+
+[Back to Home](http://www.smartekworks.com)
