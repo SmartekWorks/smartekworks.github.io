@@ -1,20 +1,25 @@
 # SWAT
+
 [About](index.md)
 
-[Guide]()
+[User Guide]()
 
  * [Getting Started with SWAT](guide_start.md)
  * [Preparing Page Knowledge](guide_knowledge.md)
  * [Building Scenarios](guide_scenarios.md)
  * [Working with Flows](guide_flows.md)
  * [Executing Cases](guide_execution.md)
- * [Working with Evidences](guide_evidences.md)
+ * [Handling the Result](guide_result.md)
+
+[Setup]()
+
+* [SWAT Server](setup_swat.md)
+* [Execution Services](setup_execservices.md)
+* [SWAT Tools](setup_tools.md)
 
 [Reference]()
 
- * [SWAT Private Server Setup](ref_setup.md)
- * [Execution Service Setup](ref_execservices.md)
- * [Knowledge Rule DSL](ref knowledge_rule.md)
+ * [Knowledge Rule DSL](ref_knowledge_rule.md)
  * [Matching & Querying DSL](ref_mq_rule.md)
  * [Settings DSL](ref_settings_rule.md)
 

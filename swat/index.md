@@ -12,13 +12,13 @@ We are offering SWAT cloud service for a more accessible and flexible use. SWAT 
 What can I use SWAT for?
 ---
 
-#### *Acceptance test*
+#### Acceptance test
 
 SWAT supports building you test scenarios on the level of business domain without the need for knowledge of web page implementation. It is easy for the designers instead of engineers to write the test scenario for acceptance test. With the automation, you can usually run your acceptance test as a regression test to ensure that there is no degrade in your latest release.
 
 SWAT also supports integration with Jenkins so that you can build a CI process with acceptance test.
 
-#### *Browser compatibility test*
+#### Browser compatibility test
 
 SWAT provides local execution server based on Selenium WebDriver and support running scenarios on your local OS/browser combinations of desktop and mobile devices. It is easy to test whether the rendering or action of javascript of your web application is correct on the specific OS/browser by just running your scenarios on different platforms. 
 
@@ -39,7 +39,7 @@ How does SWAT work?
 
 SWAT adopts "Scenario-building & Replay" approach to realise the automation of UI testing automation for web application. Instead of capturing scenarios, modifying generated script and running the script, you need to do the following steps to make an test with automation.
 
-1. Import page HTML capture to SWAT 
+1. Import page HTML captures to SWAT 
 SWAT's knowledge engine analyses web pages and extracts all the interactive operation models.
 2. Build Scenario
 Test designers build scenarios with the operation models.
@@ -55,12 +55,13 @@ The biggest difference between SWAT and other automation tools/framework is that
 
 In an agile team, as the process is a much simpler, every members can work on SWAT to do the test. And "Scenario-building & Replay" mechanism of SWAT can save much precious time of writing/modifying test code for developers.
 
-Next steps
+Next Steps
 ----
+
 #### Obtaining SWAT trial account
 
 Visit [SWAT trial application page (Japanese only)](http://www.smartekworks.com/trial.html) or contact [us](mailto:sales@smartekworks.com) with mail to apply for a trial account, 
 
-#### SWAT Guide
+#### SWAT User Guide
 
 [Learn SWAT in depth](guide_start.md).
