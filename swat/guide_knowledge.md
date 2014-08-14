@@ -98,7 +98,7 @@ Secondly, we will need to configure the preview in the settings of `Bing` Site.
 
 1. Visit **site management** page with top menu `Management > Sites`, and select `Bing` Site on the left.
 2. Input `http://www.bing.com/` to **Preview URL**, which will added `http://www.bing.com/` to URLs like `/images/search...`.
-3. Though we don have relative URL this time, you should now how to replace the URL. Click **Edit** button after **Preview Rules**. You will see a input dialog for you to write replacing rules. The rule are a JSON list of map. The key is the source text and the value is the destination text. For example:
+3. Though there is no relative URL this time, you should know how to replace the URL. Click **Edit** button after **Preview Rules**. You will see a input dialog for you to write replacing rules. The rule are a JSON list of map. The key is the source text and the value is the destination text. For example:
 ```json
 [
 	{"img/", "http://www.sample.com/a/img/"},
@@ -159,10 +159,10 @@ Knowledge rule can help you a lot when you have a lot of pages with the same imp
 5. Select the `Search` under `Bing_with_suggestion` and select **Customize Operation** in the pull-down after **Save** button.
 6. You will find a node named `sa_ghostbox` hidden on the page. We uncheck the node to disable it since we don't need it in interaction. You can change the nodes' title, order here. 
 
-You page knowledge is now ready to use.
-
 Next Steps
 ----
+
+You page knowledge is now ready to use.
 
 Next, let's start learning how to retrieve interactive operation models by importing page HTMLs from your web application to SWAT.
 
