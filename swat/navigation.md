@@ -8,8 +8,9 @@
  * [Preparing Page Knowledge](guide_knowledge.md)
  * [Building Scenarios](guide_scenarios.md)
  * [Executing Cases](guide_execution.md)
- * [Handling the Result](guide_result.md)
- * [Working with Flows](guide_flows.md)
+ * [Working with Flow](guide_flow.md)
+ * [Automated Test Maintenance](guide_maintenance.md)
+ * [Window, Frame, Alert, AJAX](guide_scenes.md)
 
 [Setup]()
 
@@ -22,7 +23,7 @@
  * [System & Web Operation](ref_operation.md)
  * [Knowledge Rule DSL](ref_knowledge_rule.md)
  * [Matching & Querying DSL](ref_mq_rule.md)
- * [Settings DSL](ref_settings_rule.md)
+ * [Settings DSL](ref_settings_dsl.md)
 
 [Back to Home](http://www.smartekworks.com)
 

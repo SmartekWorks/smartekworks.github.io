@@ -29,7 +29,7 @@ In our guide we will build an automated test for searching function in *[Bing](h
 
 ```
 When a keyword was inputed in search box in www.bing.com.
-Then a pull-down list of suggested keywords will appear.
+Then a pull-down list of suggested keywords will be displayed.
 When click an entry in the pull-down list.
 Then a search result page with the keyword of the selected entry will be returned.
 ```
@@ -62,7 +62,7 @@ Creating a Site
 
 We first need to add a new site for *Bing* in SWAT knowledge base.
 
-1. Visit **site management** page with top menu `Management > Sites`.
+1. Visit **site management** page through menu `Management > Sites`.
 2. Click <span class="glyphicon glyphicon-plus"></span> button to add a new site.
 3. Use Bing as the site title and set the HTML Charset to UTF-8 (It is needed before page import).
 4. Leave other configuration default since we will change the configure later when we needed.
@@ -73,7 +73,7 @@ Attention: SWAT has the limitation on the maximum site according to the subscrip
 Importing Pages
 ---
 
-1. Visit **Page Knowledge** page with top menu `Knowledge > Pages`.
+1. Visit **Page Knowledge** page through menu `Knowledge > Pages`.
 2. There is a pull-down list of sites under the **Search** text box. Select the site `Bing` that you have just created to switch to the `Bing` site.
 3. Click <span class="glyphicon glyphicon-plus"></span> button to add new pages.
 4. Make sure the **Target Site** is `Bing`, and choose the zip file we have created for the source file. You can also choose SHTML, HTML file for import.
@@ -96,7 +96,7 @@ Firstly, we need a brief check on the HTML source of `Bing` to decide how to con
 
 Secondly, we will need to configure the preview in the settings of `Bing` Site.
 
-1. Visit **site management** page with top menu `Management > Sites`, and select `Bing` Site on the left.
+1. Visit **site management** page through menu `Management > Sites`, and select `Bing` Site on the left.
 2. Input `http://www.bing.com/` to **Preview URL**, which will added `http://www.bing.com/` to URLs like `/images/search...`.
 3. Though there is no relative URL this time, you should know how to replace the URL. Click **Edit** button after **Preview Rules**. You will see a input dialog for you to write replacing rules. The rule are a JSON list of map. The key is the source text and the value is the destination text. For example:
 ```json
@@ -114,15 +114,17 @@ If you examine the `search` operation under `Bing_with_suggestion` carefully, yo
 
 #### Creating a Rule
 
-1. Visit **Knowledge Tuning** page with top menu `Knowledge > Tuning`.
+1. Visit **Knowledge Tuning** page through menu `Knowledge > Tuning`.
 2. Choose `Bing` Site and `Bing_with_suggestion` Page. Click **Default** on **Reset** pull-down button to reset the rule to default rule that we used for last import.
 3. You will see a JSON formatted rule text in the rule text area. Click **Preview** button you will see the current parsing result.
 4. Switch back to **Rule** tab. Before modifying the rule, we need to know the implementation of suggestion list by ourself. You will find the following HTML source from preview of `Bing_with_suggestion` by using inspection tools.
-```
+```html
 <ul class="sa_drw" id="sa_ul">
 	<li class="sa_sg" id="sa_0" url="/search?q=test&amp;qs=AS&amp;pq=test&amp;sc=8-4&amp;sp=1&amp;cvid=ae5d962746e843548572eca8e570130f&amp;FORM=QBLH" query="test" nav="sb_form_q;;sa_1;" stype="AS" hc="1" h="ID=autosuggest,5003.1" _ctf="sa_si_T" _ct="sa_0">
 		<div class="sa_s"><div class="sa_tm">test</div></div>
-...
+	</li>
+	...
+</ul>
 ```
 From the source you will know it is a special `ul#sa_ul` list with a group of interactive `li.sa_sg`.
 5. We can simply tell swat to handle 'div.sa_s' as a link, so that the list definition in the default rule can do the remaining work. We can also create a new type of operation, without interfering the default ones. We choose the later in this guide, because you can know a little more about the rule in this approach.
@@ -140,7 +142,7 @@ Hint: Please refer to [Knowledge Rule DSL](ref_knowledge_rule.md) for the detail
 
 #### Applying the Rule
 
-1. Visit **site management** page with top menu `Management > Sites`, and select `Bing` Site on the left.
+1. Visit **site management** page through menu `Management > Sites`, and select `Bing` Site on the left.
 2. You can change the **Default Rule** to `01` so that all your import for this site will use this rule by default.
 3. Click the next **Edit Rules** button, which will bring you to the **Rule Management** page.
 4. Select rule `01` and you can see the rule you have just saved.
@@ -152,7 +154,7 @@ Customizing Knowledge
 
 Knowledge rule can help you a lot when you have a lot of pages with the same implementation style, which is common for pages in the same web application. Sometimes you still need to change the individual knowledge components such as label etc. You can customize the knowledge through SWAT UI.
 
-1. Visit **Page Knowledge** page with top menu `Knowledge > Pages`.
+1. Visit **Page Knowledge** page through menu `Knowledge > Pages`.
 2. Select the `sc_hs1..` under `Bing` and you can change the title to `Links`. After saving, you will find the title will be changed in the left tree.
 3. You may also noticed that the title of `sc_hs1..` under `Bing_with_suggestion` has also been changed to `Links`. It is because SWAT assume that they are the same operation on different pages. You can change such kind of relation by selecting **Related Operations** in the pull-down after **Save** button.
 4. You can also change the title of `sa_ul` to `Suggestion List`

@@ -10,16 +10,16 @@ Creating Project / Test Set
 
 SWAT uses project as the top layer management container for grouping a number of test sets.
 
-1. Visit **Project Management** page with top menu *Management > Projects*.
+1. Visit **Project Management** page through menu *Management > Projects*.
 2. Click <span class="glyphicon glyphicon-plus"></span> button to add a new project.
 3. Fill in **Code** and **Title**, and then click **Create** button to create a new project.
-4. Visit **Projects** page with top menu *Test*. You can see the newly created project.
+4. Visit **Projects** page through menu *Test*. You can see the newly created project.
 
 #### Creating Test Set
 
 Test set is the main management container for manage scenarios, executions and issues. You can set some default settings on test set, and you can also export/import test cases on test set level. 
 
-1. Visit **Projects** page with top menu *Test*.
+1. Visit **Projects** page through menu *Test*.
 2. Click the newly created project and select **Create new test set** under it.
 3. Fill in **Code** and **Title**, and then click **Create** button to create a new project.
 4. **Default Platform** and **Default Target Server** decide your default execution settings, and they will be explained in [Executing Cases](guide_execution.md).
@@ -34,8 +34,8 @@ Hint: You can also use some special tags such as `before`, `after` to give some 
 Building Scenario
 ---
 
-1. Visit **Scenarios** page in the newly created test.
-2. Click <span class="caret"></span> on the right of the default scenario group `SG0001` and select **Add scenario**. **Test Scenario Builder** page will be shown. The workspace of **Test Scenario Builder** is devided into three areas:
+1. Visit **Scenarios** page in the newly created test set.
+2. Click <span class="caret"></span> on the right of the default scenario group `SG0001` and select **Add scenario**. **Test Scenario Builder** page will be shown. The workspace of **Test Scenario Builder** is divided into three areas:
  * **Left**: Trees of building block, such as system operations, flows, and the most important web operations from knowledge base.
  * **Upper Right**: Area to hold scenario flow of building block.
  * **Lower Right**: Properties of the building block on the scenario flow, including parameters and description.
@@ -55,12 +55,12 @@ Hint: Please refer to [System & Web Operation](ref_operation.md) for the detaile
 Adding Cases to Scenario
 ---
 
-If you set any variable in the scenario, You can add different sets of data for variables of the scenario. SWAT use **Case** for a set of data. With data sepprated from scenario, you can easily reuse your scenario with different sets of data. 
+If you set any variable in the scenario, You can add different sets of data for variables of the scenario. SWAT use **Case** for a set of data. With data separated from scenario, you can easily reuse your scenario with different sets of data. 
 
 1. Visit **Scenarios** page in the newly created test.
 2. Click <span class="caret"></span> on the right of the newly created scenario `S0001` and select **Add case**. A dialog with **Title** and inputs related to the scenario variables will show.
 3. Fill in **Title** with what you like, and **Keyword** with `test`, **Index** with `2`, which means you enter `test` to the search box and select the second suggestion on the suggestion list.
-4. You can add some other case with differnt values of **Keyword** and **Index**.
+4. You can add some other case with different values of **Keyword** and **Index**.
 
 Hint: You can export case table of test set in Excel file and import it back to the test set. You can easily add/modify/delete cases on Excel file in this way.
 

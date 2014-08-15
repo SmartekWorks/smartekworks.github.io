@@ -17,7 +17,7 @@ We’ll teach you following steps on how to use SWAT:
 
 We will try our best to mention as many functionalities as possible. However, a lot of functionalities used for a certain purpose still can not be covered in this guide. As the web based UI of SWAT is intuitive, you are encouraged to explore those functionalities in your actual use. You may also need to refer to the *Setup* and *Reference* section for information in depth.
 
-Preparing SWAT service
+Preparing SWAT Service
 ---
 
 We are offering both SWAT cloud service and SWAT package.
