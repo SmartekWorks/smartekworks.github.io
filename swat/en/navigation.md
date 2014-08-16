@@ -24,6 +24,7 @@
  * [Knowledge Rule DSL](ref_knowledge_rule.md)
  * [Matching & Querying DSL](ref_mq_rule.md)
  * [Settings DSL](ref_settings_dsl.md)
+ * [Agent Server API](ref_agent_api.md)
 
 [Back to Home](http://www.smartekworks.com)
 
