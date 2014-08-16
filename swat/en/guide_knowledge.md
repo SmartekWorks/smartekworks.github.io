@@ -13,7 +13,7 @@ Note: SWAT also accepts HTML file you saved by using Save As HTML function from 
 #### Chrome
 
 1. Start Chrome browser and visit the [extension page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
-2. Install the extension, and then you will see the ![SWAT icon](asserts/images/extension.png) on the toolbar.
+2. Install the extension, and then you will see the ![SWAT icon](../asserts/images/extension.png) on the toolbar.
 3. Visit any web pages and click the extension icon. An SHTML file will be saved automatically in your default download directory.
 
 Note: The file format SHTML is just a container of HTML.
@@ -101,8 +101,8 @@ Secondly, we will need to configure the preview in the settings of `Bing` Site.
 3. Though there is no relative URL this time, you should know how to replace the URL. Click **Edit** button after **Preview Rules**. You will see a input dialog for you to write replacing rules. The rule are a JSON list of map. The key is the source text and the value is the destination text. For example:
 ```json
 [
-	{"img/", "http://www.sample.com/a/img/"},
-	{"../img/", "http://www.sample.com/a/img/"}
+	{"img/":"http://www.sample.com/a/img/"},
+	{"../img/":"http://www.sample.com/a/img/"}
 ]
 ```
 4. Click **Save** button, and visit **Page Knowledge**, you will find you can view the preview with images this time.
