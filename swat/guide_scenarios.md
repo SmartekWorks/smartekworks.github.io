@@ -50,7 +50,7 @@ Building Scenario
 11. Click <span class="glyphicon glyphicon-refresh"></span> icon again. The select mode will switch to **Index Matching** mode, which will select an item by index. It is good for us, so you can input `{Index}` in the filed.
 12. Fill in the scenario title above the scenario flow and Click **Create** button to complete building the scenario.
 
-Hint: Please refer to [System & Web Operation](ref_operation.md) for the detailed reference.
+Hint: Please refer to [Web Operation](ref_web_operation.md) and [System Operation](ref_sys_operation.md) for the detailed reference.
 
 Adding Cases to Scenario
 ---

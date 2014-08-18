@@ -13,7 +13,7 @@ Note: SWAT also accepts HTML file you saved by using Save As HTML function from 
 #### Chrome
 
 1. Start Chrome browser and visit the [extension page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
-2. Install the extension, and then you will see the ![SWAT icon](../asserts/images/extension.png) on the toolbar.
+2. Install the extension, and then you will see the ![SWAT icon](assets/images/extension.png) on the toolbar.
 3. Visit any web pages and click the extension icon. An SHTML file will be saved automatically in your default download directory.
 
 Note: The file format SHTML is just a container of HTML.

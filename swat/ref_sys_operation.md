@@ -1,40 +1,35 @@
-System & Web Operation
+System Operation
 ===
 
-This page explains the details of using system operation and web operation.
-
-Note: This page is currently under construction. We will complete the documentation as soon as possible.
-
-Basics about Operation
+How to Use System Operations?
 ---
 
-#### Variables in operation
+System operation is a set of pre-defined operation offering support for handling browser or scenarios.
 
-You can set a variable in format of `{var}` or `%var%` in the parameter field to separate the data and scenario. All variables except those set by **Set Value**, **API Call** system operation will become parameters of a flow or scenario.
+The usage of system operation is much alike to the web operation. You just need to drag & drop a system operation onto a scenario flow or flow, and fill the parameters for the operation. However, there are still several differences between the system operation and web operation that you need to know:
 
-Both in system and web operation,
+#### Parameters
 
-* The variable name should be a string with only digits, alphbets, Japanese Charactors, Chinese Charactors and `_`.
-* You can also use variables as part of the value such as `{var1}abc{var2}`.
-* As you can define a variable in a parameter, some validation errors cannot be detected until execution.
+Unlike those in web operation, the parameters in system operation do not have following features:
 
-In system operation,
+* Using parameter option to ignoring or not to ignoring the parameter.
+* Parameter input mode to switch among different querying mode.
+* Alert options to handling alert dialog.
 
-* You cannot set a variable to a parameter with form of select, such as **Action** in **Navigation Control** operation.
-* You cannot set a variable in **Variable Name** or **Session Name** parameter in **Set Value**, **API Call** and **Session Control** operation.
+#### Using Variable
+
+* You cannot set a variables in **Variable Name** or **Session Name** parameter. These parameters exist in **Set Value**, **API Call** and **Session Control** operation.
+* As you cannot switch the select typed parameter to query mode in system operations, you cannot set a variable in such kind of fields such as **Action** in **Navigation Control** operation.
 * You can only use `%var%` format in JSON formatted parameters such as **Matching Rules** in **Assertion** operation.
 
-#### Ignoring operation in case
+#### Ignoring Parameter and Operation
 
-If you choose to ignore all the variables you defined in one operation, the operation will be ignored in execution. For example, you may define only one variable `{Duration}` for **Sleep Duration** in **Pause Scenario** operation. You can bypass this operation if you declare to ignore this variable in the test case.
+* You cannot ignore parameters of system operation by ignoring variables, but you can ignore the operation by ignoring all the variables used in the operation. 
+* As you cannot use variables in system operations such as **Navigation Control**, **Additional Information** operation, you cannot ignore those operation too.
 
-In system operation,
+#### Errors and evidences
 
-* You cannot ignore those system operation that cannot own variables such as **Navigation Control** operation. 
-
-How to use Web Operation
----
-
+Each system operation has its own pre-defined errors and evidences. Please refer to the specification of all system operations below.
 
 Operation - Go to URL
 ---
@@ -104,7 +99,7 @@ Simulate the navigation control function of browser.
 
 ##### Errors
 
-* Execute this sytem operation on *Safari*. (in execution)
+* Execute this system operation on *Safari*. (in execution)
 
 ##### Evidences
 
@@ -114,7 +109,7 @@ Simulate the navigation control function of browser.
 Operation - Obtain Download
 ---
 
-Obtain the downloaded file in the last operation and save it as an evidence. It is a little triky to use this system operation, please read the *Notes* part carefully.
+Obtain the downloaded file in the last operation and save it as an evidence. It is a little tricky to use this system operation, please read the *Notes* part carefully.
 
 Hint: To simulate a actual download and upload action may be not a good practice because it involves OS function and causes scenario unstable.
 
@@ -257,6 +252,7 @@ Hint: You can build an agent server with your extended operation conforming the 
 ##### Notes
 
 * This system operation only works in local execution service.
+* The **API URL** can be displayed as a selectable list, if you have set the API list in **External APIs** of **Account Setting** page.
 * The API of your agent server should conform the [Agent Server API](ref_agent_api.md) specification.
 
 ##### Errors

@@ -102,7 +102,7 @@ After the execution, you can verify whether the case is OK with following approa
 * Export the evidences to Excel or other formats for offline check.
 * Use assertion system operation to verify the result automatically.
 
-Note: Please refer to [System & Web Operation](ref_operation.md) to learn how to implement auto verification with assertion system operation.
+Note: Please refer to [System Operation](ref_sys_operation.md) to learn how to implement auto verification with assertion system operation.
 
 After verification, you may change the test result status after you check the evidence and create a issue for the result on **Execution Results** page.
 

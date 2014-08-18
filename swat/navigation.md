@@ -20,7 +20,8 @@
 
 [Reference]()
 
- * [System & Web Operation](ref_operation.md)
+ * [Web Operation](ref_web_operation.md)
+ * [System Operation](ref_sys_operation.md)
  * [Knowledge Rule DSL](ref_knowledge_rule.md)
  * [Matching & Querying DSL](ref_mq_rule.md)
  * [Settings DSL](ref_settings_dsl.md)
