@@ -1,4 +1,4 @@
-Setup Swat Tools
+Setup SWAT Tools and Integrations
 ===
 
 We offer several tools and integrations with other services to help you use SWAT more efficiently.
@@ -39,8 +39,9 @@ Attention: The Jenkins plugin will be available in the next update.
 
 1. Visit **Scenarios** page in the target test set in SWAT service.
 2. Select the target cases and click **Execute** button.
-3. Choose **Jenkins Request** or **Jenkins Request (Total Set)** from the pull-up list next to the **OK** button.
-4. Copy the request string shown in **Request Information** dialog.
+3. Modify the options if needed just as creating a new execution.
+4. Instead of clicking **OK** button, choose **Jenkins Request** or **Jenkins Request (Total Set)** from the pull-up list next to the **OK** button.
+5. The **Request Information** dialog will show up with the request string you needed for configuring Jenkins.
 
 Setup JIRA Integration
 ---

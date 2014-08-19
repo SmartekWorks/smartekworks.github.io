@@ -6,7 +6,7 @@ System operation is a set of pre-defined operation offering support for handling
 How to Use System Operations?
 ---
 
-The usage of system operation is much alike to the [Web Operation](ref_web_operation.md). You just need to drag & drop a system operation onto a scenario flow or flow, and fill the parameters for the operation. However, there are still several differences between the system operation and web operation that you need to know:
+The usage of system operation is much alike to the [Web Operation](ref_web_operation.md#How_to_Use_Web_Operations?). You just need to drag & drop a system operation onto a scenario flow or flow, and fill the parameters for the operation. However, there are still several differences between the system operation and web operation that you need to know:
 
 #### Parameters
 
@@ -110,7 +110,7 @@ Operation - Obtain Download
 
 Obtain the downloaded file in the last operation and save it as an evidence. It is a little tricky to use this system operation, please read the *Notes* part carefully.
 
-Hint: To simulate a actual download and upload action may be not a good practice because it involves OS function and causes scenario unstable.
+Note: To simulate a actual download and upload action may be not a good practice because it involves OS function and causes scenario unstable.
 
 ##### Parameters
 
@@ -122,7 +122,7 @@ Hint: To simulate a actual download and upload action may be not a good practice
 
 * This system operation only works in local execution service.
 * You should ensure that the file started downloading to a specific local directory in the previous operation. We offer configuration for auto downloading on Chrome and Firefox. However, you need to config browsers to bypass save file dialog and not to open file directly in other browsers.
-* You need to set *DownloadDir* with the path of download directory in your local execution service. Please refer to [SWAT Server Setup](setup_swat.md) for the configuration.
+* You need to set *DownloadDir* with the path of download directory in your local execution service. Please refer to [Execution Services](setup_execservices.md#Configuration_File) for the configuration.
 
 ##### Errors
 
@@ -236,9 +236,7 @@ Obtain additional information from the page in current window, including URL and
 Operation - API Call
 ---
 
-Call an agent server API to execute an extended operation in scenario such as DB querying/manipulation, file manipulation.
-
-Hint: You can build an agent server with your extended operation conforming the [Agent Server API](ref_agent_api.md) specification.
+Call an agent server API to execute an extended operation in scenario such as DB querying/manipulation, file manipulation. You can build an agent server with your extended operation conforming the [Agent Server API](ref_agent_api.md) specification.
 
 ##### Parameters
 

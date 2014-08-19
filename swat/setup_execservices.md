@@ -61,7 +61,7 @@ Setup BrowserStack Service
 
 In cloud service, SWAT offers support for [BrowserStack](http://www.browserstack.com), a public cloud execution service. To use the BrowserStack service, you need to obtain a BrowserStack account and purchase an automation plan first. (As the partner of BrowserStack, we also offer optional payment and support agent service.) Then, you should setup your BrowserStack account information on SWAT before you can use the service. 
 
-Hint: No setup is needed if you purchase the BrowserStack Subscription with SWAT or you are using trial account.
+Hint: You do not need to setup BrowserStack Service by yourself if you purchase the BrowserStack Subscription with SWAT or you are using trial account.
 
 1. Visit **Account Settings** page through menu *Management > Account Settings*.
 2. Input the configuration string with your BrowserStack account information such as the one below to the **Cloud Execution** field. 

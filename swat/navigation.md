@@ -15,7 +15,7 @@
 
 * [SWAT Server*](setup_swat.md)
 * [Execution Services](setup_execservices.md)
-* [Tools and Services](setup_tools.md)
+* [Tools and Integrations](setup_tools.md)
 
 [Articles]()
 
