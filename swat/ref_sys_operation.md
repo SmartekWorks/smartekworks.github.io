@@ -1,12 +1,12 @@
 System Operation
 ===
 
+System operation is a set of pre-defined operation offering support for handling browser or scenarios.
+
 How to Use System Operations?
 ---
 
-System operation is a set of pre-defined operation offering support for handling browser or scenarios.
-
-The usage of system operation is much alike to the web operation. You just need to drag & drop a system operation onto a scenario flow or flow, and fill the parameters for the operation. However, there are still several differences between the system operation and web operation that you need to know:
+The usage of system operation is much alike to the [Web Operation](ref_web_operation.md). You just need to drag & drop a system operation onto a scenario flow or flow, and fill the parameters for the operation. However, there are still several differences between the system operation and web operation that you need to know:
 
 #### Parameters
 
@@ -16,20 +16,19 @@ Unlike those in web operation, the parameters in system operation do not have fo
 * Parameter input mode to switch among different querying mode.
 * Alert options to handling alert dialog.
 
+#### Errors and evidences
+
+Each system operation has its own pre-defined errors and evidences. Please refer to the specification of all system operations below.
+
 #### Using Variable
 
 * You cannot set a variables in **Variable Name** or **Session Name** parameter. These parameters exist in **Set Value**, **API Call** and **Session Control** operation.
 * As you cannot switch the select typed parameter to query mode in system operations, you cannot set a variable in such kind of fields such as **Action** in **Navigation Control** operation.
-* You can only use `%var%` format in JSON formatted parameters such as **Matching Rules** in **Assertion** operation.
 
 #### Ignoring Parameter and Operation
 
 * You cannot ignore parameters of system operation by ignoring variables, but you can ignore the operation by ignoring all the variables used in the operation. 
 * As you cannot use variables in system operations such as **Navigation Control**, **Additional Information** operation, you cannot ignore those operation too.
-
-#### Errors and evidences
-
-Each system operation has its own pre-defined errors and evidences. Please refer to the specification of all system operations below.
 
 Operation - Go to URL
 ---
@@ -53,7 +52,7 @@ Go to a specific URL in the current browser session and window.
 
 ##### Evidences
 
-* Screenshots
+* Screenshot
 * HTML
 
 Operation - Wait in Browser 
@@ -78,7 +77,7 @@ Wait a short period of time in the current browser session and window. You usual
 
 ##### Evidences
 
-* Screenshots
+* Screenshot
 * HTML
 
 Operation - Navigation Control 
@@ -103,7 +102,7 @@ Simulate the navigation control function of browser.
 
 ##### Evidences
 
-* Screenshots
+* Screenshot
 * HTML
 
 Operation - Obtain Download
@@ -160,7 +159,7 @@ Find the target window and manipulate it.
 
 ##### Evidences
 
-* Screenshots
+* Screenshot
 * HTML
 
 Operation - Assertion
@@ -185,7 +184,7 @@ Assert whether the page in current window is the page you expected.
 
 ##### Evidences
 
-* Screenshots
+* Screenshot
 * HTML
 * Operation result in JSON text format
 
@@ -211,7 +210,7 @@ Set a value from the page in current window to a variable, which you can use in 
 
 ##### Evidences
 
-* Screenshots
+* Screenshot
 * HTML
 * Operation result in JSON text format
 
@@ -230,7 +229,7 @@ Obtain additional information from the page in current window, including URL and
 
 ##### Evidences
 
-* Screenshots
+* Screenshot
 * HTML
 * Additional information in JSON text format
 

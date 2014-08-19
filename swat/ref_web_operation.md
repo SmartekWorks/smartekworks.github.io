@@ -1,10 +1,10 @@
 Web Operation
 ===
 
+Web operation is an interactive operation model on a page. SWAT knowledge engine analyses the page, extract the web operation according to knowledge rules. Please refer to [Knowledge Rule DSL](ref_knowledge_rule.md) for details of how to obtain appropriate operations for you page implementation. You can also edit and customize the operation. You can obtain the related information from [Preparing Page Knowledge](guide_knowledge.md).
+
 How to Use Web Operations?
 ---
-
-Web operation is an interactive operation model on a page. SWAT knowledge engine analyses the page, extract the web operation according to knowledge rules. Please refer to [Knowledge Rule DSL](ref_knowledge_rule.md) for details of how to obtain appropriate operations for you page implementation. You can also edit and customize the operation. You can obtain the related information from [Preparing Page Knowledge](guide_knowledge.md).
 
 To use web operation in scenario/flow builder is simple and straightforward. You just need to drag & drop a web operation onto a scenario flow or flow, and fill the parameters for the operation. A parameter may consist of five parts: **Parameter Title**, **Using Parameter Option**, **Parameter Data**, **Querying Mode Switch** and **Alert Options**.
 
@@ -58,12 +58,13 @@ Cannot find the matched result based on the input of parameter in querying mode.
 
 #### Evidences
 
-All web operation will take the following basic evidences after execution.
+All web operation will take the following basic evidences for the activated window after execution, and if an operation contains several steps such as input and submission, an extra screenshot will be taken before the last step.
 
-* Screenshots
+* Screenshot
 * HTML
+* Screenshot before submission
 
-If an operation contains several steps such as input and submission, an extra screenshot will be taken before the last step.
+If you want to take evidence for another window, you just need to append a **Window Control** system operation to activate the target window.
 
 Querying Modes
 ---
@@ -97,7 +98,9 @@ The parameter data field will be displayed as a text-box followed by <span class
 Using Variable
 ---
 
-You can set a variable in format of `{var}` or `%var%` in the parameter data field to separate the data and scenario. All variables in a scenario/flow except those set by **Set Value**, **API Call** operation will become parameters of the scenario/flow.
+You can set a variable in format of `{var}` in the parameter data field to separate the data and scenario. All variables in a scenario/flow except those set by **Set Value**, **API Call** operation will become parameters of the scenario/flow.
+
+Attention: The format of `{var}` is planned be changed to `@(var)` in the next update.
 
 Note: The variable set by **Set Value**, **API Call** operation obtains the value from the system operation in execution, so it doest not need outside data source.
 
