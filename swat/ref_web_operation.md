@@ -58,11 +58,12 @@ Cannot find the matched result based on the input of parameter in querying mode.
 
 #### Evidences
 
-All web operation will take the following basic evidences for the activated window after execution, and if an operation contains several steps such as input and submission, an extra screenshot will be taken before the last step.
+All web operation will take the following basic evidences for the activated window after execution, and if an operation contains several steps such as input and submission, an extra screenshot will be taken before the last step. Evidence for alert will also be avaialbe if there is any alert handling in the operation.
 
 * Screenshot
 * HTML
 * Screenshot before submission
+* Alert information in JSON text format
 
 If you want to take evidence for another window, you just need to append a **Window Control** system operation to activate the target window.
 

@@ -3,45 +3,60 @@ Getting Started with SWAT
 
 This page provides information you need to know before starting this guide.
 
-About this User Guide
+About this Guide
 ---
 
-In the [Introduction](index.md) you got a taste of what SWAT is and how it works. In this guide we're going to take you through the fundamentals of using SWAT to make your test automated.
+In the [Introduction](index.md) you got a taste of what SWAT is and how it works. In this guide we are going to take you through the fundamentals of using SWAT to make your test automated.
 
-We’ll teach you following steps on how to use SWAT:
+We will teach you following steps on how to use SWAT:
 
-* Construct page knowledge base.
+* Construct the page knowledge base of you web application.
 * Build scenarios with page knowledge and flow knowledge.
-* Run your scenarios/cases on different platforms.
-* Verify the test result in different ways.
+* Run test cases on different platforms.
+* Update your test for your application update.
 
-We will try our best to mention as many functionalities as possible. However, a lot of functionalities used for a certain purpose still can not be covered in this guide. As the web based UI of SWAT is intuitive, you are encouraged to explore those functionalities in your actual use. You may also need to refer to the *Setup* and *Reference* section for information in depth.
+We will try to cover SWAT functions as much as possible in this guide. However, to keep the guide simple, we will offer links to the detailed instructions, specifications and articles if we can. Finally, you are also encouraged to explore SWAT through SWAT's intuitive web based UI.
+
+About the Sample Scenario
+---
+
+We will use a simple scenario on *Bing Search Assistant* in this guide to demonstrate how to use SWAT in most common cases. Below is the scenario:
+
+1. Visit *Bing* (http://www.bing.com).
+2. Input any keyword in the search box.
+3. Wait until search assistant, the pull-down list with keyword suggestions is displayed.
+4. Select a keyword from the list.
+5. *Bing* returns a search result page with the selected keyword.
+
+There are some more you need to know when you deal with web application with frame, multi-window, alert and AJAX. Please refer to [Window, Frame, Alert, AJAX](article_scenes.md) for the know-how after completing this guide.
 
 Preparing SWAT Service
 ---
 
 We are offering both SWAT cloud service and SWAT package.
 
-When working on SWAT cloud service, you don't need to setup SWAT server. You just need the customised URL of swat service and a user account.
+If you are using SWAT package, you need to setup SWAT package on your private server first. Please refer to [Setup SWAT Server](setup_swat.md) for the instructions on how to setup SWAT package.
 
-If you are using SWAT package, you need to setup SWAT package first if it hasn't been setup yet. Please refer to [SWAT Server Setup](setup_swat.md) to setup SWAT server on your private server. You also need a user account in this case.
+If you are using SWAT cloud service, you need the URL of your SWAT cloud service.
 
-Attention: Your will need a user account with full permission to complete this guide.
+In either case, you need a user account with full permission to complete this guide.
 
 Login to SWAT
 ---
 
-Visit the URL of SWAT service, and you can login using the confidential of your user account. The top menu consists following sections.
+Visit the URL of SWAT service and login with the user ID and password of your user account, and the **Projects** page will be displayed after login.
 
-* **Test**: This is the workspace to work on you test scenarios.
-* **Knowledge**: This is the workspace to work on blocks (such as operation, page, flow) that you need to build a scenario.
-* **Management**: This is where you management the service settings.
+The top menu in SWAT service consists following sections.
 
-Attention: Some functions of SWAT do not work well on Internet Explorer 9 and below. Please use the Internet Explorer 10 (above), Chrome, Firefox, Safari etc instead.
+* **Test**: This is where you work on you test scenarios.
+* **Knowledge**: This is where you work on knowledge that you use to build scenarios, such as operations, pages and flows.
+* **Management**: This is where you manage the service settings.
+
+Attention: Please use the Internet Explorer 10 or above, latest Chrome, latest Firefox and latest Safari to view SWAT service.
 
 Next Steps
 ----
 
-Next, let's start learning how to retrieve interactive operation models by importing page HTMLs from your web application to SWAT.
+Next, you need to construct the page knowledge base with which you can build scenarios without coding.
 
 Go to [Preparing Page Knowledge](guide_knowledge.md).

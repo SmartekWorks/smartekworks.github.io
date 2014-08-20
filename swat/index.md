@@ -1,4 +1,4 @@
-About SWAT
+Introduction
 ===
 
 ### SWAT - Smart Web Application Testing

@@ -1,11 +1,12 @@
 # SWAT
 
-[About](index.md)
+[Introduction](index.md)
 
 [User Guide]()
 
 * [Getting Started with SWAT](guide_start.md)
 * [Preparing Page Knowledge](guide_knowledge.md)
+* [Tuning Page Knowledge](guide_tuning.md)
 * [Building Scenarios](guide_scenarios.md)
 * [Executing Cases](guide_execution.md)
 * [Working with Flow](guide_flow.md)
