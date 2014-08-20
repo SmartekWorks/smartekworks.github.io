@@ -46,7 +46,7 @@ Attention: An unexpected alert will cause error in execution, and the operation 
 Web operation may encounter various of error in validation and in execution. Most common errors a listed below:
 
 * Parameter data is not valid. (in validation and execution)
-Value of parameter in `Text Query`, `Index Query` is not valid. Please refer to [Querying Modes](#Querying_Modes) for details.
+Value of parameter in `Text Query`, `Index Query` is not valid. Please refer to [Querying Modes](#Querying_Modes) for details. If you use variables in the parameter, the error will be detected in execution instead of in validation.
 * Cannot find target page. (in execution)
 This error occurs when no page is satisfied the matching rules defined in page identification of the target page.
 * Cannot find target operation. (in execution)

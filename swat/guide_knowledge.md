@@ -3,24 +3,19 @@ Preparing Page Knowledge
 
 This page explains how to get the interactive operation models, the basic blocks of your scenario from you web application page.
 
-Installing HTML capturing tool
+Installing SWAT Capture tool
 ---
 
-SWAT HTML capturing tool is a browser extension to capture the HTML from you web application page which can be later imported to SWAT. We currently provide the extension for Chrome and Internet Explorer.
+**SWAT Capture Tool** is a browser extension to capture the HTMLs from you web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
 
-Note: SWAT also accepts HTML file you saved by using Save As HTML function from your browser. However you need the plugin if the web application is frame based or you want to capture the realtime rendered HTML.
+**SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer. we will use Chrome in this guide. Please refer to [Setup Tools and Integrations](setup_tools.md#Setup_SWAT_Capture_Tool) for details of the setup. 
 
-#### Chrome
+To install and use the extention in Chrome is simple. Just follow the steps below
 
-1. Start Chrome browser and visit the [extension page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
-2. Install the extension, and then you will see the ![SWAT icon](assets/images/extension.png) on the toolbar.
-3. Visit any web pages and click the extension icon. An SHTML file will be saved automatically in your default download directory.
-
-Note: The file format SHTML is just a container of HTML.
-
-#### Internet Explorer
-
-The installation and use of extension for Internet Explorer is a little tricky. Please refer to [SWAT Tools Setup](setup_tools.md) for the details.
+1. Start Chrome browser and visit the [SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
+2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
+3. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
+4. An SHTML type file will be saved to your default download directory automatically.
 
 Preparing HTMLs for import
 ---

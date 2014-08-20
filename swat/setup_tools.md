@@ -6,6 +6,59 @@ We offer several tools and integrations with other services to help you use SWAT
 Setup SWAT Capture Tool
 ---
 
+**SWAT Capture Tool** is a browser extension to capture the HTMLs from you web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
+
+**SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer.
+
+Attention: As some extensions will modify the DOM of you web pages, it is recommended to uninstall them before using **SWAT Capture Tool**.
+
+### Google Chrome
+
+#### Requirements
+
+* Google Chrome 31 or above 
+
+#### Installing the Extensions
+
+1. Start Chrome browser and visit the [SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
+2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
+
+#### Using the Extension
+
+1. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
+2. An SHTML type file will be saved to your default download directory automatically.
+
+Note: The SHTML file format is a kind of HTML container SWAT uses.
+
+### Internet Explorer
+
+#### Requirements
+
+* Internet Explorer 9 or above
+* Internet Explorer 32bit
+* [.NET Framework 4.0](http://www.microsoft.com/en-US/download/details.aspx?id=17718)
+
+#### Installing the Extension
+
+1. Download the installation package from [here](http://www.smartekworks.com/tools/swat-ie-capture.zip).
+2. Extract the zip file to the installation directory on the target computer.
+3. Run `cmd.exe` as Administrator to open an DOS prompt.
+4. In the DOS prompt, go to the installation directory and run `install.bat`.
+
+In some cases, an error message: *Could not load file or assembly or one of its dependencies. Operation is not supported. (Exception from HRESULT: 0x80131515)* will be displayed. You need to unblock the DLL file with following steps, then redo the above installation from step 3.
+
+1. Open the installation folder in Windows Explorer.
+2. Right click one of the DLL file, and choose Properties from the context menu.
+3. Click the Unblock button in the lower right-hand corner of the resulting dialog.
+4. Do the same on another DLL file.
+
+#### Using the Extension
+
+1. Run Internet Explorer 32bit as Administrator. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
+2. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
+3. Select the target folder and change the filename if you want in **Save As** dialog, and save.
+4. An SHTML type file will be saved to the target folder.
+
 Setup Jenkins Integration
 ---
 
