@@ -1,7 +1,7 @@
 Web Operation
 ===
 
-Web operation is an interactive operation model on a page. SWAT knowledge engine analyses the page, extract the web operation according to knowledge rules. Please refer to [Knowledge Rule DSL](ref_knowledge_rule.md) for details of how to obtain appropriate operations for you page implementation. You can also edit and customize the operation. You can obtain the related information from [Preparing Page Knowledge](guide_knowledge.md).
+Web operation is an interactive operation model on a page. SWAT knowledge engine analyses the page, extract the web operation according to knowledge rules. Please refer to [Knowledge Rule DSL](ref_knowledge_rule.md) for details of how to obtain appropriate operations for you page implementation. You can also edit and customize the operation. You can obtain the related information from [Importing Pages](guide_knowledge.md).
 
 How to Use Web Operations?
 ---

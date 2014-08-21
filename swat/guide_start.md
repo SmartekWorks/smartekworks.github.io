@@ -58,4 +58,4 @@ Next Steps
 
 Next, you need to construct the page knowledge base with which you can build scenarios without coding.
 
-Go to [Preparing Page Knowledge](guide_knowledge.md).
+Go to [Importing Pages](guide_knowledge.md).

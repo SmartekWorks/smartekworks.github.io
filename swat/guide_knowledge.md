@@ -1,4 +1,4 @@
-Preparing Page Knowledge
+Importing Pages
 ===
 
 This page explains how to generate the web operation models from you web application page.

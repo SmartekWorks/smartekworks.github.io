@@ -5,7 +5,7 @@
 [User Guide]()
 
 * [Getting Started with SWAT](guide_start.md)
-* [Preparing Page Knowledge](guide_knowledge.md)
+* [Importing Pages](guide_knowledge.md)
 * [Tuning Page Knowledge](guide_tuning.md)
 * [Building Scenarios](guide_scenarios.md)
 * [Executing Cases](guide_execution.md)
