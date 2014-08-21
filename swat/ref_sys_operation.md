@@ -212,8 +212,6 @@ Set a value from the page in current window to a variable, which you can use in 
 
 ##### Evidences
 
-* Screenshot
-* HTML
 * Operation result in JSON text format
 
 Operation - Additional Information
@@ -231,8 +229,6 @@ Obtain additional information from the page in current window, including URL and
 
 ##### Evidences
 
-* Screenshot
-* HTML
 * Additional information in JSON text format
 
 Operation - API Call
