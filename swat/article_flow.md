@@ -1,40 +1,64 @@
 Working with Flow
 ===
 
-In order to make the scenario more reusable and make the maintenance easier, it is a good practice to capusulate part of the scenarios as flow.
+In order to make scenarios easy to reuse and easy to update. it is a good practice to capsulate scenarios as flows.
 
-About Flow Knowledge
+What is Flow?
 ---
 
-To put it simple, flow is just a scenario which can be used as an block like a page operation in scenario. In this way, you can reuse this common scenario in different scenarios, which will make scenario building easier.
+To put it simple, a flow is just a sub-scenario which can be used as a web operation in scenarios. You can build scenarios easily by reusing this kind of sub-scenarios. And, you don't need to change your scenarios when the interaction changed within the flow.
 
-However, the meaning of flow is much deeper than it looks like.
+However, the meaning of flow goes further than than a common sub-scenario.
 
-With flow, you can build you scenario without knowing the interaction of your web application. For example, you can build a scenario with following flow:
+With flow, you can build scenarios without knowing the interaction of the web application. For example, you can build a scenario based on business rules with flows.
 
-1. Login to your internet banking site.
-2. Check the balance of your account.
-3. Transfer $200 to one of your friend.
-4. Check the balance of your account after transfer.
+1. Login to internet banking site.
+2. Check the balance of the account.
+3. Transfer $200 to someone.
+4. Check the balance (-$200) of the account. 
 
-As flows defined a seris of interactions to achieve a certain purpose, you just need to know the business rules without knowing how to interact with your internet banking. The benifits are:
+You do not need to know how to interact with the internet banking site because flows defined a series of interactions to achieve a certain business purpose. 
 
-* You can write a scenario with much less steps, as well as efforts. 
-* You don't need to change your scenarios when the interaction changed within the flow as long as the business rules are the same.
-* You can write the scenarios before the there is any page knowledge from mockup or your test site. 
-* Business analyst can also write some scenarios.
+Hint: It is a best practice that you make flows with business meaning.
+
+Let's summarise the benefits by using flows.
+
+* Scenario is simpler and easier to understand.
+* Scenario building is more efficient.
+* Test maintenance is easier.
+* Building scenarios before page knowledge is available.
 
 Creating Flow
 ---
 
+To create a flow is just like creating a scenario except that you cannot use flow in flow.
 
-Using Flow in Scenario
+1. Visit **Flow Knowledge** page through menu *Knowledge > Flows*. (**Flow Builder** page will be displayed, if there is no existing flow.)
+2. Click <span class="glyphicon glyphicon-plus"></span> button to add a new flow. **Flow Builder** page will be displayed.
+3. Drag & drop system operations and web operations. Input parameters of each operations.
+4. Usually you need to use variables in a flow just like in a scenario, and they will become the parameters of the flow. You can set the values for them when using this flow in a scenario.
+5. Fill in the flow title above the flow and Click **Create** button to complete building a flow.
+6. On **Flow Knowledge** page you can find flow information including flow parameters and step parameters.
+
+How to Use Flows?
 ---
 
+To use a flow in **Test Scenario Builder** is just like using a [Web Operation](ref_web_operation.md#How_to_Use_Web_Operations?). However, there are still several differences between flow and web operation that you need to know:
 
-Next Steps
-----
+#### Parameters
 
-Now we've learned about how to use flow to make the scenario building more efficient. You should know how to update your scenarios when you web application has been updated, you will also find flow can make the maintenance easier.
+The parameters of a flow is from the variables you used in the flow, while those of a web operation are from the page knowledge. As a result, unlike those in web operation, the parameters in flow do not have following features:
 
-Go to [Automated Test Maintenance](guide_maintenance.md).
+* Parameter of types other than `Text`.
+* Parameter input mode to switch among different querying mode.
+* Alert options to handling alert dialog.
+
+As you will often use flow's parameters as the scenario's parameters, when you drag & drop a flow, the parameters will be filled with variables using the parameter's name automatically.
+
+#### Errors and evidences
+
+As flow is just a container, it has no errors and evidences.
+
+#### Ignoring Flow
+
+Like the policy in ignoring operation by ignoring all parameters, you can ignore the entire flow when you uncheck the **Using Data Option** of all the variables related to the flow in case data dialog. (You can also do so by using case export/import function.) 

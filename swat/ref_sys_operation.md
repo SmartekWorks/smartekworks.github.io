@@ -8,7 +8,7 @@ Attention: Some of the features may not be avaialbe until next update.
 How to Use System Operations?
 ---
 
-The usage of system operation is much alike to the [Web Operation](ref_web_operation.md#How_to_Use_Web_Operations?). You just need to drag & drop a system operation onto a scenario flow or flow, and fill the parameters for the operation. However, there are still several differences between the system operation and web operation that you need to know:
+The usage of system operation is much alike to the [Web Operation](ref_web_operation.md#How_to_Use_Web_Operations?). You just need to drag & drop a system operation onto a scenario flow or flow, and fill the parameters for the operation. However, there are still several differences between system operation and web operation that you need to know:
 
 #### Parameters
 

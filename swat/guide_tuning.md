@@ -82,7 +82,7 @@ Note: There are more than one definitions for the same implementation and many c
 Editing Pages and Operations
 ---
 
-Knowledge rule can help you a lot when you have a lot of pages with the similar implementation, which is common for pages in the same web application. Sometimes you still need to change some properties such as title in individual knowledge components. You can do the modification in **Page Knowledge** page.
+Knowledge rule can help you a lot when you have a lot of pages with the similar implementation, which is common for pages in the same web application. Sometimes you still need to change some properties such as title in individual knowledge components. You can do the modification on **Page Knowledge** page.
 
 1. Visit **Page Knowledge** page through menu `Knowledge > Pages`.
 2. Select the `hp_table` under `Bing` and you can change the title to `Links`. After saving, you will find the title changed in the left tree.

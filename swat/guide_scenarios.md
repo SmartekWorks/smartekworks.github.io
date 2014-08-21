@@ -53,7 +53,7 @@ Hint: You can click <span class="glyphicon glyphicon-eye-open"></span> besides t
 Building the Sample Scenario
 ---
 
-1. In **Test Scenario Builder** of the new Scenario, click the default **Go to URL** system operation.
+1. On **Test Scenario Builder** of the new Scenario, click the default **Go to URL** system operation.
 2. We need to select `Bing` for **Site** and leave the **URL** blank, which means that we visit the home page of site *Bing*.
 3. Switch the site of the left tree to site *Bing*, and then you will see page *Bing* and *BingSA*.
 4. Drag & drop the *Search* operation under *Bing* to the scenario flow. The operation will be appended to the flow and be activated. 

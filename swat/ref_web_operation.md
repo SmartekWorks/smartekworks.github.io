@@ -10,7 +10,7 @@ To use web operation in scenario/flow builder is simple and straightforward. You
 
 #### Parameter Title
 
-The title of parameter is usually extracted by SWAT knowledge engine automatically. You can also edit the title manually in **Operation Customization** page.
+The title of parameter is usually extracted by SWAT knowledge engine automatically. You can also edit the title manually on **Operation Customization** page.
 
 #### Using Parameter Option
 

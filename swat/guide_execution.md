@@ -26,7 +26,7 @@ There are several important settings of your execution. You need to know them be
 
 1. Visit **Scenarios** page in the test set we created in last chapter.
 2. Click <span class="glyphicon glyphicon-pencil"></span> button on the right of the title area, and **Test Set Settings** page will be displayed.
-3. In **Default Target Server** area, you will see text-box for each site. Fill in *Bing* with `http://www.bing.com` and save.
+3. On **Default Target Server** area, you will see text-box for each site. Fill in *Bing* with `http://www.bing.com` and save.
 
 Hint: You can also set the default value in **Site Management** page. The value will be used by default when you create a new test set.
 
