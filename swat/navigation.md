@@ -9,8 +9,6 @@
 * [Tuning Page Knowledge](guide_tuning.md)
 * [Building Scenarios](guide_scenarios.md)
 * [Executing Cases](guide_execution.md)
-* [Working with Flow](guide_flow.md)
-* [Automated Test Maintenance](guide_maintenance.md)
  
 [Setup]()
 
@@ -20,7 +18,10 @@
 
 [Articles]()
 
+* [Working with Flow](article_flow.md)
+* [Automated Test Maintenance*](article_maintenance.md)
 * [Window, Frame, Alert, AJAX*](article_scenes.md)
+* [DB Access and File Manipulation*](article_api_call.md)
 
 [Reference]()
 

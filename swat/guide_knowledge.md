@@ -8,7 +8,7 @@ Installing SWAT Capture tool
 
 **SWAT Capture Tool** is a browser extension to capture the HTMLs from you web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
 
-**SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer. we will use Chrome in this guide. Please refer to [Setup Tools and Integrations](setup_tools.md#Setup_SWAT_Capture_Tool) for details of the setup. 
+**SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer. we will use Chrome in this guide. Please refer to [Setup Tools and Integrations](setup_tools.md#SWAT_Capture_Tool) for details of the setup. 
 
 To install and use the extension in Chrome is simple. Just follow the steps below
 
@@ -39,7 +39,7 @@ As SWAT is a knowledge-driven automation, it uses a knowledge base supporting sc
 * **Rule**: The knowledge rule used for SWAT to understand the implementation of the page.
 * **Operation**: The interactive operation on the page, such as *Login*, *Search*. It contains information of a interactive node set.
 * **Node**: The interactive node in the operation, such as text-box, button.
-* **Flow**: A web application workflow with a certain business meaning. It contains several steps of operations. We will explain it in [Working with Flows](guide_flows.md).
+* **Flow**: A web application workflow with a certain business meaning. It contains several steps of operations. We will explain it in [Working with Flows](article_flow.md).
 
 Hint: Though construct a good knowledge base at the beginning is with some efforts, the work will make the following steps such as scenario building much more efficient.
 

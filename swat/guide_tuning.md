@@ -79,7 +79,7 @@ Note: There are more than one definitions for the same implementation and many c
 6. Check all the pages and apply in the dialog. **Page Knowledge Updater** page will be displayed and SWAT will start parsing the pages.
 7. After a while, you will get a parsed page list on the left. `Bing` is with <span class="label label-default">unmodified</span>, because it doesn't contains the suggest list. `BingSA` is with <span class="label label-danger">modified</span>, and you can see the added operation in green.
 
-Editing Knowledge
+Editing Pages and Operations
 ---
 
 Knowledge rule can help you a lot when you have a lot of pages with the similar implementation, which is common for pages in the same web application. Sometimes you still need to change some properties such as title in individual knowledge components. You can do the modification in **Page Knowledge** page.

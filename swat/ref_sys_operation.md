@@ -238,7 +238,7 @@ Obtain additional information from the page in current window, including URL and
 Operation - API Call
 ---
 
-Call an agent server API to execute an extended operation in scenario such as DB querying/manipulation, file manipulation. You can build an agent server with your extended operation conforming the [Agent Server API](ref_agent_api.md) specification.
+During a scenario you can call an agent server API to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming the [Agent Server API](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
 
 ##### Parameters
 
@@ -251,7 +251,7 @@ Call an agent server API to execute an extended operation in scenario such as DB
 ##### Notes
 
 * This system operation only works in local execution service.
-* The **API URL** can be displayed as a selectable list, if you have set the API list in **External APIs** of **Account Setting** page.
+* The **API URL** can be displayed as a selectable list, if you have setup the integration. Please refer to [Setup Tools and Integrations](setup_tools.md#Agent_Server_API_Integration) for details.
 * The API of your agent server should conform the [Agent Server API](ref_agent_api.md) specification.
 
 ##### Errors

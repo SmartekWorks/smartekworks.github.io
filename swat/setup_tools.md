@@ -3,7 +3,7 @@ Setup SWAT Tools and Integrations
 
 We offer several tools and integrations with other services to help you use SWAT more efficiently.
 
-Setup SWAT Capture Tool
+SWAT Capture Tool
 ---
 
 **SWAT Capture Tool** is a browser extension to capture the HTMLs from you web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
@@ -59,7 +59,7 @@ In some cases, an error message: *Could not load file or assembly or one of its 
 3. Select the target folder and change the filename if you want in **Save As** dialog, and save.
 4. An SHTML type file will be saved to the target folder.
 
-Setup Jenkins Integration
+Jenkins Integration
 ---
 
 You can integrate SWAT service with Jenkins to implement a CI with acceptance test. With the integration you can
@@ -96,7 +96,7 @@ Attention: The Jenkins plugin will be available in the next update.
 4. Instead of clicking **OK** button, choose **Jenkins Request** or **Jenkins Request (Total Set)** from the pull-up list next to the **OK** button.
 5. The **Request Information** dialog will show up with the request string you needed for configuring Jenkins.
 
-Setup JIRA Integration
+JIRA Integration
 ---
 
 SWAT can use JIRA to replace the internal issue management system. With the integration you can
@@ -116,7 +116,7 @@ Note: You should ensure that SWAT service can access JIRA service when using the
 #### Configuring SWAT
 
 1. Visit **Account Settings** page through menu *Management > Account Settings*.
-2. Input the configuration string with your BrowserStack account information such as the one below to the **Extensions** field. 
+2. Input the configuration string with your JIRA account information such as the one below to the **Extensions** field. 
 ```json
 {
 	"jira":{
@@ -132,9 +132,37 @@ Note: You should ensure that SWAT service can access JIRA service when using the
 
 The configuration string is a JSON map with following rules:
 
-* Use the key of `"jira"`, and the configuration map with following keys as value.
+* Use the key `"jira"`, and the configuration map with following keys as value.
  * `"url"`: The URL of JIRA service.
  * `"username"`: The username of JIRA account.
  * `"password"`: The password of JIRA account.
  * `"project"`: The project name for SWAT. The key is not required, SWAT will use the project code of SWAT for the project name in JIRA if you do not set the key. You should ensure that the target project in JIRA exists in both cases.
  
+Agent Server API Integration
+---
+
+During a scenario you can call an agent server API to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming the [Agent Server API](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
+
+Though you can input the URL of the API directly in **API Call** system operation, you can setup an integration in SWAT, so that you can select the defined API in **API Call** system operation. 
+
+#### Configuring SWAT
+
+1. Visit **Account Settings** page through menu *Management > Account Settings*.
+2. Input the configuration string with your API information such as the one below to the **Extensions** field.
+```json
+{
+	"agent_api":{
+		"Obtain server log":"http://xxx.xxx.xxx.xxx:xxx/log/webserver",
+		"Obtain db diff":"http://xxx.xxx.xxx.xxx:xxx/db/diff",
+		"Initialize db":"http://xxx.xxx.xxx.xxx:xxx/db/initialize"
+	}
+}
+```
+
+#### Configuration String
+
+The configuration string is a JSON map with following rules:
+
+* Use the key `"agent_api"` and an API map.
+* The key of the API map is the name and the value is the URL.
+* The configuration string can also contain the key `"jira"` if you are using JIRA integration.
