@@ -46,12 +46,13 @@ The Configuration file, `account.ini` is a JAVA property file with following key
 * `execProxy.port`: The port of the proxy. The value will be ignored if `execProxy.enable` is `false`.
 * `driverParallelization`: The maximum parallel sessions allowed in the local execution server. As you can only run one IE session on a computer, the value will be ignored in this case.
 * `downloadDir`: The default download directory of your browser. You cannot use **Obtain Download** system operation if you do not set the value.
+* `firefoxProfile`: The path of Firefox profile which your want to start the testing browser with. This is useful when you want to test on Firefox with special settings or addons.
 
 #### Next Steps
 
-To enable execution on various types, versions of OS and Browsers are not a easy task, because there are a lot of settings of you OSs and browsers may influence the execution. We offer several suggestions to made the process easier.
+To enable execution on various types, versions of OS and Browsers are not a easy task, because there are a lot of settings of you OSes and browsers may influence the execution. We offer several suggestions to made the process easier.
 
-* Use cloud execution service, since the provider will handle most of the settings of OSs and browsers.
+* Use cloud execution service, since the provider will handle most of the settings of OSes and browsers.
 * Check [Configure Local Environment](#Configure_Local_Environment) section frequently, as we will update the information on how to config the local environment.
 * Update your local execution server to the latest version, as we will include some of the solution to execution problems in our local execution server.
 * Search the internet for information on Selenium Web Driver, which is currently our main execution engine.
