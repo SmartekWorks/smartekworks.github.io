@@ -29,6 +29,6 @@
 * [System Operation](ref_sys_operation.md)
 * [Knowledge Rule DSL*](ref_knowledge_rule.md)
 * [Matching & Querying DSL*](ref_mq_rule.md)
-* [Agent Server API*](ref_agent_api.md)
+* [Agent API specification](ref_agent_api.md)
 
 [gimmick:theme (inverse: true)](bootstrap)
