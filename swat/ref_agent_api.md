@@ -31,7 +31,7 @@ Agent API Specification
 
 #### Response 
 
-Agent API should return following response when the call is successful.
+Agent API should return following response when the call is successful. 
 
 * HTTP Code: `200`
 * Content-Type: `application/json`
@@ -49,6 +49,8 @@ Agent API should return following response when the call is failed.
 * Body: JSON Map with following keys
  * `code`: (Optional) Error code of the call. Used in error message of SWAT.
  * `message`: (Required) Error message of the call. Used in error message of SWAT.
+
+Note: As the timeout of the request is 10 minutes, you should ensure that agent server complete the procession and return within 10 minutes.
 
 Agent API Sample
 ---

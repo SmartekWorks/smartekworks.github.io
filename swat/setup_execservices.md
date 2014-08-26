@@ -48,6 +48,11 @@ The Configuration file, `account.ini` is a JAVA property file with following key
 * `downloadDir`: The default download directory of your browser. You cannot use **Obtain Download** system operation if you do not set the value.
 * `firefoxProfile`: The path of Firefox profile which your want to start the testing browser with. This is useful when you want to test on Firefox with special settings or addons.
 
+#### Notes
+
+* When you start local execution server on Windows 8, you may find a warning message showing "Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.". You can ignore this message, as it will not influence the execution. You can also remove this message by adding the key `HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs` to registry.
+
+
 #### Next Steps
 
 To enable execution on various types, versions of OS and Browsers are not a easy task, because there are a lot of settings of you OSes and browsers may influence the execution. We offer several suggestions to made the process easier.
