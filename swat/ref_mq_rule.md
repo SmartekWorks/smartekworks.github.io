@@ -169,7 +169,7 @@ The JSON map contains three type of keys:
 {"source":"input[name='gender']", "css_key":"value", "css_index":2}
 ```
 
-## Samples
+### Samples
 
 * Use value of parameter `orderNo` in current URL.
 ```json
