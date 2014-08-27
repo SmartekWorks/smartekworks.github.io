@@ -1,9 +1,9 @@
 Matching & Querying DSL
 ===
 
-Matching rules and querying rules are used to assert conditions on a web page and retrieve values from a web page accordingly. You usually do not need to use either types of rules if build a simple scenario and want it run automatically in you browser. However, you may need these rules to improve test efficiency and help you build complicated scenarios.
+Matching rules and querying rules are used to assert conditions on a web page and retrieve values from a web page accordingly. You usually do not need to use either types of rules if you build a simple scenario and want it run automatically in you browser. However, you may need these rules to improve test efficiency and help you build complicated scenarios.
 
-Why Using Matching Rules?
+What is Matching Rule for?
 ---
 
 Matching rules are written in a kind of Domain-specific language, which we can use to assert conditions on a web page. You can use matching rules in the following functions of SWAT.
@@ -120,7 +120,7 @@ The value of `"have_css"` and `"not_have_css"` is a JSON map contains following 
 {"have_css":{"css":"input[name='gender']", "with_index":2, "selected":true}}
 ```
 
-Why Using Querying Rules?
+What is Querying Rule for
 ---
 
 Querying rules are written in a kind of Domain-specific language, which we can use to retrieve values from a page. You can use querying rules in the following function of SWAT.
@@ -155,7 +155,7 @@ The JSON map contains three type of keys:
  * `"url"`: URL of the page. You need to use `"query_key"` to retrieve the value of a parameter of the query string.
  * `"title"`: Title of the page.
  * `"alert"`: Text of the last alert appeared in the previous operation.
- * *Selector String*: A node in the page (first matched frame if you have `"frame"` key) defined by CSS selector. You need to use `"css_key"` to retrieve the text or attribute of the node.
+ * *Selector String*: A visable node (that must be displayed) in the page (first matched frame if you have `"frame"` key) defined by CSS selector. You need to use `"css_key"` to retrieve the text or attribute of the node.
 * `"query_key"`: (Required when `"source"` is `"url"`) The parameter key of the query string.
 ```json
 {"source":"url", "query_key":"orderNo"}

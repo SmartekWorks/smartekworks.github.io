@@ -27,8 +27,8 @@
 
 * [Web Operation](ref_web_operation.md)
 * [System Operation](ref_sys_operation.md)
-* [Knowledge Rule DSL*](ref_knowledge_rule.md)
 * [Matching & Querying DSL](ref_mq_rule.md)
+* [Knowledge Rule DSL](ref_knowledge_rule.md)
 * [Agent API specification](ref_agent_api.md)
 
 [gimmick:theme (inverse: true)](bootstrap)

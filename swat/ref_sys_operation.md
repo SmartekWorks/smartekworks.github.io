@@ -24,7 +24,7 @@ Each system operation has its own pre-defined errors and evidences. Please refer
 
 #### Using Variable
 
-* You cannot set a variables in **Variable Name** or **Session Name** parameter. These parameters exist in **Set Value**, **API Call** and **Session Control** operation.
+* You cannot set a variables in **Variable Name** parameter. These parameters exist in **Set Value** and **API Call** operation.
 * As you cannot switch the select typed parameter to query mode in system operations, you cannot set a variable in such kind of fields such as **Action** in **Navigation Control** operation.
 
 #### Ignoring Parameter and Operation
@@ -39,7 +39,7 @@ Go to a specific URL in the current browser session and window.
 
 ##### Parameters
 
-| Parameters | Explanation
+| Parameter  | Explanation
 | ---------- | -----------
 | Site       | Site managed in SWAT. SWAT will use the execution related settings of the site after this operation.
 | URL        | Relative URL to the target server URL of the **Site**. You can also use full URL starting with `http://`, `https://`, `file://` to ignore the target server URL. 
@@ -64,7 +64,7 @@ Wait a short period of time in the current browser session and window. You usual
 
 ##### Parameters
 
-| Parameters | Explanation
+| Parameter  | Explanation
 | ---------- | -----------
 | Duration   | Seconds to wait in the current browser session and window.
 
@@ -89,7 +89,7 @@ Simulate the navigation control function of browser.
 
 ##### Parameters
 
-| Parameters | Explanation
+| Parameter  | Explanation
 | ---------- | -----------
 | Action     | browsers' navigation control function: `Forward`, `Back`, `Reload`.
 
@@ -116,7 +116,7 @@ Note: To simulate a actual download and upload action may be not a good practice
 
 ##### Parameters
 
-| Parameters    | Explanation
+| Parameter     | Explanation
 | ------------- | -----------
 | Wait Duration | Seconds to wait for finishing downloading the file.
 
@@ -143,10 +143,10 @@ Find the target window and manipulate it.
 
 ##### Parameters
 
-| Parameters     | Explanation
+| Parameter      | Explanation
 | -----------    | -----------
 | Window Name    | The window name of the target window. Leave it blank to bypass this condition.
-| Matching Rules | The matching rules of the target window. Please refer to [Matching & Querying DSL](ref_mq_rule.md) for the details of matching rule. Leave it blank to bypass this condition.
+| Matching Rules | The matching rules of the target window. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL) for the details of matching rule. Leave it blank to bypass this condition.
 | Action         | `Activate` for switching the target window to the current window. `Close` for closing the target window.
 
 ##### Notes
@@ -156,7 +156,7 @@ Find the target window and manipulate it.
 
 ##### Errors
 
-* **Matching Rules** do not conform [Matching & Querying DSL](ref_mq_rule.md). (in validation and execution) 
+* **Matching Rules** do not conform [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
 * Target window cannot be found. (in execution)
 
 ##### Evidences
@@ -171,9 +171,9 @@ Assert whether the page in current window is the page you expected.
 
 ##### Parameters
 
-| Parameters     | Explanation
+| Parameter      | Explanation
 | -----------    | -----------
-| Matching Rules | Expectation in format of matching rules. Please refer to [Matching & Querying DSL](ref_mq_rule.md) for the details of matching rule. Leave it blank to bypass the assertion.
+| Matching Rules | Expectation in format of matching rules. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL) for the details of matching rule. Leave it blank to bypass the assertion.
 
 ##### Notes
 
@@ -181,7 +181,7 @@ Assert whether the page in current window is the page you expected.
 
 ##### Errors
 
-* **Matching Rules** do not conform [Matching & Querying DSL](ref_mq_rule.md). (in validation and execution) 
+* **Matching Rules** do not conform [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
 * Assertion failed. (in execution)
 
 ##### Evidences
@@ -197,15 +197,15 @@ Set a value from the page in current window to a variable, which you can use in 
 
 ##### Parameters
 
-| Parameters    | Explanation
+| Parameter     | Explanation
 | ------------- | -----------
-| Querying Rule | Definition of the target value in format of querying rule. Please refer to [Matching & Querying DSL](ref_mq_rule.md) for the details of querying rule. 
+| Querying Rule | Definition of the target value in format of querying rule. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL) for the details of querying rule. 
 | Variable Name | Variable Name to store the value.
 
 
 ##### Errors
 
-* **Query Rule** is blank or does not conform [Matching & Querying DSL](ref_mq_rule.md). (in validation and execution) 
+* **Query Rule** is blank or does not conform [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL). (in validation and execution) 
 * **Variable Name** is blank or does not conform rules of variable name. (in validation and execution)
 * **Variable Name** has been referenced in the previous operations. (in validation)
 * Querying target cannot be found. (in execution)
@@ -238,10 +238,10 @@ During a scenario you can call a web service to execute an extended operation su
 
 ##### Parameters
 
-| Parameters    | Explanation
+| Parameter     | Explanation
 | ------------- | -----------
 | API URL       | URL of the API
-| API Params    | Parameters for the API, using request query string format such as `Key1=Value1&Key2=Value2`.
+| API Params    | Parameter  for the API, using request query string format such as `Key1=Value1&Key2=Value2`.
 | Variable Name | Variable name to store the result in API return. Leave it blank if you do not need to set the value.
 
 ##### Notes
@@ -269,7 +269,7 @@ Pause the scenario and resume on a certain condition. All browser sessions will 
 
 ##### Parameters
 
-| Parameters     | Explanation
+| Parameter      | Explanation
 | -------------  | -----------
 | Pause Type     | `Sleep` for pausing a specific time, and `Wake Up` for waking up at a specific date time.
 | Pause Duration | Minutes to pause. Works under `Sleep` type.
@@ -296,7 +296,7 @@ Manipulate multiple browser sessions in scenario. You usually use one session (m
 
 ##### Parameters
 
-| Parameters   | Explanation
+| Parameter    | Explanation
 | ------------ | -----------
 | Action       | `Create` for creating a new browser session, `Activate` for switching a browser session to the current session.
 | Session Name | The name of a new session or target session for activating. The session name of the default session is `default`.
@@ -309,7 +309,7 @@ Manipulate multiple browser sessions in scenario. You usually use one session (m
 
 ##### Errors
 
-* **Session Name** does not conform rules of variable name. (in validation)
+* **Session Name** is blank. (in validation and execution)
 * Create a new session with an existing **Session Name**. (in execution)
 * Activate a session with an non-existed **Session Name**. (in execution)
 
