@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>HTML for Test</title>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/1.11.0/jquery.min.js"></script>
 <script>
 function getInternetExplorerVersion()
 // Returns the version of Internet Explorer or a -1
@@ -25,18 +26,17 @@ function checkVersion()
 
 	if ( ver > -1 )
 	{
-		if ( ver >= 8.0 ) 
-			msg = "You're using a recent copy of Internet Explorer."
-		else
-			msg = "You should upgrade your copy of Internet Explorer.";
+		msg = "You're using Internet Explorer " + ver + ".";
 	}
-	alert( msg );
+	return msg;
 }
 
-checkVersion();
+$(document).ready(function(){
+	$('h1').text(checkVersion());
+});
 </script>
 </head>
-
 <body>
+<h1></h1>
 </body>
 </html>
