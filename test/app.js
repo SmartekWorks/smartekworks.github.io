@@ -3,6 +3,9 @@
  * @class App
  * @constructor
  */
+if (!window.console) window.console = {};
+if (!window.console.log) window.console.log = function () { };
+
 function App() {
 	var self = this;
 
