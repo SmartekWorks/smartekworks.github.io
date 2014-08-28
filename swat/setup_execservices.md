@@ -91,7 +91,7 @@ The configuration string is a JSON map with following rules:
  * `"username"`: The username of BrowserStack account.
  * `"accesskey"`: The accesskey of BrowserStack account.
  * `"parallelization"`: The maximum parallel sessions allowed of BrowserStack subscription.
- * `"enableRoute"`: Use `true` or `false` to decide whether to use BrowserStack Local Testing or not. The default value is `false`.
+ * `"local"`: Use `true` or `false` to decide whether to use BrowserStack Local Testing or not. The default value is `false`.
  
 Note: Please refer to the documentation of BrowserStack for how to get the account information and how to use Local Testing.
 
