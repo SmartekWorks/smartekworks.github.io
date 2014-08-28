@@ -105,7 +105,7 @@ function App() {
 	 * @param  title {string} ページタイトル
 	 */
     self.updateViewSettings = function(page, title){
-        console.log('call updateViewSettings page="' + page + '"');
+ //       console.log('call updateViewSettings page="' + page + '"');
 
         document.title = title; // 画面タイトル設定
         History.pushState({state:page}, title, '?state=' + page);    // ページURL、履歴設定
@@ -152,7 +152,7 @@ function App() {
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
             // alert('Ajaxエラー発生');
-            console.log("Ajax Status: " + jqXHR.status + ", " + textStatus + ", errorThrown" + errorThrown)
+ //           console.log("Ajax Status: " + jqXHR.status + ", " + textStatus + ", errorThrown" + errorThrown)
         });
     };
 
@@ -190,7 +190,7 @@ function App() {
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
             // alert('Ajaxエラー発生');
-            console.log("Ajax Status: " + jqXHR.status + ", " + textStatus + ", errorThrown" + errorThrown)
+//            console.log("Ajax Status: " + jqXHR.status + ", " + textStatus + ", errorThrown" + errorThrown)
         });
 
     };
