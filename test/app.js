@@ -311,26 +311,26 @@ function App() {
      * @method InitBlockUI
      */
     self.InitBlockUI = function(){
-        // $.blockUI.defaults = {
-        //     message: "<img src='http://54.92.109.84/mypage/images/sim/loader-lg.gif'></img>",
-        //     css : {
-        //         padding: 0,
-        //         margin: 0,
-        //         width: '30%',
-        //         top: '40%',
-        //         left: '35%',
-        //         textAlign: 'center',
-        //         cursor: 'wait'
-        //     },
-        //     overlayCSS:  {
-        //         backgroundColor: '#FFFFFF',
-        //         opacity: 0.6,
-        //         cursor: 'wait'
-        //     },
-        //     fadeIn:  200,
-        //     fadeOut:  400,
-        //     showOverlay: true,
-        // };
+        $.blockUI.defaults = {
+            message: "<img src='http://54.92.109.84/mypage/images/sim/loader-lg.gif'></img>",
+            css : {
+                padding: 0,
+                margin: 0,
+                width: '30%',
+                top: '40%',
+                left: '35%',
+                textAlign: 'center',
+                cursor: 'wait'
+            },
+            overlayCSS:  {
+                backgroundColor: '#FFFFFF',
+                opacity: 0.6,
+                cursor: 'wait'
+            },
+            fadeIn:  200,
+            fadeOut:  400,
+            showOverlay: true,
+        };
     }();
 }
 

@@ -1,112 +1,987 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Browser Information</title>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" type="text/css"></link>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-	$('#appCodeName').text(navigator.appCodeName);
-	$('#appName').text(navigator.appName);
-	$('#appVersion').text(navigator.appVersion);
-	$('#language').text(navigator.language);
-	$('#platform').text(navigator.platform);
-	$('#product').text(navigator.product);
-	$('#userAgent').text(navigator.userAgent);
-	$('#documentMode').text(document.documentMode);
-});
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+        <title>生命保険シミュレーション（おすすめ商品見積もり）│オリックス生命保険ダイレクト</title>
+<meta name="description" content="オリックス生命保険の保険料シミュレーションページです。インターネットで人気のおすすめ商品（生命保険・医療保険・がん保険）を自分で簡単にお見積もりいただけます。【オリックス生命保険ダイレクト公式】">
+<meta name="keywords" content="生命保険,医療保険,シミュレーション,見積もり,資料請求,申込,オリックス生命,オリックス">
+
+        <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/default.css" media="all">
+    <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/errModal.css" media="all">    
+    <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/colorbox.css" media="all">
+
+        <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/select.css" media="all">
+
+        
+
+
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.23.6. -->
+
 </head>
+
 <body>
-<div class="container" style="margin-top:20px;">
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Browser Information</h3>
-			<table class="table table-bordered table-striped">
-				<tbody>
-					<tr>
-						<td>appCodeName</td>
-						<td id="appCodeName"></td>
-					</tr>
-					<tr>
-						<td>appName</td>
-						<td id="appName"></td>
-					</tr>
-					<tr>
-						<td>appVersion</td>
-						<td id="appVersion"></td>
-					</tr>
-					<tr>
-						<td>language</td>
-						<td id="language"></td>
-					</tr>
-					<tr>
-						<td>platform</td>
-						<td id="platform"></td>
-					</tr>
-					<tr>
-						<td>product</td>
-						<td id="product"></td>
-					</tr>
-					<tr>
-						<td>userAgent</td>
-						<td id="userAgent"></td>
-					</tr>
-					<tr>
-						<td>documentMode</td>
-						<td id="documentMode"></td>
-					</tr>
-				</tbody>
-			</table>
+
+       <div data-bind="visible: false">
+      <div class="contents" style="text-align: center;">
+        <img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"><br/>
+        しばらくお待ちください…
+      </div>
+    </div>
+
+    <div id="wrap" data-bind="visible: true" style="display: none">
+        <div class="inner" data-bind="css: {
+                                            'inner-free': $root.index() == '1' || $root.index() == '2' || $root.index() == '3',
+                                            'inner-select': $root.index() == '4' || $root.index() == '5' || $root.index() == '6',
+                                            'direct': $root.index() == '1' || $root.index() == '5'
+                                            },
+                                        style: { paddingBottom: $root.index() == '2' ? '1px' : '' },">
+
+                        <div id="header">
+    <h1 class="direct" title="オリックス生命保険 (ダイレクト 公式サイト)"><a href="/"><img src="http://54.92.109.84/mypage/images/sim/companylogo.jpg" alt="オリックス生命保険 (ダイレクト 公式サイト)"></a></h1>
+    <!-- ko if: ($root.index() == '1') || ($root.index() == '5') -->
+    <h1 class="official" title="オリックス生命保険"><a href="http://www.orix.co.jp/ins/index.htm"><img src="http://54.92.109.84/mypage/images/sim/companylogo_bg.jpg" alt="オリックス生命保険"></a></h1>
+    <!-- /ko -->
+    <!-- ko if: ($root.index() != '1') && ($root.index() != '5') -->
+    <h1 class="official" title="オリックス生命保険"><a><img src="http://54.92.109.84/mypage/images/sim/companylogo_bg.jpg" alt="オリックス生命保険"></a></h1>
+    <!-- /ko -->
+    <div class="tagline">
+        <ul>
+            <li><a href="http://faq.orixlife.dga.jp/">よくあるご質問</a></li>
+            <li><a href="/contact/">お問合せ</a></li>
+            <li><a href="/sitemap/">サイトマップ</a></li>
+        </ul>
+        <p class="inquery"><span class="kontxt padb5">通販商品に関するお問合せ</span> <span class="free-dial">0120-679-816</span><br>
+            <span class="rtime">受付時間 9:00～21:00 土曜日は18:00まで、</span><span class="redtxt">日・祝日・年末年始は休み</span>
+        </p>
+    </div>
+</div>
+
+            <div class="contents">
+                                
+<div class="ttl-box">
+	<h2 data-bind="css: { 'tsuhan': $root.index() == '6', 'select': $root.index() != '6' }"><img src="http://54.92.109.84/mypage/images/sim/h2_ttl_r.jpg" alt="保険料シミュレーション"></h2>
+	<div class="pop-box001 box-w230" data-bind="click: function(){$root.showBirthdayPopup(false)}, visible: $root.showBirthdayPopup"><div class="arrow-d"></div><div class="poparrow-d poparrow-s2"><span class="pop_ttl">もうすぐお誕生日の方へ</span><br>お誕生日が近い方は、契約年齢が上がると<br>ほとんどの場合、保険料が上がります。<br>お早めにお申込みください。<div class="close_check"></div></div></div>
+	<div id="user-status" class="user-status">
+		<div class="user-status-inner">
+			<div class="age-ttl"><div class="midtxt">試算条件</div></div>
+			<div class="user-profile">
+				<div class="prof-age"><strong>契約年齢</strong>&nbsp;<span id="now-age" data-bind="text:$root.contractAge"></span><strong>歳</strong>&nbsp;<span id="sex-txt" data-bind="text: $root.selectedGenderText, visible: $root.firstSimulation() == false"></span>&nbsp;&nbsp;&nbsp;生年月日：<span id="birth-y" data-bind="text: $root.selectedBirthdayYearText"></span>年<span id="birth-m" data-bind="text: $root.selectedBirthdayMonth"></span>月<span id="birth-d" data-bind="text: $root.selectedBirthdayDay"></span>日<br>
+					<span class="age-capt01" data-bind="visible: $root.paymentCount() == 'm'">※契約年齢は「申込日の翌月1日における被保険者の満年齢」で計算しています。</span>
+					<span class="age-capt02" data-bind="visible: $root.paymentCount() == 'h' || $root.paymentCount() == 'y'">※契約年齢は「申込日における被保険者の満年齢」で計算しています。</span>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<h3>Benchmark</h3>
-			<table class="table table-bordered table-striped">
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td id="1"></td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td id="2"></td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td id="3"></td>
-					</tr>
-					<tr>
-						<td>4</td>
-						<td id="4"></td>
-					</tr>
-					<tr>
-						<td>5</td>
-						<td id="5"></td>
-					</tr>
-					<tr>
-						<td>6</td>
-						<td id="6"></td>
-					</tr>
-					<tr>
-						<td>7</td>
-						<td id="7"></td>
-					</tr>
-					<tr>
-						<td>8</td>
-						<td id="8"></td>
-					</tr>
-				</tbody>
-			</table>
+	<div class="age-set">
+				<a href="javascript:void(0);" data-bind="click: $root.sh.showAgeSetting">年齢・性別を変更する</a>
+			</div>
+</div>
+
+
+<div class="conts_inner">
+	<!-- ko if: $root.index() == '4' -->
+	<div class="otherlink"><p><a href="javascript:void(0);" id="goToIndex3" data-bind="click: $root.clickChangePlan.bind($data, '3')">以下、４商品以外の<br>シミュレーションはこちら</a></p></div>
+	<!-- /ko -->
+	<!-- ko if: $root.index() == '5' -->
+	<div class="otherlink"><p><a href="javascript:void(0);" id="goToIndex1" data-bind="click: $root.clickChangePlan.bind($data, '1')">以下、４商品以外の<br>シミュレーションはこちら</a></p></div>
+	<!-- /ko -->
+
+	<div class="plan-choice">
+		<div class="arrow-r"></div>
+		<div class="poparrow-r">選択されたプランをもとに<br>保障内容を変更することができます。</div>
+	</div>
+
+	<form id="products-wrapper">
+		<!-- ko foreach: { data: products, as: 'product' } -->
+		<!-- ko if: $root.index() == '4' || $root.index() == '5' -->
+								<!-- ko if: product.productCd == '3G' -->
+		<div id="bridge" class="itembox" data-bind="css: { 'active': $root.isSelectedBridge, 'close': $root.selectableBridge() == false }">
+			<div class="tl-bar">
+	            <input type="checkbox" name="bridge_check" id="bridge_check" class="check-sq-input product_check" data-bind="checked: $root.isSelectedBridge, disable: $root.selectableBridge() == false " />
+	            <label for="bridge_check">
+	                <h3><span data-bind="text: product.productMasterInfo.productGroupName"></span> : <span data-bind="text: product.productMasterInfo.productName"></span></h3>
+	            </label>
+				<div class="gurd-close" data-bind="html: $root.bridgeDisableMessage"></div>
+				<div class="uint_price" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="price-label">月払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.basic.premiums.p1), css { graytxt: !$root.isSelectPlanBasic() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_price_y" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="price-label">年払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.basic.premiums.p12), css { graytxt: !$root.isSelectPlanBasic() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_pricej" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="price-label">月払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p1), css { graytxt: !$root.isSelectPlanRich() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_pricej_y" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="price-label">年払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p12), css { graytxt: !$root.isSelectPlanRich() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetBridgeBasic()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetBridgeRich()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+			</div>
+			<div class="simul-box" data-bind="slideVisible: $root.isSelectedBridge">
+				<div class="box-inner">
+					<div class="left-ttl">
+						<div class="logomark">
+							<!-- ko if: $root.index() == '5' -->
+							<a href="/product/bridge/" target="_blank" data-bind="text: product.productMasterInfo.productName"></a>
+							<!-- /ko -->
+							<!-- ko if: $root.index() != '5' -->
+							<a data-bind="text: product.productMasterInfo.productName"></a>
+							<!-- /ko -->
+						</div>
+						<p class="btn-point" id="point01" data-bind="event: { mouseover: $root.sh.btnPointOver, mouseout: $root.sh.btnPointOut }">おすすめポイント</p>
+						<div class="pop-box box-w330" style="top:64px;" data-bind="click: $root.sh.hideSelf"><div class="arrow-l"></div>
+							<div class="poparrow">インターネット申込専用の保険料を抑えた商品です。<br>インターネットでのお申込みができる方におすすめです。</div>
+						</div>
+					</div>
+
+					<div class="mid-box">
+						<dl>
+							<dt class="ico-sum_ins"><span class="icon-m"></span>保険金額</dt>
+							<dd class="ddl">
+								<select id="bridge_sum_insured_1" name="bridge_sum_insured_1" data-bind="options: $root.bridgeInsuranceAmountBasic, optionsText: 'text', optionsValue: 'value', value: $root.selectedBridgeInsuranceAmountBasic">
+								</select>
+							</dd>
+							<dd class="ddr">
+								<select id="bridge_sum_insured_2" name="bridge_sum_insured_2" data-bind="options: $root.bridgeInsuranceAmountRich, optionsText: 'text', optionsValue: 'value', value: $root.selectedBridgeInsuranceAmountRich">
+								</select>
+							</dd>
+						</dl>
+						<dl class="last">
+							<dt class="ico-term"><span class="icon-m"></span>保険期間</dt>
+							<dd class="ddl">
+								<select id="bridge_term_1" name="bridge_term_1" data-bind="options: $root.bridgeInsurancePeriodBasic, optionsText: 'text', optionsValue: 'value', value: $root.selectedBridgeInsurancePeriodBasic">
+								</select>
+							</dd>
+							<dd class="ddr">
+								<select id="bridge_term_2" name="bridge_term_2" data-bind="options: $root.bridgeInsurancePeriodRich, optionsText: 'text', optionsValue: 'value', value: $root.selectedBridgeInsurancePeriodRich">
+								</select>
+							</dd>
+						</dl>
+
+						<ul class="list-help">
+							<li><a href="javascript:void(0);" id="goLifePlan" data-bind="click: $root.showLifePlan"><span class="midtxt">保障金額に迷ったら</span></a></li>
+						</ul>
+						<!-- ko if: $root.contractAge() >= '22' && $root.contractAge() <= '39' -->
+						<div class="age22-39 caption">
+						    <div class="asta-marker">※</div>
+						    <p>
+						        保険金額が1,500万円をこえる場合は、過去2年以内に健康診断または人間ドックを受けていることが条件となります。<br/>
+						        <a href="/estimate/plan_bridge.htm" target="_blank" rel="external">＞詳しくはこちら</a>
+						    </p>
+						</div>
+						<!-- /ko -->
+						<!-- ko if: $root.contractAge() >= '40' && $root.contractAge() <= '60' -->
+						<div class="age40-60 caption">
+						    <div class="asta-marker">※</div>
+						    <p>
+						        保険金額が1,000万円をこえる場合は、過去2年以内に健康診断または人間ドックを受けていることが条件となります。<br/>
+						        <a href="/estimate/plan_bridge.htm" target="_blank" rel="external">＞詳しくはこちら</a>
+						    </p>
+						</div>
+						<!-- /ko -->
+					</div>				</div>
+			</div>		</div>		<div class="spcerblock">&nbsp;</div>		<!-- /ko -->
+		<!-- /ko -->
+
+				<!-- ko if: product.productCd == '4C' -->
+		<div id="cure" class="itembox" data-bind="css: { 'active': $root.isSelectedCure, 'close': $root.selectableCure() == false }">
+			<div class="tl-bar">
+	            <input type="checkbox" name="cure_check" id="cure_check" class="check-sq-input product_check" data-bind="checked: $root.isSelectedCure, disable: $root.selectableCure() == false " />
+	            <label for="cure_check">
+	                <h3><span data-bind="text: product.productMasterInfo.productGroupName"></span> : <span data-bind="text: product.productMasterInfo.productName"></span></h3>
+	            </label>
+	            <div class="gurd-close" data-bind="html: $root.cureDisableMessage"></div>
+				<div class="uint_price" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="price-label">月払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.basic.premiums.p1), css { graytxt: !$root.isSelectPlanBasic() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_price_y" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="price-label">年払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.basic.premiums.p12), css { graytxt: !$root.isSelectPlanBasic() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_pricej" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="price-label">月払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p1), css { graytxt: !$root.isSelectPlanRich() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_pricej_y" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="price-label">年払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p12), css { graytxt: !$root.isSelectPlanRich() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetCureBasic()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetCureRich()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+			</div>
+			<div class="simul-box" data-bind="slideVisible: $root.isSelectedCure">
+				<div class="box-inner">
+					<div class="left-ttl">
+						<div class="logomark">
+							<!-- ko if: $root.index() == '5' -->
+							<a href="/product/n_cure/" target="_blank" data-bind="text: product.productMasterInfo.productName"></a>
+							<!-- /ko -->
+							<!-- ko if: $root.index() != '5' -->
+							<a data-bind="text: product.productMasterInfo.productName"></a>
+							<!-- /ko -->
+						</div>
+						<p class="btn-point c01" id="point04" data-bind="event: { mouseover: $root.sh.btnPointOver, mouseout: $root.sh.btnPointOut }">おすすめポイント</p>
+						<div class="pop-box box-w410" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow">七大生活習慣病で入院されたときの支払限度日数が拡大する医療保険です。<br>特に三大疾病（がん・心疾患・脳血管疾患）で入院された場合は、<br>支払日数を無制限で保障するので、入院が長期化した場合にも安心です。<br>
+						入院が長引きがちな生活習慣病が気になる方におすすめです。<br>
+							<p class="caution"><span class="dotmark">※</span>対象となる七大生活習慣病は、<br>(1)がん(悪性新生物・上皮内新生物)&nbsp;(2)心疾患&nbsp;(3)脳血管疾患&nbsp;<br>(4)糖尿病&nbsp;(5)高血圧性疾患&nbsp;(6)肝硬変&nbsp;(7)慢性腎不全です。</p></div>
+						</div>
+					</div>
+
+					<div class="mid-box">
+						<dl id="cure_kyufu">
+							<dt class="ico-sum_ins">
+								<span class="icon-m"></span>入院給付金日額
+								<div class="rlabel-t">手術給付金</div>
+								<!-- ko if: $root.isOverHospitalAmount -->
+								<a href data-bind="click: $root.showOverHospitalAmountMessage">
+	                            	<div class="caution-ico" id="pop40"></div>
+	                        	</a>
+								<!-- /ko -->
+							</dt>
+							<dd class="ddl">
+								<select id="cure_benefit_1" name="cure_benefit_1" data-bind="options: $root.cureHospitalAmountBasic, optionsText: 'text', optionsValue: 'value', value: $root.selectedCureHospitalAmountBasic, css: { redalert: $root.isSelectPlanBasic() && $root.isOverHospitalAmount() } ">
+								</select>
+								<div class="group1" data-bind="visible: $root.selectedCureHospitalAmountBasic() == '5000'">
+									<div id="cure-b11" class="rlabel w240 f14">入院中10万円／外来2.5万円</div>
+								</div>
+								<div class="group2" data-bind="visible: $root.selectedCureHospitalAmountBasic() == '10000'">
+									<div id="cure-b12" class="rlabel w240 f14">入院中20万円／外来5万円</div>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<select id="cure_benefit_2" name="cure_benefit_2" data-bind="options: $root.cureHospitalAmountRich, optionsText: 'text', optionsValue: 'value', value: $root.selectedCureHospitalAmountRich, css: { redalert: $root.isSelectPlanRich() && $root.isOverHospitalAmount() } ">
+								</select>
+								<div class="group1" data-bind="visible: $root.selectedCureHospitalAmountRich() == '5000'">
+									<div id="cure-b11" class="rlabel w240 f14">入院中10万円／外来2.5万円</div>
+								</div>
+								<div class="group2" data-bind="visible: $root.selectedCureHospitalAmountRich() == '10000'">
+									<div id="cure-b12" class="rlabel w240 f14">入院中20万円／外来5万円</div>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="ico-star"><span class="icon-m"></span>先進医療特約<span class="ques pop" id="pop41" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span></dt>
+							<dd class="ddl">
+								<div class="group01">
+									<input value="1" name="cure_advanced_medicine_1" id="cure_advanced_medicine_11" type="radio" data-bind="checked: $root.selectedCureAdvancedMedicalBasic ">
+									<label for="cure_advanced_medicine_11">あり</label>
+								</div>
+								<div class="group02" data-bind="style: { display: $root.hideCureAdvancedMedicalBasic() == '0' ? 'none' : '' }">
+									<input value="0" name="cure_advanced_medicine_1" id="cure_advanced_medicine_12" type="radio" data-bind="checked: $root.selectedCureAdvancedMedicalBasic ">
+									<label for="cure_advanced_medicine_12">なし</label>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<div class="group01">
+									<input value="1" name="cure_advanced_medicine_2" id="cure_advanced_medicine_21" type="radio" data-bind="checked: $root.selectedCureAdvancedMedicalRich ">
+									<label for="cure_advanced_medicine_21">あり</label>
+								</div>
+								<div class="group02" data-bind="style: { display: $root.hideCureAdvancedMedicalRich() == '0' ? 'none' : '' }">
+									<input value="0" name="cure_advanced_medicine_2" id="cure_advanced_medicine_22" type="radio" data-bind="checked: $root.selectedCureAdvancedMedicalRich ">
+									<label for="cure_advanced_medicine_22">なし</label>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="ico-hosp"><span class="icon-m"></span>がん診断治療給付金特約<span class="ques pop" id="pop42" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span></dt>
+							<dd class="ddl">
+								<div class="group01">
+									<input value="1" name="cure_cancerpremium_period_1" id="cure_cancerpremium_period_11" type="radio" data-bind="checked: $root.selectedCureCancerOptionBasic">
+									<label for="cure_cancerpremium_period_11">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="cure_cancerpremium_period_1" id="cure_cancerpremium_period_12" type="radio" data-bind="checked: $root.selectedCureCancerOptionBasic">
+									<label for="cure_cancerpremium_period_12">なし</label>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<div class="group01">
+									<input value="1" name="cure_cancerpremium_period_2" id="cure_cancerpremium_period_21" type="radio" data-bind="checked: $root.selectedCureCancerOptionRich">
+									<label for="cure_cancerpremium_period_21">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="cure_cancerpremium_period_2" id="cure_cancerpremium_period_22" type="radio" data-bind="checked: $root.selectedCureCancerOptionRich">
+									<label for="cure_cancerpremium_period_22">なし</label>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="ico-hosp"><span class="icon-m"></span>がん通院特約<span class="ques pop" id="pop43" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span></dt>
+							<dd class="ddl">
+								<div class="group01">
+									<input value="1" name="cure_cancer_period_1" id="cure_cancer_period_11" type="radio" data-bind="checked: $root.selectedCureCancerOutpatientBasic, disable: $root.selectedCureCancerOptionBasic() == '0' ">
+									<label for="cure_cancer_period_11">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="cure_cancer_period_1" id="cure_cancer_period_12" type="radio" data-bind="checked: $root.selectedCureCancerOutpatientBasic, disable: $root.selectedCureCancerOptionBasic() == '0' ">
+									<label for="cure_cancer_period_12">なし</label>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<div class="group01">
+									<input value="1" name="cure_cancer_period_2" id="cure_cancer_period_21" type="radio" data-bind="checked: $root.selectedCureCancerOutpatientRich, disable: $root.selectedCureCancerOptionRich() == '0' ">
+									<label for="cure_cancer_period_21">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="cure_cancer_period_2" id="cure_cancer_period_22" type="radio" data-bind="checked: $root.selectedCureCancerOutpatientRich, disable: $root.selectedCureCancerOptionRich() == '0' ">
+									<label for="cure_cancer_period_22">なし</label>
+								</div>
+							</dd>
+						</dl>
+						<dl class="last">
+							<dt class="ico-term"><span class="icon-m"></span><a href="/estimate/term.htm" target="_blank" rel="external">保険料払込期間</a>&nbsp;<span class="norm">（保険期間：終身）</span></dt>
+							<dd class="ddl">
+								<select id="cure_period_1" name="cure_period_1" data-bind="options: $root.cureInsurancePaymentPeriodBasic, optionsText: 'text', optionsValue: 'value', value: $root.selectedCureInsurancePaymentPeriodBasic">
+								</select>
+							</dd>
+							<dd class="ddr">
+								<select id="cure_period_2" name="cure_period_2" data-bind="options: $root.cureInsurancePaymentPeriodRich, optionsText: 'text', optionsValue: 'value', value: $root.selectedCureInsurancePaymentPeriodRich">
+								</select>
+							</dd>
+						</dl>
+						<div class="pop-box41 box-w230" id="pop41-box" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow2">先進医療にかかる技術料と同額を<br>通算2,000万円限度までお支払いします。</div>
+						</div>
+						<div class="pop-box42 box-w320" id="pop42-box" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow2">がんと診断されたときにお支払いします。<br>
+								初回：初めてがんと診断されたとき<br>
+								2回目以降：がんの治療を目的として入院を開始されたとき<br>
+								<br>
+								　●日額5,000円の場合：1回につき50万円<br>
+								　●日額10,000円の場合：1回につき100万円
+							</div>
+						</div>
+						<div class="pop-box43 box-w300" id="pop43-box" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow2">がんで約款所定の通院をされたときにお支払いします。<br>
+								<br>
+								　●日額5,000円の場合：1日につき5,000円<br>
+								　●日額10,000円の場合：1日につき10,000円
+							</div>
+						</div>
+					</div>				</div>
+			</div>		</div>		<div class="spcerblock">&nbsp;</div>		<!-- /ko -->
+
+				<!-- ko if: product.productCd == '4A' -->
+		<div id="curelady" class="itembox" data-bind="css: { 'active': $root.isSelectedCureLady, 'close': $root.selectableCureLady() == false }">
+			<div class="tl-bar">
+	            <input type="checkbox" name="cure-l_check" id="cure-l_check" class="check-sq-input product_check" data-bind="checked: $root.isSelectedCureLady, disable: $root.selectableCureLady() == false " />
+	            <label for="cure-l_check">
+	                <h3><span data-bind="text: product.productMasterInfo.productGroupName"></span> : <span data-bind="text: product.productMasterInfo.productName"></span></h3>
+	            </label>
+				<div class="gurd-close" data-bind="html: $root.cureLadyDisableMessage"></div>
+				<div class="gurd-formen">新キュア・レディは<br>女性専用の保険となります。</div>
+				<div class="uint_price" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="price-label">月払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.basic.premiums.p1), css { graytxt: !$root.isSelectPlanBasic() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_price_y" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="price-label">年払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.basic.premiums.p12), css { graytxt: !$root.isSelectPlanBasic() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_pricej" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="gurd-formen">新キュア・レディは<br>女性専用の保険となります。</div>
+					<div class="price-label">月払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p1), css { graytxt: !$root.isSelectPlanRich() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_pricej_y" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="price-label">年払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p12), css { graytxt: !$root.isSelectPlanRich() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetCureLadyBasic()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetCureLadyRich()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+			</div>
+			<div class="simul-box" data-bind="slideVisible: $root.isSelectedCureLady">
+				<div class="box-inner">
+					<div class="left-ttl">
+						<div class="logomark">
+							<!-- ko if: $root.index() == '5' -->
+							<a href="/product/n_cure_lady/" target="_blank" data-bind="text: product.productMasterInfo.productName"></a>
+							<!-- /ko -->
+							<!-- ko if: $root.index() != '5' -->
+	                        <a data-bind="text: product.productMasterInfo.productName"></a>
+							<!-- /ko -->
+						</div>
+						<p class="btn-point" id="point05" data-bind="event: { mouseover: $root.sh.btnPointOver, mouseout: $root.sh.btnPointOut }">おすすめポイント</p>
+						<div class="pop-box box-w400" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow">
+								女性特有の病気やすべてのがんで入院されたときに、<br>
+								女性入院給付金として5,000円を上乗せしてお支払いする医療保険です。<br>
+								女性特有の病気やがんにしっかり備えたい方におすすめです。
+							</div>
+						</div>
+					</div>
+
+					<div class="mid-box">
+						<dl id="cure-l_kyufu">
+							<dt class="ico-sum_ins">
+								<span class="icon-m"></span>入院給付金日額
+								<div class="rlabel-t">
+									<p>（女性特有の病気・がんの場合）</p><br><p style="margin-top:-0.8em">手術給付金</p>
+								</div>
+								<!-- ko if: $root.isOverHospitalAmount -->
+								<a href data-bind="click: $root.showOverHospitalAmountMessage">
+	                            	<div class="caution-ico" id="pop50"></div>
+	                        	</a>
+								<!-- /ko -->
+							</dt>
+							<dd class="ddl">
+								<select id="cure-l_benefit_1" name="cure-l_benefit_1" data-bind="options: $root.cureLadyHospitalAmountBasic, optionsText: 'text', optionsValue: 'value', value: $root.selectedCureLadyHospitalAmountBasic, css: { redalert: $root.isSelectPlanBasic() && $root.isOverHospitalAmount() } ">
+								</select><br>
+								<div class="group1" data-bind="visible: $root.selectedCureLadyHospitalAmountBasic() == '5000'">
+									<div class="rlabel f14">
+										<p>（10,000円）</p><br><p style="margin-top:-1em">入院中10万円/外来2.5万円</p>
+									</div>
+								</div>
+								<div class="group2" data-bind="visible: $root.selectedCureLadyHospitalAmountBasic() == '10000'">
+									<div class="rlabel f14">
+										<p>（15,000円）</p><br><p style="margin-top:-1em">入院中20万円/外来5万円</p>
+									</div>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<select id="cure-l_benefit_2" name="cure-l_benefit_2" data-bind="options: $root.cureLadyHospitalAmountRich, optionsText: 'text', optionsValue: 'value', value: $root.selectedCureLadyHospitalAmountRich, css: { redalert: $root.isSelectPlanRich() && $root.isOverHospitalAmount() } ">
+								</select><br>
+								<div class="group1" data-bind="visible: $root.selectedCureLadyHospitalAmountRich() == '5000'">
+									<div class="rlabel f14">
+										<p>（10,000円）</p><br><p style="margin-top:-1em">入院中10万円/外来2.5万円</p>
+									</div>
+								</div>
+								<div class="group2" data-bind="visible: $root.selectedCureLadyHospitalAmountRich() == '10000'">
+									<div class="rlabel f14">
+										<p>（15,000円）</p><br><p style="margin-top:-1em">入院中20万円/外来5万円</p>
+									</div>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="ico-star">
+								<span class="icon-m"></span>先進医療特約
+								<span class="ques pop" id="pop51" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span>
+							</dt>
+							<dd class="ddl">
+								<div class="group01">
+									<input value="1" name="cure-l_advanced_medicine_1" id="cure-l_advanced_medicine_11" type="radio" data-bind="checked: $root.selectedCureLadyAdvancedMedicalBasic ">
+									<label for="cure-l_advanced_medicine_11">あり</label>
+								</div>
+								<div class="group02" data-bind="style: { display: $root.hideCureLadyAdvancedMedicalBasic() == '0' ? 'none' : '' }">
+									<input value="0" name="cure-l_advanced_medicine_1" id="cure-l_advanced_medicine_12" type="radio" data-bind="checked: $root.selectedCureLadyAdvancedMedicalBasic ">
+									<label for="cure-l_advanced_medicine_12">なし</label>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<div class="group01">
+									<input value="1" name="cure-l_advanced_medicine_2" id="cure-l_advanced_medicine_21" type="radio" data-bind="checked: $root.selectedCureLadyAdvancedMedicalRich ">
+									<label for="cure-l_advanced_medicine_21">あり</label>
+								</div>
+								<div class="group02" data-bind="style: { display: $root.hideCureLadyAdvancedMedicalRich() == '0' ? 'none' : '' }">
+									<input value="0" name="cure-l_advanced_medicine_2" id="cure-l_advanced_medicine_22" type="radio" data-bind="checked: $root.selectedCureLadyAdvancedMedicalRich ">
+									<label for="cure-l_advanced_medicine_22">なし</label>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="ico-hosp">
+								<span class="icon-m"></span>がん診断治療給付金特約
+								<span class="ques pop" id="pop52" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span>
+							</dt>
+							<dd class="ddl">
+								<div class="group01">
+									<input value="1" name="cure-l_cancerpremium_period_1" id="cure-l_cancerpremium_period_11" type="radio" data-bind="checked: $root.selectedCureLadyCancerOptionBasic">
+									<label for="cure-l_cancerpremium_period_11">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="cure-l_cancerpremium_period_1" id="cure-l_cancerpremium_period_12" type="radio" data-bind="checked: $root.selectedCureLadyCancerOptionBasic">
+									<label for="cure-l_cancerpremium_period_12">なし</label>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<div class="group01">
+									<input value="1" name="cure-l_cancerpremium_period_2" id="cure-l_cancerpremium_period_21" type="radio" data-bind="checked: $root.selectedCureLadyCancerOptionRich">
+									<label for="cure-l_cancerpremium_period_21">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="cure-l_cancerpremium_period_2" id="cure-l_cancerpremium_period_22" type="radio" data-bind="checked: $root.selectedCureLadyCancerOptionRich">
+									<label for="cure-l_cancerpremium_period_22">なし</label>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="ico-hosp">
+								<span class="icon-m"></span>がん通院特約
+								<span class="ques pop" id="pop53" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span>
+							</dt>
+							<dd class="ddl">
+								<div class="group01">
+									<input value="1" name="cure-l_cancer_period_1" id="cure-l_cancer_period_11" type="radio" data-bind="checked: $root.selectedCureLadyCancerOutpatientBasic, disable: $root.selectedCureLadyCancerOptionBasic() == '0'">
+									<label for="cure-l_cancer_period_11" data-bind="css: { 'radio-disabled': $root.selectedCureLadyCancerOptionBasic() == '0' } ">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="cure-l_cancer_period_1" id="cure-l_cancer_period_12" type="radio" data-bind="checked: $root.selectedCureLadyCancerOutpatientBasic">
+									<label for="cure-l_cancer_period_12">なし</label>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<div class="group01">
+									<input value="1" name="cure-l_cancer_period_2" id="cure-l_cancer_period_21" type="radio" data-bind="checked: $root.selectedCureLadyCancerOutpatientRich, disable: $root.selectedCureLadyCancerOptionRich() == '0'">
+									<label for="cure-l_cancer_period_21" data-bind="css: { 'radio-disabled': $root.selectedCureLadyCancerOptionRich() == '0' }">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="cure-l_cancer_period_2" id="cure-l_cancer_period_22" type="radio" data-bind="checked: $root.selectedCureLadyCancerOutpatientRich">
+									<label for="cure-l_cancer_period_22">なし</label>
+								</div>
+							</dd>
+						</dl>
+						<dl class="last">
+							<dt class="ico-term">
+								<span class="icon-m"></span>
+								<a href="/estimate/term_cl.htm" target="_blank" rel="external">保険料払込期間</a>&nbsp;
+								<span class="norm">（保険期間：終身）</span>
+							</dt>
+							<dd class="ddl">
+								<select id="cure-l_period_1" name="cure-l_period_1" data-bind="options: $root.cureLadyInsurancePaymentPeriodBasic, optionsText: 'text', optionsValue: 'value', value: $root.selectedCureLadyInsurancePaymentPeriodBasic">
+								</select>
+							</dd>
+							<dd class="ddr">
+								<select id="cure-l_period_2" name="cure-l_period_2" data-bind="options: $root.cureLadyInsurancePaymentPeriodRich, optionsText: 'text', optionsValue: 'value', value: $root.selectedCureLadyInsurancePaymentPeriodRich">
+								</select>
+							</dd>
+						</dl>
+						<div class="pop-box51 box-w230" id="pop51-box" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow2">先進医療にかかる技術料と同額を<br>通算2,000万円限度までお支払いします。</div>
+						</div>
+						<div class="pop-box52 box-w320" id="pop52-box" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow2">
+								がんと診断されたときにお支払いします。<br>
+								初回：初めてがんと診断されたとき<br>
+								2回目以降：がんの治療を目的として入院を開始されたとき<br>
+								<br>
+								　●日額5,000円の場合：1回につき50万円<br>
+								　●日額10,000円の場合：1回につき100万円
+							</div>
+						</div>
+						<div class="pop-box53 box-w300" id="pop53-box" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow2">
+								がんで約款所定の通院をされたときにお支払いします。<br>
+								<br>
+								　●日額5,000円の場合：1日につき5,000円<br>
+								　●日額10,000円の場合：1日につき10,000円
+							</div>
+						</div>
+					</div>					<div class="right-box">
+					</div>				</div>
+			</div>		</div>		<div class="spcerblock">&nbsp;</div>		<!-- /ko -->
+
+				<!-- ko if: product.productCd == '1V' -->
+		<div id="believe" class="itembox" data-bind="css: { 'active': $root.isSelectedBelieve, 'close': $root.selectableBelieve() == false }">
+			<div class="tl-bar">
+	            <input type="checkbox" name="believe_check" id="believe_check" class="check-sq-input product_check" data-bind="checked: $root.isSelectedBelieve, disable: $root.selectableBelieve() == false " />
+	            <label for="believe_check">
+	                <h3><span data-bind="text: product.productMasterInfo.productGroupName"></span> : <span data-bind="text: product.productMasterInfo.productName"></span></h3>
+	            </label>
+				<div class="gurd-close">この商品は<br>お申込みできません。</div>
+				<div class="uint_price" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="price-label">月払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.basic.premiums.p1), css { graytxt: !$root.isSelectPlanBasic() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_price_y" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="price-label">年払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.basic.premiums.p12), css { graytxt: !$root.isSelectPlanBasic() }">
+					</span><span class="price-tani">円</span>
+				</div>
+				<div class="uint_pricej" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="price-label">月払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p1), css { graytxt: !$root.isSelectPlanRich() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="uint_pricej_y" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="price-label">年払<br>保険料</div>
+					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p12), css { graytxt: !$root.isSelectPlanRich() }"></span>
+					<span class="price-tani">円</span>
+				</div>
+				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetBelieveBasic()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetBelieveRich()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+			</div>
+			<div class="simul-box" data-bind="slideVisible: $root.isSelectedBelieve">
+				<div class="box-inner">
+					<div class="left-ttl">
+						<div class="logomark">
+							<!-- ko if: $root.index() == '5' -->
+							<a href="/product/believe/" target="_blank" data-bind="text: product.productMasterInfo.productName"></a>
+							<!-- /ko -->
+							<!-- ko if: $root.index() != '5' -->
+							<a data-bind="text: product.productMasterInfo.productName"></a>
+							<!-- /ko -->
+						</div>
+						<p class="btn-point" id="point07" data-bind="event: { mouseover: $root.sh.btnPointOver, mouseout: $root.sh.btnPointOut }">おすすめポイント</p>
+						<div class="pop-box box-w390" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow">がんと診断されてから入院・手術・退院（特約付加により通院）まで、<br>がんにしっかり備えたい方におすすめです。</div>
+						</div>
+					</div>
+
+					<div class="mid-box">
+						<dl>
+							<dt class="ico-sum_ins">
+								<span class="icon-m"></span>基本給付金額<br>
+								<div class="rlabel-t">がん初回診断一時金<br>
+									がん治療給付金<br>
+									がん手術給付金<br>
+									がん退院一時金
+								</div>
+							</dt>
+							<dd class="ddl">
+								<select id="believe_benefit_1" name="believe_benefit_1" data-bind="options: $root.believeAmountBasic, optionsText: 'text', optionsValue: 'value', value: $root.selectedBelieveAmountBasic">
+								</select><br>
+								<div class="group1" data-bind="visible: $root.selectedBelieveAmountBasic() == '5000'">
+									<div class="rlabel">50万円<br>25万円<br>10万円<br>5万円</div>
+								</div>
+								<div class="group2" data-bind="visible: $root.selectedBelieveAmountBasic() == '10000'">
+									<div class="rlabel">100万円<br>50万円<br>20万円<br>10万円</div>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<select id="believe_benefit_2" name="believe_benefit_2" data-bind="options: $root.believeAmountRich, optionsText: 'text', optionsValue: 'value', value: $root.selectedBelieveAmountRich">
+								</select><br>
+								<div class="group1" data-bind="visible: $root.selectedBelieveAmountRich() == '5000'">
+									<div class="rlabel">50万円<br>25万円<br>10万円<br>5万円</div>
+								</div>
+								<div class="group2" data-bind="visible: $root.selectedBelieveAmountRich() == '10000'">
+									<div class="rlabel">100万円<br>50万円<br>20万円<br>10万円</div>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="ico-star">
+								<span class="icon-m"></span>がん先進医療特約
+								<span class="ques pop" id="pop71" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span>
+							</dt>
+							<dd class="ddl">
+								<div class="group01">
+									<input value="1" name="believe_premium_pay_period_1" id="believe_premium_pay_period_11" type="radio" data-bind="checked: $root.selectedBelieveCancerAdvancedMedicalBasic ">
+									<label for="believe_premium_pay_period_11">あり</label>
+								</div>
+								<div class="group02" data-bind="style: { display: $root.hideBelieveCancerAdvancedMedicalBasic() == '0' ? 'none' : '' }">
+									<input value="0" name="believe_premium_pay_period_1" id="believe_premium_pay_period_12" type="radio" data-bind="checked: $root.selectedBelieveCancerAdvancedMedicalBasic ">
+									<label for="believe_premium_pay_period_12">なし</label>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<div class="group01">
+									<input value="1" name="believe_premium_pay_period_2" id="believe_premium_pay_period_21" type="radio" data-bind="checked: $root.selectedBelieveCancerAdvancedMedicalRich ">
+									<label for="believe_premium_pay_period_21">あり</label>
+								</div>
+								<div class="group02" data-bind="style: { display: $root.hideBelieveCancerAdvancedMedicalRich() == '0' ? 'none' : '' }">
+									<input value="0" name="believe_premium_pay_period_2" id="believe_premium_pay_period_22" type="radio" data-bind="checked: $root.selectedBelieveCancerAdvancedMedicalRich ">
+									<label for="believe_premium_pay_period_22">なし</label>
+								</div>
+							</dd>
+						</dl>
+						<dl>
+							<dt class="ico-hosp">
+								<span class="icon-m"></span>がん通院特約
+								<span class="ques pop" id="pop72" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span>
+							</dt>
+							<dd class="ddl">
+								<div class="group01">
+									<input value="1" name="believe_cancerhospvisit_period_1" id="believe_cancerhospvisit_period_11" type="radio" data-bind="checked: $root.selectedBelieveCancerOutpatientBasic">
+									<label for="believe_cancerhospvisit_period_11">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="believe_cancerhospvisit_period_1" id="believe_cancerhospvisit_period_12" type="radio" data-bind="checked: $root.selectedBelieveCancerOutpatientBasic">
+									<label for="believe_cancerhospvisit_period_12">なし</label>
+								</div>
+							</dd>
+							<dd class="ddr">
+								<div class="group01">
+									<input value="1" name="believe_cancerhospvisit_period_2" id="believe_cancerhospvisit_period_21" type="radio" data-bind="checked: $root.selectedBelieveCancerOutpatientRich">
+									<label for="believe_cancerhospvisit_period_21">あり</label>
+								</div>
+								<div class="group02">
+									<input value="0" name="believe_cancerhospvisit_period_2" id="believe_cancerhospvisit_period_22" type="radio" data-bind="checked: $root.selectedBelieveCancerOutpatientRich">
+									<label for="believe_cancerhospvisit_period_22">なし</label>
+								</div>
+							</dd>
+						</dl>
+						<dl class="last">
+							<dt class="ico-term">
+								<span class="icon-m"></span>
+								<a href="/estimate/term.htm" target="_blank" rel="external">保険料払込期間</a>&nbsp;
+								<span class="norm">（保険期間：終身）</span>
+							</dt>
+							<dd class="ddl">
+								<select id="believe_period_1" name="believe_period_1" data-bind="options: $root.believeInsurancePaymentPeriodBasic, optionsText: 'text', optionsValue: 'value', value: $root.selectedBelieveInsurancePaymentPeriodBasic">
+								</select>
+							</dd>
+							<dd class="ddr">
+								<select id="believe_period_2" name="believe_period_2" data-bind="options: $root.believeInsurancePaymentPeriodRich, optionsText: 'text', optionsValue: 'value', value: $root.selectedBelieveInsurancePaymentPeriodRich">
+								</select>
+							</dd>
+						</dl>
+
+						<div class="pop-box71 box-w360" id="pop71-box" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow2">
+								がんを直接の原因として、先進医療による療養を受けられたとき、<br>	その技術料と同額を通算2,000万円限度までお支払いします。
+							</div>
+						</div>
+						<div class="pop-box72 box-w310" id="pop72-box" data-bind="click: $root.sh.hideSelf">
+							<div class="arrow-l"></div>
+							<div class="poparrow2">
+								がんで約款所定の通院をされたときにお支払いします。<br>
+								<br>
+								　●基本給付金額5,000円の場合：1日につき5,000円<br>
+								　●基本給付金額10,000円の場合：1日につき10,000円
+							</div>
+						</div>
+					</div>				</div>
+			</div>		</div>		<!-- /ko -->
+		<!-- /ko -->
+	</form>
+	<div class="overline">
+		<div id="tab01" class="tab" data-bind="click: $root.validation, css { active: $root.isSelectPlanBasic() }"><div id="tab01_midtxt" class="midtxt">基本プラン</div></div>
+		<div id="tab02" class="tab" data-bind="click: $root.validation, css { active: $root.isSelectPlanRich() }"><div id="tab02_midtxt" class="midtxt">充実プラン</div></div>
+	</div>
+	<div class="mask01" data-bind="css { active: !$root.isSelectPlanBasic() }"></div>
+	<div class="mask02" data-bind="css { active: !$root.isSelectPlanRich() }"></div>
+	<div class="line11" data-bind="css { active: $root.isSelectPlanBasic() }"></div>
+	<div class="line12" data-bind="css { active: $root.isSelectPlanBasic() }"></div>
+	<div class="line1b" data-bind="css { active: $root.isSelectPlanBasic() }"></div>
+	<div class="line21" data-bind="css { active: $root.isSelectPlanRich() }"></div>
+	<div class="line22" data-bind="css { active: $root.isSelectPlanRich() }"></div>
+	<div class="line23" data-bind="css { active: $root.isSelectPlanRich() }"></div>
+	<div class="line15"></div>
+	<div class="line25"></div>
+	<div class="line2b" data-bind="css { active: $root.isSelectPlanRich() }"></div>
+</div><div class="spcerblock">&nbsp;</div></form><div id="footgurd">
+	<p class="release-date"><span class="dotmark">※</span>保険料は、2014年5月1日現在です。</p>
+	<p id="gd-f01" class="caution">
+		<span class="dotmark">・</span>商品によっては年齢・性別によりお選びいただけない場合がございます。また商品の組合せによっては、同時にお申込みいただけない場合がございます。<br>
+		同時にお申込みいただけない商品については、「この商品はお申込みできません」と表示されます。
+	</p>
+	<p id="gd-f02" class="caution">
+		<span class="dotmark">・</span>
+		「医療保険 新キュア」「医療保険 新キュア・レディ」を同時にお申込みいただける組合せは、それぞれの入院給付金日額が5,000円、合計10,000円の場合のみとなります。
+	</p>
+	<p id="gd-f03" class="caution">
+		<span class="dotmark">・</span>
+		同一の被保険者において、先進医療給付のある当社特約の重複加入はできません。選択された商品の一つにあらかじめチェックをいれております。他の商品への付加をご希望の場合は、チェックを変更してください。
+	</p>
+	<p id="gd-f04" class="caution">
+		<span class="dotmark">・</span>
+		クレジットカード払の場合は、保険料が月払5万円、半年払・年払10万円以下のお取扱いとなります。
+	</p>
+	<!-- ko if: $root.index() == '5' -->
+	<p id="gd-f05" class="caution">
+		<span class="dotmark">・</span>
+		上記以外の商品や払込方法（半年払）もお選びいただけます。保険料シミュレーション（全商品）をご利用ください。
+	</p>
+	<!-- /ko -->
+	<!-- ko if: $root.index() == '4' -->
+	<p id="gd-f05" class="caution">
+		<span class="dotmark">・</span>
+		上記以外の商品や払込方法（半年払）もお選びいただけます。<a href="javascript:void(0);" id="goToIndex3" data-bind="click: $root.clickChangePlan.bind($data, '3')">保険料シミュレーション</a>をご利用ください。
+	</p>
+	<!-- /ko -->
+</div>
+            </div>
+
+                        <div id="footerlink">
+	<ul>
+		<li><a class="flink-icon" target="_blank" href="http://www.orix.co.jp/ins/koho/privacy.htm"><span>プライバシーポリシー</span></a></li>
+		<li><a class="flink-icon" target="_blank" href="http://www.orix.co.jp/ins/koho/policy/site.htm"><span>サイトポリシー</span></a></li>
+		<li><a class="flink-icon" target="_blank" href="http://www.orix.co.jp/ins/koho/policy/security.htm"><span>セキュリティについて</span></a></li>
+		<li><a class="flink-icon" target="_blank" href="http://www.orix.co.jp/ins/koho/policy/kanyu.htm"><span>勧誘方針</span></a></li>
+	</ul>
+	<!-- ko if: $root.index() == '4' || $root.index() == '5' -->
+	<span class="bobun-number">ORIX2013-C-304</span>
+	<!-- /ko -->
+	<!-- ko if: $root.index() == '6' -->
+	<span class="bobun-number">ORIX2013-B-062</span>
+	<!-- /ko -->
+	<p class="copyright">Copyright &copy; ORIX Life Insurance Corporation. All rights reserved.</p>
+</div>
+        </div>    </div>
+        <div class="footershadow" style="margin-bottom:22px"></div>
+<div id="footer">
+	<div class="inner">
+		<div class="sumbox">
+			<div class="sum-databox2">
+				<div class="arrow-g"></div>
+				<div class="sum-datainner"></div>
+				<div class="arrow-dbox2" data-bind="css { offmode: !$root.isSelectPlanRich() }"></div>
+				<div id="pay_sum-m_2" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="paylabel">月払保険料合計</div>
+					<div class="sum-count"><span class="sumred" data-bind="text: $root.sumInsuranceRich.p1, css { graytxt: !$root.isSelectPlanRich() }">0</span><span class="tani">円</span></div>
+				</div>
+				<div id="pay_sum-y_2" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="paylabel">年払保険料合計</div>
+					<div class="sum-count"><span class="sumred" data-bind="text: $root.sumInsuranceRich.p12, css { graytxt: !$root.isSelectPlanRich() }">0</span><span class="tani">円</span></div>
+				</div>
+			</div>
+			<div class="sum-databox1">
+				<div class="arrow-g"></div>
+				<div class="sum-datainner"></div>
+				<div class="arrow-dbox1" data-bind="css { offmode: !$root.isSelectPlanBasic() }"></div>
+				<div id="pay_sum-m_1" data-bind="visible: $root.paymentCount() == 'm'">
+					<div class="paylabel">月払保険料合計</div>
+					<div class="sum-count"><span class="sumred" data-bind="text: $root.sumInsuranceBasic.p1, css { graytxt: !$root.isSelectPlanBasic() }">0</span><span class="tani">円</span></div>
+				</div>
+				<div id="pay_sum-y_1" data-bind="visible: $root.paymentCount() == 'y'">
+					<div class="paylabel"> 年払保険料合計</div>
+					<div class="sum-count"><span class="sumred" data-bind="text: $root.sumInsuranceBasic.p12, css { graytxt: !$root.isSelectPlanBasic() }">0</span><span class="tani">円</span></div>
+				</div>
+			</div>
+			<div class="btn-culclong">
+				<a href="javascript:void(0);" id="goToApply" data-bind="click: $root.clickGoToButton.bind($data,'apply'),css: { disable: ($root.isEnableButton() == false ) || $root.isExecuteSimulating } ">お申し込み手続きへ</a>
+			</div>
+			<div class="pop-box000-birth box-w260">
+				<div class="arrow-d"></div>
+				<div class="poparrow-d poparrow-s">
+					ネットからのお申込みの場合は、<br>契約年齢20歳以上とさせていただきます。
+					<div class="close_check"></div>
+				</div>
+			</div>
+			<p class="item-number">
+				<span class="midtxt">
+				<span id="ins_number" data-bind="text: $root.selectedProductCount()"></span>
+				&nbsp;&nbsp;商品合計</span>
+			</p>
+			<p>
+				<span class="paypattern-m" data-bind="visible: $root.paymentCount() == 'y'"><a href="javascript:void(0);" class="total_btn_m" data-bind="click: $root.clickPaymentCount.bind($data, 'm')">月払に変更&gt;&gt;</a></span>
+				<span class="paypattern-y" data-bind="visible: $root.paymentCount() == 'm'"><a href="javascript:void(0);" class="total_btn_y" data-bind="click: $root.clickPaymentCount.bind($data, 'y')">年払に変更&gt;&gt;</a></span>
+				<span class="ques pop" id="pop003" data-bind="event: { mouseover: $root.sh.quesOver, mouseout: $root.sh.quesOut }"><a>[？]</a></span>
+			</p>
+			<div class="pop-box003 box-w270" id="pop003-box" data-bind="click: sh.hideSelf">
+				<div class="arrow-d"></div>
+				<div class="poparrow-d">
+					保険料の払込方法（回数）には、<br>毎月払い込む月払、半年ごとに払い込む半年払、<br>毎年1回払い込む年払があります。<br>
+					月払より年払のようにまとめて払い込む方が<br>保険料負担を軽減できます。
+				</div>
+			</div>
 		</div>
+
+		<!-- ko if: $root.index() == '6' -->
+				<div id="shokuiki" class="leftbox_s">
+			<p>こちらは、ネット申込を希望されるお客さまにおすすめの商品です。上記以外の商品や払込方法(半年払)をご希望の場合は、商品概要ページに記載の募集代理店までお問合せください。</p>
+			<ul class="blue-btn">
+				<li class="btn-simul">
+					<a href="javascript:void(0);" id="goToSave" class="disable" onClick=" var s=s_gi('orixlifeorixcojp'); s.linkTrackVars='prop29'; s.prop29='シミュレーション結果を保存する'; s.tl(this,'o','シミュレーション結果を保存する');" data-bind="click: $root.clickGoToButton.bind($data,'save'), css: { disable: $root.isEnableButton() == false } ">シミュレーション結果を保存する</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /ko -->
+		<!-- ko if: $root.index() != '6' -->
+		<div id="direct" class="leftbox_s">
+			<!-- ko if: $root.index() == '4' -->
+			<p><a href="javascript:void(0);" id="goToIndex3" data-bind="click: $root.clickChangePlan.bind($data, '3')">上記、４商品以外の<br>シミュレーションはこちら</a></p>
+			<!-- /ko -->
+			<!-- ko if: $root.index() == '5' -->
+			<p><a href="javascript:void(0);" id="goToIndex1" data-bind="click: $root.clickChangePlan.bind($data, '1')">上記、４商品以外の<br>シミュレーションはこちら</a></p>
+			<!-- /ko -->
+			<ul class="blue-btn">
+				<li class="btn-simul"><a href="javascript:void(0);" id="goToSave" class="disable" onClick=" var s=s_gi('orixlifeorixcojp'); s.linkTrackVars='prop29'; s.prop29='シミュレーション結果を保存する'; s.tl(this,'o','シミュレーション結果を保存する');" data-bind="click: $root.clickGoToButton.bind($data,'save'), css: { disable: $root.isEnableButton() == false } ">シミュレーション結果を保存する</a></li>
+				<!-- ko if: $root.index() == '5' -->
+				<li class="btn-pdfdoc"><a href="/request-doc">資料請求</a></li>
+				<!-- /ko -->
+			</ul>
+		</div>
+		<!-- /ko -->
 	</div>
 </div>
-<input type="hidden" name="initializeProperty" id="initializeProperty" value="{&quot;index&quot;:&quot;5&quot;,&quot;birthday&quot;:null,&quot;age&quot;:null,&quot;strsex&quot;:null,&quot;p&quot;:[],&quot;ag&quot;:null,&quot;sl&quot;:null,&quot;genderctl&quot;:null,&quot;oKL&quot;:null}">
+        <input type="hidden" name="initializeProperty" id="initializeProperty" value="{&quot;index&quot;:&quot;5&quot;,&quot;birthday&quot;:null,&quot;age&quot;:null,&quot;strsex&quot;:null,&quot;p&quot;:[],&quot;ag&quot;:null,&quot;sl&quot;:null,&quot;genderctl&quot;:null,&quot;oKL&quot;:null}">
 
-<script type="text/javascript" src="app.js"></script>
-<script type="text/javascript" src="simulation.js"></script>
+        
+        <div data-bind="visible: true" style="display: none">
+    <div class="bk_bg" style="display: none;"></div>
+    <div id="age-setting" style="display: none;">
+        <div class="set-inner">
+            <div class="formwrap">
+                <p><img src="http://54.92.109.84/mypage/images/sim/first_input_ttl.gif" alt="お客さまの生年月日・性別を入力してください。"></p>
+                <form>
+                    <p>
+                        <label><strong>生年月日</strong>&nbsp;
+                            <select name="year" id="input-dialog-year" data-bind="options: birthdayYear, optionsText: 'text', optionsValue: 'value', value: selectedBirthdayYear,event: { change: $root.setMonth()}"></select>年
+                        </label>
+
+                        <label>
+                            <select name="month" id="input-dialog-month" data-bind="options: birthdayMonth, optionsText: 'text', optionsValue: 'value', value: selectedBirthdayMonth,event: { change: $root.setDay()}"></select>月
+                        </label>
+
+                        <label>
+                            <select name="date" id="input-dialog-date" data-bind="options: birthdayDay, optionsText: 'text', optionsValue: 'value', value: selectedBirthdayDay"></select>日
+                        </label>
+                        &nbsp;&nbsp;
+                        <label><strong>性別</strong></label>
+                        <input value="1" name="info_sex" id="info_sex_1" type="radio" data-bind="checked: $root.selectedGender">
+                        <label for="info_sex_1">男性</label>
+                        <input value="2" name="info_sex" id="info_sex_2" type="radio" data-bind="checked: $root.selectedGender">
+                        <label for="info_sex_2">女性</label>
+                    </p>
+                    <p class="setting_foot"><a href="javascript:void(0)" onclick="return false;" class="start-btn" data-bind="click: clickStartButton">スタート</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="errModal" data-bind="if: showModal" data-bind="visible: true" style="display: none">
+    <div id="contents_popup">
+        <h1 class="popup_hd1-error">
+            <img src="http://54.92.109.84/mypage/images/sim/colorbox/error_icon.png" alt="" width="68" height="60"/>ご確認ください！</h1>
+        <p data-bind="html: modalErrorMsg" class="mb10 ml15"></p>
+    </div>
+</div>
+
+        <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.corner.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.colorbox.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim//jTypeWriter.js"></script>
+
+        <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/common.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/validator.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/code.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.autosave.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/knockout-3.1.0.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="simulation.js"></script>
+    <script type="text/javascript" src="simulation.viewmodel.js"></script>
+    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/simulation.style.js"></script>
+
+        
+        
 </body>
 </html>
