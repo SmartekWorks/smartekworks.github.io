@@ -12,11 +12,11 @@ The usage of system operation is much alike to the [Web Operation](ref_web_opera
 
 #### Parameters
 
-Unlike those in web operation, the parameters in system operation do not have following features:
+Unlike those in web operation, the parameters in system operation do not have the following features:
 
-* Using parameter option to ignoring or not to ignoring the parameter.
+* Using parameter option to ignore or not to ignore the parameter.
 * Parameter input mode to switch among different querying mode.
-* Alert options to handling alert dialog.
+* Alert options to handle alert dialog.
 
 #### Errors and evidences
 
@@ -46,7 +46,7 @@ Go to a specific URL in the current browser session and window.
 
 ##### Notes
 
-* A new default browser session and window will be create if there is no sessions.
+* A new default browser session and window will be created if there is no sessions.
 
 ##### Errors
 
@@ -193,7 +193,7 @@ Assert whether the page in current window is the page you expected.
 Operation - Set Value
 ---
 
-Set a value from the page in current window to a variable, which you can use in the parameters of following operations.
+Set a value from the page in current window to a variable, which you can use as parameters for the following operations.
 
 ##### Parameters
 
