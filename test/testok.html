@@ -9,12 +9,12 @@
 <meta name="description" content="オリックス生命保険の保険料シミュレーションページです。インターネットで人気のおすすめ商品（生命保険・医療保険・がん保険）を自分で簡単にお見積もりいただけます。【オリックス生命保険ダイレクト公式】">
 <meta name="keywords" content="生命保険,医療保険,シミュレーション,見積もり,資料請求,申込,オリックス生命,オリックス">
 
-        <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/default.css" media="all">
-    <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/print.css" media="print">
-    <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/errModal.css" media="all">    
-    <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/colorbox.css" media="all">
+        <link rel="stylesheet" type="text/css" href="default.css" media="all">
+    <link rel="stylesheet" type="text/css" href="print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="errModal.css" media="all">    
+    <link rel="stylesheet" type="text/css" href="colorbox.css" media="all">
 
-        <link rel="stylesheet" type="text/css" href="http://54.92.109.84/mypage/css/sim/select.css" media="all">
+        <link rel="stylesheet" type="text/css" href="select.css" media="all">
 
         
 
@@ -32,7 +32,7 @@ if (!window.console.log) window.console.log = function () { };
 
        <div data-bind="visible: false">
       <div class="contents" style="text-align: center;">
-        <img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"><br/>
+        <img src="loading.gif" alt="" width="24" height="24"><br/>
         しばらくお待ちください…
       </div>
     </div>
@@ -46,12 +46,12 @@ if (!window.console.log) window.console.log = function () { };
                                         style: { paddingBottom: $root.index() == '2' ? '1px' : '' },">
 
                         <div id="header">
-    <h1 class="direct" title="オリックス生命保険 (ダイレクト 公式サイト)"><a href="/"><img src="http://54.92.109.84/mypage/images/sim/companylogo.jpg" alt="オリックス生命保険 (ダイレクト 公式サイト)"></a></h1>
+    <h1 class="direct" title="オリックス生命保険 (ダイレクト 公式サイト)"><a href="/"><img src="companylogo.jpg" alt="オリックス生命保険 (ダイレクト 公式サイト)"></a></h1>
     <!-- ko if: ($root.index() == '1') || ($root.index() == '5') -->
-    <h1 class="official" title="オリックス生命保険"><a href="http://www.orix.co.jp/ins/index.htm"><img src="http://54.92.109.84/mypage/images/sim/companylogo_bg.jpg" alt="オリックス生命保険"></a></h1>
+    <h1 class="official" title="オリックス生命保険"><a href="http://www.orix.co.jp/ins/index.htm"><img src="companylogo_bg.jpg" alt="オリックス生命保険"></a></h1>
     <!-- /ko -->
     <!-- ko if: ($root.index() != '1') && ($root.index() != '5') -->
-    <h1 class="official" title="オリックス生命保険"><a><img src="http://54.92.109.84/mypage/images/sim/companylogo_bg.jpg" alt="オリックス生命保険"></a></h1>
+    <h1 class="official" title="オリックス生命保険"><a><img src="companylogo_bg.jpg" alt="オリックス生命保険"></a></h1>
     <!-- /ko -->
     <div class="tagline">
         <ul>
@@ -68,7 +68,7 @@ if (!window.console.log) window.console.log = function () { };
             <div class="contents">
                                 
 <div class="ttl-box">
-	<h2 data-bind="css: { 'tsuhan': $root.index() == '6', 'select': $root.index() != '6' }"><img src="http://54.92.109.84/mypage/images/sim/h2_ttl_r.jpg" alt="保険料シミュレーション"></h2>
+	<h2 data-bind="css: { 'tsuhan': $root.index() == '6', 'select': $root.index() != '6' }"><img src="h2_ttl_r.jpg" alt="保険料シミュレーション"></h2>
 	<div class="pop-box001 box-w230" data-bind="click: function(){$root.showBirthdayPopup(false)}, visible: $root.showBirthdayPopup"><div class="arrow-d"></div><div class="poparrow-d poparrow-s2"><span class="pop_ttl">もうすぐお誕生日の方へ</span><br>お誕生日が近い方は、契約年齢が上がると<br>ほとんどの場合、保険料が上がります。<br>お早めにお申込みください。<div class="close_check"></div></div></div>
 	<div id="user-status" class="user-status">
 		<div class="user-status-inner">
@@ -131,8 +131,8 @@ if (!window.console.log) window.console.log = function () { };
 					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p12), css { graytxt: !$root.isSelectPlanRich() }"></span>
 					<span class="price-tani">円</span>
 				</div>
-				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetBridgeBasic()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
-				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetBridgeRich()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetBridgeBasic()"><img src="loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetBridgeRich()"><img src="loading.gif" alt="" width="24" height="24"></div>
 			</div>
 			<div class="simul-box" data-bind="slideVisible: $root.isSelectedBridge">
 				<div class="box-inner">
@@ -228,8 +228,8 @@ if (!window.console.log) window.console.log = function () { };
 					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p12), css { graytxt: !$root.isSelectPlanRich() }"></span>
 					<span class="price-tani">円</span>
 				</div>
-				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetCureBasic()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
-				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetCureRich()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetCureBasic()"><img src="loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetCureRich()"><img src="loading.gif" alt="" width="24" height="24"></div>
 			</div>
 			<div class="simul-box" data-bind="slideVisible: $root.isSelectedCure">
 				<div class="box-inner">
@@ -418,8 +418,8 @@ if (!window.console.log) window.console.log = function () { };
 					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p12), css { graytxt: !$root.isSelectPlanRich() }"></span>
 					<span class="price-tani">円</span>
 				</div>
-				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetCureLadyBasic()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
-				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetCureLadyRich()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetCureLadyBasic()"><img src="loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetCureLadyRich()"><img src="loading.gif" alt="" width="24" height="24"></div>
 			</div>
 			<div class="simul-box" data-bind="slideVisible: $root.isSelectedCureLady">
 				<div class="box-inner">
@@ -634,8 +634,8 @@ if (!window.console.log) window.console.log = function () { };
 					<span class="pricered" data-bind="text: addComma(product.plans.rich.premiums.p12), css { graytxt: !$root.isSelectPlanRich() }"></span>
 					<span class="price-tani">円</span>
 				</div>
-				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetBelieveBasic()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
-				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetBelieveRich()"><img src="http://54.92.109.84/mypage/images/sim/loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_1" data-bind="loadingImage: $root.isCalcTargetBelieveBasic()"><img src="loading.gif" alt="" width="24" height="24"></div>
+				<div class="loading_image_2" data-bind="loadingImage: $root.isCalcTargetBelieveRich()"><img src="loading.gif" alt="" width="24" height="24"></div>
 			</div>
 			<div class="simul-box" data-bind="slideVisible: $root.isSelectedBelieve">
 				<div class="box-inner">
@@ -932,7 +932,7 @@ if (!window.console.log) window.console.log = function () { };
     <div id="age-setting" style="display: none;">
         <div class="set-inner">
             <div class="formwrap">
-                <p><img src="http://54.92.109.84/mypage/images/sim/first_input_ttl.gif" alt="お客さまの生年月日・性別を入力してください。"></p>
+                <p><img src="first_input_ttl.gif" alt="お客さまの生年月日・性別を入力してください。"></p>
                 <form>
                     <p>
                         <label><strong>生年月日</strong>&nbsp;
@@ -963,29 +963,27 @@ if (!window.console.log) window.console.log = function () { };
         <div id="errModal" data-bind="if: showModal" data-bind="visible: true" style="display: none">
     <div id="contents_popup">
         <h1 class="popup_hd1-error">
-            <img src="http://54.92.109.84/mypage/images/sim/colorbox/error_icon.png" alt="" width="68" height="60"/>ご確認ください！</h1>
+            <img src="error_icon.png" alt="" width="68" height="60"/>ご確認ください！</h1>
         <p data-bind="html: modalErrorMsg" class="mb10 ml15"></p>
     </div>
 </div>
 
-        <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.corner.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.colorbox.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim//jTypeWriter.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.corner.js"></script>
+    <script type="text/javascript" src="jquery.colorbox.js"></script>
+    <script type="text/javascript" src="jTypeWriter.js"></script>
 
-        <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/common.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/validator.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/code.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.cookie.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.autosave.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/jquery.blockUI.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/knockout-3.1.0.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="validator.js"></script>
+    <script type="text/javascript" src="code.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script type="text/javascript" src="jquery.autosave.js"></script>
+    <script type="text/javascript" src="jquery.blockUI.js"></script>
+    <script type="text/javascript" src="knockout-3.1.0.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="simulation.js"></script>
     <script type="text/javascript" src="simulation.viewmodel.js"></script>
-    <script type="text/javascript" src="http://54.92.109.84/mypage/js/sim/simulation.style.js"></script>
-
-        
+    <script type="text/javascript" src="simulation.style.js"></script>
         
 </body>
 </html>

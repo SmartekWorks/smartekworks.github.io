@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document
+
+.rise_select_area{
+	background-color: #f0f0f0;
+	margin-bottom: 18px;
+	overflow: hidden;
+	padding: 15px;
+}
+
+#contents_popup .rise_select_area ul li{
+	float: left;
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 0px;
+	list-style-type: none;
+	width: 50%;
+}
+
+.va_m{vertical-align: middle;}
+.amount_area table{
+	border: 1px solid #d9d9d9;
+	clear: both;
+	margin-bottom: 20px;
+	font-size: 18px;
+	width: 100%;
+}
+.amount_area table tr{border: 1px solid #d9d9d9;}
+.amount_area table tr th,.amount_area table tr td{
+	background-color: #f0f0f0;
+	font-size: 95%;
+	font-weight: bold;
+	padding: 15px 20px;
+	width: 50%;
+}
+.amount_area table tr td{
+	background: none;
+	color: #d8092f;
+}
+.n_font{
+	color: #000;
+	font-size: 13px;
+}*/
+
+.popup_hd1-error{
+	background-color: #e6456e;
+	font-size: 169.2%;
+	font-weight: bold;
+	margin-bottom: 28px;
+	color: #fff;
+	padding: 0 0 0 85px;
+	border-radius: 10px;
+	position: relative;
+	display: block;
+	height: 40px;
+	behavior: url("/simulation/css/PIE.htc");
+}
+
+.popup_hd1-error img{
+	position: absolute;
+	top: -8px;
+	left:8px;
+}
+
+.mb15{margin-bottom: 15px;}
+.mb10{margin-bottom: 10px;}
+.ml15{margin-left: 15px;}
+
+
+#contents_popup{
+    width: 680px;
+    margin: 10px auto;
+}
+#contents_popup p,#contents_popup ol li,#contents_popup ul li{line-height: 1.5;}
+
+#contents_popup h1,#contents_popup p {
+    text-align: left;
+}
