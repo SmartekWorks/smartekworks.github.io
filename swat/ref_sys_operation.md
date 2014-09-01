@@ -156,7 +156,7 @@ Find the target window and manipulate it.
 
 ##### Errors
 
-* **Matching Rules** do not conform [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
+* **Matching Rules** do not conform to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
 * Target window cannot be found. (in execution)
 
 ##### Evidences
@@ -181,7 +181,7 @@ Assert whether the page in current window is the page you expected.
 
 ##### Errors
 
-* **Matching Rules** do not conform [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
+* **Matching Rules** do not conform to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
 * Assertion failed. (in execution)
 
 ##### Evidences
@@ -205,8 +205,8 @@ Set a value from the page in current window to a variable, which you can use as 
 
 ##### Errors
 
-* **Query Rule** is blank or does not conform [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL). (in validation and execution) 
-* **Variable Name** is blank or does not conform rules of variable name. (in validation and execution)
+* **Query Rule** is blank or does not conform to [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL). (in validation and execution) 
+* **Variable Name** is blank or does not conform to rules of variable name. (in validation and execution)
 * **Variable Name** has been referenced in the previous operations. (in validation)
 * Querying target cannot be found. (in execution)
 
@@ -234,7 +234,7 @@ Obtain additional information from the page in current window, including URL and
 Operation - API Call
 ---
 
-During a scenario you can call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming the [Agent API specification](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
+During a scenario you can call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming to the [Agent API specification](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
 
 ##### Parameters
 
@@ -248,13 +248,13 @@ During a scenario you can call a web service to execute an extended operation su
 
 * This system operation only works in local execution service.
 * The **API URL** can be displayed as a selectable list, if you have setup the integration. Please refer to [Setup Tools and Integrations](setup_tools.md#Agent_Server_API_Integration) for details.
-* The API of your agent server should conform the [Agent API specification](ref_agent_api.md) specification.
+* The API of your agent server should conform to the [Agent API specification](ref_agent_api.md) specification.
 
 ##### Errors
 
-* **Variable Name** does not conform rules of variable name. (in validation)
+* **Variable Name** does not conform to rules of variable name. (in validation)
 * API return does not contain `result` key when you need to set the value. (in execution)
-* **API Params** does not conform request query string format. (in validation and execution)
+* **API Params** does not conform to request query string format. (in validation and execution)
 * Execute this system operation in cloud execution service. (in execution)
 * Cannot communicate correctly with the API by using **API URL** and **API Params**. (in execution) 
 

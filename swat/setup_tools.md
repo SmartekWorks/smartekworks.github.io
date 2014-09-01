@@ -141,7 +141,7 @@ The configuration string is a JSON map with following rules:
 Agent API Integration
 ---
 
-During a scenario you can call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming the [Agent API specification](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
+During a scenario you can call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming to the [Agent API specification](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
 
 Though you can input the URL of the API directly in **API Call** system operation, you can setup an integration in SWAT, so that you can select the defined API in **API Call** system operation. 
 

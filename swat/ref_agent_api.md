@@ -1,7 +1,7 @@
 Agent API specification
 ===
 
-During a scenario you can use an [**API Call** system operation](ref_sys_operation.md#Operation_-_API_Call) to call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming the API specification which we will explain here. 
+During a scenario you can use an [**API Call** system operation](ref_sys_operation.md#Operation_-_API_Call) to call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming to the API specification which we will explain here. 
 
 You may also refer to [DB Access and File Manipulation](article_api_call.md) for considerations of using Agent Server.
 
@@ -19,7 +19,7 @@ Note: **API Call** system operation and agent server only works on local executi
 Agent API Specification
 ---
 
-**API Call** system operation will call the Agent API with following specification. You should build your own API implementation conforming this specification.
+**API Call** system operation will call the Agent API with following specification. You should build your own API implementation conforming to this specification.
 
 #### Request
 
