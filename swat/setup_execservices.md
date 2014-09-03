@@ -45,8 +45,8 @@ The Configuration file, `account.ini` is a JAVA property file with following key
 * `execProxy.host`: The host of the proxy. The value will be ignored if `execProxy.enable` is `false`.
 * `execProxy.port`: The port of the proxy. The value will be ignored if `execProxy.enable` is `false`.
 * `driverParallelization`: The maximum parallel sessions allowed in the local execution server. As you can only run one IE session on a computer, the value will be ignored in this case.
-* `downloadDir`: The default download directory of your browser. You cannot use **Obtain Download** system operation if you do not set the value.
-* `firefoxProfile`: The path of Firefox profile which your want to start the testing browser with. This is useful when you want to test on Firefox with special settings or addons.
+* `downloadDir`: The default download directory of your browser. You cannot use **Obtain Download** system operation if you do not set the value. Please add double backslash on Windows, such as `C:\\Downloads`.
+* `firefoxProfile`: The path of Firefox profile which your want to start the testing browser with. This is useful when you want to test on Firefox with special settings or addons. Please add double backslash on Windows, such as `C:\\MyProfile`.
 
 #### Notes
 
