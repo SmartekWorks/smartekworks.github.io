@@ -85,6 +85,8 @@ The definition of a single node is also a JSON map containing following keys:
 | `"rightClick"`  | Right click the node such as a link with context menu.
 | `"doubleClick"` | Double click the node such as an area with double click interaction.
 
+Note: The following sections are currently under construction. We will complete the documentation as soon as possible.
+
 ### Definition of Collection Nodes
 
 ### Definition of Operations

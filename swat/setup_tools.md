@@ -68,11 +68,9 @@ You can integrate SWAT service with Jenkins to implement a CI with acceptance te
 * View the test progress in Jenkins
 * View the test result report in Jenkins
 
-Attention: The Jenkins plugin will be available in the next update.
-
 #### Installing Jenkins Plugin
 
-1. Copy the `swat-execute-plugin.hpi` to `plugins` directory under Jenkins installation directory.
+1. Copy the [swat-execute-plugin.hpi](http://www.smartekworks.com/tools/swat-execute-plugin.hpi) to `plugins` directory under Jenkins installation directory.
 2. Restart the Jenkins and login.
 3. Visit **Configure System** page through *Manage Jenkins > Configure System*, you will find **SWAT Execution** section added.
 4. Fill in the following parameters and save.
