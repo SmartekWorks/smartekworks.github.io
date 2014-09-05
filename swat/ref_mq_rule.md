@@ -120,7 +120,7 @@ The value of `"have_css"` and `"not_have_css"` is a JSON map contains following 
 {"have_css":{"css":"input[name='gender']", "with_index":2, "selected":true}}
 ```
 
-What is Querying Rule for
+What is Querying Rule for?
 ---
 
 Querying rules are written in a kind of Domain-specific language, which we can use to retrieve values from a page. You can use querying rules in the following function of SWAT.
