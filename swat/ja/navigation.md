@@ -1,0 +1,36 @@
+# SWAT
+
+[はじめに](index.md)
+
+[スタートガイド]()
+
+* [SWATサービス利用開始](guide_start.md)
+* [画面インポート](guide_knowledge.md)
+* [ナレッジチューニング](guide_tuning.md)
+* [シナリオ作成](guide_scenarios.md)
+* [テスト実行](guide_execution.md)
+ 
+[導入手順]()
+
+* [SWATサーバー](setup_swat.md)
+* [実行サービス](setup_execservices.md)
+* [ツールおよび他システム連携](setup_tools.md)
+
+[ノウハウ集]()
+
+* [フローの活用](article_flow.md)
+* [自動テストのメンテナンス](article_maintenance.md)
+* [ウィンドウ、フレーム、ダイアログ、AJAX](article_scenes.md)
+* [データベース、ファイル操作](article_api_call.md)
+
+[レファレンス]()
+
+* [画面オペレーション](ref_web_operation.md)
+* [システムオペレーション](ref_sys_operation.md)
+* [マッチング・クエリルール](ref_mq_rule.md)
+* [ナレッジルール](ref_knowledge_rule.md)
+* [Agent API specification](ref_agent_api.md)
+
+[English](/swat/)
+
+[gimmick:theme (inverse: true)](bootstrap)

@@ -206,7 +206,7 @@ Set a value from the page in current window to a variable, which you can use as 
 ##### Errors
 
 * **Query Rule** is blank or does not conform to [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL). (in validation and execution) 
-* **Variable Name** is blank or does not conform to rules of variable name. (in validation and execution)
+* **Variable Name** is blank or does not conform to rules of variable name. (in validation)
 * **Variable Name** has been referenced in the previous operations. (in validation)
 * Querying target cannot be found. (in execution)
 
