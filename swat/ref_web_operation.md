@@ -99,14 +99,12 @@ The parameter data field will be displayed as a text-box followed by <span class
 Using Variable
 ---
 
-You can set a variable in format of `{var}` in the parameter data field to separate the data and scenario. All variables in a scenario/flow except those set by **Set Value**, **API Call** operation will become parameters of the scenario/flow. The variable set by **Set Value**, **API Call** operation obtains the value from the system operation in execution, so it doest not need outside data source.
-
-Attention: The format of `{var}` is planned be changed to `@(var)` in the next update.
+You can set a variable in format of `@{var}` in the parameter data field to separate the data and scenario. All variables in a scenario/flow except those set by **Set Value**, **API Call** operation will become parameters of the scenario/flow. The variable set by **Set Value**, **API Call** operation obtains the value from the system operation in execution, so it doest not need outside data source.
 
 Using variable should conform to the following rules:
 
 * The variable name should be a string with only digits, alphabets, Japanese Characters, Chinese Characters and `_`.
-* You can use several variables in one parameter data field such as `{var1}abc{var2}`.
+* You can use several variables in one parameter data field such as `@{var1}abc@{var2}`.
 * Variable can only be used in a text typed parameter, so you have to switch a parameter with form of select or multi-select to other querying mode before you use variables.
 * Validation errors cannot not be detected until execution when you use variable.
 
@@ -129,7 +127,7 @@ It is meaningless that you try to ignore the operation in scenario/flow builder 
 
 Like the policy in ignoring parameter by ignoring variables, you can ignore the entire operation when you uncheck the **Using Data Option** of all the variables related to the operation in case data dialog. (You can also do so by using case export/import function.) 
 
-For example, you may have a *Search* operation with a *Search Box* and a *Search Button*, and you use only one variable `{SearchKey}` for the *Search Box*. You can bypass the *Search* operation by unchecking the **Using Data Option** of the variable `SearchKey` in case.
+For example, you may have a *Search* operation with a *Search Box* and a *Search Button*, and you use only one variable `@{SearchKey}` for the *Search Box*. You can bypass the *Search* operation by unchecking the **Using Data Option** of the variable `SearchKey` in case.
 
 When an operation is ignored, you can not see the operation and evidence in your test result.
 

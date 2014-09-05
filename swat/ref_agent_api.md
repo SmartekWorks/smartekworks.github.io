@@ -63,7 +63,7 @@ Append an **API Call** system operation with following parameters:
 
 * API URL: `http://127.0.0.1/traceUpload`
 * API Params: `db=true&file=true`
-* Variable Name: `{fileNo}`
+* Variable Name: `@{fileNo}`
 
 After the system operation, you need to append a *Search Uploaded File* web operation using variable `fileNo` to search the file.
 

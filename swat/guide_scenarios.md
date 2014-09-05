@@ -59,10 +59,10 @@ Building the Sample Scenario
 4. Drag & drop the *Search* operation under *Bing* to the scenario flow. The operation will be appended to the flow and be activated. 
 5. On the <span class="glyphicon glyphicon-th-list"></span> tab of operation property, the text-box named **Enter your search ...** refers to the search box and 
 the select named **Action** refers to all actions under this operation. (There is only one search button in this operation.)
-6. Though you can enter a keyword directly in the text-box, we prefer to using variable here. So you fill in **Enter your search ...** with `{Keyword}`. (Please refer to [Web Operation](ref_web_operation.md#Using_Variable) for details of using variables.)
+6. Though you can enter a keyword directly in the text-box, we prefer to using variable here. So you fill in **Enter your search ...** with `@{Keyword}`. (Please refer to [Web Operation](ref_web_operation.md#Using_Variable) for details of using variables.)
 7. For our sample scenario, we need to select an item in suggestion list instead of clicking *Search* button. So, we have to uncheck the checkbox after **Action** to ignore the parameter. (Please refer to [Web Operation](ref_web_operation.md#Ignoring_Parameter) for details of ignoring parameter.)
 8. Drag & drop the *Suggestion List* under *BingSA* to the scenario flow, and you will see a select named **sa_list** on the data tab. The content of the list is from the page knowledge we imported before.
-9. As the list will change according to the input, we choose **Index Query Mode** of the list by clicking <span class="glyphicon glyphicon-refresh"></span> icon after the select twice. Then Input `{Index}` in the filed, which means that the item on the position `{Index}` should be selected during execution. (Please refer to [Web Operation](ref_web_operation.md#Querying_Modes) for details of querying modes.)
+9. As the list will change according to the input, we choose **Index Query Mode** of the list by clicking <span class="glyphicon glyphicon-refresh"></span> icon after the select twice. Then Input `@{Index}` in the filed, which means that the item on the position `@{Index}` should be selected during execution. (Please refer to [Web Operation](ref_web_operation.md#Querying_Modes) for details of querying modes.)
 10. The sample scenario is done.
 
 Adding Cases to Scenario
