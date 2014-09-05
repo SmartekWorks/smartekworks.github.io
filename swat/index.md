@@ -3,7 +3,7 @@ Introduction
 
 ### SWAT - Smart Web Application Testing
 
-SWAT is a code-less UI testing automation tool for web application, which helps you test web applications by simulating how a real user would interact with your app. SWAT is designed to implement and maintain you test automation more easily. 
+SWAT is a code-less UI testing automation tool for web application, which helps you test web applications by simulating how a real user would interact with your app. SWAT is designed to implement and maintain your test automation more easily. 
 
 With the web mining technology, SWAT understands the interaction of web pages, so that you can implement and maintain the automation without writing/modifying code against the view layer or DOM. SWAT also follows BDD (Behaviour-driven Development) methodology, so that you can write user stories as and executable acceptance criteria.
 
@@ -14,7 +14,7 @@ What can I use SWAT for?
 
 #### Acceptance test
 
-SWAT supports building you test scenarios on the level of business domain without the need for knowledge of web page implementation. It is easy for the designers without special skills on development to build the test scenario for acceptance test. 
+SWAT supports building your test scenarios on the level of business domain without the need for knowledge of web page implementation. It is easy for the designers without special skills on development to build the test scenario for acceptance test. 
 
 With the automation, you can usually run your acceptance test as a regression test. SWAT also supports integration with Jenkins so that you can build a CI process with acceptance test.
 
