@@ -12,7 +12,7 @@ Setup Local Execution Server
 | ------- | -----------
 | CPU     | 2.2 GHz (Single Core) or above
 | Memory  | 2048 MB
-| OS      | Windows XP or above, Mac OS X 10.6 or above, Ubuntu 10.4 or above (Other distribution may also work)
+| OS      | Windows XP or above, Mac OS X 10.6 or above, Ubuntu 10.4 or above (Other linux distribution may also work)
 | Browser | Internet Explorer 6 or above, the latest Firefox, the latest Chrome, the latest Safari
 | Others  | You must have Java SDK 7 installed on your target desktop/VM. 
 

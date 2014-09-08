@@ -12,7 +12,7 @@
  
 [Setup]()
 
-* [SWAT Server*](setup_swat.md)
+* [SWAT Server](setup_swat.md)
 * [Execution Services](setup_execservices.md)
 * [Tools and Integrations](setup_tools.md)
 

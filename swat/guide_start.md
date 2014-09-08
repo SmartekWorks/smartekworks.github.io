@@ -51,7 +51,7 @@ The top menu in SWAT service consists following sections.
 * **Knowledge**: This is where you work on knowledge that you use to build scenarios, such as operations, pages and flows.
 * **Management**: This is where you manage the service settings.
 
-Attention: Please use the Internet Explorer 10 or above, latest Chrome, latest Firefox and latest Safari to view SWAT service.
+Note: Please use the Internet Explorer 10 or above, latest Chrome, latest Firefox and latest Safari to view SWAT service.
 
 Next Steps
 ----
