@@ -1,4 +1,4 @@
-Introduction
+はじめに
 ===
 
 ### SWAT - Smart Web Application Testing
