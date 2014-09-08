@@ -3,20 +3,20 @@
 
 ### SWAT - Smart Web Application Testing
 
-SWAT is a code-less UI testing automation tool for web application, which helps you test web applications by simulating how a real user would interact with your app. SWAT is designed to implement and maintain you test automation more easily. 
+SWATはWebアプリケーション用コードレスUIテスト自動化ツールで、あなたがそのアプリケーションをどのように操作するのかシュミレートし、Webアプリケーションのテストを手助けします。SWATは実装や保守でのテスト自動化をより簡単にするために設計されてます。
+Webマイニング技術を使い、Webページの相互作用を理解し、ビューレイヤやDOMに対してコードの書き込みや変更をすることなく実装や保守での自動化が行えます。SWATはまたBDD(振舞駆動開発）の方法論に従い、実行可能な受入基準としてのユーザストーリーを書くことができます。
 
-With the web mining technology, SWAT understands the interaction of web pages, so that you can implement and maintain the automation without writing/modifying code against the view layer or DOM. SWAT also follows BDD (Behaviour-driven Development) methodology, so that you can write user stories as and executable acceptance criteria.
+私たちは、プライベートサーバー上で実行するパッケージ版SWATや、柔軟な利用で、よりアクセス可能なクラウド版SWATを提供しています。
 
-We offer SWAT cloud service for a more accessible and flexible use and SWAT package that can be run on a private server.
+何のためにSWATは使いますか？
 
-What can I use SWAT for?
 ---
 
-#### Acceptance test
+#### 受入テスト
 
-SWAT supports building you test scenarios on the level of business domain without the need for knowledge of web page implementation. It is easy for the designers without special skills on development to build the test scenario for acceptance test. 
 
-With the automation, you can usually run your acceptance test as a regression test. SWAT also supports integration with Jenkins so that you can build a CI process with acceptance test.
+SWATはWebページをインプリする知識を必要とせず、ビジネスドメインのレベルでテストシナリオの構築をサポートします。これは、受入テストのためのテストシナリオを構築する特別な開発スキルのない設計者にとっては容易である。
+自動化で、リグレッションテストとして受入テストを普通に実行することができます。SWATはまた受入テストと一緒にCIプロセスの構築にJenkinsとの連携をサポートします。
 
 #### Browser compatibility test
 
