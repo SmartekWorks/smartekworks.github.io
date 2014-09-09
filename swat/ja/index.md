@@ -3,10 +3,11 @@
 
 ### SWAT - Smart Web Application Testing
 
-SWATはWebアプリケーション用コードレスUIテスト自動化ツールで、あなたがそのアプリケーションをどのように操作するのかシュミレートし、Webアプリケーションのテストを手助けします。SWATは実装や保守でのテスト自動化をより簡単にするために設計されてます。
-Webマイニング技術を使い、Webページの相互作用を理解し、ビューレイヤやDOMに対してコードの書き込みや変更をすることなく実装や保守での自動化が行えます。SWATはまたBDD(振舞駆動開発）の方法論に従い、実行可能な受入基準としてのユーザストーリーを書くことができます。
+SWATはWebアプリケーション用テストスクリプトレスUIテスト自動化ツールです。あなたがそのアプリケーションをどのように操作するのかシュミレートし、Webアプリケーションのテストを手助けします。SWATは開発や保守でのテスト自動化をより簡単にするために設計されてます。
+それは、Webマイニング技術を使い、Webページのオペレーションを理解し、ビューレイヤやDOMに対してコードの書き込みや変更をすることなく開発や保守でのテスト自動化が行えます。SWATはまたBDD(振舞駆動開発）の方法論に従い、要求仕様に則ったユーザストーリーを受入基準で書く
+ことができます。
 
-私たちは、プライベートサーバー上で実行するパッケージ版SWATや、柔軟な利用で、よりアクセス可能なクラウド版SWATを提供しています。
+SWATは、柔軟な利用を可能とするクラウド版とプライベートサーバー上で実行するパッケージ版を用意します。
 
 何のためにSWATは使いますか？
 
@@ -15,54 +16,50 @@ Webマイニング技術を使い、Webページの相互作用を理解し、�
 #### 受入テスト
 
 
-SWATはWebページをインプリする知識を必要とせず、ビジネスドメインのレベルでテストシナリオの構築をサポートします。これは、受入テストのためのテストシナリオを構築する特別な開発スキルのない設計者にとっては容易である。
-自動化で、リグレッションテストとして受入テストを普通に実行することができます。SWATはまた受入テストと一緒にCIプロセスの構築にJenkinsとの連携をサポートします。
+SWATはWebページを開発する知識を必要とせず、ビジネスドメインのレベルでテストシナリオ作成を可能とします。これは、受入テストのためのテストシナリオを作成する特別な開発知識のない設計者でも可能ということです。
+自動化回帰テストとして受入テストを普通に実行することができます。SWATはまた受入テストと一緒にCIプロセスの構築にJenkinsとの連携をサポートします。
 
-#### Browser compatibility test
+#### ブラウザ互換テスト
 
-SWAT provides local execution server based on Selenium WebDriver supporting various of local OS/browser combinations. It is easy to run cases on different platforms to test whether the rendering or action of javascript of your web application is correct on different combinations.
-
-SWAT cloud service also supports running scenarios on [BrowserStack](http://www.browserstack.com), a public cloud execution service. You can easily test you web application on cloud with 300+ platforms from BrowserStack.
-
-Why SWAT?
+SWATはさまざまなOSやブラウザの組み合わせをサポートしているSelenium WebDriverベースのローカル実行サーバーを用意します。これは、WebアプリケーションのJavaScriptによる描画や動作が異なる組み合わせで正しいかどうかをテストするために、異なるプラットフォーム上でテストケースを実行することを簡単にしてます。
+SWATクラウドサービスでは、 [BrowserStack](http://www.browserstack.com)上でシナリオの実行をパブリッククラウド実行サービスとしてサポートします。BrowserStackからの300以上のクラウド環境で、Webアプリケーションを簡単にテストすることができます。
+なぜSWATですか？
 ---
 
-* Not requiring test engineers to build test scenarios and cases.
-* Relieving the pain of test ware maintenance by automatic knowledge analysis. 
-* Realising unified management and easy-to-use user experience with management server + web UI architecture.
-* Supporting execution on various OS/browser combinations of desktop and mobile devices.
-* Providing a more flexible monthly subscription SaaS model with low rate for both cloud service and package.
+* テストシナリオやケースを作成するための専任テストエンジニアを必要としない。
+* 自動ナレッジ解析によりテストウェアの保守を楽にする。
+* テストウェアの一元管理と使い易いユーザエクスペリエンスを提供する。
+* さまざまなOSとブラウザを組み合わせたデスクトップやモバイル端末での実行をサポートする。
+* クラウドサービスとパッケージ共に低価格で月単位での契約を用意する。
 
-How does SWAT work?
+SWATをどのように動かしますか？
 ---
 
-SWAT adopts "Scenario-building & Replay" approach to do the automation of UI testing automation for web application. Instead of capturing your actual operations, modifying generated script and running the script, you just need the following steps in SWAT.
+SWATはWebアプリケーションのUIテスト自動化に於いて”シナリオの組み立て＆リプレイ”方式を採用してます。実際の操作をキャプチャーする代わりに、生成されたスクリプトの実行作や修正は以下の手順となります。
 
-1. Importing HTML captures to SWAT 
-SWAT's knowledge engine analyses web pages and extracts all the interactive operation models.
-2. Building Scenario
-Test designers connect different operation models to build a scenario.
-3. Executing Scenario
-SWAT's knowledge engine explains and executes the scenarios on the real browser.
+1. HTMLキャプチャーをSWATにインポ―ト
+WebページをSWATのナレッジエンジンで解析し、すべてのオペレーションをモデル化します。
+2. シナリオ作成
+テスト設計者はシナリオ作成をするために必要なオペレーションモデルを組み合わせます。
+3. シナリオの実行
+SWATのナレッジエンジンで解釈しオペレーションモデルを実ブラウザ上で実行します。
 
-Who should use SWAT?
+誰がSWATを使いますか？
 ---
 
-The answer may depend on your current development/test process. However, there are several considerations on this question.
+その答えは現在の開発手法やテストプロセスに関係します。しかしながら、この質問にいくつかの考慮すべき事があります。
+SWATと他の自動化ツールとの間には大きな違いがあり、SWATはビジネスアナリストや設計者が自動化テストを行うことを可能にしてます。したがって、彼らはシナリオやケースを作成するために、SWATを使用することができます。
+しかしながら、効率的に自動化をさせ、自動検証を実施するには、そのためのプラクティスが必要です。より正確なオペレーションモデルを生成させるにはナレッジエンジンのカスタマイズも場合によっては必要です。このカスタマイズでは、HTML、CSS、Javascriptなどの開発経験や知識は必要となります。従ってこれらの知識を有するテスト技術者はとりわけテスト自動化の準備段階で係わることを推奨します。
+結論として、テスト設計者と開発スキルを有するテスト技術者を一人テストチームに割り当て、通常ウォーターフォールスタイルの開発でテスト自動化に必要とされるテスト実装フェーズはスキップします。
+プロダクトオーナーはアジャイルチームの開発者の助けを借りるのもひとつの手です。もし、あなたが開発者であれば、テストコードを書いたり、修正したりする多くの貴重な時間があればSWATを簡単に使いこなすことができます。
 
-The biggest difference between SWAT and other automation tools/frameworks is that SWAT makes it possible for business analyst/designers to do the automated test. Therefore, they can use SWAT to build scenarios and cases.
-
-However, to make an efficient automation, you need practices such as implementing auto verification, customizing the knowledge engine to generate operation models more precisely. knowledge in HTML, CSS, Javascript and development experiences are needed for these practices. Therefore, a good test engineer is recommended to help the SWAT use, especially in the automation deployment phase.
-
-In conclusion, you may assigning a test team with test designers and one test engineer, skipping the test implementation phase, which is normally needed in test automation of waterfall styled development. You may also let the product owner use SWAT to do the test with the help from other developers in an agile team. If you are a developer, you can use SWAT to save much of your precious time writing/modifying test code.
-
-Next Steps
+次へ
 ----
 
-#### Obtaining SWAT Trial Account
+#### SWAT試用版アカウントの取得
 
-Visit [SWAT trial application page (Japanese only)](http://www.smartekworks.com/trial.html) or mail [us](mailto:sales@smartekworks.com) to apply for a trial account. 
+Visit [SWAT試用版ページへ](http://www.smartekworks.com/trial.html) or mail [問い合わせ](mailto:sales@smartekworks.com) to apply for a trial account. 
 
-#### The SWAT User Guide
+#### SWATユーザガイド
 
 [Learn SWAT in depth](guide_start.md).
