@@ -36,19 +36,19 @@ Agent API should return following response when the call is successful.
 * HTTP Code: `200`
 * Content-Type: `application/json`
 * Body: JSON Map with following keys
- * `result`: (Optional) A string which can be saved in the variable defined in **Variable Name** parameter of **API Call** system operation. It is required when you set the variable name. 
- * `extraEvidences`: (Optional) A list of files to be saved as evidences in SWAT.
-   * `name`: (Required) Name of the file.
-   * `type`: (Required) Mime type of the file.
-   * `content`: (Required) Content of the binary file. Using BASE64 for encoding.
+ * `result`: **(Optional)** A string which can be saved in the variable defined in **Variable Name** parameter of **API Call** system operation. It is required when you set the variable name. 
+ * `extraEvidences`: **(Optional)** A list of files to be saved as evidences in SWAT.
+   * `name`: **(Required)** Name of the file.
+   * `type`: **(Required)** Mime type of the file.
+   * `content`: **(Required)** Content of the binary file. Using BASE64 for encoding.
 
 Agent API should return following response when the call is failed.
 
 * HTTP Code: `404`
 * Content-Type: `application/json`
 * Body: JSON Map with following keys
- * `code`: (Optional) Error code of the call. Used in error message of SWAT.
- * `message`: (Required) Error message of the call. Used in error message of SWAT.
+ * `code`: **(Optional)** Error code of the call. Used in error message of SWAT.
+ * `message`: **(Required)** Error message of the call. Used in error message of SWAT.
 
 Note: As the timeout of the request is 10 minutes, you should ensure that agent server complete the procession and return within 10 minutes.
 
