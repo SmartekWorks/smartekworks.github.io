@@ -55,11 +55,11 @@ Executing Selected Cases
 2. Check the checkbox before scenario `S0001`, and all the cases under the scenario will be automatically checked. **Execute** button will be displayed on the button toolbar as well.
 3. Click **Execute** button, and **New Execution** page will be displayed.
 4. You have several settings on **New Execution** page. However you will usually use the default settings except **Target Platform**. You can also remove cases or change case order from the case list on the right.
-5. In **Target Platform**, SWAT will select the platform according to your default settings if it is available. You can also choose different execution services and platforms available in each service. (For multiple platform selection, you need press `Ctrl/Command` or `Shift` key while selecting.)
+5. In **Target Platform**, SWAT will select the platform according to your default settings if it is available. You can also choose different execution services and platforms available in each service. (For multiple platform selection, you need press `Ctrl/Command` or `Shift` key while selecting. If you select multiple platforms, you will create several executions, one for each platform.)
 6. Click **OK** button to create the execution. **Executions** page will be displayed.
 7. On **Executions** page, you can view the progress of execution and cases under the execution.
 
-Note: If you select multiple platforms, you will create several executions, one for each platform.
+Note: The *Bing Sample Scenario* doesn't work on mobile platforms sinces the HTMLs we captured are different from that for mobiles.
 
 Working with Test Result
 ---
@@ -84,7 +84,7 @@ You have several ways to export evidences to an Excel file.
 
 Hint: When exporting to Excel, you can choose normal mode (only evidences of **Assertion** system operation will be exported) or full mode (all evidences will be exported). We recommend that you use normal mode with several **Assertion** system operations in you scenario, which will make the export faster and make it easier to implement auto verification later.
 
-After verification, you can change the test result status to `OK` or `NG`, and create a issue for the result on **Execution Results** page.
+After verification, you can change the test result status to `OK` or `NG`, and create an issue for the result on **Execution Results** page.
 
 Next Steps
 ----
