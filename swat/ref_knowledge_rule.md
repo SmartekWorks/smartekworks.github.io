@@ -1,8 +1,6 @@
 Knowledge Rule DSL
 ===
 
-Note: This page is currently under construction. We will complete the documentation as soon as possible.
-
 SWAT Knowledge rule is a kind of Domain-specific language to describe how to interact with a web page. Though SWAT knowledge engine has the ability to analyse web pages, it needs knowledge rules to help handle some specific implementations of web pages. 
 
 What is Knowledge Rule for?
@@ -290,3 +288,5 @@ As a further step to the case above, now the dialog is treated as a `form`, but 
 ```
 
 Hereby we create a new type of operation which is comprised of an `ui-dialog` collection node. This collection node has several text fields and a group of buttons, with its first child's text as the label: `"Create new user"` accordingly in this case.
+
+Note: More cases would be appended to cover more HTML variations.
