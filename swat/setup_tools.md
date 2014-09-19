@@ -8,7 +8,7 @@ SWAT Capture Tool
 
 **SWAT Capture Tool** is a browser extension to capture the HTMLs from you web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
 
-**SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer.
+**SWAT Capture Tool** is currently offered on Google Chrome, Mozilla Firefox and Internet Explorer.
 
 Attention: As some extensions will modify the DOM of you web pages, it is recommended to uninstall them before using **SWAT Capture Tool**.
 
@@ -18,7 +18,7 @@ Attention: As some extensions will modify the DOM of you web pages, it is recomm
 
 * Google Chrome 31 or above 
 
-#### Installing the Extensions
+#### Installing the Extension
 
 1. Start Chrome browser and visit the [SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
 2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
@@ -28,7 +28,22 @@ Attention: As some extensions will modify the DOM of you web pages, it is recomm
 1. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
 2. An SHTML type file will be saved to your default download directory automatically.
 
-Note: The SHTML file format is a kind of HTML container SWAT uses.
+### Mozilla Firefox
+
+#### Requirements
+
+* Mozilla Firefox 29 or above 
+
+#### Installing the Add-on
+
+1. Start Firefox browser and visit the [SWAT Capture Tool page](https://addons.mozilla.org/firefox/addon/firefoxswatcapture/) in the online Firefox Add-ons Marketplace.
+2. Click <span class="glyphicon glyphicon-plus"></span> **Add to Firefox** button to install the add-on. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
+
+#### Using the Add-on
+
+1. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
+2. Select the target folder and change the filename as you wish in **Save As** dialog, and save.
+3. An SHTML type file will be saved to the target folder.
 
 ### Internet Explorer
 
@@ -56,7 +71,7 @@ In some cases, an error message: *Could not load file or assembly or one of its 
 
 1. Run Internet Explorer 32bit as Administrator. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
 2. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
-3. Select the target folder and change the filename if you want in **Save As** dialog, and save.
+3. Select the target folder and change the filename as you wish in **Save As** dialog, and save.
 4. An SHTML type file will be saved to the target folder.
 
 Jenkins Integration
