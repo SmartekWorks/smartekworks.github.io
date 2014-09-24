@@ -1,76 +1,76 @@
-���s�T�[�r�X�̃Z�b�g�A�b�v
+実行サービスのセットアップ
 ===
 
-SWAT�͂������I�ɃV�i���I���쐬�ł��邾���łȂ��A�l�X�ȃv���b�g�t�H�[����Ń��[�J�����s�T�[�r�X�ƃN���E�h���s�T�[�r�X��񋟂��Ă܂��B
+SWATはより効率的にシナリオを作成できるだけでなく、様々なプラットフォーム上でローカル実行サービスとクラウド実行サービスを提供してます。
 
-���[�J�����s�T�[�o�[�̃Z�b�g�A�b�v
+ローカル実行サーバーのセットアップ
 ---
 
-#### �����
+#### 動作環境
 
-|         | �����
+|         | 動作環境
 | ------- | -----------
 | CPU     | 2.2 GHz (Single Core) or above
 | Memory  | 2048 MB
-| OS      | Windows XP�ȏ�, Mac OS X 10.6�ȏ�, Ubuntu 10.4�ȏ�(����linux�œ��삷�邩�͕ʓr���؂��K�v)
-| Browser | Internet Explorer 6�ȏ�, �ŐV��Firefox, �ŐV��Chrome, �ŐV��Safari
-| Others  | desktop��VM���Java�@SDK7�̃C���X�g�[�����K�v�B 
+| OS      | Windows XP以上, Mac OS X 10.6以上, Ubuntu 10.4以上(他のlinuxで動作するかは別途検証が必要)
+| Browser | Internet Explorer 6以上, 最新版Firefox, 最新版Chrome, 最新版Safari
+| Others  | desktopかVM上でJava　SDK7のインストールが必要。 
 
-#### �C���X�g�[���菇
+#### インストール手順
 
-1. SWAT�T�[�r�X�̃T�[�r�X�ݒ肩�烍�[�J�����s����I�сA**���[�J�����s���ꗗ**��ʂ�\�������܂��B
-2. �E���̃{�^�����N���b�N���A**���[�J�����s��**��I�����܂��B
-3. �ݒ�����m�F���āA�u�_�E�����[�h�v���N���b�N����ƁAzip�t�@�C����`WAAS-xxx.zip`�����[�J���R���s���[�^�Ƀ_�E�����[�h����܂��B
-4. �^�[�Q�b�g�R���s���[�^��̃C���X�g�[���f�B���N�g����zip�t�@�C�����𓀂��܂�.
-6. ���L�͂ɏ]���ăC���X�g�[���f�B���N�g���̉���`account.ini`�ݒ�t�@�C����ύX���܂��B
-7. ���[�J�����s�T�[�o�[�𗧂��グ��̂́A�C���X�g�[���f�B���N�g������`startup.bat` (`startup.sh` on Mac or Linux)�����s���܂��B 
-8. �T�[�r�X�ݒ�̃��[�J�����s����I�сA**���[�J�����s���ꗗ���** ��ʂ��ēx�\�������A���[�J�����s�T�[�o���o�^����Ă��邱�Ƃ��m�F�ł��܂��B
-9. ���[�J�����s�T�[�o�[���~������ɂ́A�C���X�g�[���f�B���N�g������`shutdown.bat` (`shutdown.sh` on Mac or Linux)�����s���܂��B
+1. SWATサービスのサービス設定からローカル実行環境を選び、**ローカル実行環境一覧**画面を表示させます。
+2. 右側のボタンをクリックし、**ローカル実行環境**を選択します。
+3. 設定情報を確認して、「ダウンロード」をクリックすると、zipファイル名`WAAS-xxx.zip`がローカルコンピュータにダウンロードされます。
+4. ターゲットコンピュータ上のインストールディレクトリにzipファイルを解凍します.
+6. 下記章に従ってインストールディレクトリの下の`account.ini`設定ファイルを変更します。
+7. ローカル実行サーバーを立ち上げるのは、インストールディレクトリ下の`startup.bat` (`startup.sh` on Mac or Linux)を実行します。 
+8. サービス設定のローカル実行環境を選び、**ローカル実行環境一覧画面** 画面を再度表示させ、ローカル実行サーバが登録されていることを確認できます。
+9. ローカル実行サーバーを停止させるには、インストールディレクトリ下の`shutdown.bat` (`shutdown.sh` on Mac or Linux)を実行します。
 
-#### �ݒ�t�@�C��
+#### 設定ファイル
 
-�ȉ��̏͂ɏ]���ăC���X�g�[���f�B���N�g���̉���`account.ini`�̐ݒ�t�@�C����ύX
+以下の章に従ってインストールディレクトリの下の`account.ini`の設定ファイルを変更
 
-* `waasCode`: ���s�T�[�o�[�̃R�[�h�ł��B����̎��s�T�[�o�[�ŃV�i���I�����s���邽�߂̎��s�̍쐬���ɃR�[�h���w�肷�邱�Ƃ��ł��܂��B�A���t�@�x�b�g�Ɛ����̑g������16�����ȉ��Ŏw�肵�܂��B���̋@�\������Ȃ��ꍇ�͐ݒ肷��K�v�͂���܂���B 
-* `privateMode`: �s�����**WaasCode**�Ŏ��s�^�X�N���󂯓���邩�ǂ��������߂�̂�`true`��`false`���w�肵�܂��B �f�t�H���g�l`false`�ł��B���s�T�[�o�[�� `waasCode`��ݒ肵�Ȃ��ꍇ�A�l�͖�������܂��B
-* `serverUrl`: SWAT�A�J�E���g�̃T�[�o�[URL�ł��B**�A�J�E���g�ݒ�**��ʂ��炱�̏�����肷�邱�Ƃ��ł��܂��B
-* `apiKey`: SWAT�A�J�E���g��API�L�[�ł��B **�A�J�E���g�ݒ�**��ʂ��炱�̏�����肷�邱�Ƃ��ł��܂��B
-* `secretKey`: SWAT�A�J�E���g�̃V�[�N���b�g�L�[�ł��B**�A�J�E���g�ݒ�**��ʂ��炱�̏�����肷�邱�Ƃ��ł��܂��B
-* `swatProxy.enable`: SWAT�T�[�r�X�֐ڑ����邽�߂Ƀv���L�V�[���g�����ǂ��������肷��̂�`true`��`false`���w�肵�܂��B�f�t�H���g�l��`false`�ł��B
-* `swatProxy.host`: �v���L�V�[�̃z�X�g�ł��B`swatProxy.enable`��`false`�̏ꍇ�A��������܂��B
-* `swatProxy.port`: �v���L�V�[�̃|�[�g�ł��B �������w�肵�܂��B`swatProxy.enable`��`false`�̏ꍇ�A��������܂��B
-* `swatProxy.username`: �v���L�V�[��username�ł��B`swatProxy.enable` ��`false`�̏ꍇ�A��������܂��B
-* `swatProxy.password`: �v���L�V�[��password�ł��B`swatProxy.enable`��`false`�̏ꍇ�A��������܂��B
-* `execProxy.enable`: �u���E�U���s���Ƀv���L�V�[���g�����ǂ��������߂�̂�`true`��`false`�Ŏw�肵�܂��BSWAT�́A���s���̃u���E�U�F�؃_�C�A���O���������Ƃ��ł��܂���B���[�U�l�[���ƃp�X���[�h�Ȃ��Ńv���L�V�[���g�����Ƃ��ł��܂��B�f�t�H���g�l��`false`�ł��B
-* `execProxy.host`: �v���L�V�[��host�ł��B`execProxy.enable`��`false`�̏ꍇ�A��������܂��B
-* `execProxy.port`: �v���L�V�[��port�ł��B`execProxy.enable`��`false`�̏ꍇ�A�������ꂍ���B
-* `driverParallelization`:���[�J�����s�T�[�o�ŋ����ꂽ�ő����Z�b�V�����ł��B�R���s���[�^���IE�̃Z�b�V����������s���Ă���ƁA���̃P�[�X�ł͒l�͖�������܂��B
-* `downloadDir`: �u���E�U�̃f�t�H���gdownload�f�B���N�g���[�ł��B�l��ݒ肵�Ȃ��ƁA�V�X�e���I�y���[�V������**Obtain Download**�͎g�����Ƃ��ł��Ȃ��B `C:\\Downloads`�̂悤��Windows�Ń_�u���o�b�N�X���b�V���������Ă��������B
-* `firefoxProfile`: �e�X�g�u���E�U���N�����邱�Ƃ�]�ލۂ�Firefox profile�̃p�X�ł��B���ʂȐݒ��ǉ������AFirefox��Ńe�X�g�����������ɕ֗��ł��B `C:\\Downloads`�̂悤��Windows�Ń_�u���o�b�N�X���b�V���������Ă��������B
+* `waasCode`: 実行サーバーのコードです。特定の実行サーバーでシナリオを実行するための実行の作成時にコードを指定することができます。アルファベットと数字の組合せで16文字以下で指定します。この機能がいらない場合は設定する必要はありません。 
+* `privateMode`: 不特定の**WaasCode**で実行タスクを受け入れるかどうかを決めるのに`true`か`false`を指定します。 デフォルト値`false`です。実行サーバーで `waasCode`を設定しない場合、値は無視されます。
+* `serverUrl`: SWATアカウントのサーバーURLです。**アカウント設定**画面からこの情報を入手することができます。
+* `apiKey`: SWATアカウントのAPIキーです。 **アカウント設定**画面からこの情報を入手することができます。
+* `secretKey`: SWATアカウントのシークレットキーです。**アカウント設定**画面からこの情報を入手することができます。
+* `swatProxy.enable`: SWATサービスへ接続するためにプロキシーを使うかどうかを決定するのに`true`か`false`を指定します。デフォルト値は`false`です。
+* `swatProxy.host`: プロキシーのホストです。`swatProxy.enable`が`false`の場合、無視されます。
+* `swatProxy.port`: プロキシーのポートです。 数字を指定します。`swatProxy.enable`が`false`の場合、無視されます。
+* `swatProxy.username`: プロキシーのusernameです。`swatProxy.enable` が`false`の場合、無視されます。
+* `swatProxy.password`: プロキシーのpasswordです。`swatProxy.enable`が`false`の場合、無視されます。
+* `execProxy.enable`: ブラウザ実行時にプロキシーを使うかどうかを決めるのに`true`か`false`で指定します。SWATは、実行中のブラウザ認証ダイアログを扱うことができません。ユーザネームとパスワードなしでプロキシーを使うことができます。デフォルト値は`false`です。
+* `execProxy.host`: プロキシーのhostです。`execProxy.enable`が`false`の場合、無視されます。
+* `execProxy.port`: プロキシーのportです。`execProxy.enable`が`false`の場合、無視されｍす。
+* `driverParallelization`:ローカル実行サーバで許可された最大並列セッションです。コンピュータ上でIEのセッションが一つ実行していると、このケースでは値は無視されます。
+* `downloadDir`: ブラウザのデフォルトdownloadディレクトリーです。値を設定しないと、システムオペレーションの**Obtain Download**は使いことができない。 `C:\\Downloads`のようにWindowsでダブルバックスラッシュを加えてください。
+* `firefoxProfile`: テストブラウザを起動することを望む際のFirefox profileのパスです。特別な設定や追加をし、Firefox上でテストをしたい時に便利です。 `C:\\Downloads`のようにWindowsでダブルバックスラッシュを加えてください。
 
-#### �m�[�g
+#### ノート
 
-* Windows 8�Ń��[�J�����s�T�[�o�[�𗧂��グ��Ƃ��A"Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5."��warning message���m�F���܂��B ���ꂪ���s�ɉe����^���邱�Ƃ͂���܂���̂ŁA���̃��b�Z�[�W�𖳎����������B �܂��A���W�X�g����`HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs`��ǉ����邱�Ƃɂ��A���̃��b�Z�[�W���폜���邱�Ƃ��ł��܂��B
+* Windows 8でローカル実行サーバーを立ち上げるとき、"Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5."のwarning messageを確認します。 それが実行に影響を与えることはありませんので、このメッセージを無視ください。 また、レジストリに`HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs`を追加することにより、このメッセージを削除することができます。
 
 
-#### ����
+#### 次へ
 
-���s�ɉe����^����\���̂���u���E�U�̐ݒ�͑������߁AOS��u���E�U�̐ݒ�͊ȒP�ȍ�Ƃł͂���܂���B�����̃v���Z�X���ȒP�ɂ��邢�����̒�Ă����܂��B
+実行に影響を与える可能性のあるブラウザの設定は多いため、OSやブラウザの設定は簡単な作業ではありません。これらのプロセスを簡単にするいくつかの提案をします。
 
-* �N���E�h���s�T�[�r�X���g���AOS��u���E�U�̐ݒ�̂قƂ�ǂ��v���o�C�_�ɂ�菈�����܂��B
-* ���[�J�����̐ݒ���@�ɂ��Ă̏��A�b�v�f�[�g��p�ɂɃZ�b�V�������m�F���������B
-* �ŐV�o�[�W�����̃��[�J�����s�T�[�o�[���A�b�v�f�[�g���A���[�J�����s�T�[�o�ɂ�������s�̖��Ɋւ���������Ȃ���Ă܂��B
-* Selenium Web Driver�̏����C���^�[�l�b�g�ŒT���܂��B����͌���SWAT�̃��C���̎��s�G���W��������ł��B
+* クラウド実行サービスを使い、OSやブラウザの設定のほとんどをプロバイダにより処理します。
+* ローカル環境の設定方法についての情報アップデートを頻繁にセッションを確認ください。
+* 最新バージョンのローカル実行サーバーをアップデートし、ローカル実行サーバにおける実行の問題に関する解決がなされてます。
+* Selenium Web Driverの情報をインターネットで探します。これは現在SWATのメインの実行エンジンだからです。
 
-BrowserStack�T�[�r�X�̐ݒ�
+BrowserStackサービスの設定
 ---
 
-�N���E�h�T�[�r�X�ŁASWAT�̓p�u���b�N���s�T�[�r�X�Ƃ���[BrowserStack](http://www.browserstack.com)���T�|�[�g���܂��B BrowserStack�T�[�r�X���g���ɂ́ABrowserStack�A�J�E���g���擾���A�ŏ��̎������v�������w������K�v������܂��B (BrowserStack�̃p�[�g�i�[�Ƃ��āA���Ђ͎x������s�ƈꎞ�T�|�[�g������񋟂��Ă��܂��B) ���̌�A�T�[�r�X�𗘗p����O��SWAT���BrowserStack�A�J�E���g��ݒ肵�܂��B 
+クラウドサービスで、SWATはパブリック実行サービスとして[BrowserStack](http://www.browserstack.com)をサポートします。 BrowserStackサービスを使うには、BrowserStackアカウントを取得し、最初の自動化プランを購入する必要があります。 (BrowserStackのパートナーとして、弊社は支払い代行と一時サポート窓口を提供しています。) その後、サービスを利用する前にSWAT上にBrowserStackアカウントを設定します。 
 
-�q���g�FBrowserStack�T�[�r�X�͎��p�A�J�E���g���g�p���Ă���ꍇ�A���ɐݒ肳��A�������̓T�u�X�N���v�V�������w�����܂��B
+ヒント：BrowserStackサービスは試用アカウントを使用している場合、既に設定され、もしくはサブスクリプションを購入します。
 
-1. �T�[�r�X�ݒ�̃A�J�E���g�ݒ��I�сA**�A�J�E���g�ݒ�**��ʂ�\�����܂��B
-2. BrowserStack�A�J�E���g���̃R���t�B�O���[�V�����������**�N���E�h���s**�t�B�[���h�ɉ��L�̈�Ƃ��ē��͂��܂��B 
+1. サービス設定のアカウント設定を選び、**アカウント設定**画面を表示します。
+2. BrowserStackアカウント情報のコンフィグレーション文字列を**クラウド実行**フィールドに下記の一つとして入力します。 
 ```json
 {
 	"browserstack":{
@@ -82,32 +82,32 @@ BrowserStack�T�[�r�X�̐ݒ�
 }
 ```
 
-#### �R���t�B�O���[�V����������
+#### コンフィグレーション文字列
 
-�R���t�B�O���[�V����������͉��L���[����JSON�}�b�v�ł��B
+コンフィグレーション文字列は下記ルールのJSONマップです。
 
-*`"browserstack"`�̃L�[���g���A�l�Ƃ��ĉ��L�L�[�̃R���t�B�O���[�V�����}�b�v�ł��B
- * `"enable"`: Use �T�[�r�X���g�����ǂ��������߂�̂�`true`��`false`���g���܂��B �f�t�H���g�l��`false`�ł��B
- * `"username"`: BrowserStack�A�J�E���g��username�ł��B
- * `"accesskey"`: BrowserStack�A�J�E���g��accesskey�ł��B
- * `"parallelization"`: �ő啽�s�Z�b�V�����́ABrowserStack�T�u�X�N���v�V�����ŋ����ꂽ���̂ł��B
- * `"local"`: ���[�J���e�X�g��BrowserStack���g�����ǂ��������߂�ɂ�`true`��`false`���g���܂��B�f�t�H���g�l��`false`�ł��B
+*`"browserstack"`のキーを使い、値として下記キーのコンフィグレーションマップです。
+ * `"enable"`: Use サービスを使うかどうかを決めるのに`true`か`false`を使います。 デフォルト値は`false`です。
+ * `"username"`: BrowserStackアカウントのusernameです。
+ * `"accesskey"`: BrowserStackアカウントのaccesskeyです。
+ * `"parallelization"`: 最大平行セッションは、BrowserStackサブスクリプションで許可されたものです。
+ * `"local"`: ローカルテストでBrowserStackを使うかどうかを決めるには`true`か`false`を使います。デフォルト値は`false`です。
  
-�m�[�g�F�A�J�E���g�����擾������@�⃍�[�J���e�X�g�̎g�p���@��BrowserStack�̃h�L�������g���Q�Ƃ��Ă��������B
+ノート：アカウント情報を取得する方法やローカルテストの使用方法はBrowserStackのドキュメントを参照してください。
 
-���[�J�����̐ݒ�
+ローカル環境の設定
 ---
 
-�ł��\���̍������ɏo��ɂ͎��̒ʂ�ł��B
+最も可能性の高い問題に出会うには次の通りです。
 
 #### Internet Explorer
 
-���s���s���ɂ͉��L�ݒ肪�K�v�ł��B
+実行を行うには下記設定が必要です。
 
-* Windows VISTA��7��IE 7�ȍ~���g�p����ꍇ�A�����l�ɂȂ�悤�Ƀ]�[�����Ƃɕی샂�[�h�̐ݒ������K�v������܂��B�l�́A���ׂẴ]�[���̂��߂ɓ����ł������A�I���܂��̓I�t�ɂ��邱�Ƃ��ł��܂��B �ی샂�[�h��ݒ肷��ɂ́A[�c�[��]���j���[���� "�C���^�[�l�b�g�I�v�V����..."��I�����A[�Z�L�����e�B]�^�u���N���b�N���Ă��������B�e�]�[���ɂ��ẮA�u�ی샂�[�h��L���ɂ���v�ƋL���ꂽ�^�u�̉����ɂ���`�F�b�N�{�b�N�X������܂��B
-* ����ɁA�u�������ꂽ�ی샂�[�h�uIE10�ȍ~�̂��߂ɖ����ɂ���K�v������܂��B���̃I�v�V�����́A[�C���^�[�l�b�g�I�v�V����]�_�C�A���O��[�ڍאݒ�]�^�u�Ɋ܂܂�Ă��܂��B
-* �l�C�e�B�u�̃}�E�X�C�x���g�����������W�ɐݒ�ł���悤�ɁA�u���E�U�̃Y�[�����x����100���ɐݒ肳��Ȃ���΂Ȃ�܂���B
-* IE11�݂̂ł́A�h���C�o��Internet Explorer�̃C���X�^���X�ւ̐ڑ����ێ��ł���悤�ɁA�^�[�Q�b�g�R���s���[�^��̃��W�X�g���G���g����ݒ肷��K�v������܂��B reg file�͂�������_�E�����[�h�ł��܂��B [here](http://www.smartekworks.com/tools/ie11-get-window-handles.zip).
+* Windows VISTAか7でIE 7以降を使用する場合、同じ値になるようにゾーンごとに保護モードの設定をする必要があります。値は、すべてのゾーンのために同じである限り、オンまたはオフにすることができます。 保護モードを設定するには、[ツール]メニューから "インターネットオプション..."を選択し、[セキュリティ]タブをクリックしてください。各ゾーンについては、「保護モードを有効にする」と記されたタブの下部にあるチェックボックスがあります。
+* さらに、「強化された保護モード「IE10以降のために無効にする必要があります。このオプションは、[インターネットオプション]ダイアログの[詳細設定]タブに含まれています。
+* ネイティブのマウスイベントが正しい座標に設定できるように、ブラウザのズームレベルを100％に設定されなければなりません。
+* IE11のみでは、ドライバがInternet Explorerのインスタンスへの接続を維持できるように、ターゲットコンピュータ上のレジストリエントリを設定する必要があります。 reg fileはここからダウンロードできます。 [here](http://www.smartekworks.com/tools/ie11-get-window-handles.zip).
 * If the website uses basic authentication, you can use the URL in the format like `http://<username>:<password>@yourdomain`. However, IE does not support this type of URL by default. You have to set a registry entry on the target computer. You can download the reg file [here](http://www.smartekworks.com/tools/ie-enable-basic-auth.zip)
 
 You should also take care of the following points in execution:
