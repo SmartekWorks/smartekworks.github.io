@@ -1,12 +1,12 @@
 Importing Pages
 ===
 
-This page explains how to generate the web operation models from you web application page.
+This page explains how to generate the web operation models from your web application page.
 
 Installing SWAT Capture tool
 ---
 
-**SWAT Capture Tool** is a browser extension to capture the HTMLs from you web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
+**SWAT Capture Tool** is a browser extension to capture the HTMLs from your web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
 
 **SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer. we will use Chrome in this guide. Please refer to [Setup Tools and Integrations](setup_tools.md#SWAT_Capture_Tool) for details of the setup. 
 
@@ -34,7 +34,7 @@ About SWAT Knowledge Base
 
 As SWAT is a knowledge-driven automation, it uses a knowledge base supporting scenario building, maintenance and execution. SWAT knowledge base contains followings components:
 
-* **Site**: The management container for managing pages share the same properties, such as charset. It usually correspond to a real site or a web application.
+* **Site**: The management container for managing pages share the same properties, such as charset. It usually corresponds to a real site or a web application.
 * **Page**: The page in your web application. 
 * **Rule**: The knowledge rule used for SWAT to understand the implementation of the page.
 * **Operation**: The interactive operation on the page, such as *Login*, *Search*. It contains information of a interactive node set.

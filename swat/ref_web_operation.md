@@ -82,7 +82,7 @@ This is the default mode for parameters related to a collection node. The parame
 
 #### Text Query Mode
 
-The parameter data field will be displayed as a text-box followed by <span class="glyphicon glyphicon-th-list"></span>. SWAT will search the sub-node by using `equal`, `startWith`, `contain` policies in order until the first matched node is found.
+The parameter data field will be displayed as a text-box followed by <span class="glyphicon glyphicon-font"></span>. SWAT will search the sub-node by using `equal`, `startWith`, `contain` policies in order until the first matched node is found.
 
 * In multi-select typed node, use `,` to specify several sub-node querying text and use blank to select none. For example, `red, blue` will select the sub-node containing text `red` and the sub-node containing text `blue`.
 * In single select typed node, blank is not allowed.
@@ -90,7 +90,7 @@ The parameter data field will be displayed as a text-box followed by <span class
 
 #### Index Query Mode
 
-The parameter data field will be displayed as a text-box followed by <span class="glyphicon glyphicon-font"></span>. SWAT will search the sub-node by the position. Use index `1` and bigger number to specify the first sub-node and after, and use index `-1` and smaller number to specify the last sub-node and before.
+The parameter data field will be displayed as a text-box followed by <span class="glyphicon glyphicon-th-list"></span>. SWAT will search the sub-node by the position. Use index `1` and bigger number to specify the first sub-node and after, and use index `-1` and smaller number to specify the last sub-node and before.
 
 * In multi-select typed node, use `,` to specify several sub-node querying index and use blank to select none. For example, `1, 2` will select the sub-node at position `1` and the sub-node at `2`.
 * In single select node, only integer except `0` is allowed.
@@ -123,11 +123,11 @@ Actually, you have several ways to ignore a parameter in execution.
 Ignoring Operation
 ---
 
-It is meaningless that you try to ignore the operation in scenario/flow builder because you can simply not add it. However, sometimes you may need to ignoring an operation in you case. 
+It is meaningless that you try to ignore the operation in scenario/flow builder because you can simply not add it. However, sometimes you may need to ignore an operation in your case. 
 
 Like the policy in ignoring parameter by ignoring variables, you can ignore the entire operation when you uncheck the **Using Data Option** of all the variables related to the operation in case data dialog. (You can also do so by using case export/import function.) 
 
-For example, you may have a *Search* operation with a *Search Box* and a *Search Button*, and you use only one variable `@{SearchKey}` for the *Search Box*. You can bypass the *Search* operation by unchecking the **Using Data Option** of the variable `SearchKey` in case.
+For example, you may have a *Search* operation with a *Search Box* and a *Search Button*, and you use only one variable `@{SearchKey}` for the *Search Box*. You can bypass the *Search* operation by unchecking the **Using Data Option** of the variable `SearchKey` in this case.
 
 When an operation is ignored, you can not see the operation and evidence in your test result.
 

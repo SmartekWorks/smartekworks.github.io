@@ -45,11 +45,11 @@ Matching rule is a JSON map string with the assertion condition. In SWAT, you us
 
 The JSON map contains three type of keys:
 
-* `"frame"`: (Optional) The target frame's name or ID. SWAT will use the main HTML if the key is not defined. (You can ignore the key if your web application does not use frames.)
+* `"frame"`: **(Optional)** The target frame's name or ID. SWAT will use the main HTML if the key is not defined. (You can ignore the key if your web application does not use frames.)
 ```json
 {"frame":"main", "have_text":"Success"}
 ```
-* `"target"`: (Optional) The target of the evaluation. You can use the following values. The default value is `"body"`.
+* `"target"`: **(Optional)** The target of the evaluation. You can use the following values. The default value is `"body"`.
 ```json
 {"target":"url", "have_text":"contract"}
 ```
@@ -57,7 +57,7 @@ The JSON map contains three type of keys:
  * `"title"`: Title of the page.
  * `"alert"`: Text of the all alerts appeared in the previous operation. (`"alert"` type is only available in **Assertion** system operation.)
  * *Selector String*: An area in the page (first matched frame if you have `"frame"` key) defined by CSS selector such as `"body"`, `"#Main"`. We recommend you use `"body"` unless you have several logical pages implemented in areas of a physical page.
-* *Evaluation*: (Required) You can use several types of evaluations by specifying following keys and values
+* *Evaluation*: **(Required)** You can use several types of evaluations by specifying following keys and values
 ```json
 {"target":"title", "equal_text":"Search Results"}
 {"have_css":{"css":"button#btnOK", "with_text":"Go"}}
@@ -75,15 +75,15 @@ The value of `"have_css"` and `"not_have_css"` is a JSON map contains following 
 {"have_css":{"css":"button#btnOK", "with_text":"Go"}}
 ```
 
-* `"css"`: (Required) a node defined by CSS selector.
-* `"with_text"`: (Optional) You can add condition to `"css"` by defining that the `text` of the node should equal to the string value of the key.
-* `"with_part_text"`: (Optional) You can add condition to `"css"` by defining that the `text` of the node should contain the string value of the key. SWAT will bypass this condition by default.
-* `"with_value"`: (Optional) You can add condition to `"css"` by defining that the `value` of the node should equal to the string value of the key. SWAT will bypass this condition by default.
-* `"with_href"`: (Optional) You can add condition to `"css"` by defining that the `href` of the node should equal to the string value of the key. As the href is from the actual DOM, it is the full URL instead of the relative URL you may defined in HTML. If you need use the `href` you defined in HTML, you can use CSS select with attribute match. SWAT will bypass this condition by default.
-* `"with_index"`: (Optional) You can add condition to `"css"` by defining that the index (starting from `1`) of the matched node should equal to the number value of the key. SWAT will bypass this condition by default.
-* `"enabled"`: (Optional) You can add condition to `"css"` by defining whether the node should be enabled or not (true/false). SWAT will bypass this condition by default.
-* `"selected"`: (Optional) You can add condition to `"css"` by defining whether the node should be selected or not (true/false). SWAT will bypass this condition by default.
-* `"displayed"`: (Optional) You can add condition to `"css"` by defining whether the node should be displayed or not (true/false). SWAT will use `true` by default.
+* `"css"`: **(Required)** a node defined by CSS selector.
+* `"with_text"`: **(Optional)** You can add condition to `"css"` by defining that the `text` of the node should equal to the string value of the key.
+* `"with_part_text"`: **(Optional)** You can add condition to `"css"` by defining that the `text` of the node should contain the string value of the key. SWAT will bypass this condition by default.
+* `"with_value"`: **(Optional)** You can add condition to `"css"` by defining that the `value` of the node should equal to the string value of the key. SWAT will bypass this condition by default.
+* `"with_href"`: **(Optional)** You can add condition to `"css"` by defining that the `href` of the node should equal to the string value of the key. As the href is from the actual DOM, it is the full URL instead of the relative URL you may defined in HTML. If you need use the `href` you defined in HTML, you can use CSS select with attribute match. SWAT will bypass this condition by default.
+* `"with_index"`: **(Optional)** You can add condition to `"css"` by defining that the index (starting from `1`) of the matched node should equal to the number value of the key. SWAT will bypass this condition by default.
+* `"enabled"`: **(Optional)** You can add condition to `"css"` by defining whether the node should be enabled or not (true/false). SWAT will bypass this condition by default.
+* `"selected"`: **(Optional)** You can add condition to `"css"` by defining whether the node should be selected or not (true/false). SWAT will bypass this condition by default.
+* `"displayed"`: **(Optional)** You can add condition to `"css"` by defining whether the node should be displayed or not (true/false). SWAT will use `true` by default.
 
 ### Samples
 
@@ -144,11 +144,11 @@ Querying rule is a JSON map string with a query condition.
 
 The JSON map contains three type of keys:
 
-* `"frame"`: (Optional) The target frame's name or ID. SWAT will use the main HTML if the key is not defined. (You can ignore the key if your web application does not use frames.)
+* `"frame"`: **(Optional)** The target frame's name or ID. SWAT will use the main HTML if the key is not defined. (You can ignore the key if your web application does not use frames.)
 ```json
 {"frame":"main", "source":"#orderNo", "css_key":"text"}
 ```
-* `"source"`: (Required) The source of the value. You can use the following values.
+* `"source"`: **(Required)** The source of the value. You can use the following values.
 ```json
 {"source":"#selectGender", "css_key":"value"}
 ```
