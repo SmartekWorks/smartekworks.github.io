@@ -1,61 +1,60 @@
-Getting Started with SWAT
+SWAT入門
 ===
 
-This page provides information you need to know before starting this guide.
+このガイドを読む前に必要な情報です。
 
-About this Guide
+このガイドについて
 ---
 
-In the [Introduction](index.md) you got a taste of what SWAT is and how it works. In this guide we are going to take you through the fundamentals of using SWAT to make your test automated.
+[イントロダクション](index.md)では、SWATが何であるかの、それがどのように機能するかを説明します。このガイドではテスト自動化を行うためのSWAT利用方法をお伝えします。
 
-We will teach you following steps on how to use SWAT:
+SWATの使い方について以下参照ください。
 
-* Construct the page knowledge base of you web application.
-* Build scenarios with page knowledge and flow knowledge.
-* Run test cases on different platforms.
+* Webアプリケーションのページ知識ベースを構築
+* ページ知識とフロー知識を持ったシナリオを構築
+* 異なったプラットフォーム上でテストケースを実行
 
-We will try to cover SWAT functions as much as possible in this guide. However, to keep the guide simple, we will offer links to the detailed instructions, specifications and articles if we can. Finally, you are also encouraged to explore SWAT through SWAT's intuitive web based UI.
+このガイドでは、できるだけ多くのSWAT機能を説明してます。しかし、ガイドをシンプルにするため、その詳細な手順、仕様はおよび記事についてはリンクを提供します。最後にSWATの直感的なWebベースのUIを通してSWATを探求してみてください。
 
-About the Sample Scenario
+サンプルシナリオについて
 ---
 
-We will use a simple scenario on *Bing Search Assistant* in this guide to demonstrate how to use SWAT in most common cases. Below is the scenario:
+SWATで最も共通的なケースの使い方のデモをこのガイドでは*Bing Search Assistant*のシンプルなシナリオを使います。そのシナリオを以下参照ください。
 
-1. Visit *Bing* (http://www.bing.com).
-2. Input any keyword in the search box.
-3. Wait until search assistant, the pull-down list with keyword suggestions is displayed.
-4. Select a keyword from the list.
-5. *Bing* returns a search result page with the selected keyword.
+1. *Bing* (http://www.bing.com)へ訪問
+2. 検索ボックスで適当なキーワードを入力します。
+3. 検索プルダウンリストにキーワード候補が表示されます。
+4. キーワード候補から選択します。
+5. *Bing* で選択したキーワードの結果ページが表示されます。
 
-There are some more you need to know when you deal with web application with frame, multi-window, alert and AJAX. Please refer to [Window, Frame, Alert, AJAX](article_scenes.md) for the know-how after completing this guide.
+詳細については、フレーム、マルチウィンドウ、アラートおよびAJAXを使用したWebアプリケーションを扱う時知っておく必要があります。これらのノウハウについては[ウィンドウ、フレーム、アラート、AJAX]（article_scenes.md）を参照してください。
 
-Preparing SWAT Service
+SWATサービスの準備
 ---
 
-We are offering both SWAT cloud service and SWAT package.
+スマーテックワークスでは、SWATクラウドサービスとSWATパッケージを提供しています。
 
-If you are using SWAT package, you need to setup SWAT package on your private server first. Please refer to [Setup SWAT Server](setup_swat.md) for the instructions on how to setup SWAT package.
+SWATパッケージを使用する場合、最初にプライベートサーバーへSWATのパッケージをセットアップする必要があります。SWATのパッケージのセットアップ方法については、[設定SWATサーバ]（setup_swat.md）を参照してください。
 
-If you are using SWAT cloud service, you need the URL of your SWAT cloud service.
+SWATクラウドサービスを使用する場合は、SWATクラウドサービスのURLが必要です.
 
-In either case, you need a user account with full permission to complete this guide.
-
-Login to SWAT
+いずれのケースでもこのガイドを読み終わるまでに完全なアクセス許可を持つユーザーアカウントが必要です。
+SWATにログインする
 ---
 
-Visit the URL of SWAT service and login with the user ID and password of your user account, and the **Projects** page will be displayed after login.
 
-The top menu in SWAT service consists following sections.
+SWATサービスのURLにアクセスし、自分のユーザーアカウントのIDとパスワードでログインし、ログイン後は、**プロジェクトは**ページが表示されます。
+SWATサービスのトップメニューには、以下のセッションから構成されてます。
 
-* **Test**: This is where you work on you test scenarios.
-* **Knowledge**: This is where you work on knowledge that you use to build scenarios, such as operations, pages and flows.
-* **Management**: This is where you manage the service settings.
+* **テスト**: ここでは、テストシナリオ、ケースを作成、実行する場所です。
+* **ナレッジ**: ここでは、シナリオ作成を行うために必要なオペレーションパーツを準備する場所です。
+* **マネージメント**: ここでは、サービスを設定し管理する場所です。
 
-Note: Please use the Internet Explorer 10 or above, latest Chrome, latest Firefox and latest Safari to view SWAT service.
+Note：SWATサービスを参照するには、ブラウザ環境として、IE10以上、最新版Chrome、Firefox、Safariを利用ください。
 
-Next Steps
+次へ
 ----
 
-Next, you need to construct the page knowledge base with which you can build scenarios without coding.
+次に、コーディングを必要としないシナリオを作成可能とするためのにページナレッジベースを準備する必要があります。
 
 Go to [Importing Pages](guide_knowledge.md).

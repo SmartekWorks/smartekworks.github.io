@@ -1,22 +1,22 @@
-Tuning Page Knowledge
+ナレッジ画面のチューニング
 ===
 
-This page explains how to generate a correct operation model by using a customized knowledge rule and how to edit the pages and operations. 
+このページでは、カスタマイズナレッジルールを使って画面や操作の編集して、どのように正しいオペレーションモデルを生成するかを説明します. 
 
-Note: It is a good practice to do page knowledge tuning in you knowledge base construction, though they are not required.
+ノート：利用者の使い勝手をよくするために、ナレッジベースの構築に画面ナレッジチューニングを行うことをお勧めします.
 
-Tuning Page Parsing
+チューニング画面の解析
 ---
 
-SWAT uses knowledge rule to understand the implementation of the page. Though SWAT's default rule can handle common implementations, you usually need to customize the rule to tuning the page parsing if
+SWATは画面の実装を理解するナレッジルールを使います。SWATのデフォルトルールは、一般的な実装を想定してますが、往々にして画面解析をしたときにルールをチューニングするカスタマイズが必要になります。
 
-* There are special JS controlled interactive elements in the web application.
-* You uses special implementation policies such as special CSS class to locate the nodes.
-* You want to change the default scope, title of operation or nodes.
+* Webアプリケーションでのインタラクティブな要素を制御する特殊なJSがある場合。
+* ノードを見つけるために特別なCSSクラスのような特別な実装ポリシーを使用している場合。
+* オペレーションやノードのタイトルをデフォルトスコープへ変更したい場合。
 
-#### Analysing the Default Parsing
+#### デフォルト構文解析の分析
 
-Let's check the default parsing of page `Bing` and `BingSA` first. There is a problem that the `BingSA` do not have operation related to the pull-down list with keyword suggestions. If you examine the HTML from the preview frame you will find the following HTML codes.
+最初、`Bing` and `BingSA`画面のデフォルト構文解析を確認します。 `BingSA`操作は、検索を補佐するプルダウンリストに関係していない問題があります. プレビューフレームからHTMLを調べる場合、以下のHTMLコードを見つけるでしょう。
 
 ```html
 <ul class="sa_drw" id="sa_ul">
@@ -27,73 +27,74 @@ Let's check the default parsing of page `Bing` and `BingSA` first. There is a pr
 </ul>
 ```
 
-It seems that the pull-down list is implemented by a `ul#sa_ul` list with a group of `div.sa_s`. As a there are no interactive tags, SWAT with the default rule does not know it is interactive. Let's tell SWAT this kind of implementation by defining a new knowledge rule.
+これは、プルダウンリストが `div.sa_s`のグループと` UL＃1 sa_ul`リストによって実装されているようです。このように対話型のタグが存在しない場合、デフォルトのルールではSWATはそれが対話型と認識しません。新しいナレッジルールを定義することで、SWATにこの種の実装を教え込みます。
 
-#### Designing a Rule
 
-The SWAT knowledge rule is a JSON formatted string following [Knowledge Rule DSL](ref_knowledge_rule.md). We need to know the following basic components of the rule.
+#### ルールの設計
 
-* `singleNodes`: The definition of single interactive DOM nodes such as button, input.
-* `collectionNode`: The definition of collection of DOM nodes such as list, table, select.
-* `operations`: The definition of how to extract the collectionNode to be an operation.
+SWATナレッジルールは以下ストリングJSONフォーマットです。ルールの基本コンポートを知る必要があります。
 
-You can view the default rule in following steps:
+* `singleNodes`: ボタンなど、入力として単一のインタラクティブなDOMノードの定義
+* `collectionNode`: リスト、テーブル、セレクトのようなDOMノードのコレクションを定義
+* `operations`: collectionNodeの抽出方法を操作する定義
 
-1. Visit **Knowledge Tuning** page through menu *Knowledge > Tuning*.
-2. Choose site `Bing` and page `BingSA`. Click **Default** on **Reset** pull-down button to reset the rule to default rule.
-3. The default rule will be displayed.
+以下の手順でデフォルトルールを確認できます。
 
-To make the suggestion list as an operation, we need to
+1. メニュータグのナレッジからチューニングを選択し、**画面チューニング**を開きます。
+2. `Bing`サイトの`BingSA`画面を選びます。 ルールボタンをクリックし、プルダウンから**デフォルト**を選択します。
+3. デフォルトルールが表示されます。
 
-* define a clickable node for `div.sa_s` like `link` does. you will need to append the following entry to singleNodes.
+オペレーションにsuggestionリストを作成するには以下が必要です。
+
+* `link`のような`div.sa_s`のためのクリック可能なノードを定義します。SingleNodesに次のエントリを追加する必要があります。.
 ```json
 "sa_link":{"selectors":["div.sa_s"], "decisive":true, "action":"click", "label":"link", "locator":"link"}, 
 ```
-* define a collection node for `ul#sa_ul` with `sa_link` as its children like `buttonGroup` does. you will need to append the following entry to collectionNodes.
+* `buttonGroup`のようなその子として、sa_link``と`UL＃1 sa_ul`のcollection nodeを定義します。collectionNodesに次のエントリーを追加する必要がります。
 ```json
 "sa_list":{"selectors":["ul#sa_ul"], "children":["sa_link"], "action":"or"},
 ```
-* define an operation for `sa_list`. you will need to append the following entry to collectionNodes.
+* `sa_list`のためのオペレーションを定義します。 collectionNodesに次のエントリーを追加する必要がります。
 ```json
 {"selectors": ["ul#sa_ul"], "collectionNode":"sa_list", "nesting":"outer"},
 ```
 
-Hint: Please refer to [Knowledge Rule DSL](ref_knowledge_rule.md) for the detailed reference.
+ヒント： 詳細なリファレンスについては[知識ルールDSL]（ref_knowledge_rule.md）を参照してください。
 
-#### Creating a Rule
+#### ルールの作成
 
-1. Following the steps above, modified the rule according to the above design. 
-2. Click **Preview** button you will see the parsing result of the new rule in **Preview** tab.
-3. You will find a new operation named `sa_ul` with a list of clickable items.
-4. Switch back to **Rule** tab, click **Save As** button and save the rule with the title `01`.
+1. 上記の手順に従うと、上記の設計に応じてルールを変更されます。 
+2. **プレビュー**ボタンをクリックし、 **プレビュー**タブで新しいルールの構文解析結果を参照します。
+3. クリックタブアイテムで`sa_ul`の新しいオペレーション名を確認します。 
+4. **ルール**タブに切り替え、**Save As**ボタンをクリックし、タイトル`01`のルールを保存します。
 
-Note: There are more than one definitions for the same implementation and many considerations to make an efficient rule. We will discuss the best practice to make a good rule in our **Article** section later.
+ノート：効率的にルールを作るためには同じ実装や多くの考慮事項について複数の定義があります。別章の**Article**で、良いルールを作るためのベストプラクティスについて説明します。
 
-#### Applying the Rule
+#### ルールの適応
 
-1. Visit **Site Management** page through menu *Management > Sites*, and select site `Bing` on the left.
-2. You can change the **Default Rule** to `01` so that all your import for this site will use this rule by default.
-3. Click **Edit Rules** button, and the **Rule Management** page will be displayed.
-4. Select rule `01` and you can see the rule you have just saved.
-5. Click <span class="caret"></span> next to the **Save** button and select **Apply to Pages** in the pull-down menu. 
-6. Check all the pages and apply in the dialog. **Page Knowledge Updater** page will be displayed and SWAT will start parsing the pages.
-7. After a while, you will get a parsed page list on the left. `Bing` is with <span class="label label-default">unmodified</span>, because it doesn't contains the suggest list. `BingSA` is with <span class="label label-danger">modified</span>, and you can see the added operation in green.
+1. メニュータグのサービス設定から**サイト設定**選択し、左側の`Bing`を選びます。
+2. **解析ルール**を`01`へ変更し、このサイトのすべてのインポートは、このルールを使用することができます。
+3. **ルール編集**ボタンをクリックし、**ルール管理**画面を表示させます。
+4. ルール `01`を選び、 保存したルールを参照できます。
+5. 次に**保存**ボタンのプルダウンメニューから**画面適応**を選択します。
+6. 選択した画面にルールを適応の画面を表示され、対象画面の適応を行い、SWATは画面の構文解析を実施します。
+7. しばらくしたら、左側に解析された画面リストを取得します。`Bing`は変更されてません、なぜならsuggest listが含まれていないからです。`BingSA`は変更されたので、緑色に追加されたオペレーションが確認できます。
 
-Editing Pages and Operations
+画面編集とオペレーション
 ---
 
-Knowledge rule can help you a lot when you have a lot of pages with the similar implementation, which is common for pages in the same web application. Sometimes you still need to change some properties such as title in individual knowledge components. You can do the modification on **Page Knowledge** page.
+ナレッジルールは同じWebアプリケーションで共通の画面や似通った実装の画面が多いとき助かります。時にはまだそのような個別のナレッジコンポーネントのタイトルとしていくつかのプロパティを変更する必要があります。
 
-1. Visit **Page Knowledge** page through menu `Knowledge > Pages`.
-2. Select the `hp_table` under `Bing` and you can change the title to `Links`. After saving, you will find the title changed in the left tree.
-3. You may also notice that the title of `hp_table` under `BingSA` has also been changed to `Links`. It is because SWAT think that they are the same operation on different pages. You can remove the relation by selecting **Related Operations** in the pull-down of **Save** button.
-4. You can also change the title of `sb_form` to `Search` and `sa_ul` to `Suggestion List`. (SWAT don't think the `Search` are the same in two pages this time.)
-5. Select the `Search` under `BingSA`. Click <span class="caret"></span> next to the **Save** button and select **Customize Operation** in the pull-down menu. **Operation Customization** page will be displayed.
-6. You can find a hidden node named `sa_ghostbox`. We uncheck the node to disable it since we don't need it in execution. You can also change the nodes' title, order here, though we do not need to do so now. 
+1. メニュータグのナレッジから**ナレッジ画面**を選択します。
+2. `Bing`下の`hp_table`を選択、`Links`タイトルを変更します。保存後、左側ツリーでタイトルが変わったことを確認します。
+3. また`hp_table`のタイトル下`BingSA`も`Links`に変更されています。SWATは、それらが別のページに同じ操作であると認識しているためです。**保存**ボタンのプルダウンメニューで**関連オペレーション**を選択することでリレーションを削除することができます。
+4. また、`sb_form`のタイトルを `Search`、`sa_ul`を `Suggestion List`へ変更できます。（`Search`は今回2画面で同じと思わない）
+5. `Search`下の`BingSA`を選択します。 次に**保存**ボタンのプルダウンメニューから **カスタマイズオペレーション**選択します。 **オペレーションカスタマイズ**画面が表示します。
+6. `sa_ghostbox`という隠れたノード名を確認します。 実行時にそれを必要としないので、それを無効にするには、ノードのチェックを外します。今そうする必要はありませんがノードのタイトルを変更することができます。
 
-Next Steps
+次へ
 ----
 
-You page knowledge is now ready to use. Next, you will learn how to use the web operation to build a scenario.
+これで画面ナレッジが使えるようになりました。次はシナリオ作成のためのWebオペレーション使い方を説明します。
 
 Go to [Building Scenarios](guide_scenarios.md).
