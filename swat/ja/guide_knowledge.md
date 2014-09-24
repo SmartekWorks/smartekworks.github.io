@@ -1,116 +1,109 @@
-Importing Pages
+画面のインポート
 ===
 
-This page explains how to generate the web operation models from you web application page.
-
-Installing SWAT Capture tool
+このページでは、Web画面からWebのオペレーションモデルを生成する方法について説明します。
+SWATキャプチャーツールのインストール
 ---
 
-**SWAT Capture Tool** is a browser extension to capture the HTMLs from you web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
+**SWATキャプチャツールは**SWAT画面ナレッジのインポートで使用されるWebアプリケーションのHTMLsをキャプチャするためのブラウザ拡張機能です。 SWATはまたブラウザ機能による`HTMLとして保存`を使い、保存形式としてHTMLsをサポートしています。 WebアプリケーションでリアルタイムレンダリングされたHTMLでフレーム構造を扱うには、**SWATのキャプチャツール**で Webアプリケーションをキャプチャする必要があります。
 
-**SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer. we will use Chrome in this guide. Please refer to [Setup Tools and Integrations](setup_tools.md#SWAT_Capture_Tool) for details of the setup. 
+**SWATのキャプチャツールは**現在Google ChromeとInternetExplorerで提供されています。このガイドではchromeを使います。セットアップの詳細は、[Setup Tools and Integrations](setup_tools.md#SWAT_Capture_Tool)を参照ください。 
 
-To install and use the extension in Chrome is simple. Just follow the steps below
+Chrome拡張機能のインストールと使用は簡単です。以下の手順に従ってください
 
-1. Start Chrome browser and visit the [SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
-2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
-3. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
-4. An SHTML type file will be saved to your default download directory automatically.
+1. Chromeブラウザを開き、Chrome Webストアの次画面へ[SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) 
+2. **＋無料**ボタンで拡張機能をインストールします。 インストール完了後は、ChromeのツールバーにSWATアイコン[SWAT icon](assets/images/extension.png)が表示されます。
+3. 任意のWeb画面を開き、SWATアイコン[SWAT icon](assets/images/extension.png) をクリックします。 
+4. SHTMLタイプのファイルは、デフォルトでは自動的にダウンロードフォルダーに保存されます。
 
-Preparing HTMLs for import
+HTMLsインポートの準備
 ---
 
-In the *Bing Search Assistant* sample scenario, you need two HTMLs, one the search page and the search page with search assistant.
+*Bing検索アシスタント*のサンプルシナリオでは、2つのHTMLs、一つの検索画面と検索アシスタントの検索画面が必要です。
 
-1. Visit http://www.bing.com in your browser with **SWAT Capture Tool**.
-2. Click ![SWAT icon](assets/images/extension.png) icon after the search page is loaded. A file named `Bing.shtml` will be saved.
-3. Input any keyword in the search box and wait until search assistant, the pull-down list with keyword suggestions is displayed.
-4. Click ![SWAT icon](assets/images/extension.png) icon again to save the search page with search assistant, and rename the file to `BingSA.shtm
+1. **SWATキャプチャーツール**がインストールされたブラウザで、 http://www.bing.com サイトを開きます。
+2. 検索画面がロードされたら、SWATキャプチャーツールのSWATアイコン[SWAT icon](assets/images/extension.png)をクリックします。ファイル名は`Bing.shtml`で保存します。
+3. 検索ボックスに任意のキーワードを入力し、検索アシストされるまで待ち、プルダウンにキーワード候補が表示されます。
+4. SWATアイコン[SWAT icon](assets/images/extension.png)を再びクリックしキーワード候補が表示された画面を保存します。ファイル名を`BingSA.shtml`とします。
 
-Hint: Actually, `BingSA.shtml` contains all the information in `Bing.shtml`. So it is possible that we use only the latter. We will use two pages in this guide for demonstration.
+ヒント：実際には、`BingSA.shtml`は`Bing.shtml`内のすべての情報が含まれています。よって、`BingSA.shtml`のみ使用すれば問題ありません。デモガイドに2画面を使用します。
 
-About SWAT Knowledge Base
+SWATナレッジベースについて
 ---
 
-As SWAT is a knowledge-driven automation, it uses a knowledge base supporting scenario building, maintenance and execution. SWAT knowledge base contains followings components:
+SWATはナレッジドリブン自動化として、シナリオ構築、保守および実行をサポートするナレッジベースを使用しています。SWATのナレッジベースは以下コンポーネントを含みます。：
 
-* **Site**: The management container for managing pages share the same properties, such as charset. It usually correspond to a real site or a web application.
-* **Page**: The page in your web application. 
-* **Rule**: The knowledge rule used for SWAT to understand the implementation of the page.
-* **Operation**: The interactive operation on the page, such as *Login*, *Search*. It contains information of a interactive node set.
-* **Node**: The interactive node in the operation, such as text-box, button.
-* **Flow**: A web application workflow with a certain business meaning. It contains several steps of operations. We will explain it in [Working with Flows](article_flow.md).
+* **サイト**: 文字セットのような画面共有と同じ性質を管理するための管理コンテナ。通常は、実際のサイトまたはウェブアプリケーションに対応。
+* **画面**: Webアプリケーションの画面。 
+* **ルール**: ナレッジルールは画面の実装をSWATが理解。
+* **オペレーション**: *ログイン*や*検索*のような会話型オペレーション画面。会話型ノードセットの情報を含む。
+* **ノード**: テキストボックスやボタンのようなオペレーションの会話型ノード。
+* **フロー**: 特定のビジネス上のWebアプリケーションワークフローを意味する。それはオペレーションのいくつかのステップを含む。 ここでの説明を参照。[Working with Flows](article_flow.md)
 
-Hint: Though construct a good knowledge base at the beginning is with some efforts, the work will make the following steps such as scenario building much more efficient.
-
-Creating a Site
+ヒント: 最初に十分なナレッジベースの組み立ては、はるかに効率的なシナリオ構築を以下の手順で行います。
+サイトの作成
 ---
 
-We first need to add a new site for *Bing* in SWAT knowledge base.
+最初にSWATナレッジベースに*Bing*の新しいサイト追加が必要。
 
-1. Visit **site management** page through menu *Management > Sites*.
-2. Click <span class="glyphicon glyphicon-plus"></span> button to add a new site.
-3. Use `Bing` as the **Title** and set the **HTML Charset** to `UTF-8`.
-4. Leave other configuration with the default values and create the site.
-
-Note: SWAT has a limitation on the maximum site in your subscription. Please contact your administrator (or [us](mailto:sales@smartekworks.com) in case of trial) if no more site can be created.
-
-Importing Pages
+1. メニュータグのサービス設定から**サイト設定**を開きます。
+2. 新しいサイトを作成（＋）ボタンをクリックします。
+3. タイトルを`Bing`、HTMLエンコードを`UTF-8`とします。
+4. デフォルト値を使用し他の設定をそのままにして、サイトを作成します。
+ノート：SWATは、サブスクリプションでサイト作成の上限があります。これ以上にサイトが作成できない場合は、(or [us](mailto:sales@smartekworks.com) in case of trial)へ連絡ください。
+画面のインポート
 ---
 
-1. Visit **Page Knowledge** page through menu `Knowledge > Pages`.
-2. Select the site `Bing` from the pull-down list of sites under the **Search** text-box. The page knowledge tree of site `Bing` will be displayed.
-3. Click <span class="glyphicon glyphicon-plus"></span> button and **Page Knowledge Updater** page will be displayed for construction.
-4. Make a zip file of `Bing.shtml` and `BingSA.shtml`. (You can also import the file one by one.)
-4. Make sure the **Target Site** is `Bing`, and choose the zip file for the **Source File**.
-5. **File Name Charset** refers to the encoding of file name in zip file. As we used English file name, we don't need to change this option.
-6. You can also select a customized **Parsing Rule** for import. We use the default one now since we do not have any customized one. 
-7. Click **Start** button, and then SWAT will start parsing the HTMLs. The progress will be displayed on the left.
-8. After the parse is completed, `Bing` and `BingSA` with <span class="label label-success">Added</span> will be displayed.
-9. Click **Back** button, and you can now find the two new pages in the page knowledge tree. 
-9. Select page `Bing`, and you will find two operations under it. 
-10. If you select the operation, you will find the nodes in the operation be highlighted. (one operation is for the menu and the other is for the search.)
+1. メニュータグのナレッジから**画面ナレッジ**を開きます。
+2. **検索**テキストボックス下のサイトプルダウンリストから`Bing`サイトを選択。`Bing`サイトのナレッジツリー画面が表示。
+3. 画面ナレッジ追加ボタンをクリックし、**画面ナレッジメンテナンス**画面がが表示。
+4. `Bing.shtml`と`BingSA.shtml`をzipファイルにまとめる。成(1つ1つのファイルをインポートすることができます）
+5. **対象サイト**は`Bing`であることを確認し、**ファイルを選択**ボタンをクリックし4で作成したzipファイルを選びます。
+6. **ファイル名のエンコード**はzipファイル内のファイル名のエンコーディングを指し、英語のファイル名を使う場合このオプションを変える必要はありません。
+7. インポート時に**解析ルール**のカスタマイズを選ぶことができます。 カスタマイズされたものを用意していないので、デフォルトのままとします。
+8. **Start**ボタンをクリックし、その後SWATはのHTMLsの構文解析を開始します。 進捗は左側に表示されます。
+9. 解析が完了した後、`Bing` と `BingSA` は**画面ナレッジメンテナンス**画面に表示されます。
+10. **戻る**ボタンをクリックし、ナレッジツリー画面内に２つの新しい画面ナレッジが追加されたことを確認します。 
+11. `Bing`画面を選択し、その下に3つのナレッジオペレーションを確認します。 
+12. どれかナレッジオペレーションを選択すると、ハイライト表示されたオペレーションのノードが確認できます（テーブル、オペレーション、検索、３つのナレッジオペレーション)
 
-Configuring preview
+設定プレビュー
 ---
 
-The operation preview is very useful in knowledge management and scenario building. However, the preview is usually without CSS because we only import the HTML source without any resource file (except that the HTML uses full URL for the resources). You can configure it to use the remote resources.
+操作プレビューは、ナレッジ管理とシナリオ作成に非常に有効です。プレビューではCSSを必要としません、なぜなら任意のリソースファイルを使用せずにHTMLソースだけをインポートするからです（HTMLがリソースに対して完全なURLを使用することを除く）。リモートリソースを使用するように設定をすることができます。
+ノート：`https`を使ってSWATサーバーへアクセスする場合、`http`ではリソースにアクセスできません。SWATメニュータグのサービス設定から**サイト設定**画面でSWATに必要なリソースをアップロードし、リモートリソースとしてそれらを構成します。
+#### リソースURLを分析
 
-Note: If you are using `https` to access SWAT service, you cannot access the resources with `http`. You can upload the needed resources to SWAT on **Site Management** page and configure them as the remote resources. 
+ブラウザのビルドイン開発ツールを使い、*Firebugs*のような拡張機能でプレビューフレーム内のHTMLソースを検査します。以下URLを参照。
 
-#### Analysing the Resource URL
+* `http://www.bing.com/...`: このタイプのURLは、SWATプレビューで動作するので、何か特別な処置は必要はありません.
+* `/images/search...`: このタイプのURLは、プレビューで`Bing`の代わりにSWATのサービスドメインを使い、 `http://www.bing.com/`をドメインに追加する必要があります。
 
-Use build-in development tools of the browser or extensions such as *Firebugs* to inspect the HTML source in the preview frame. You will find the following types of URL:
+#### サイト設定の変更
 
-* `http://www.bing.com/...`: This type of URL works in our preview, so we don't need to do any thing for it.
-* `/images/search...`: This type of URL uses SWAT service domain instead of *Bing* in preview, we have to add domain `http://www.bing.com/` for it.
+1. SWATメニュータグのサービス設定から**サイト設定**画面を開き、左側に表示されている`Bing`サイトを選択します。
+2. **URLプレビュー**に`http://www.bing.com/`を入力し、`/images/search...`.を`http://www.bing.com/`に追加します。
+3. 設定を保存し、**画面ナレッジ**のプレビューで画面イメージを確認します。
 
-#### Changing Site Settings
+#### 相対的URLの取扱
 
-1. Visit **Site Management** page through menu *Management > Sites*, and select site `Bing` on the left.
-2. Input `http://www.bing.com/` to **Preview URL**, which will add `http://www.bing.com/` to URLs like `/images/search...`.
-3. Save the settings, and you will find images displayed in preview of **Page Knowledge**.
+HTMLの`img/a.png`, `..img/a.css`のような相対的なURLを確認します。このような場合、算出された絶対URLにURL全体を変換しなければなりません。
 
-#### Handling Relative URL
-
-Sometimes we may find relative URL such as `img/a.png`, `..img/a.css` in HTML. We have to replace the whole URL to a calculated absolute URL in this case.
-
-1. Visit **Site Management** page through menu *Management > Sites*,
-2. Click **Edit** button for **Preview Rules**, and an input dialog for replacing rule string will be displayed. 
-3. The rule are a JSON list of map. The key is the source text and the value is the destination text. For example:
+1. メニュータグのサービス設定から**サイト設定**を開きます。
+2. **プレビュー用ルール**の**編集**ボタンをクリックし、プレビュー用置換ルール画面が表示されます。 
+3. ここでのルールは、mapのJSONリストです。keyはsource、valueはdestination textです。例えば、
 ```json
 [
 	{"img/":"http://www.sample.com/a/img/"},
 	{"../img/":"http://www.sample.com/a/img/"}
 ]
 ```
-4. Do not forget saving the settings after you close the dialog.
+4. ダイアログを閉じた後は必ず設定の保存をしてください。
 
-Next Steps
+次へ
 ----
 
-Now, you have your pages imported to SWAT's knowledge base. Before building scenarios with it, you still need to make some adjustment.
-
-Next, let's start learning how to create a customized knowledge rule and how to edit the pages and operations.
+SWATのナレッジ·ベースにインポートされた画面があります。それ使いシナリオを作成する前にまだいくつかの設定を行う必要があります。
+次は、ナレッジルールのカスタマイズ方法、画面と操作の編集方法を説明します。
 
 Go to [Tuning Page Knowledge](guide_tuning.md).

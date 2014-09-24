@@ -1,92 +1,87 @@
-Executing Cases
+テストケースの実行
 ===
 
-This page explains how to execute cases and work with the test result.
+このページではテストケースの実行とテスト結果の操作方法について説明します。
 
-Preparing for Execution
+実行のための準備
 ---
 
-### Setup Execution Services
+### セットアップと実行サービス
 
-Before you can execute your cases, you need to preparing execution services on your SWAT service. SWAT has two kinds of execution services, local execution service and public cloud execution service.
+テストケースを実行する前に、SWAT上に実行サービスを準備します。SWATの実行サービスには、ローカル実行サービスとパブリッククラウド実行サービスの2種類があります。
 
-If there is no execution service connected to SWAT, please setup a local execution server on your local machine according to [Execution Services Setup](setup_execservices.md#Setup_Local_Execution_Server).
+ローカル実行サービスはパブリッククラウドに接続できない場合、ローカルマシン上にローカル実行サービスをセットアップをします。[実行サービスの設定]（setup_execservices.md＃Setup_Local_Execution_Server）
 
-If you have an BrowserStack account, you can also setup a cloud execution service on SWAT according to [Execution Services Setup](setup_execservices.md#Setup_BrowserStack_Service)
+既にBrowserStackアカウントをお持ちの場合は、SWAT上でパブリッククラウド実行サービスをセットアップします。[実行サービスの設定](setup_execservices.md#Setup_BrowserStack_Service)
 
-Hint: The BrowserStack Service has already been configured for you if you are using trial account or you purchase the BrowserStack Subscription with SWAT.
+ヒント：もしBrowserStackサービスの評価版を利用中かサブスクリプションを購入している場合、SWATでBrowserStackサービスは既に設定されます。
+### 実行の設定
 
-### Settings of execution
+テストケースを実行するにはいくつか重要な設定があります。それらは実行する前に理解いただくことが必要です。
 
-There are several important settings of your execution. You need to know them before execution.
+#### ターゲットサーバー
 
-#### Target Server
+**ターゲットサーバー** ケースを実行するサーバーURLを決めます。ローカル開発サーバーや統合テストサーバなど異なる段階で同じテストケースをテストサーバーへ実行することができます。 一般的にテストセットの中で値をセットし、新しい実行を行う時はセットの変更をします。
 
-**Target Server** decides which server URL you should run the cases against. You can run the same cases against your test server on different stages, such as local development server, integration test server etc. The common practice is that you set the default value in your test set, though you can set or modify the value when you create a new execution.
+1. 最後の章で作成したテストセットの**シナリオ**ページを参照.
+2. タイトルの右ボタンをクリック、 **テストセット セッティング**ページを表示、<span class="glyphicon glyphicon-pencil"></span>をクリック。
+3. **デフォルトターゲットサーバー** エリアでそれぞれのサイトのテキストボックスを参照。*Bing*を入力し、セーブください`http://www.bing.com` 
 
-1. Visit **Scenarios** page in the test set we created in last chapter.
-2. Click <span class="glyphicon glyphicon-pencil"></span> button on the right of the title area, and **Test Set Settings** page will be displayed.
-3. On **Default Target Server** area, you will see text-box for each site. Fill in *Bing* with `http://www.bing.com` and save.
+ヒント：**Site Management**ページのデフォルト値をセットすることができます。この値は新しいテストセットを作成する時のデフォルトとして継承されます。
 
-Hint: You can also set the default value in **Site Management** page. The value will be used by default when you create a new test set.
+注意：**ターゲットサーバ**の設定は、このガイドのサンプルシナリオを含むすべての実行のために必要です。
 
-Attention: The settings of **Target Server** is required for every execution including the sample scenario in this guide.
+#### プラットフォームとウィンゥズサイズ
 
-#### Platform & Window Size
+プラットフォームは、テストケースを実行させる際のＯＳとブラウザの組み合わせで決定します。ウィンドゥ幅とウィンドゥ高さは実行中のブラウザでウィンドゥサイズを制御します。Ｗｅｂアプリケーションが応答する時便利です。 They are useful when your web application is responsive. 
 
-**Platform** decides on which OS/Browser combination you will run the cases. **Window Width** and **Window Height** controls the window size of your browser in execution. They are useful when your web application is responsive. 
+新しい実行を行うとき、さらに詳細な設定があります。それらはデフォルトで選択できるようにしておくと便利です。デフォルト設定は、SWATのサービスレベルで設定することができます。 
 
-You have more detailed settings when you create a new execution. However, it is convenient to have a default choice. Both default settings can be set on SWAT service level. 
+1. **アカウントセッティング**は、管理メニューページの⇒アカウントセッティング
+2. **デフォルトプラットフォーム**のデフォルト値を選択し、**ウィンドゥ幅（ピクセル）**、**ウィンドゥ高さ（ピクセル）**のデフォルト値を記入します。
+3. セッティングを保存します。
 
-1. Visit **Account Settings** page through menu *Management > Account Settings*.
-2. Choose the default value for **Default Platform**, and Fill in the default value for **Window Width (px)** and **Window Height (px)**.
-3. Save the settings.
+#### サイトの実行パラメーター
 
-#### Execution Parameters of the Site
+すべてのWebアプリケーションには、フレーム、アラート、および独自のテスト要件のような実装タイプがあります。 当社は、詳細な実行動作を変更するために、各サイトの拡張可能な実行パラメータを設計しました。新しいサイトを作成するときに、パラメータのデフォルト値が設定されます。サイトに`Bing`を含む、ほとんどの状況でパラメータを変更する必要はありません。
 
-Every web application has its own type of implementation such as frame, alert, and its own test requirements. We designed a extendable execution parameters for each site in order to change the detailed execution behaviour. A default set of parameters will be set when you create a new site. You don't need to change the parameters in most situations including the site `Bing`. 
+パラメータの使用方法については、別の章[ウィンドウ、フレーム、アラート、AJAX]（guide_scenes.md）を参照してください。
 
-Please refer to chapter [Window, Frame, Alert, AJAX](guide_scenes.md) for how to use the parameters in different scenes.
+ケース選択し実行---
 
-Executing Selected Cases
+1. 最後の章で作成したテスト·セット内のページ**シナリオ**へ訪問
+2. シナリオ`S0001`の前のチェックボックスにチェックをします。シナリオ配下のすべてのケースは自動的にチェックされます。**実行**ボタンはツールバー表示されます。 
+3. **実行**ボタンをクリックすると**新しい実行**ページが表示されます。
+4. **新しい実行**ページでいくつかのセッティングを行います。通常は**ターゲットプラットフォーム**以外はデフォルトのセッティングを使用します。 またケースリストの右側でケース削除やケースの順番を変更することができます。
+5. 使用可能なプラットフォームについて、ＳＷＡＴはデフォルトの設定に従いプラットフォームを選択します。 また、各サービスで利用可能な異なる実行サービスやプラットフォームを選択することができます。（`Ctrlキー/ Command`や` Shift`キーを押しながら複数プラットフォームの選択ができます）
+6. **OK**ボタンをクリックし実行します。**実行**ページが表示されます。
+7. **実行**ページでは、実行の進行状況や実行下のケースを参照できます。
+
+ノート：複数プラットフォームを選択した場合、それぞれのプラットフォームのいずれかが順番に実行されます。
+
+テスト結果作業
 ---
 
-1. Visit **Scenarios** page in the test set we created in last chapter.
-2. Check the checkbox before scenario `S0001`, and all the cases under the scenario will be automatically checked. **Execute** button will be displayed on the button toolbar as well.
-3. Click **Execute** button, and **New Execution** page will be displayed.
-4. You have several settings on **New Execution** page. However you will usually use the default settings except **Target Platform**. You can also remove cases or change case order from the case list on the right.
-5. In **Target Platform**, SWAT will select the platform according to your default settings if it is available. You can also choose different execution services and platforms available in each service. (For multiple platform selection, you need press `Ctrl/Command` or `Shift` key while selecting.)
-6. Click **OK** button to create the execution. **Executions** page will be displayed.
-7. On **Executions** page, you can view the progress of execution and cases under the execution.
+1. ケースの右端にある進捗ラベルは、ケースが完了した段階で、**完了**が、**失敗** ボタンに変更します。
+2. **完了**か、**失敗**のボタンをクリックし、結果情報は**実行結果**ページで表示されます。
+3. **エビデンス確認**ボタンをクリックし、テスト結果は**エビデンスビューアー**ページで表示されます。
+4. サムネイルをクリックするとスライドショーですべてのテストステップのスクリーンショットが表示されます。また、 ステップの詳細を表示させるには、左側のシナリオ·ツリー内の特定のステップをクリックします。
 
-Note: If you select multiple platforms, you will create several executions, one for each platform.
+殆どのケースでは、ケースがOKであるか否かを確認する必要があります。以下の手順を参照ください。
 
-Working with Test Result
----
+* **結果検証について、**エビデンスビューアー**ページで確認します。
+* エビデンスの外部出力は、ＥＸＣＥＬか他フォーマットでオフラインで確認します。
+* **アサーション**システム操作を使い、自動で結果確認を行います。
 
-1. The progress label on the right of the cases will change to a button with **DONE** or **FAIL** status when they has be completed.
-2. Click the button with **DONE** or **FAIL** status. **Execution Results** page with the result information will be displayed.
-3. Click **Check Evidences** button and **Evidence Viewer** page of the selected test result will be displayed.
-4. You can click the thumbnails to view the screenshots of all the test steps in a slide show. You can also click a specific step in the scenario tree on the left to view the details of the step.
+EXCELにエビデンス出力をするには、いくつかの方法があります。
+* **エビデンスビューアー**ページで単独の結果をEXCELかzipへ出力することができます。
+* **実行**ページですべての実行結果をEXCELへ出力することができます。
+* **実行**ページで各々の結果をEXCELへ出力することができます。
+* **シナリオ**ページでテストセットにあるすべてのケースの最終結果を出力することができます。
 
-In most cases, you need to verify whether the case is OK or not. You can do so in following approaches.
-
-* Use **Evidence Viewer** page to verify the result following the above steps.
-* Export the evidences to Excel or other formats for offline check.
-* Use **Assertion** system operation to verify the result automatically. (We will discuss this topics in other articles.)
-
-You have several ways to export evidences to an Excel file.
-
-* You can export a single result to Excel or zip file on **Evidence Viewer** page.
-* You can export all results from a execution to Excel on **Executions** page.
-* You can export all results from several executions to Excel on **Executions** page.
-* You can export the latest results of all cases in test set to Excel on **Scenarios** page.
-
-Hint: When exporting to Excel, you can choose normal mode (only evidences of **Assertion** system operation will be exported) or full mode (all evidences will be exported). We recommend that you use normal mode with several **Assertion** system operations in you scenario, which will make the export faster and make it easier to implement auto verification later.
-
-After verification, you can change the test result status to `OK` or `NG`, and create a issue for the result on **Execution Results** page.
-
-Next Steps
+ヒント：EXCELへ出力してるときに、ノーマルモード（**アサーション**システムオペレーションだけをエビデンスとして出力されます）かフルモード（すべてのエビデンスを出力します）を選ぶことができます。自動検証を簡単に実装させ、より速く出力させるのは、いくつかの**アサーション**システムオペレーションを通常モードで使用することを推奨します。
+検証後は、テスト結果のステータスを`OK`を、`NG`に変えることができ、**実行結果**ページで結果に対する課題を作成することができます。
+次へ
 ----
 
-You can try to make your own test automation on SWAT! You are recommended to read articles from Article Section for the know-how from different cases. And you can refer to the Reference Section when you need to know the details of the specification.
+SWATでテスト自動化を行うことができます！異なる状況でのノウハウはアーティクル章の記事を読むことをお勧めします。仕様の詳細を知る必要がある場合、リファレンス章を参照することができます.

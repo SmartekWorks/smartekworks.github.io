@@ -1,85 +1,83 @@
-Building Scenarios
+﻿シナリオ作成
 ===
 
-This page explains how to build scenarios and cases with SWAT knowledge base.
+ここでは、SWATナレッジベースでシナリオやケースの作成方法を説明します。
 
-Creating Project / Test Set
+プロジェクト、テストセットの作成
 ---
 
-#### Creating Project
+#### プロジェクト作成
 
-SWAT uses project as the top layer management container for grouping a number of test sets.
+SWATは、テストセットをグループ化し管理するするためにプロジェクトを使用しています。
 
-1. Visit **Project Management** page through menu *Management > Projects*.
-2. Click <span class="glyphicon glyphicon-plus"></span> button to add a new project.
-3. Fill in **Code** and **Title**, and then create the project.
-4. Visit **Projects** page through menu *Test*. You can see the newly created project.
+1. メニュータグの*サービス設定*から**プロジェクト管理**を開きます。
+2. 新しいプロジェクト作成ボタン <span class="glyphicon glyphicon-plus"></span> をクリックします。
+3. **番号**と**タイトル**、プロジェクトの説明を記入し、新規をクリックします。
+4. メニュータグの*テスト*から**プロジェクト**画面を開き、新しいプロジェクトが作成されていることを確認します。
 
-#### Creating Test Set
+#### テストセット作成
 
-Test set is the main container for managing scenarios, executions and issues. With it you can set default execution settings for scenarios, and you can also export/import test cases on test set level. 
+テストセットはシナリオの実行や課題を管理するためのメインコンテナです。テストセット単位でシナリオの実行設定を予めセットできます。また、テストセット単位でテストケースのインポート／エクスポートができます。
 
-1. Visit **Projects** page through menu *Test*.
-2. Click the newly created project and select **Create new test set** under it.
-3. Fill in **Code** and **Title**, and then create the test set.
-5. After the creation of test set, the **Scenarios** page of this test set will be displayed. 
-6. You will find a default scenario group with the code `SG0001` has been created by default in the test set.
+1. メニュータグの*テスト*から**プロジェクト**を開きます。
+2. その下に**新しく作成したプロジェクト**を選択し、新しいテストセットを作成します。
+3. **番号**と**タイトル**、プロジェクトの説明を記入し、新規をクリックします。
+5. テストセット作成後、このテストセットは**シナリオ**画面に表示されます。 
+6. デフォルトでコード`SG0001`として作成され、シナリオグループで確認できます。
 
-#### About the Scenario Group
+#### シナリオグループについて
 
-Scenario group is a group of scenarios in the test set. The main purpose is to categorise you scenario, and you can use tags on scenario groups to filter the scenarios within test set.
+シナリオグループは、テストセット内のシナリオをグループします。主な目的はシナリオを分類することで、シナリオグループにタグを付けることでテストセット内のシナリオをフィルタリングすることができます。
+ヒント：AOPのインターセプタが動くシナリオグループを定義するには、 `前`、`後`のような特別なタグを使うことができます。 
 
-Hint: You can also use some special tags such as `before`, `after` to define a group of scenarios working as AOP interceptors.
-
-Creating Scenario
+シナリオ作成
 ---
 
-Though to design a good scenario is not easy, it is simple to create a scenario in SWAT. 
+良いシナリオを設計することは容易ではないが、SWATでシナリオを作成することは簡単です。 
 
-1. Visit **Scenarios** page of the test set we created.
-2. Click <span class="caret"></span> on the right of the default scenario group `SG0001` and select **Add scenario**. **Test Scenario Builder** page will be displayed. 
-3. **Test Scenario Builder** is divided into three main areas:
- * **Left**: Tree of building blocks, such as system operations, flows and web operations from knowledge base.
- * **Upper Right**: Scenario flow of building block.
- * **Lower Right**: Properties of the selected building block on the scenario flow, including parameters and description.
-4. The **Go to URL** system operation will be automatically inserted to the new scenario flow. It will start a browser and visit the URL of your test site.
-5. To build a scenario, you should drag some system operations, flows, web operations from left and drop them to the scenario flow on the right. 
-6. For each operation, you need to input the parameters for the data in execution.
-7. Fill in the scenario title above the scenario flow and Click **Create** button to complete building a scenario.
-8. The **Scenarios** page will be displayed and you can see the newly created scenario under the default scenario group `SG0001`.
+1. 既に作成したテストセットの**シナリオ**画面を開きます。
+2. シナリオグループ`SG0001`の右側<span class="caret"></span>をクリックし、**シナリオ追加**を選択すると**シナリオビルダー** 画面が表示されます。 
+3. **シナリオビルダー** は、3つのエリアに分かれます。:
+ * **左エリア**: ナレッジベースからシステムオペレーション、フロー、オペレーションが表示されるエリアです。
+ * **右上エリア**: シナリオを作成するエリアです。
+ * **右下エリア**: シナリオの個々のパラメータや説明を含むプロパティをセットするエリアです。
+4. システムオペレーションの **URLへアクセス**は、新しいシナリオフローに自動的に挿入されます。それはテストサイトのURLにアクセスしブラウザを立ち上げます。
+5. シナリオ作成にあたり、左エリアからいくつかのシステムオペレーション、フロー、WebオペレーションをDragし、右エリアへDropしシナリオを作成します。 
+6. それぞれのオペレーションでは、実行させるためのデータをパラメータにセットする必要があります。
+7. シナリオ作成の上にあるシナリオタイトルボックスにタイトルを入力し、**新規**ボタンをクリックしシナリオを完了させます。
+8. **シナリオ一覧**画面では、シナリオグループ`SG0001`配下に新しく作成したシナリオが確認できます。.
 
-Hint: You can click <span class="glyphicon glyphicon-eye-open"></span> besides the search box to open a help/summary/preview window for system operations, flows and web operations.
+ヒント： <span class="glyphicon glyphicon-eye-open"></span> 検索ボックス横のボタンをクリックすると、システムオペレーション、フロー、Webオペレーションのヘルプ、概要、プレビュー画面が参照できます。
 
-Building the Sample Scenario
+サンプルシナリオの作成
 ---
 
-1. On **Test Scenario Builder** of the new Scenario, click the default **Go to URL** system operation.
-2. We need to select `Bing` for **Site** and leave the **URL** blank, which means that we visit the home page of site *Bing*.
-3. Switch the site of the left tree to site *Bing*, and then you will see page *Bing* and *BingSA*.
-4. Drag & drop the *Search* operation under *Bing* to the scenario flow. The operation will be appended to the flow and be activated. 
-5. On the <span class="glyphicon glyphicon-th-list"></span> tab of operation property, the text-box named **Enter your search ...** refers to the search box and 
-the select named **Action** refers to all actions under this operation. (There is only one search button in this operation.)
-6. Though you can enter a keyword directly in the text-box, we prefer to using variable here. So you fill in **Enter your search ...** with `@{Keyword}`. (Please refer to [Web Operation](ref_web_operation.md#Using_Variable) for details of using variables.)
-7. For our sample scenario, we need to select an item in suggestion list instead of clicking *Search* button. So, we have to uncheck the checkbox after **Action** to ignore the parameter. (Please refer to [Web Operation](ref_web_operation.md#Ignoring_Parameter) for details of ignoring parameter.)
-8. Drag & drop the *Suggestion List* under *BingSA* to the scenario flow, and you will see a select named **sa_list** on the data tab. The content of the list is from the page knowledge we imported before.
-9. As the list will change according to the input, we choose **Index Query Mode** of the list by clicking <span class="glyphicon glyphicon-refresh"></span> icon after the select twice. Then Input `@{Index}` in the filed, which means that the item on the position `@{Index}` should be selected during execution. (Please refer to [Web Operation](ref_web_operation.md#Querying_Modes) for details of querying modes.)
-10. The sample scenario is done.
+1. 新しいシナリオの**テストシナリオビルダー**で、システムオペレーションの**URLへ遷移**をクリックします。
+2. **サイト**で`Bing`を選択すると、*Bing*のホームページへアクセスすることを意味します。その下の**URL**はブランクのままにします。
+3. 左エリアでサイトを*Bing*サイトへ切り替えると、*Bing*と*BingSA*画面が確認できます。
+4. シナリオ作成エリアへ*Bing*下の*検索*オペレーションをDrag & dropします。オペレーションはシナリオに追加され、有効化されます。 
+5. このオペレーションのプロパティで<span class="glyphicon glyphicon-th-list"></span>、**Enter your search ...** はテキストボックスが検索ボックスを指し、**アクション選択**はこのオペレーション下の全てのアクションを指します。（このオペレーションの検索ボタンは一つです）
+6. テキストボックスに直接キーワードを入力することができますが、ここでは変数を使用する方が良いでしょう。よって、 **Enter your search ...** への入力は`@{Keyword}`このように指定ください。（変数の利用方法の詳細は[Web Operation](ref_web_operation.md#Using_Variable) を参照ください。)
+7. サンプル·シナリオでは、候補リストの代わりにクリック*検索*ボタンで項目を選択する必要があります。そこで、パラメータを無視するようにアクションの後にチェックボックスをオフにする必要があります。(パラメータを無視する方法の詳細は[Web Operation](ref_web_operation.md#Ignoring_Parameter)を参照ください。)
+8. *BingSA*下の *Suggestion List* をDrag&Dropでシナリオ作成へ、下段に**sa_list**のセレクトボックスが表示されます。リスト名は前にインポートしたナレッジページです。
+9. リストは入力に応じ変更され、アイコン（データ入力モードの切り替え）を二度クリックし、リストを**インデックスクエリモード**にします。フィールドへの入力値を引数`@{Index}`とし、ケース作成時はここの引数にセットされる数字がリストの順番を意味します。(照会モードの詳細はここを[Web Operation](ref_web_operation.md#Querying_Modes)参照ください、。)
+10. これでサンプルシナリオは終了です。
 
-Adding Cases to Scenario
+シナリオへケースを追加
 ---
 
-You can add different sets of data to a scenario as different cases if you use variables in the scenario. With data separated from scenario, you can easily reuse your scenario with with different inputs.
+シナリオで変数設定をしている場合、シナリオに異なるケースとして異なるデータセットを追加することができます。データをシナリオから分離することで、データバリデーションテストを簡単に実施できます。
 
-1. Visit **Scenarios** page of the test set we created.
-2. Click <span class="caret"></span> on the right of the newly created scenario `S0001` and select **Add case**. A dialog will be displayed with **Title** and **KeyWord** and **Index**, which are the names of variables we defined in the scenario.
-3. Fill in **Title** with whatever you like. Fill in **Keyword** with `automation` and **Index** with `2`, which means you enter `automation` to the search box and select the second suggestion on the suggestion list.
-4. Repeat the above steps to add another cases with `test` and `-1` for **Keyword** and **Index**. You will select the last suggestion on the suggest list in this case.
+1. **シナリオ**から既に作成したテストセット画面を開きます。 
+2. 新しく作成したシナリオ`S0001`の右端をクリックし、**ケースを追加**を選択します。 ケース作成・編集のダイアログが開き、シナリオで定義した変数名これら**タイトル**、 **Keyword**、**Index**を設定します。
+3. 何か好きなタイトルを入力します。 **Keyword**には`automation`とし、**Index**には`2`とします。これらの意味は、検索ボックスに`automation`を入力、候補リストの2番目の候補を選択することを指します。
+4. **Keyword**と**Index**に`test`と`1`を設定し、更に他のケースを追加するには上記手順を繰り返えします。 このケースの中で最後に作成したものを選びます。
 
-Hint: You can export/import case table of test set in Excel format. By doing so, you can easily add/modify/delete cases in Excel.
+ヒント：Excelフォーマットでテストセットのテーブルをexport/importすることができます。これを用いることで、Excel上で簡単にケースの追加、変更、削除ができます。
 
-Next Steps
+次へ
 ----
 
-Now we know how to build scenarios and cases. The next step is to run these cases on the execution service.
+ここでシナリオとケースの作成方法を説明しました。次は実行サービスとしてこれらのケースを実行させます。
 
 Go to [Executing Cases](guide_execution.md).
