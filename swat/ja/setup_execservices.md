@@ -82,11 +82,11 @@ BrowserStackサービスの設定
 }
 ```
 
-#### コンフィグレーション文字列
+#### 構成文字列
 
-コンフィグレーション文字列は下記ルールのJSONマップです。
+構成文字列は下記ルールのJSONマップです。
 
-*`"browserstack"`のキーを使い、値として下記キーのコンフィグレーションマップです。
+*`"browserstack"`のキーを使い、値として下記キーの構成マップです。
  * `"enable"`: Use サービスを使うかどうかを決めるのに`true`か`false`を使います。 デフォルト値は`false`です。
  * `"username"`: BrowserStackアカウントのusernameです。
  * `"accesskey"`: BrowserStackアカウントのaccesskeyです。
@@ -105,17 +105,17 @@ BrowserStackサービスの設定
 実行を行うには下記設定が必要です。
 
 * Windows VISTAか7でIE 7以降を使用する場合、同じ値になるようにゾーンごとに保護モードの設定をする必要があります。値は、すべてのゾーンのために同じである限り、オンまたはオフにすることができます。 保護モードを設定するには、[ツール]メニューから "インターネットオプション..."を選択し、[セキュリティ]タブをクリックしてください。各ゾーンについては、「保護モードを有効にする」と記されたタブの下部にあるチェックボックスがあります。
-* さらに、「強化された保護モード「IE10以降のために無効にする必要があります。このオプションは、[インターネットオプション]ダイアログの[詳細設定]タブに含まれています。
+* さらに、「強化された保護モード「IE10以降のために無効にする必要があります。このオプションは、[Internet Option]ダイアログの[詳細設定]タブに含まれています。
 * ネイティブのマウスイベントが正しい座標に設定できるように、ブラウザのズームレベルを100％に設定されなければなりません。
 * IE11のみでは、ドライバがInternet Explorerのインスタンスへの接続を維持できるように、ターゲットコンピュータ上のレジストリエントリを設定する必要があります。 reg fileはここからダウンロードできます。 [here](http://www.smartekworks.com/tools/ie11-get-window-handles.zip).
-* If the website uses basic authentication, you can use the URL in the format like `http://<username>:<password>@yourdomain`. However, IE does not support this type of URL by default. You have to set a registry entry on the target computer. You can download the reg file [here](http://www.smartekworks.com/tools/ie-enable-basic-auth.zip)
+* ウェブサイトで基本認証を使用する場合は、`http://<username>:<password>@yourdomain`のようなフォーマットでURLを使うことができます。しかしながら、IEはデフォルトでこのタイプのURLをサポートしません。 ターゲットコンピュータにレジストリを入力しなければなりません。 reg fileはここからダウンロードできます。 [here](http://www.smartekworks.com/tools/ie-enable-basic-auth.zip)
 
-You should also take care of the following points in execution:
+また、実行中以下の点について注意が必要です。
 
-* As the InternetExplorerDriver uses so-called "native", or OS-level events to perform mouse and keyboard operations in the browser, you have to stop other tasks when using the IE driver for execution to ensure no to interfere the execution.
-* Screenshot cannot be captured normally in execution during the period that you use remote desktop (RDP) to connect execution environment, which is common when you use VM for execution. You also have to disconnect the RDP connect normally before execution.
-* InternetExplorerDriver uses current user's settings and data of IE, which means that cookies from one execution will remains in the next execution. You need to set IE to delete the context data when exit in *Internet Options > General* to ensure the execution starts with a clean context.
+* InternetExplorerDriverが"native"と呼ばれ使用するため、OSレベルでブラウザ上のマウスやキーボード操作を実行するイベントでは、実行を妨げることが無いよう実行のためのIEドライバを使用するとき、他のタスクを停止しなければならない。
+* スクリーンショットは、実行のためのVMを使用するとき、共通で実行環境を接続するためのリモートデスクトップ（RDP)を使う間は正常に実行中のキャプチャを取得することができません。また、RDPを実行前に正常に接続を切断する必要があります。
+* InternetExplorerDriverはIEのデータやセッティングで標準ユーザで使用します。その意味は一つの実行からcookiesは次の実行に残ります。 コンテキストデータを削除してIEの設定が必要です。コンテキストをきれいな状態で実行させるため、*Internet Options > General*exitします。
 
-#### Windows Firewall
+#### WindowsFirewall
 
-If you execute the scenario for the first on Windows with Windows Firewall enabled, there may be a dialog shown to ask whether allow the communication of `IEDriverServer.exe` or `chromedriver.exe`. Please permit the communication. You can also add the permission manually in your windows firewall settings.
+WindowsFiewallを有効にしてWindows上で最初のためのシナリオを実行すると、`IEDriverServer.exe`や` chromedriver.exe`の通信を可能にするようなダイアログで確認があります。その場合、通信を許可してください。また、WIndowsFirewallの設定で、手動でアクセス許可を追加することができます。

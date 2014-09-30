@@ -1,120 +1,118 @@
-Setup SWAT Tools and Integrations
+SWATツールとの統合セットアップ
 ===
 
-We offer several tools and integrations with other services to help you use SWAT more efficiently.
+より効率的にSWATを使用する際に役立ついくつかのツールや他のサービスとの統合を提供しています。
 
-SWAT Capture Tool
+SWATキャプチャーツール
 ---
 
-**SWAT Capture Tool** is a browser extension to capture the HTMLs from you web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
+**SWATキャプチャーツール** は、SWAT画面ナレッジのインポートで使用されるWebアプリケーションをHTMLsでキャプチャするブラウザ拡張機能である.SWATはまたブラウザの機能で*HTMLsとして保存*を使うことでHTMLｓを保存もサポートしてます。しかし、**SWATキャプチャーツール**は、Webアプリケーションのフレーム構造を扱う場合や、HTMLのリアルタイムレンダリングされている場合のキャプチャで使用する必要があります。 
+**SWATキャプチャーツール** は、Google ChromeやInternet Explorerで提供されます。
 
-**SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer.
-
-Attention: As some extensions will modify the DOM of you web pages, it is recommended to uninstall them before using **SWAT Capture Tool**.
+注意：いくつかの拡張機能を使用すると、WebページのDOMを変更するため、** SWATキャプチャツール**を使用する前にそれらをアンインストールすることをお勧めします。
 
 ### Google Chrome
 
-#### Requirements
+#### 条件
 
-* Google Chrome 31 or above 
+* Google Chrome 31以降 
 
-#### Installing the Extensions
+#### 拡張機能のインストール
 
-1. Start Chrome browser and visit the [SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
-2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
+1. Start Chromeブラウザを開き、ChromeのWeb Store画面からSWATキャプチャーツールを開きます。[SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie)
+2. <span class="glyphicon glyphicon-plus"></span> **Free**ボタンをクリックし、拡張機能をインストールします。 ChromeのツールバーにSWATアイコン![SWAT icon](assets/images/extension.png)が表示されます。
 
-#### Using the Extension
+#### 拡張機能の利用
 
-1. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
-2. An SHTML type file will be saved to your default download directory automatically.
+1. 任意のWeb画面を開き、SWATアイコン![SWAT icon](assets/images/extension.png)をクリックします。 
+2. SHTMLタイプのファイルとして自動的にダウンロードディレクトリに保存されます。
 
-Note: The SHTML file format is a kind of HTML container SWAT uses.
+ノート: SHTMLファイルフォーマットはSWATが使うHTMLコンテナの一種です。 
 
 ### Internet Explorer
 
-#### Requirements
+#### 条件
 
-* Internet Explorer 9 or above
+* Internet Explorer 9以降
 * Internet Explorer 32bit
 * [.NET Framework 4.0](http://www.microsoft.com/en-US/download/details.aspx?id=17718)
 
-#### Installing the Extension
+#### 拡張機能のインストール
 
-1. Download the installation package from [here](http://www.smartekworks.com/tools/swat-ie-capture.zip).
-2. Extract the zip file to the installation directory on the target computer.
-3. Run `cmd.exe` as Administrator to open an DOS prompt.
-4. In the DOS prompt, go to the installation directory and run `install.bat`.
+1.弊社のダウンロードページからインストール用zipをダウンロードします。[here](http://www.smartekworks.com/tools/swat-ie-capture.zip)
+2.zipをインストール先に解凍してください。
+3.cmd.exeを検索、それに対して右クリックで「管理者として実行」を選びます。
+4.開いたコマンドウインドにインストールフォルダに入り、install.batを実行します。（アンインストールの場合uninstall.batを実行します）
+端末によって、「Could not load file or assembly or one of its dependencies. Operation is not supported. (Exception from HRESULT: 0x80131515)」のエラーが発生することがあります。その場合、フォルダにある二つのDLLファイルに右クリックし、プロパティに「ブロックの解除」ボタンをクリックし、再度インストールしてください。
 
-In some cases, an error message: *Could not load file or assembly or one of its dependencies. Operation is not supported. (Exception from HRESULT: 0x80131515)* will be displayed. You need to unblock the DLL file with following steps, then redo the above installation from step 3.
+1. Windows Explorerでインストールフォルダーを開きます。
+2. DLLファイルの一つを右クリックし、コンテキストメニューからプロパティを選びます。
+3. ダイアログ結果画面の右下のUnblockボタンをクリックします。
+4. 他のDLLファイルへ同じ操作をします。
 
-1. Open the installation folder in Windows Explorer.
-2. Right click one of the DLL file, and choose Properties from the context menu.
-3. Click the Unblock button in the lower right-hand corner of the resulting dialog.
-4. Do the same on another DLL file.
+#### 拡張機能の利用
 
-#### Using the Extension
+1. 管理者モードでInternet Explorer 32bitを動かします。ブラウザのツールバーにSWATアイコンが表示されます。[SWAT icon](assets/images/extension.png)
+2. 任意のWeb画面を開き、SWATアイコンをクリックします。[SWAT icon](assets/images/extension.png) 
+3. ターゲットフォルダーを選択します。もし**名前を付けて保存**ダイアログを望む場合ファイル名を変え、保存します。
+4. SHTMLタイプとしてファイルはターゲットフォルダーに保存されます。
 
-1. Run Internet Explorer 32bit as Administrator. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
-2. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
-3. Select the target folder and change the filename if you want in **Save As** dialog, and save.
-4. An SHTML type file will be saved to the target folder.
-
-Jenkins Integration
+Jenkinsとの統合
 ---
 
-You can integrate SWAT service with Jenkins to implement a CI with acceptance test. With the integration you can
+SWATサービスは受入テストとしてCIの実装にJenkinsと統合することができます。 統合機能としては下記の通りです。
 
-* Run your cases in SWAT in a Jenkins build.
-* View the test progress in Jenkins
-* View the test result report in Jenkins
+* JenkinsビルドとしてSWATのケースを実行します。
+* Jenkinsでテストの進捗を参照します。
+* Jenkinsでテスト結果レポートを参照します。
 
-#### Installing Jenkins Plugin
+#### Jenkinsプラグインのインストール
 
-1. Copy the [swat-execute-plugin.hpi](http://www.smartekworks.com/tools/swat-execute-plugin.hpi) to `plugins` directory under Jenkins installation directory.
-2. Restart the Jenkins and login.
-3. Visit **Configure System** page through *Manage Jenkins > Configure System*, you will find **SWAT Execution** section added.
-4. Fill in the following parameters and save.
- * **Server URL**: The serverUrl of your SWAT account. You can get this information from **Account Settings** page.
- * **Api key**: The apiKey of your SWAT account. You can get this information from **Account Settings** page.
- * **Secret key**: The secretKey of your SWAT account. You can get this information from **Account Settings** page.
- * **Progress query interval**: Seconds between each progress query. The default value is `30`.
+1. Jenkinsのインストールディレクトリ下に`pligin`ディレクトリ[swat-execute-plugin.hpi](http://www.smartekworks.com/tools/swat-execute-plugin.hpi)をコピーします。
+2. Jenkinsを再起動しログインします。
+3. Jenkins管理からシステム設定を選び、**システム設定**画面を開き、**SWAT実行**セクションに追加されていることが確認できます。 
+4. 下記パラメータを設定し、保存します。
+ * **Server URL**: SWATアカウントのサーバURLです。**アカウント設定**画面からこの情報を得ることができます。
+ * **Api key**: SWATアカウントのapiキーです。**アカウント設定**画面からこの情報を得ることができます。
+ * **Secret key**: SWATアカウントのSecretキーです。**アカウント設定**画面からこの情報を得ることができます。
+ * **Progress query interval**: 各進行クエリ間の時間です。デフォルト値は`30秒`です。
 
-#### Configuring Jenkins Build
+#### Jenkinsビルドの設定
 
-1. Create a project (free-style software project) for executing SWAT cases in Jenkins.
-2. In the **Build** section, add build step **SWAT Execution** and fill in the **Request Information** with SWAT execution request string.
-3. In the **Post-build Actions** section, add post-build action **Publish JUnit test result report** and fill in **Test report XMLs** with `swat_result.xml`.
-4. Save the project.
+1. JenkinsにSWATケースを実行させるためのプロジェクト（フリースタイルソフトウェアプロジェクト）を作成します。
+2. ビルドセッションでは、**SWAT実行**をビルドステップに追加し、 SWAT実行要求の文字列に**要求情報**に入力します。
+3. **ビルド後のアクション**セクションでは、**Publish JUnit test result report**にビルド後のアクションを追加し、**XMLsテストレポート**に`swat_result.xml`を入力します。
+4. プロジェクトを保存します。
 
-#### Obtaining Execution Request String
+#### 実行要求文字列を取得
 
-1. Visit **Scenarios** page in the target test set in SWAT service.
-2. Select the target cases and click **Execute** button.
-3. Modify the options if needed just as creating a new execution.
-4. Instead of clicking **OK** button, choose **Jenkins Request** or **Jenkins Request (Total Set)** from the pull-up list next to the **OK** button.
-5. The **Request Information** dialog will show up with the request string you needed for configuring Jenkins.
+1. SWATサービスのターゲットテストセットにある**シナリオ**画面を表示します。
+2. ターゲットケースを選び、**実行**ボタンをクリックします。
+3. 新しい実行の作成など、必要に応じてオプションを変更します。
+4. **OK**ボタンをクリックする変わりに、 プルアップリストの**Jenkins要求** か **Jenkins要求(Total Set)**を選び、次の**OK**ボタンをクリックします。
+5. **要求情報**ダイアログは、Jenkinsを設定するために必要な要求文字列で表示されます。
 
-JIRA Integration
+JIRAとの統合
 ---
 
-SWAT can use JIRA to replace the internal issue management system. With the integration you can
+SWATは内部の課題管理システムをJIRAに置き換え使用することができます。 統合機能は以下の通りです。
 
-* Create a issue in JIRA project from SWAT.
-* Find the issues related to a certain test result.
-* Switch between SWAT page and your JIRA project page seamlessly.
+* SWATからJIRAプロジェクトへ課題を起票します。
+* 特定のテスト結果に関連する問題を検索します。
+* SWAT画面とJIRAプロジェクト画面とをシームレスに切り替えることができます。
 
-Note: You should ensure that SWAT service can access JIRA service when using the integration. For this reason, usually you can use JIRA OnDemond or JIRA package in SWAT package, while you can only use JIRA OnDemond in SWAT cloud service.
+ノート: SWATサービスは統合機能でJIRAサービスにアクセスすることができることを確認します。 この理由として、 SWATパッケージでJIRAオンデマンドやJIRAパッケージを使うことがで、SWATクラウドサービスでJIRAオンデマンド使うことができます。
 
-#### Configuring JIRA
+#### JIRA設定
 
-* You need at least one JIRA Project.
-* Issue types with the following name used by SWAT should be added to the project.
+* 少なくとも一つのJIRAプロジェクトを必要とします。
+* SWATで使用される課題の種類に関する以下の名前は、プロジェクトに追加する必要があります。
  * `bug`, `duplicate`, `enhancement`, `question`, `others`
 
-#### Configuring SWAT
+#### SWAT設定
 
-1. Visit **Account Settings** page through menu *Management > Account Settings*.
-2. Input the configuration string with your JIRA account information such as the one below to the **Extensions** field. 
+1. サービス設定のアカウント設定を選び、 **アカウント設定**画面を開きます。 
+2. *拡張機能**フィールドに以下のようにJIRAアカウント情報へ構成文字列として入力します。 
 ```json
 {
 	"jira":{
@@ -126,27 +124,27 @@ Note: You should ensure that SWAT service can access JIRA service when using the
 }
 ```
 
-#### Configuration String
+#### 文字列設定
 
-The configuration string is a JSON map with following rules:
+文字列設定は以下ルールを持つJSON mapです。
 
-* Use the key `"jira"`, and the configuration map with following keys as value.
- * `"url"`: The URL of JIRA service.
- * `"username"`: The username of JIRA account.
- * `"password"`: The password of JIRA account.
- * `"project"`: The project name for SWAT. The key is not required, SWAT will use the project code of SWAT for the project name in JIRA if you do not set the key. You should ensure that the target project in JIRA exists in both cases.
+* `"jira"`キーを使い、値として以下キーを持つ設定mapです。
+ * `"url"`: JIRAサービスのURLです。
+ * `"username"`: JIRAアカウントのユーザネームです。
+ * `"password"`: JIRAアカウントのパスワードです。
+ * `"project"`: SWATのプロジェクト名です。 キーを設定しない場合、SWATはJIRA内のプロジェクト名をSWATのプロジェクトコードで使用します。キーは必須ではありません。JIRAの対象プロジェクトは、両方に存在することを確認できます。
  
-Agent API Integration
+エージェントAPIの統合
 ---
 
-During a scenario you can call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming to the [Agent API specification](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
+シナリオ中にDBアクセスのようなファイル操作の拡張操作を実行するために、Webサービスを呼び出すことができます。 拡張操作については、[エージェントのAPI仕様]（ref_agent_api.md）に準拠したエージェントサーバを構築する必要があります。 詳細はこちらを参照ください。[DB Access and File Manipulation](article_api_call.md)
 
-Though you can input the URL of the API directly in **API Call** system operation, you can setup an integration in SWAT, so that you can select the defined API in **API Call** system operation. 
+システムオペレーションの**API CALL**を使い直接APIのURLを入力することができます。またSWATで統合のセットアップを可能とし、システムオペレーションの**API CALL**で定義されたAPIを選択することもできます。
 
-#### Configuring SWAT
+#### SWAT設定
 
-1. Visit **Account Settings** page through menu *Management > Account Settings*.
-2. Input the configuration string with your API information such as the one below to the **Extensions** field.
+1. システム設定からアカウント設定を選び、**アカウント設定**画面を表示します。
+2. **拡張機能**フィールドで以下一つの例としてAPI情報をもつ構成文字列を入力します。 
 ```json
 {
 	"agent_api":{
@@ -157,10 +155,10 @@ Though you can input the URL of the API directly in **API Call** system operatio
 }
 ```
 
-#### Configuration String
+#### 構成文字列
 
-The configuration string is a JSON map with following rules:
+構成文字列は以下るーるをもつJSON　mapです。
 
-* Use the key `"agent_api"` and an API map.
-* The key of the API map is the name and the value is the URL.
-* The configuration string can also contain the key `"jira"` if you are using JIRA integration.
+* Use the key `"エージェントapi"`やAPI mapのキーを使います。
+* API mapのキーは名前で、値はURLです。
+* JIRAの統合を使う場合、構成文字列は`"jira"`キー含むみます。.

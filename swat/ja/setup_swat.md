@@ -1,78 +1,78 @@
-Setup SWAT Server
+SWATサーバーのセットアップ
 ===
 
-We are offering both SWAT cloud service and SWAT package. Though you just need an account for using SWAT cloud service, you need to setup SWAT pacakge to you private server before you can use it.
+SWATはクラウドサービスとパッケージ版の両方を提供してます。 SWATクラウドサービスを利用する場合はアカウント情報が必要で、SWATパッケージ版を利用する場合は事前にプライベートサーバーにセットアップが必要です。
 
-Requirements
+動作環境
 ---
 
-|         | Requirements
+|         | 動作環境
 | ------- | -----------
 | CPU     | 2.2 GHz (Single Core) or above
 | Memory  | 3072 MB (Windows), 2048 MB (Linux)
-| OS      | Windows 7 or above, Mac OS X 10.6 or above, Ubuntu 10.4 or above, Redhat 5 or above (Other linux distribution may also work)
-| Others  | You must have Java SDK 7 installed on your target desktop/VM. 
+| OS      | Windows 7以降、Mac OS X 10.6以降、Ubuntu 10.4以降、Redhat 5以降(その他Linuxの場合、ディストリビューションも動作可能)
+| Others  | Java SDK 7をターゲットPCかVMにインストール必要 
 
 
-Installation Instructions
+インストール手順
 ---
 
-1. Download a packaged release of the latest SWAT.
-2. Setup the JAVA Home and path in your environment settings. For example
-In Windows
+1. 最新版SWATのリリースパッケージをダウンロードします。
+2. JAVA Homeや環境設定のpathをセットアップします。例えば、
+Windowsでは、
 ```
 JAVA_HOME=C:\Program Files\Java\jdk1.7.0_45
 Path=%JAVA_HOME%\bin
 ```
-In Linux
+Linuxでは、
 ```
 JAVA_HOME=/home/ubuntu/jdk1.7.0_45
 PATH=/home/ubuntu/jdk1.7.0_45/bin
 ```
-3. Extract the swat.xx.zip file to the installation directory on your target computer.
-4. If you setup SWAT on platforms other than Windows, you should ensure that the user account running the application must have write permission on the subdirectories.
-5. After server configuration, you can use following commands to start and stop SWAT server.
-In Windows
+3. ターゲットコンピュータ上のインストールディレクトリにswat.xx.zipファイルを展開します
+4. Windows以外のプラットフォームでセットアップした場合、アプリケーションを実行しているユーザーアカウントが、サブディレクトリに対する書き込み権限を持っていることが必要です。
+5. サーバー設定後は、サーバーの起動や停止については以下のコマンドを使用します。
+Windowsの場合
 ```
 <installation directory>/bin/startup.bat
 <installation directory>/bin/shutdown.bat
 ```
-In Linux
+Linuxの場合、
 ```
 <installation directory>/bin/startup.sh
 <installation directory>/bin/shutdown.sh
 ```
 
-Configuration
+設定
 ---
 
-#### Server Configuration
+#### サーバーの設定
 
-As most of the settings can be set from SWAT UI, you only need to config the IP in configuration file through which you can access to SWAT server.
+設定の殆どはSWATのUIからセットすることができます。SWATのサーバにアクセスするための設定ファイルではIPアドレスを設定します。
 
-1. Open `<installation directory>/bin/setenv.bat` or `<installation directory>/bin/setenv.sh` in text editor.
-2. Locate the part `-DswatServer=‘http://IP_ADDRESS:8080’` and change the `IP_ADDRESS` to the actual server address. You should not use local `127.0.0.1` or `localhost` unless you plan to use SWAT server standalone.
+1. テキストエディターで `<installation directory>/bin/setenv.bat` か `<installation directory>/bin/setenv.sh`を開きます。
+2. `-DswatServer=窶鷲ttp://IP_ADDRESS:8080窶兪を確認し、実際のサーバーアドレス`IP_ADDRESS`へ変更します。SWATサーバーをスタンドアロンで使用しない場合は、`127.0.0.1` か `localhost`は使用しません。
 
-#### Account Configuration
+#### アカウントの設定
 
-You need to start the SWAT server and do the remaining account settings in your browser.
+SWATのサーバを起動し、ブラウザに残っているアカウントの設定を行います。
 
-Note: Please use the Internet Explorer 10 or above, latest Chrome, latest Firefox and latest Safari to view SWAT service.
+ノート：SWATサービスを参照するためにInternet Explorer 10以降か、最新版Chrome、最新版Firefox、最新版Safariを使ってください。
 
-1. Execute `<installation directory>/bin/startup.bat` or `<installation directory>/bin/startup.sh` and wait for server startup complete.
-2. Access `http://<IP_ADDRESS>:8080` in your browser.
-3. Login with the initial user/password (`manager`/`12345678`).
-4. Visit **Account Settings** page through menu *Management > Account Settings*, and you will find the information of the account.
-5. Finish the following configuration.
- * Click the **Update** button next to **Plan Information** and input your license code before using SWAT.
- * Select **Internal Language** for language SWAT will use in execution and parsing. (The UI language will be switched according to your browser's preference.)
- * Change the **Timezone** and other settings if you need. (They are explained in [User Guide](guide_start.md), [Setup Execution Services](setup_execservices.md) and [Setup Tools and Integrations](setup_tools.md))
-6. Visit **User Profile** page through menu *manager > Edit Profile*, and change the password. 
-7. You may also setup a new user in **User Management** page through menu *Management > Users*.
+1.`<installation directory>/bin/startup.bat` か `<installation directory>/bin/startup.sh`で実行し、 サーバーの起動完了するまで待ちます。
+2.ブラウザで`http://<IP_ADDRESS>:8080`へ接続します。
+3.user/password (`manager`/`12345678`)でログインします。
+4.メニュータグのサービス設定からアカウント設定を選び、**アカウント設定**画面を表示させます。ここでアカウント情報を参照します。
+5.以下設定を完了させます。
+ * **アップデート**ボタンをクリックし、次にSWATを使用する前に**プラン情報**やライセンスコードを入力します。
+ * SWATの実行と解析で使用するために**内部言語**を選択します。 (UI言語は使用中のブラウザに応じて切り替えます）
+ * 必要に応じ、**タイムゾーン**とその他の設定を変更します。 (これはユーザガイドで説明してます。[User Guide](guide_start.md), [Setup Execution Services](setup_execservices.md) and [Setup Tools and Integrations](setup_tools.md))
+6.TOP画面右上にあるアイコンをクリックし、**プロファイル編集**画面を開き、プロファイルの編集とパスワードの変更をします。 
+7.メニュータグのサービス設定から**ユーザ管理**画面を開き、新しいユーザをセットアップしても構いません。.
 
-Next Steps
+次へ
 ----
 
-After the SWAT server setup, you need to setup [Local Execution Services](setup_execservices.md#Setup_Local_Execution_Server) before you can run you scenario.
+SWATサーバーのセットアップ後、シナリオを実行させる前に [Local Execution Services](setup_execservices.md#Setup_Local_Execution_Server)のセットアップが必要です。
 
-You are strongly recommended to finish the [User Guide](guide_start.md) before starting working on your own web application.
+独自に作業を始める前にユーザガイド [User Guide](guide_start.md)を終了させることをお勧めします。
