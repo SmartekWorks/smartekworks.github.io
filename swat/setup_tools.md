@@ -21,11 +21,11 @@ Attention: As some extensions will modify the DOM of you web pages, it is recomm
 #### Installing the Extension
 
 1. Start Chrome browser and visit the [SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
-2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
+2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](/swat/assets/images/extension.png) icon on toolbar.
 
 #### Using the Extension
 
-1. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
+1. Visit any web pages and click ![SWAT icon](/swat/assets/images/extension.png) icon. 
 2. An SHTML type file will be saved to your default download directory automatically.
 
 ### Mozilla Firefox
@@ -37,11 +37,11 @@ Attention: As some extensions will modify the DOM of you web pages, it is recomm
 #### Installing the Add-on
 
 1. Start Firefox browser and visit the [SWAT Capture Tool page](https://addons.mozilla.org/firefox/addon/firefoxswatcapture/) in the online Firefox Add-ons Marketplace.
-2. Click <span class="glyphicon glyphicon-plus"></span> **Add to Firefox** button to install the add-on. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
+2. Click <span class="glyphicon glyphicon-plus"></span> **Add to Firefox** button to install the add-on. Then you will find ![SWAT icon](/swat/assets/images/extension.png) icon on toolbar.
 
 #### Using the Add-on
 
-1. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
+1. Visit any web pages and click ![SWAT icon](/swat/assets/images/extension.png) icon. 
 2. Select the target folder and change the filename as you wish in **Save As** dialog, and save.
 3. An SHTML type file will be saved to the target folder.
 
@@ -69,8 +69,8 @@ In some cases, an error message: *Could not load file or assembly or one of its 
 
 #### Using the Extension
 
-1. Run Internet Explorer 32bit as Administrator. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
-2. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
+1. Run Internet Explorer 32bit as Administrator. Then you will find ![SWAT icon](/swat/assets/images/extension.png) icon on toolbar.
+2. Visit any web pages and click ![SWAT icon](/swat/assets/images/extension.png) icon. 
 3. Select the target folder and change the filename as you wish in **Save As** dialog, and save.
 4. An SHTML type file will be saved to the target folder.
 

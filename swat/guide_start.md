@@ -11,7 +11,7 @@ In the [Introduction](index.md) you got a taste of what SWAT is and how it works
 We will teach you following steps on how to use SWAT:
 
 * Construct the page knowledge base of you web application.
-* Build scenarios with page knowledge and flow knowledge.
+* Build scenarios with page knowledge.
 * Run test cases on different platforms.
 
 We will try to cover SWAT functions as much as possible in this guide. However, to keep the guide simple, we will offer links to the detailed instructions, specifications and articles if we can. Finally, you are also encouraged to explore SWAT through SWAT's intuitive web based UI.

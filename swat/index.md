@@ -61,7 +61,7 @@ Next Steps
 
 #### Obtaining SWAT Trial Account
 
-Visit [SWAT trial application page (Japanese only)](http://www.smartekworks.com/trial.html) or mail [us](mailto:sales@smartekworks.com) to apply for a trial account. 
+Visit [SWAT free plan page (Japanese only)](http://www.smartekworks.com/free.html) to apply for a free account. 
 
 #### The SWAT User Guide
 

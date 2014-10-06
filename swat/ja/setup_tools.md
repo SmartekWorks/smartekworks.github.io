@@ -1,13 +1,13 @@
-SWATツールとの統合セットアップ
+ツールおよび他システム連携のセットアップ
 ===
 
 より効率的にSWATを使用する際に役立ついくつかのツールや他のサービスとの統合を提供しています。
 
-SWATキャプチャーツール
+SWATキャプチャー
 ---
 
-**SWATキャプチャーツール** は、SWAT画面ナレッジのインポートで使用されるWebアプリケーションをHTMLsでキャプチャするブラウザ拡張機能である.SWATはまたブラウザの機能で*HTMLsとして保存*を使うことでHTMLｓを保存もサポートしてます。しかし、**SWATキャプチャーツール**は、Webアプリケーションのフレーム構造を扱う場合や、HTMLのリアルタイムレンダリングされている場合のキャプチャで使用する必要があります。 
-**SWATキャプチャーツール** は、Google ChromeやInternet Explorerで提供されます。
+**SWATキャプチャー** は、SWAT画面ナレッジのインポートで使用されるWebアプリをHTMLsでキャプチャするブラウザ拡張機能である.SWATはまたブラウザの機能で*HTMLsとして保存*を使うことでHTMLｓを保存もサポートしてます。しかし、**SWATキャプチャー**は、Webアプリのフレーム構造を扱う場合や、HTMLのリアルタイムレンダリングされている場合のキャプチャで使用する必要があります。 
+**SWATキャプチャー** は、Google ChromeやInternet Explorerで提供されます。
 
 注意：いくつかの拡張機能を使用すると、WebページのDOMを変更するため、** SWATキャプチャツール**を使用する前にそれらをアンインストールすることをお勧めします。
 
@@ -19,12 +19,12 @@ SWATキャプチャーツール
 
 #### 拡張機能のインストール
 
-1. Start Chromeブラウザを開き、ChromeのWeb Store画面からSWATキャプチャーツールを開きます。[SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie)
-2. <span class="glyphicon glyphicon-plus"></span> **Free**ボタンをクリックし、拡張機能をインストールします。 ChromeのツールバーにSWATアイコン![SWAT icon](assets/images/extension.png)が表示されます。
+1. Start Chromeブラウザを開き、ChromeのWeb Store画面からSWATキャプチャーを開きます。[SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie)
+2. <span class="glyphicon glyphicon-plus"></span> **Free**ボタンをクリックし、拡張機能をインストールします。 ChromeのツールバーにSWATアイコン![SWAT icon](/swat/assets/images/extension.png)が表示されます。
 
 #### 拡張機能の利用
 
-1. 任意のWeb画面を開き、SWATアイコン![SWAT icon](assets/images/extension.png)をクリックします。 
+1. 任意のWeb画面を開き、SWATアイコン![SWAT icon](/swat/assets/images/extension.png)をクリックします。 
 2. SHTMLタイプのファイルとして自動的にダウンロードディレクトリに保存されます。
 
 ノート: SHTMLファイルフォーマットはSWATが使うHTMLコンテナの一種です。 
@@ -52,8 +52,8 @@ SWATキャプチャーツール
 
 #### 拡張機能の利用
 
-1. 管理者モードでInternet Explorer 32bitを動かします。ブラウザのツールバーにSWATアイコンが表示されます。[SWAT icon](assets/images/extension.png)
-2. 任意のWeb画面を開き、SWATアイコンをクリックします。[SWAT icon](assets/images/extension.png) 
+1. 管理者モードでInternet Explorer 32bitを動かします。ブラウザのツールバーにSWATアイコンが表示されます。[SWAT icon](/swat/assets/images/extension.png)
+2. 任意のWeb画面を開き、SWATアイコンをクリックします。[SWAT icon](/swat/assets/images/extension.png) 
 3. ターゲットフォルダーを選択します。もし**名前を付けて保存**ダイアログを望む場合ファイル名を変え、保存します。
 4. SHTMLタイプとしてファイルはターゲットフォルダーに保存されます。
 

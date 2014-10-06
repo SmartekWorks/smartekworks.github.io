@@ -10,7 +10,7 @@
 * [シナリオ作成](guide_scenarios.md)
 * [テスト実行](guide_execution.md)
  
-[導入手順]()
+[セットアップ]()
 
 * [SWATサーバー](setup_swat.md)
 * [実行サービス](setup_execservices.md)

@@ -8,13 +8,13 @@ Installing SWAT Capture tool
 
 **SWAT Capture Tool** is a browser extension to capture the HTMLs from your web application which is used in SWAT page knowledge import. SWAT also support HTMLs you save by using *Save As HTML* function of your browser. However, as **SWAT Capture Tool** can handle frame structure in web application and capture realtime rendered HTML, you should use it if the web application is in the above cases.
 
-**SWAT Capture Tool** is currently offered on Google Chrome and Internet Explorer. we will use Chrome in this guide. Please refer to [Setup Tools and Integrations](setup_tools.md#SWAT_Capture_Tool) for details of the setup. 
+**SWAT Capture Tool** is currently offered on Google Chrome, Mozilla Firefox and Internet Explorer. we will use Chrome in this guide. Please refer to [Setup Tools and Integrations](setup_tools.md#SWAT_Capture_Tool) for details of the setup. 
 
 To install and use the extension in Chrome is simple. Just follow the steps below
 
 1. Start Chrome browser and visit the [SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
-2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](assets/images/extension.png) icon on toolbar.
-3. Visit any web pages and click ![SWAT icon](assets/images/extension.png) icon. 
+2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](/swat/assets/images/extension.png) icon on toolbar.
+3. Visit any web pages and click ![SWAT icon](/swat/assets/images/extension.png) icon. 
 4. An SHTML type file will be saved to your default download directory automatically.
 
 Preparing HTMLs for import
@@ -23,9 +23,9 @@ Preparing HTMLs for import
 In the *Bing Search Assistant* sample scenario, you need two HTMLs, one the search page and the search page with search assistant.
 
 1. Visit http://www.bing.com in your browser with **SWAT Capture Tool**.
-2. Click ![SWAT icon](assets/images/extension.png) icon after the search page is loaded. A file named `Bing.shtml` will be saved.
+2. Click ![SWAT icon](/swat/assets/images/extension.png) icon after the search page is loaded. A file named `Bing.shtml` will be saved.
 3. Input any keyword in the search box and wait until search assistant, the pull-down list with keyword suggestions is displayed.
-4. Click ![SWAT icon](assets/images/extension.png) icon again to save the search page with search assistant, and rename the file to `BingSA.shtm
+4. Click ![SWAT icon](/swat/assets/images/extension.png) icon again to save the search page with search assistant, and rename the file to `BingSA.shtm
 
 Hint: Actually, `BingSA.shtml` contains all the information in `Bing.shtml`. So it is possible that we use only the latter. We will use two pages in this guide for demonstration.
 
