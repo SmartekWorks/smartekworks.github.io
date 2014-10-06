@@ -1,32 +1,32 @@
-Knowledge Rule DSL
+DSLナレッジルール
 ===
 
-SWAT Knowledge rule is a kind of Domain-specific language to describe how to interact with a web page. Though SWAT knowledge engine has the ability to analyse web pages, it needs knowledge rules to help handle some specific implementations of web pages. 
+SWATのナレッジルールは、Web画面と対話する方法を説明するためのドメイン固有言語の一種です。SWATナレッジエンジンは、ウェブ画面を分析する能力を持っているが、ウェブ画面のいくつか特別な実装を取扱うためにはナレッジルールを必要です。
 
-What is Knowledge Rule for?
+ナレッジルールとは何か？
 ---
 
-You will have a default knowledge rule for each site by default, in which the most common interactions are defined. You can modify a default knowledge rule for the following purposes.
+最も一般的な画面の作りで定義されているデフォルトでは、各サイトはデフォルトのナレッジ·ルールを持ちます。以下の目的のために、デフォルトのナレッジ·ルールを変更することができます。
 
-* To add an operation without interactive HTML tags. It is usually necessary when you use Javascript or JS library to make a non-interactive HTML tag such as `div` interactive. You can find a sample in [User Guide](guide_tuning.md#Tuning_Page_Parsing).
-* To change the default operation size. Mostly the default rule will extract operations in proper size according to the general usability. However, sometimes you may want to merge several operations to a bigger one or split one into several smaller operations. You can do so by modify the default rule.
-* To change the policy of how to locate the operations and the nodes in execution. As cases are usually executed on dynamic pages instead of static pages, you need a locator policy for reliable automation. Ad most web applications do not have a good unified locator policy such as using HTML attributes such as `id` and `name`, you may need to set different locating polices for different nodes, operations in the knowledge rule.
-* To change the policy of how to obtain the label of operations and nodes. SWAT will try to obtain the label from the HTML for the title of the object when extracting operations and nodes. You can change the default policy to a more suitable one for your web application.
+* インタラクティブなHTMLタグなしにオペレーションを追加する。 そのようなdiv`インタラクティブ`のような非対話型のHTMLタグを作成するJavascriptやJSのライブラリを使用する際には通常必要です。[User Guide](guide_tuning.md#Tuning_Page_Parsing).でサンプルが参照できます。
+* デフォルトのオペレーションサイズを変更します。主にデフォルトの規則は、一般的な使いやすさに応じて適切なサイズでのオペレーションを抽出します。しかし、時には1より大きい複数の操作をマージしたり、いくつか小さな演算を分割することができます。デフォルトルールを変更することによって可能です。
+* オペレーションの検索方法の方針と実行中のノードを変更します。場合によっては、静的画面が動的画面上で実行されているとして、信頼性の高い自動化のためのロケータ方針が必要。殆どのWebアプリケーションは`id``name`のようなHTMLを使い、統一されたロケーター方針を持ちません。ナレッジルールのオペレーションで異なるノードの異なるロケーター方針設定することが必要。、
+* オペレーションとノードのラベルを取得する方法の方針を変更します。SWATはオペレーションとノードを抽出する際にオブジェクトのタイトルのHTMLからラベルを取得しようとします。 Webアプリケーションの適切なかたちのにデフォルトポリシーを変更することができます。
 
-Note: The default rule will be updated occasionally for better compatibility. We are also planning to offer several template rules for different kinds of implementations.
+ノート: デフォルトルールは、より良い互換性のために随時更新されます。 また異なる種類の実装のためにいくつかのテンプレートルールを提供する予定です。
 
-Basics of Knowledge Rule
+ナレッジルールの基礎
 ---
 
-### Knowledge Rule Management
+### ナレッジルールの管理
 
-Knowledge rules are basically designed for a specific group of web pages such as all web pages in a web application. Therefore, knowledge rules are managed under a web application or SWAT site. However as you may have several types of implementation in a web application, you can have several rules under a site. You can even add a knowledge rule for a specific web page, though we do not recommend you do so for maintenance issues.
+ナレッジルールは、WebアプリケーションのすべてのWeb画面を特定グループで設計されています。そのため、ナレッジルールは、WebアプリケーションやSWATサイトの下で管理されています。Webアプリケーションでの実装にはいくつかのタイプを持っているため、サイトの下に、いくつかのルールを設定できます。お勧めしませんが、メンテナンスを楽にするために特定のWeb画面のナレッジルールを追加することができます。
 
-Each version of page knowledge in SWAT is related to a rule under the same site. SWAT handles the page knowledge based on that rule, so the knowledge rule cannot be modified once it has been used. You can only add a new rule to upgrade the page knowledge, which will add a new version of page knowledge.
+SWATの画面ナレッジの各バージョンは、同じサイトの下の規則に関連しています。SWATはそのルールに基づいて画面ナレッジを扱うので、それが使用された後、ナレッジルールを変更することはできません。画面ナレッジの新しいバージョンを追加するには、画面ナレッジをアップグレードし、新しいルールを追加することができます。
 
-### Syntax
+### 構文
 
-Knowledge Rule is a JSON map string with several keys to define the following components. The details of the syntax for each component will be explained later.
+ナレッジルールは、以下のコンポーネントを定義し、いくつかのキーを使用するJSON　MAP文字列です。各コンポーネントの構文の詳細については後述します。
 
 ```json
 {
@@ -42,20 +42,20 @@ Knowledge Rule is a JSON map string with several keys to define the following co
 	}
 }```
 
-* `singleNodes`: Single node is an atomic interactive node we need to interact in the operation, such as an input, a button.
-* `collectionNodes`: Collection node is a group of single nodes or even other collection nodes with certain relations, such as several inputs in a form which you need to interact one by one, several links in a link list which you need to choose one from the list.
-* `operations`: Operation is a special collectionNode which will finally be extracted as the operation of page knowledge.
-* `labelPolicies`: Label policy defines how to retrieve the label for a single node and collection node when generating page knowledge.
-* `locatorPolicies`: Locator policy defines how to locate a single node and a collection node in execution.
+* `singleNodes`: シングルノードは、入力としてのボタンで、オペレーションで対話する必要があるアトミック対話型のノードです。
+* `collectionNodes`: コレクションノードはシングルノードや更に特定の関係で他のコレクションノードの集まり、そのような一つずつ対話する必要がある形で、いくつかの入力として、リンクリスト内のいくつかのリンクは、リストから1つを選択する必要があります。
+* `operations`: オペレーションは最終的にページナレッジのオペレーションとして抽出される特別なcollectionNodeです。
+* `labelPolicies`: ラベルポリシーは、画面ナレッジを生成する際に、単一ノードと収集ノードのラベルを取得する方法を定義します。
+* `locatorPolicies`: ロケータポリシーは、単一ノードと実行中の収集ノードを配置する方法を定義します。
 
-The `singleNodes`, `collectionNodes` and `operations` are the most important components and they are required for every rules, while the `labelPolicies` and `locatorPolicies` are not required.
+`singleNodes`、`collectionNodes`、`operations`は最も重要なコンポーネントです。それらはすべてのルールのために必要とされ、`labelPolicies`、`locatorPolicies`は必要としません。
 
-Syntax of Core Components
+コアコンポーネントの構文
 ---
 
-### Definition of Single Nodes
+### シングルノードの定義
 
-Single nodes are defined as a JSON map with keys for the node code of the nodes and values for the definition. The node code can be referenced from the definition of a collection node. Below is the sample. 
+シングルノードは、ノードと値を定義するノードコードのキーを使用してJSON MAPが定義されます。 ノードコードは収集ノードの定義から参照することができます。 下記サンプルを参照。 
 
 ```json
 {
@@ -66,30 +66,30 @@ Single nodes are defined as a JSON map with keys for the node code of the nodes 
 }
 ```
 
-The definition of a single node is a JSON map containing values for following keys:
+単一ノードの定義は、以下キーの値を含むJSON MAPです。
 
-* `"selectors"`: **(Required)** A JSON list of CSS selectors defining nodes in the HTML DOM.
-* `"decisive"`: **(Required)** `true` or `false` indicating whether the node would complete an operation or not. For example, you usually use `true` for buttons, and use `false` for text-boxes.
-* `"action"`: **(Required)** Action code indicating the type of node interaction. Please refer to the action code table below.
-* `"label"`: **(Optional)** Label policy code indicating which label policy should be used for the node.
-* `"locator"`: **(Optional)** Locator policy code indicating which locator policy should be used for the node.
-* `"group"`: **(Optional)** A JSON Map defining how to group the single nodes such as a group of radios and checkboxes. The definition contains values for following keys.
- * `"by"`: **(Optional)** The attribute name used to group the nodes. `"name"` is used by default.
- * `"label"`: **(Optional)** Label policy code for the whole group.
- * `"locator"`: **(Optional)** Locator policy code for the whole group.
+* `"selectors"`: **(Required)** HTML DOM内のノードを定義するCSSセレクタのJSONリスト。
+* `"decisive"`: **(Required)** `成功`か`失敗` のノードがオペレーションを完了するか、しないかどうかを示す。たとえば、通常のボタンには `成功`を使用し、テキストボックスには`失敗`を使用します。
+* `"action"`: **(Required)** ノードとの対話のタイプを示すアクションコード。下記のアクションコード表を参照してください。
+* `"label"`: **(Optional)** ラベルポリシーコードはラベルポリシーがノードに使用されることを示します。
+* `"locator"`: **(Optional)** ロケーターポリシーコードはロケーターポリシーがノードに使用されることを示します。
+* `"group"`: **(Optional)** JSON Mapはどのグループの単一ノードに、ラジオやチェックボックスのグループとするか定義します。 定義には以下のキーが含まれます。
+ * `"by"`: **(Optional)** ノードをグループ化するために使用する属性名。 `"名前"`がデフォルトで使用されます。
+ * `"label"`: **(Optional)** グループ全体のラベルポリシーコード。
+ * `"locator"`: **(Optional)** グループ全体のロケーターポリシーコード。
 
-Action code table:
+アクションコードテーブル:
 
-| Action          | Explanation
+| Action          | 説明
 | --------------- | -----------
-| `"type"`        | Type some text into the node such as a text input.
-| `"upload"`      | Set a file path into the node such as a file input.
-| `"select"`      | Select the node such as an option of a select.
-| `"check"`       | Check the node such as a checkbox.
-| `"click"`       | Click the node such as a button.
-| `"moveTo"`      | Move mouse cursor to the node such as a hover button.
-| `"rightClick"`  | Right click the node such as a link with context menu.
-| `"doubleClick"` | Double click the node such as an area with double click interaction.
+| `"type"`        | テキスト入力などのノードにテキストを入力。
+| `"upload"`      | ファイル入力などのノードにファイルパスを設定。
+| `"select"`      | 選択のオプションなどのコードを選択
+| `"check"`       | チェックボックスなどのノードをチェック
+| `"click"`       | ボタンなどのノードをクリック
+| `"moveTo"`      | バーボタンとしてノードにマウスカーソルを移動
+| `"rightClick"`  | コンテキストメニューのリンクなどのノードを右クリック
+| `"doubleClick"` | インターラクションをダブルクリックし領域などのノードをダブルクリック
 
 
 ### Definition of Collection Nodes
@@ -98,33 +98,33 @@ Collection nodes are defined as a JSON map with keys for the node code of the no
 
 ```json
 {
-	"collectionNodes":{
+	"コレクションノードの定義"
+	{
 		"form":{"selectors":["*"],"children":["text", "textarea", "upload", "checkbox", "radio", "select", "multiSelect", "buttonGroup"], "action":"and", "label":"block", "locator":"block"},
 		"buttonGroup":{"selectors":["*"], "children":["button", "link"], "action":"or", "label":"block", "locator":"block"},
 	}
 }
 ```
 
-The definition of a collection node is a JSON map containing values for following keys:
+コレクションノードの定義は、以下キーの値を含むJSON MAPです。:
 
-* `"selectors"`: **(Required)** A JSON list of CSS selectors defining nodes in the HTML DOM. You can use `"*"` to indicate the same as parent node or the operation.
-* `"children"`: **(Required)** A JSON list of single nodes or collection nodes which should be included in the collection node.
-* `"action"`: **(Required)** Action code indicating the type of the interaction. Please refer to the action code table below.
-* `"label"`: **(Optional)** Label policy code indicating which label policy should be used for the node.
-* `"locator"`: **(Optional)** Locator policy code indicating which locator policy should be used for the node.
+* `"selectors"`: **(Required)** HTML DOM内のノードを定義するCSSセレクタのJSONのリスト. 親ノードまたはオペレーションと同じことを示すために`" *"`使用することができます。
+* `"children"`: **(Required)** コレクションノードに含まれるべき単一ノードまたはコレクションノードのJSON形式のリスト。
+* `"action"`: **(Required)** インタラクションの種類を示すアクションコード。下記のアクションコード表を参照。
+* `"label"`: **(Optional)** ラベルポリシーコードはノードに使用されるラベルポリシーを示す
+* `"locator"`: **(Optional)**ロケータポリシーコードはノードに使用されるロケーターポリシーを示す
 
-Action code table:
+アクションコードテーブル
 
-| Action    | Explanation
+| Action    | 説明
 | --------- | -----------
-| `"and"`   | Interact with each children node one by one.
-| `"or"`    | Select a child node from children and interact with it.
-| `"multi"` | Select several children nodes from children and interact with them. This action is only used in `multi-select`.
+| `"and"`   | 1対１で各々子供たちが対話.
+| `"or"`    | 子供たちから子ノードを選択し対話する。
+| `"multi"` | 子どもたちから複数の子ノードを選択し、それらと対話。このアクションは、`マルチSELECT`で使用。
 
+### コレクションのノードの定義（繰り返し）
 
-### Definition of Collection Nodes (Repetitive)
-
-Among the collection nodes, you can define a special kind of collection nodes, which contains repetitive, usually dynamic nodes such as a table with rows of different data or a list of search results. Below is the sample. 
+コレクションノードで、異なるデータ行や検索結果の一覧として動的ノードが繰り返し含まれるような、特別な種類を定義することができます. 以下はサンプルです。 
 
 ```json
 {
@@ -135,18 +135,17 @@ Among the collection nodes, you can define a special kind of collection nodes, w
 }
 ```
 
-There are some differences in repetitive collection node definitions. Firstly, you have to define the parent collection node and child collection node in a set. Secondly, You do not need to define `"action"`, `"label"` and `"locator"` because the mechanism of handling repetitive collection node is quite different. At last, you need to define values for following new keys in the parent node.
+繰返しコレクションノードの定義にいくつかの違いがあります。まず、セット内の親コレクションノードと子コレクションノードを定義する必要があります。次に、`"アクション"を定義する必要はありません`、 `"ラベル"`と`"ロケータ"`繰返しコレクターノードを処理するメカニズムが全く異なるためです。最後に、親ノードに新しいキーを以下の値で定義する必要があります。
 
-* `"repetitive"`: **(Required)** It should always be `true` in parent repetitive collection node.
-* `"similarity"`: **(Required)** A float number from `0` to `1`, which indicates whether to think similar children nodes are repetitive. the larger is the more strict. 
-* `"combination"`: **(Required)** An Integer number from `1` to `9`, which indicates how many neighbour children nodes can be combined as a repetitive unit. For example, you may need to set the combination to `2`, if you use two `tr` with `row-span=2` to make a logical row in a table.
-* `"percentage"`: **(Required)** A float number from `0` to `1`, which indicates whether to think the parent node is a repetitive collection nodes. The repetitive children nodes / all children nodes has to be larger than the value to make the parent a valid repetitive node.
+* `"repetitive"`: **(Required)** 常に親の繰返しコレクションノードでは` true`にする必要があります。
+* `"similarity"`: **(Required)** 同じような子ノードが繰返しを示すfloat番号は0から1にします。大きいほど、より厳格。
+* `"combination"`: **(Required)** 多くの隣人の子ノードは繰返す単位として組み合わせることができる性数値は1から9までです。例えば、テーブルに論理行を作る`row-span=2`で`tr`を2つ使うなら、'2'に組み合わせを設定する必要があります。
+* `"percentage"`: **(Required)** 親ノードを考えているかどうかを示すフロート数 `0'から`1`は、繰返しコレクションノードです。.繰返し子ノード/すべての子ノードは、親の有効な繰返しノード値よりも大きくなければなりません。
 
-Hint: The definition of repetitive node is quite complicated. We recommend you start with the default rule, and make some experiment before modification.
+ヒント: 繰返しノードの定義は非常に複雑です。まずはデフォルトのルールで始め、変更する場合はいくつか試しを行うことをお勧めします。
 
-### Definition of Operations
-
-Operations are defined as a JSON list of definitions of operation. As the knowledge engine will analyse the operations in sequence, you should take care of the order too. Below is the sample. 
+### オペレーションの定義
+オペレーションは、JSON形式のリストとして定義されます。ナレッジエンジンはシーケンス内の業務を分析したように、順番に注意する必要があります。以下がサンプルです。 
 
 ```json
 {
@@ -157,19 +156,19 @@ Operations are defined as a JSON list of definitions of operation. As the knowle
 }
 ```
 
-The definition of an operation is a JSON map containing values for following keys:
+オペレーションの定義は、以下キーの値を含むJSON MAPです。
 
-* `"selectors"`: **(Required)** A JSON list of CSS selectors defining the operation search area in the HTML DOM.
-* `"collectionNode"`: **(Required)** The Collection node to be extracted as an operation in the operation search area.
-* `"nesting"`: **(Required)** `outer` or `inner` indicating the search sequence in the area. `inner` means to search the operation from bottom of the DOM tree while `outer` means to search from the top of the DOM tree. For example, if the selectors contains a nested `"div"`, the result will be influenced by the value.
+* `"selectors"`: **(Required)** HTML DOMのオペレーション検索領域を定義するCSSセレクタのJSONのリスト
+* `"collectionNode"`: **(Required)** コレクションノードは、オペレーション探索領域での動作として抽出
+* `"nesting"`: **(Required)** `outer` か `inner`はエリア内の検索順序を示します。  `inner`はDOMツリーの一番下からの操作を検索することを意味し、`outer`は、DOMツリーのトップから検索することを意味します。例えば、セレクターにネスト`"div"`が含まれているなら、結果は値により影響を受けます。
 
 
-Syntax of Supportive Components
+持的コンポーネントの構文
 ---
 
-### Definition of Label Policies
+###ラベルポリシーの定義
 
-The label policies are defined as a JSON map. Each entry stands for a single label policy with the key as the policy code which can be referenced in node definitions. Here is the sample:
+ラベルポリシーはJSON mapとして定義されます。 各エントリは、ノード定義で参照できるポリシーコードのようなキーを持つ単一のラベルポリシーの略です。ここにサンプルを示します。
 
 ```json
 {
@@ -181,30 +180,30 @@ The label policies are defined as a JSON map. Each entry stands for a single lab
 }
 ```
 
-Each label policy consists of a series of atomic labelling mechanisms in order. All these mechanisms will be processed in sequence until one returns a non-empty string. Detailed explanation could be referenced as below:
+各ラベルポリシーは、順番に、原子ラベリングメカニズムのシリーズで構成されています。すべてのこれらのメカニズムは空でない文字列を一つ返すまで順に処理されます。詳細な説明は、以下参照ください。
 
-| Mechanism    				| Explanation
+| Mechanism    				| 説明
 | --------- 				| -----------
-| `"label"` 				| The text of the ```<label>``` node corresponding to the target node. The `id` value of the target node should be the same as the `for` value of the ```<label>``` node.
-| `"text"` 					| Get the text owned by the target node only, otherwise get the combined text of all children.
-| `"prevSibling"`   		| The text of the previous sibling node in DOM tree.
-| `"nextSibling"`   		| The text of the next sibling node in DOM tree.
-| `"parentPrevSibling"`   	| The text of the previous sibling node of the target's parent node in DOM tree.
-| `"parentNextSibling"`  	| The text of the next sibling node of the target's parent node in DOM tree.
-| `"parentTdPrevSibling"`   | The text of the previous ```<td>``` node corresponding to the nearest ```<td>``` containing the target's parent node in DOM tree.
-| `"imgChild"` 				| The `id`, `alt` or `title` value of the ```<img>``` child node.
-| `"firstChild"`   			| The text of the first child node.
-| `"alt"`   				| The value of the target node's attribute `alt`.
-| `"title"`   				| The value of the target node's attribute `title`.
-| `"id"`	   				| The value of the target node's attribute `id`.	
-| `"name"`   				| The value of the target node's attribute `name`.
-| `"placeholder"`  			| The value of the target node's attribute `placeholder`.
-| `"value"`   				| The value of the target node's attribute `value`.
+| `"label"` 				| ターゲットノードに対応する```<ラベル>` ``ノードのテキスト。 ターゲットノードの`id`値が``<ラベル>`` ノードの` for`値と同じでなければなりません。
+| `"text"` 					| ターゲットノードが所有するテキストを取得しそれ以外の場合はすべての子供の合計テキストを取得。
+| `"prevSibling"`   		| DOMツリー内の直前の兄弟関係ノードのテキスト。
+| `"nextSibling"`   		| DOMツリー内の直後の兄弟関係ノードのテキスト。
+| `"parentPrevSibling"`   	| DOMツリー内のターゲット親ノードに対して直前の兄弟関係ノードのテキスト。
+| `"parentNextSibling"`  	| DOMツリー内のターゲット親ノードに対して直後の兄弟関係ノードのテキスト。
+| `"parentTdPrevSibling"`   | `<TD>` ノード前のテキストは DOMツリー内のターゲットの親ノードを含む最寄り```<TD>` ``に対応します。
+| `"imgChild"` 				| 子ノード ```<img>```の`id`、`alt`、`title`値。
+| `"firstChild"`   			| 最初の子ノードのテキスト。
+| `"alt"`   				| ターゲットノード属性の値 `alt`.
+| `"title"`   				| ターゲットノード属性の値 `title`.
+| `"id"`	   				| ターゲットノード属性の値 `id`.	
+| `"name"`   				| ターゲットノード属性の値 `name`.
+| `"placeholder"`  			| ターゲットノード属性の値 `placeholder`.
+| `"value"`   				| ターゲットノード属性の値 `value`.
 
 
-### Definition of Locator Policies
+### ロケータポリシーの定義
 
-The locator policies are defined as a JSON map. Each entry stands for a single locator policy with the key as the policy code which can be referenced in node definitions. Here is the sample:
+ロケータポリシーは、JSON　MAPとして定義されます。各エントリは、ノード定義で参照できるポリシーコードのようなキーを使用し、単一のロケータポリシーのことです。ここでサンプルを参照。
 
 ```json
 {
@@ -215,24 +214,23 @@ The locator policies are defined as a JSON map. Each entry stands for a single l
 	}	
 }
 ```
-Each locator policy consists of a series of atomic locating mechanisms in order. All these mechanisms will be processed in sequence until one can locate the node uniquely. The output nodes of the previous mechanism will act as the input of the next one. Detailed explanation could be referenced as below:
-
-| Mechanism    	| Explanation
+各ロケータポリシーは、順番に、原子の位置決めメカニズムのシリーズで構成されます。すべてのこれらのメカニズムは一意のノードを見つけるまで順に処理されます。前回のメカニズムの出力ノードは、次回1の入力として機能します。詳細な説明は以下参照
+ Mechanism    	| 説明
 | --------- 	| -----------
-| `"name"` 		| Get nodes with the same `name` as the target node.
-| `"id"` 		| Get nodes with the same `id` as the target node.
-| `"value"`		| Get nodes with the same `value` as the target node.
-| `"class"`		| Get nodes with the same `class` as the target node.
-| `"xpath"`		| Get nodes with the same `xpath` as the target node. Here the `xpath` is the one relative to its parent in operation knowledge tree.
-| `"label"`		| Get nodes with the same `label` as the target node. Here the `label` is the one generated by its label policy.
+| `"name"` 		| ターゲットノードと同じ`name`でノードを取得する。
+| `"id"` 		| ターゲットノードと同じ`id`でノードを取得する。
+| `"value"`		| ターゲットノードと同じ`value`でノードを取得する。
+| `"class"`		| ターゲットノードと同じ`class`でノードを取得する。
+| `"xpath"`		| ターゲットノードと同じ`xpath`でノードを取得する。 ここで`xpath`はオペレーションナレッジツリー内の親への1つのつながりです。
+| `"label"`		| ターゲットノードと同じ`label`でノードを取得する。 ここで`label`はラベルポリシーによって生成されたものです。
 
 
-Case Studies
+ケーススタディ
 ---
 
-### Extend existing default rules
+### 既存のデフォルトルールを拡張
 
-The default knowledge rule leverages the standard HTML specification, and sometimes need to be extended especially when some UI library is introduced into the web site. Here is the sample code snippet of a jQuery UI dialog:
+デフォルトのナレッジ·ルールは、標準のHTML仕様を活用し、時には、いくつかのUIライブラリはウェブサイトに導入される時に特別に拡張される必要があります。 ここではjQueryUIダイアログのサンプルコードスニペットです。
 
 ```
 <div class="ui-dialog ui-widget">
@@ -255,7 +253,7 @@ The default knowledge rule leverages the standard HTML specification, and someti
 </div>
 ```
 
-In regards to the above HTML, the default rule will extract the `<form>` block as one operation, and the `<div class="ui-dialog-buttonset">` block as the other operation. However, we prefer to combining all the elements inside the dialog into one pseudo form. This magic takes place with only one tiny modification to the existing rule as below. 
+上記のHTMLに関して、デフォルトルールは1オペレーションとして`<form>`ブロックを抽出し、他のオペレーションとして`<divクラス=" UI-ダイアログbuttonset">`ブロックします。しかし、1擬似フォームにダイアログ内のすべての要素を組み合わせることをします。この魔法は、以下のように、既存のルールに一つだけの小さな修正を加えて行われます。
 
 ```json
 {
@@ -265,11 +263,11 @@ In regards to the above HTML, the default rule will extract the `<form>` block a
 }
 ```
 
-Hint: Please be noted that "div.ui-dialog" must stands before "form" so that all the child elements could be absorbed.
+ヒント: すべての子要素を一緒にすることができるように、"div.ui-dialog"は"form"以前に置かなければならない点を注意ください。
 
-### Create new rules
+### 新ルールの作成
 
-As a further step to the case above, now the dialog is treated as a `form`, but this is not enough as we want to create a much more personalized rule towards such kind of dialogs. Thus, we need to create an operation rule, a collection node rule and a label policy respectively.
+上記ケースの更なるステップとして新ルールを作成します, 今ダイアログは`form`として扱います。しかし、これはそのようなダイアログに対して多くのパーソナライズされたルールを作成したいのであれば、十分ではありません。そこで、それぞれオペレーションルール、コレクションノードルールとラベルポリシーを作成する必要があります。
 
 ```json
 {
@@ -287,6 +285,6 @@ As a further step to the case above, now the dialog is treated as a `form`, but 
 }
 ```
 
-Hereby we create a new type of operation which is comprised of an `ui-dialog` collection node. This collection node has several text fields and a group of buttons, with its first child's text as the label: `"Create new user"` accordingly in this case.
+これによって、`UI-dialog`コレクションノードから構成されているオペレーションの新しいタイプを作成します。このコレクションノードは、ラベとしての最初の子供テキストを複数のテキストフィールドとボタングループで成り立っています。 それに応じて、 "新しいユーザー″を作成します。
 
-Note: More cases would be appended to cover more HTML variations.
+ノート: 以上のケースはHTMLバリエーションをカバーするために追加されます。

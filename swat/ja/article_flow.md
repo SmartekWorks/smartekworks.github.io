@@ -1,64 +1,62 @@
-Working with Flow
+フロー作業
 ===
 
-In order to make scenarios easy to reuse and easy to update. it is a good practice to capsulate scenarios as flows.
+簡単に再利用可能で簡単にアップデート可能なシナリオを作成するため、フローとしてシナリオをカプセル化することを推奨します。
 
-What is Flow?
+フローとは？
 ---
 
-To put it simple, a flow is just a sub-scenario which can be used as a web operation in scenarios. You can build scenarios easily by reusing this kind of sub-scenarios. And, you don't need to change your scenarios when the interaction changed within the flow.
+それは単純言えば、フローはシナリオでWeb操作として用いることができるだけのサブシナリオである。この種のサブシナリオを再利用することで簡単にシナリオを作成できます。フロー内でWeb操作が変更されても、そのシナリオ自体変更する必要はありません。
 
-However, the meaning of flow goes further than than a common sub-scenario.
+しかし、フローの意味は共通のサブシナリオよりも更に進んでます。
 
-With flow, you can build scenarios without knowing the interaction of the web application. For example, you can build a scenario based on business rules with flows.
+フローを使用すると、Webアプリケーションの操作を知らずにシナリオを構築することができます。 例えば、フローでビジネスルールに基づいたシナリオが作成できます。.
 
-1. Login to internet banking site.
-2. Check the balance of the account.
-3. Transfer $200 to someone.
-4. Check the balance (-$200) of the account. 
+1. インターネットバンキングのサイトでログインします。
+2. 口座残高を確認します。
+3. 誰かに2万円振り込みます。
+4. 口座残高（-2万円)を再度確認します。
 
-You do not need to know how to interact with the internet banking site because flows defined a series of interactions to achieve a certain business purpose. 
+フローは、特定のビジネスで目的を達成するための一連の操作を定義しているため、インターネットバンキングサイトとやり取りする方法を知る必要はありません。
+ヒント：ビジネス上意味を持つフローを作成することがベストプラクティスです。
 
-Hint: It is a best practice that you make flows with business meaning.
+フローを使うメリットをまとめます。
 
-Let's summarise the benefits by using flows.
+* シナリオは簡単で理解し易い。
+* シナリオ作成をより効率的にする。
+* シナリオの保守が簡単
+* 画面ナレッジを準備する前にシナリオを作成できる。
 
-* Scenario is simpler and easier to understand.
-* Scenario building is more efficient.
-* Test maintenance is easier.
-* Building scenarios before page knowledge is available.
-
-Creating Flow
+フローの作成
 ---
 
-To create a flow is just like creating a scenario except that you cannot use flow in flow.
+フローを作成するには、下記操作を参照ください。
 
-1. Visit **Flow Knowledge** page through menu *Knowledge > Flows*. (**Flow Builder** page will be displayed, if there is no existing flow.)
-2. Click <span class="glyphicon glyphicon-plus"></span> button to add a new flow. **Flow Builder** page will be displayed.
-3. Drag & drop system operations and web operations. Input parameters of each operations.
-4. Usually you need to use variables in a flow just like in a scenario, and they will become the parameters of the flow. You can set the values for them when using this flow in a scenario.
-5. Fill in the flow title above the flow and Click **Create** button to complete building a flow.
-6. On **Flow Knowledge** page you can find flow information including flow parameters and step parameters.
+1. メニュータグのナレッジからフローを選び、**フローナレッジ** 画面を表示します。(既存のフローが無い場合は、**フロービルダー**画面が表示されます）
+2. 新しいフローを追加するボタンをクリックします。<span class="glyphicon glyphicon-plus"></span> **フロービルダー**画面が表示されます。
+3. Drag & dropでシステムオペレーションやWebオペレーションを組み立て、それらオペレーションのパラメーターを入力します。
+4. 通常、フロー内のパラメータ値を変数にして使用します。シナリオでこのフローを使用するときは、それら変数で指定した箇所を別途設定することができます。
+5. フロー上のフローのタイトルを入力し、**設定**ボタンをクリックするとフローの構築が完了します。
+6. **フローナレッジ**画面では、 フローパラメータとステップパラメータを含むフロー情報を参照することができます。
 
-How to Use Flows?
+フローの使い方
 ---
 
-To use a flow in **Test Scenario Builder** is just like using a [Web Operation](ref_web_operation.md#How_to_Use_Web_Operations?). However, there are still several differences between flow and web operation that you need to know:
+Webオペレーションを使うように、 **テストシナリオビルダー**画面でフローを使います。 [Web Operation](ref_web_operation.md#How_to_Use_Web_Operations?).しかし、フローとWebオペレーションとは、いくつか違う点があります。
 
-#### Parameters
+#### パラメーター
 
-The parameters of a flow is from the variables you used in the flow, while those of a web operation are from the page knowledge. As a result, unlike those in web operation, the parameters in flow do not have following features:
+フローのパラメーターはフロー内で使っいる変数で、Web画面は画面ナレッジからです。結果としてWebオペレーションののと違い、フローのパラメーターは以下の特徴を持っていません。
 
-* Parameter of types other than `Text`.
-* Parameter input mode to switch among different querying mode.
-* Alert options to handling alert dialog.
+* `Text`以外のパラメータータイプ
+* パラメータ入力モードが異なる照会モード間で切り替えます。
+* 警告ダイアログを処理するアラートのオプション。
 
-As you will often use flow's parameters as the scenario's parameters, when you drag & drop a flow, the parameters will be filled with variables using the parameter's name automatically.
+しばしフローパラメーターをシナリオパラメーターとして使います。drag & dropでフローを作成し、パラメーターは自動的にパラメーター名を使用して変数で示します。
 
-#### Errors and evidences
+#### エラーとエビデンス
 
-As flow is just a container, it has no errors and evidences.
+フローがコンテナであるため、エラーやエビデンスがありません。
 
-#### Ignoring Flow
-
-Like the policy in ignoring operation by ignoring all parameters, you can ignore the entire flow when you uncheck the **Using Data Option** of all the variables related to the flow in case data dialog. (You can also do so by using case export/import function.) 
+#### フローを無視
+ケースデータダイアログに関連する全ての変数の**Using Data Option**のチェックを外した時、全てのパラメーターを無視することによりオペレーションを無視するポリシーと同様に全体のフローを無視することができます。(ケースのエクスポート、印オート機能を使って行うことができます） 

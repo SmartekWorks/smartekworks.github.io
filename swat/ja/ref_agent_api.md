@@ -1,75 +1,75 @@
-Agent API specification
+エージェントAPI仕様
 ===
 
-During a scenario you can use an [**API Call** system operation](ref_sys_operation.md#Operation_-_API_Call) to call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming to the API specification which we will explain here. 
+シナリオ中に、DBアクセスのような拡張オペレーションを実行し、ファイルを操作するWebサービスを呼び出すために[** API Call**システムオペレーション]（ref_sys_operation.md＃操作_-_ API_Call）を使用することができます。拡張操作はここで説明したAPI仕様に準拠して、エージェントサーバを構築する必要があります。
 
-You may also refer to [DB Access and File Manipulation](article_api_call.md) for considerations of using Agent Server.
+また、エージェントサーバを使用するための注意事項については、[DBアクセスとファイル操作]（article_api_call.md）を参照することができます。
 
-How does Agent Server Work? 
+エージェントサーバは、どのように動作しますか？ 
 ---
 
-When you execute a case on SWAT local execution service, SWAT tells the local execution server to execute every step of the scenario. Though most of the steps do some operations on web pages in a browser, sometimes you need to do something like accessing DB, manipulating file or notifying someone by email etc. during the scenario. To support such kind of use cases, we need a special step to call an existing web service, which we call agent API. 
+SWATローカル実行サービス上でケースを実行すると、SWATはシナリオのすべてのステップを実行するためローカル実行サーバに指示をします。ステップのほとんどは、ブラウザでWebページ上のいくつかの操作を行いますが、時には電子メールで誰かに通知する、DBへのアクセスをする、ファイルの操作をする、といったような何かをする必要があります。シナリオの中で、ユースケースのようなものをサポートするため、エージェントAPIを呼び出し、既存のWebサービスを呼び出すために特別な手順が必要です。
 
-There should be an agent server offering the agent API and doing the work such as accessing DB and return the result. After obtaining the result, SWAT will continue to run the steps after.
+エージェントサーバーがエージェントAPIを使ってDBアクセスのような操作を行い、その結果を返答します。結果を得た後は、SWATは後の手順を実行し続けます。
 
-So, an agent server will be called by local execution server of SWAT, do whatever you implemented for the call, and return the result to SWAT.
+エージェントサーバーは、SWATローカル実行サーバーによりコールされ、コールのための実装はなしにSWATに結果を返します。
 
-Note: **API Call** system operation and agent server only works on local execution service.
+ノート: システムオペレーションの**API Call**やエージェントサーバーはローカル実行サービスでしか動きません。
 
-Agent API Specification
+エージェントAPI仕様
 ---
 
-**API Call** system operation will call the Agent API with following specification. You should build your own API implementation conforming to this specification.
+システムオペレーションの**API Call**は、以下仕様でエージェントAPIをコールします。この仕様に独自のAPIを実装する必要があります.
 
-#### Request
+#### 要求
 
-* URL: URL defined in **API URL** parameter of **API Call** system operation.
+* URL: **API　Call**システムオペレーションのパラメータで、**API　URL**で定義されているURL
 * Method: `POST`
 * Content-Type: `application/json`
-* Parameters: Only one internal parameter named `sessionId` will be set indicating the execution session of the case.
-* Body: JSON Map for storing **API Params** parameter of **API Call** system operation.
+* Parameters: `sessionId`と言う内部パラメーターの一つでケースの実行セッションを指示するための設定です。
+* Body: JSON Mapを記憶するためのシステムオペレーションんの**API Call**の**API Params**パラメータです。
 
-#### Response 
+#### レスポンス 
 
-Agent API should return following response when the call is successful. 
+エージェントAPIはコールが成功したとき、次の応答を返す必要があります。 
 
 * HTTP Code: `200`
 * Content-Type: `application/json`
-* Body: JSON Map with following keys
- * `result`: **(Optional)** A string which can be saved in the variable defined in **Variable Name** parameter of **API Call** system operation. It is required when you set the variable name. 
- * `extraEvidences`: **(Optional)** A list of files to be saved as evidences in SWAT.
-   * `name`: **(Required)** Name of the file.
-   * `type`: **(Required)** Mime type of the file.
-   * `content`: **(Required)** Content of the binary file. Using BASE64 for encoding.
+* Body: 以下キーを持つJSON Map
+ * `result`: システムオペレーション**API Call**のパラメータ**変数名**で定義された変数に保存することができる**(オプション)**文字列。 それは変数名を設定するときに必要です。 
+ * `extraEvidences`: SWATでエビデンスとして保存する**(オプション)**ファイルのリスト。
+   * `name`: ファイルの**(Required)**名。
+   * `type`: ファイルの**(Required)** Mimeタイプ。
+   * `content`: バイナリーファイルの**(Required)**コンテンツ。エンコード BASE64で使用。
 
-Agent API should return following response when the call is failed.
+エージェントAPIはコールが失敗した時、以下レスポンスを返します。
 
 * HTTP Code: `404`
 * Content-Type: `application/json`
-* Body: JSON Map with following keys
- * `code`: **(Optional)** Error code of the call. Used in error message of SWAT.
- * `message`: **(Required)** Error message of the call. Used in error message of SWAT.
+* Body:以下キーを持つJSON Map
+ * `code`: コールの**(Optional)**エラーコード。SWATのエラーメッセージで使用。
+ * `message`: コールの**(Required)**エラーコード。SWATのエラーメッセージで使用。
 
-Note: As the timeout of the request is 10 minutes, you should ensure that agent server complete the procession and return within 10 minutes.
+ノート: リクエストのタイムアウトが10分であるため、エージェントサーバはプロセスを完了の確認をし10分以内に返す必要があります。
 
-Agent API Sample
+エージェントAPIのサンプル
 ---
 
-We will explain an agent API with a user upload application sample. We need to get the *fileNo* from DB and the uploaded file after user uploads the file. After that, we need to search the file's detail in the same application.
+ユーザーのアップロード·アプリケーション·サンプルとエージェントAPIについて説明します。ユーザがファイルをアップロードした後、DBおよびアップロードされたファイルから*fileNo*を取得する必要があります。 その後、同じアプリケーションでファイルの詳細を検索する必要があります。
 
-#### For SWAT Scenario
+#### SWATシナリオについて
 
-Append an **API Call** system operation with following parameters:
+以下のパラメータでシステムオペレーションの**API Cal**を追加
 
 * API URL: `http://127.0.0.1/traceUpload`
 * API Params: `db=true&file=true`
 * Variable Name: `@{fileNo}`
 
-After the system operation, you need to append a *Search Uploaded File* web operation using variable `fileNo` to search the file.
+システムオペレーションの後、ファイルを検索するように、変数 `fileNo`を使用して*検索アップロードファイル*ウェブオペレーションを追加する必要があります。
 
-#### For Agent Server
+#### エージェントServerについて
 
-When the SWAT execute the above operation, a following JSON POST request will be made:
+SWATは、上記の操作を実行すると、次のようなJSON POST要求が行われます。
 
 * URL: `http://127.0.0.1/traceUpload`
 * Parameters: `sessionId=12345`
@@ -81,7 +81,7 @@ When the SWAT execute the above operation, a following JSON POST request will be
 }
 ```
 
-You need to implement an agent server to accept the above request, do the SQL query and read the uploaded file. After that, the agent server should return the following response:
+上記の要求を受け入れるようにエージェントサーバを実装する必要があり、SQLクエリを実行やアップロードファイルの読み込みで。 その後、エージェントサーバは、次の応答を返す必要があります。
 
 * HTTP Code: `200`
 * Content-Type: `application/json`
@@ -99,4 +99,4 @@ You need to implement an agent server to accept the above request, do the SQL qu
 }
 ```
 
-In this way, the uploaded file named `file0513.pdf` will be save as an evidence for the system operation. And, then the test will use `file0513` to search the file`s detail.
+このようにして、ファイル名`file0513.pdf`はアップロードされ、、システムオペレーションのためのエビデンスとして保存されます。 そして、file`sの詳細を検索するには、 `file0513`を使用します。

@@ -1,38 +1,38 @@
-Matching & Querying DSL
+マッチング＆DSLの問い合わせ
 ===
 
-Matching rules and querying rules are used to assert conditions on a web page and retrieve values from a web page accordingly. You usually do not need to use either types of rules if you build a simple scenario and want it run automatically in you browser. However, you may need these rules to improve test efficiency and help you build complicated scenarios.
+ルールマッチングとクエリールールは、それに応じて、ウェブ画面からの値をWeb画面上の条件をアサートし、取得するために使用されている。普通単純なシナリオを構築し、それを自分のブラウザで自動的に実行したい場合は、ルールのいずれかのタイプを使用する必要はありません。しかしばがら、テスト効率を向上させ、複雑なシナリオ構築を支援するためには、これらのルールが必要です。
 
-What is Matching Rule for?
+マッチングルールとは？
 ---
 
-Matching rules are written in a kind of Domain-specific language, which we can use to assert conditions on a web page. You can use matching rules in the following functions of SWAT.
+マッチングルールは、ウェブ画面上の条件をアサートするために使用できるドメイン固有言語の一つとして書かれてます。SWATの以下の機能にマッチングルールを使用することができます。
 
-#### Scenario Auto-Verification
+#### シナリオの自動検証
 
-You can use [**Assertion** system operation](ref_sys_operation.md#Operation_-_Assertion) to add checkpoints to a scenario. You need to set matching rules as a parameter of the system operation, and when executing it, SWAT will check whether the page in the activated window pass the matching rules or not. If the conditions are not satisfied, the execution will report error. Therefore, if you design a scenario with adequate assertions, you can tell the test passed or not without checking every screenshots manually.
+シナリオのチェックポイントへ追加し使うことができます。[**Assertion** system operation](ref_sys_operation.md#Operation_-_Assertion)  システムオペレーションのパラメータとしてマッチングルールをセットする必要があります。and when executing it, SWATはアクティブなウィンドウ内の画面でマッチングルールをパスすかどうかチェックします。 もし条件が満たされない場合、実行時エラーを報告します。 適切なアサーションでシナリオを設計する場合には、テストが手動ですべてのスクリーンショットをチェックせずに通過したかどうかがわかります。
 
-Though to build such kind of auto-verification tests needs some efforts, it can greatly increase test efficiency and it is mostly required in regression tests.
+自動検証を構築するには、いくつかやるべきことがありますが、それが大幅にテスト効率を向上させるには主に回帰テストで必要とされます。
 
-#### Finding Window in Scenario
+#### シナリオでWindowsを見つける
 
-You can use [**Window Control** system operation](ref_sys_operation.md#Operation_-_Window_Control) to find the target window and manipulate it. You need to set matching rules as a parameter of the system operation, and when executing it, SWAT find the first window which pass the matching rules and switch it to the current window or close it.
+ターゲットウィンドウを見つけて、それを操作するために使用できます。[**Window Control** system operation](ref_sys_operation.md#Operation_-_Window_Control)　システムオペレーションのパラメータとしてマッチングルールをセットする必要があり、それを実行するとき、SWATはマッチングルールにパスしたり現在のウィンドウに切り替え閉じたりする最初のWindowを見つけます。
 
-#### Page Identification
+#### 画面の識別
 
-You can define matching rules as an identification of the page knowledge by following steps:
+次の手順による画面ナレッジの識別としてマッチングルールを定義することができます。
 
-1. Visit **Page Knowledge** page through menu `Knowledge > Pages`.
-2. Select the target page in the tree on the left.
-3. Click <span class="caret"></span> next to the **Save** button and select **Page Identification** in the pull-down menu. A **Matching Rules of Page Identification** dialog will be displayed.
-4. Input the matching rules in the text area and save.
+1. メニュータグのナレッジから**画面ナレッジ**を開きます。
+2. 左側のツリーにあるターゲット画面を選びます。
+3. <span class="caret"></span>**保存**ボタンをクリックし、次へ進み、プルダウンメニューから**画面の識別**を選び、 **画面識別のマッチングルール**ダイアログ表示させます。
+4. テスト領域のマッチングルールを入力し保存します。
 
-If you define the identification of a page, SWAT will check the whether the page pass the matching rules or not before executing operation on that page. It helps to avoid executing operation on the wrong page which is similar to the target page. 
+画面の識別を定義したなら、SWATは _ページかどうか、その画面上でオペレーションを実行する前に、マッチングルールにパスするかどうかをチェックします。それは、ターゲット画面に似ていて間違った画面で操作を実行しないようにするのに役立ちます。 
 
-Matching Rule DSL
+マッチングルールのDSL
 ---
 
-Matching rule is a JSON map string with the assertion condition. In SWAT, you usually use matching rules, which is a JSON list containing several matching rule.
+マッチングルールはアサーション条件のJSON map文字列です。SWATでは、通常、複数のマッチングルールを含むJSONリストでマッチングルールを使用しています。
 
 ```json
 [
@@ -41,42 +41,42 @@ Matching rule is a JSON map string with the assertion condition. In SWAT, you us
 ]
 ```
 
-### Syntax
+### 構文
 
-The JSON map contains three type of keys:
+JSON　MAPは、キーの3種類が含まれています。
 
-* `"frame"`: **(Optional)** The target frame's name or ID. SWAT will use the main HTML if the key is not defined. (You can ignore the key if your web application does not use frames.)
+* `"frame"`: **(Optional)** ターゲットフレームの名前とID。 SWATはキーが定義されていない場合、主にHTMLを使います。 (Webアプリケーションフレームを使用していない場合は、キーを無視することができます。)
 ```json
 {"frame":"main", "have_text":"Success"}
 ```
-* `"target"`: **(Optional)** The target of the evaluation. You can use the following values. The default value is `"body"`.
+* `"target"`: **(Optional)** 評価対象。次の値を使用することができます。デフォルト値は`"body"`です。
 ```json
 {"target":"url", "have_text":"contract"}
 ```
- * `"url"`: URL of the page.
- * `"title"`: Title of the page.
- * `"alert"`: Text of the all alerts appeared in the previous operation. (`"alert"` type is only available in **Assertion** system operation.)
- * *Selector String*: An area in the page (first matched frame if you have `"frame"` key) defined by CSS selector such as `"body"`, `"#Main"`. We recommend you use `"body"` unless you have several logical pages implemented in areas of a physical page.
-* *Evaluation*: **(Required)** You can use several types of evaluations by specifying following keys and values
+ * `"url"`: 画面のURL。
+ * `"title"`: 画面のタイトル。
+ * `"alert"`: すべてのアラートのテキストは、前回の動作に現れます。 (`"alert"`タイプは、システムオペレーションの**アサーション** で利用可能です。)
+ * *Selector String*: 画面の領域で (タイプは、"frame"`キーを持っている場合、infirstマッチしたフレームで利用可能)CSSセレクターで定義される。 物理ページの領域に実装され、複数の論理ページがない限り、`"body"`使用をお勧めします。
+* *Evaluation*: **(Required)** あなたは、以下のキーと値を指定することで、評価のいくつかのタイプを使用することができます。
 ```json
 {"target":"title", "equal_text":"Search Results"}
 {"have_css":{"css":"button#btnOK", "with_text":"Go"}}
 ```
- * `"equal_text"`: The target text should equal to the string value of the key.
- * `"not_equal_text"`: The target text should not equal to the string value of the key.
- * `"have_text"`: The target text should contain the string value of the key.
- * `"not_have_text"`: The target text should not contain the string value of the key.
- * `"have_css"`: The target area should contain a node defined in the value of the key. It is only valid when `"target"` is a selector string.
- * `"not_have_css"`: The target area should not contain a node defined in the value of the key. It is only valid when `"target"` is a selector string.
+ * `"equal_text"`: 目的のテキストは、キーの文字列値に等しくなければならない。
+ * `"not_equal_text"`: 目的のテキストは、キーの文字列値に等しくない。.
+ * `"have_text"`: 目的のテキストは、キーの文字列値に含まれる。
+ * `"not_have_text"`: 目的のテキストは、キーの文字列値に含まれない。
+ * `"have_css"`: 目的のテキストは、キーの文字列値に定義されたノードに含まれる。〝Target"はセレクタ文字列である場合にのみ有効です。
+ * `"not_have_css"`: 目的のテキストは、キーの文字列値に定義されたノードに含まれない。 〝Target"はセレクタ文字列である場合にのみ有効です。
 
-The value of `"have_css"` and `"not_have_css"` is a JSON map contains following keys:
+`` "have_css" `と` "not_have_css」の値は、JSON MAPで次のキーが含まれます。:
 
 ```json
 {"have_css":{"css":"button#btnOK", "with_text":"Go"}}
 ```
 
-* `"css"`: **(Required)** a node defined by CSS selector.
-* `"with_text"`: **(Optional)** You can add condition to `"css"` by defining that the `text` of the node should equal to the string value of the key.
+* `"css"`: **(Required)** CSSセレクタによって定義されたノード
+* `"with_text"`: **(Optional)** ノードのTEXTはキーの文字列値に等しくなければならないというCSSへ定義する条件を追加することができる。
 * `"with_part_text"`: **(Optional)** You can add condition to `"css"` by defining that the `text` of the node should contain the string value of the key. SWAT will bypass this condition by default.
 * `"with_value"`: **(Optional)** You can add condition to `"css"` by defining that the `value` of the node should equal to the string value of the key. SWAT will bypass this condition by default.
 * `"with_href"`: **(Optional)** You can add condition to `"css"` by defining that the `href` of the node should equal to the string value of the key. As the href is from the actual DOM, it is the full URL instead of the relative URL you may defined in HTML. If you need use the `href` you defined in HTML, you can use CSS select with attribute match. SWAT will bypass this condition by default.
@@ -85,7 +85,7 @@ The value of `"have_css"` and `"not_have_css"` is a JSON map contains following 
 * `"selected"`: **(Optional)** You can add condition to `"css"` by defining whether the node should be selected or not (true/false). SWAT will bypass this condition by default.
 * `"displayed"`: **(Optional)** You can add condition to `"css"` by defining whether the node should be displayed or not (true/false). SWAT will use `true` by default.
 
-### Samples
+### サンプル
 
 * The page's URL should contain text the `"contract"`.
 ```json
@@ -120,7 +120,7 @@ The value of `"have_css"` and `"not_have_css"` is a JSON map contains following 
 {"have_css":{"css":"input[name='gender']", "with_index":2, "selected":true}}
 ```
 
-What is Querying Rule for?
+何のためのルールを照会する？
 ---
 
 Querying rules are written in a kind of Domain-specific language, which we can use to retrieve values from a page. You can use querying rules in the following function of SWAT.
