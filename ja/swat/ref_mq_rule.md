@@ -76,14 +76,14 @@ JSON　MAPは、キーの3種類が含まれています。
 ```
 
 * `"css"`: **(Required)** CSSセレクタによって定義されたノード
-* `"with_text"`: **(Optional)** ノードのTEXTはキーの文字列値に等しくなければならないというCSSへ定義する条件を追加することができる。
-* `"with_part_text"`: **(Optional)** You can add condition to `"css"` by defining that the `text` of the node should contain the string value of the key. SWAT will bypass this condition by default.
-* `"with_value"`: **(Optional)** You can add condition to `"css"` by defining that the `value` of the node should equal to the string value of the key. SWAT will bypass this condition by default.
-* `"with_href"`: **(Optional)** You can add condition to `"css"` by defining that the `href` of the node should equal to the string value of the key. As the href is from the actual DOM, it is the full URL instead of the relative URL you may defined in HTML. If you need use the `href` you defined in HTML, you can use CSS select with attribute match. SWAT will bypass this condition by default.
-* `"with_index"`: **(Optional)** You can add condition to `"css"` by defining that the index (starting from `1`) of the matched node should equal to the number value of the key. SWAT will bypass this condition by default.
-* `"enabled"`: **(Optional)** You can add condition to `"css"` by defining whether the node should be enabled or not (true/false). SWAT will bypass this condition by default.
-* `"selected"`: **(Optional)** You can add condition to `"css"` by defining whether the node should be selected or not (true/false). SWAT will bypass this condition by default.
-* `"displayed"`: **(Optional)** You can add condition to `"css"` by defining whether the node should be displayed or not (true/false). SWAT will use `true` by default.
+* `"with_text"`: **(Optional)** ノードの`text`は、キーの文字列値に等しい定義により、`" CSS"`に条件を追加することができます。
+* `"with_part_text"`: **(Optional)** ノードの`text`は、キーの文字列値を含む定義により、`" CSS"`に条件を追加することができます。SWATは、デフォルトでこの条件をバイパスします。
+* `"with_value"`: **(Optional)** ノードの`value`は、キーの文字列値に等しい定義ににより、`" CSS"`に条件を追加することができます。SWATは、デフォルトでこの条件をバイパスします。
+* `"with_href"`: **(Optional)** ノードの`href`は、キーの文字列値に等しい定義ににより、`" CSS"`に条件を追加することができます。hrefは実際のDOMからであり、HTMLで定義された相対URLの代わりで完全URLです。もしHTMLで定義されている`href`を使うなら、属性が一致するCSSセレクターを使うことができます。SWATは、デフォルトでこの条件をバイパスします。
+* `"with_index"`: **(Optional)** マッチしたノードの（1 '`から始まる）インデックスは、キーの数値に等しい定義により、`"css"`に条件を追加することができます。SWATは、デフォルトでこの条件をバイパスします。
+* `"enabled"`: **(Optional)** ノードを有効にすべきかどうか（true/false）の定義により、`" CSS"`に条件を追加することができます。SWATは、デフォルトでこの条件をバイパスします。
+* `"selected"`: **(Optional)** ノードが選択されるべきかどうか（true/false）、`" CSS"`に条件を追加することができます。SWATは、デフォルトでこの条件をバイパスします。
+* `"displayed"`: **(Optional)** ノードが表示されるべきかどうか（true/false）、" CSS"`に条件を追加することができます。SWATはデフォルトで`true`を使います。
 
 ### サンプル
 
@@ -123,71 +123,71 @@ JSON　MAPは、キーの3種類が含まれています。
 何のためのルールを照会する？
 ---
 
-Querying rules are written in a kind of Domain-specific language, which we can use to retrieve values from a page. You can use querying rules in the following function of SWAT.
+問合せルールは、画面から値を取得するために使用することができるドメイン固有言語の一種で書かれています。SWATの以下機能でクエリ-ルールを使うことができます。
 
-#### Using Values from Web Page
+#### Web画面からの値を使用
 
-In some complicated scenario, you may need to use a value from the web page for succeeding operations. For example, you may need the *Order Number* shown on *Order Complete* page to search the status of the order.
+いくつかの複雑なシナリオでは、オペレーションを続けるため、Web画面からの値を使う必要があるかもしれません。例えば、*ご注文番号*で注文のステータスを検索するために*注文完了*画面を表示させる場合があります。
 
-To do this, you should use [**Set Value** system operation](ref_sys_operation.md#Operation_-_Set_Value) to retrieve the value from a web page and save it to an variable which can be used in parameters of later operations. You need to set a querying rule as a parameter of the system operation, and when executing it, SWAT will retrieve the value according to the rule.
+この様な場合、ウェブ画面から値を取得し、オペレーション後のパラメーターで使用することができる変数に保存して使うべきです。 [**Set Value** system operation](ref_sys_operation.md#Operation_-_Set_Value) システムオペレーションのパラメータとしてクエリ-ルールをセットすることが必要で、それを実行している時、SWATは規則に従って値を取得します。
 
-Querying Rule DSL
+DSLクエリ-ルール
 ---
 
-Querying rule is a JSON map string with a query condition. 
+ルールをクエリすると、クエリ条件によるJSONのマップ文字列です。
 
 ```json
 {"source":"title"}
 ```
 
-### Syntax
+### 構文
 
-The JSON map contains three type of keys:
+JSON　MAPは、キーの3種類が含まれています。:
 
-* `"frame"`: **(Optional)** The target frame's name or ID. SWAT will use the main HTML if the key is not defined. (You can ignore the key if your web application does not use frames.)
+* `"frame"`: **(Optional)** ターゲットframe'sは名前かIDです。キーが定義されていない場合SWATはメインのHTMLを使用します。 (Webアプリケーションフレームを使用していない場合は、キーを無視することができます。)
 ```json
 {"frame":"main", "source":"#orderNo", "css_key":"text"}
 ```
-* `"source"`: **(Required)** The source of the value. You can use the following values.
+* `"source"`: **(Required)** 値のソース。次の値を使用することができます。
 ```json
 {"source":"#selectGender", "css_key":"value"}
 ```
- * `"url"`: URL of the page. You need to use `"query_key"` to retrieve the value of a parameter of the query string.
- * `"title"`: Title of the page.
- * `"alert"`: Text of the last alert appeared in the previous operation.
- * *Selector String*: A visable node (that must be displayed) in the page (first matched frame if you have `"frame"` key) defined by CSS selector. You need to use `"css_key"` to retrieve the text or attribute of the node.
+ * `"url"`: 画面のURL。クエリ文字列のパラメータ値を取得する`"query_key"`を使うことが必要です。
+ * `"title"`: 画面のタイトル。
+ * `"alert"`: 前の操作に現れた最終アラートのテキスト。
+ * *Selector String*: CSSセレクターで定義した画面(`"フレーム"`キーを持っているなら、最初にマッチしたフレーム)の目に見えるノード (表示されなければならない)。 ノードのテキストまたは属性を取得するために` "css_key″´を使う必要があります。
 * `"query_key"`: (Required when `"source"` is `"url"`) The parameter key of the query string.
 ```json
 {"source":"url", "query_key":"orderNo"}
 ```
-* `"css_key"`: (Required when `"source"` is *Selector String*) The attribute name of the node. You can also use `text` to retrieve the text of the node.
+* `"css_key"`: (Required when `"source"` is *Selector String*) ノードの属性名。ノードのテキストを取得するために`text`を使用することができます。
 ```json
 {"source":"#selectGender", "css_key":"value"}
 ```
-* `"css_index"`: (Optional, Only used when `"source"` is *Selector String*) If there are several nodes match the *Selector String*, you can use `"css_index"` to specify the node. SWAT will use `1` by default.
+* `"css_index"`: (Optional, Only used when `"source"` is *Selector String*) *セレクタ文字列*に一致するいくつかのノードがある場合、ノードを指定するために`"css_index"`を使うことができます。 SWATはデフォルトで `1`を使います。
 ```json
 {"source":"input[name='gender']", "css_key":"value", "css_index":2}
 ```
 
-### Samples
+### サンプル
 
-* Use value of parameter `orderNo` in current URL.
+* 現在のURLにある`orderNo`パラメータ値を使用。
 ```json
 {"source":"url", "query_key":"orderNo"}
 ```
-* Use value of the text of a `span` with ID `"orderNo"` in the frame with name `"main"` of the page.
+* 画面で`"main"`の名前を持つフレームで `"orderNo"` IDである `span`のテキスト値を使用。
 ```json
 {"frame":"main", "source":"#orderNo", "css_key":"text"}
 ```
-* Use value of the value of a select with ID `"selectGender"`.
+* `" selectGender"` IDを持つセレクト値の値を使用。
 ```json
 {"source":"#selectGender", "css_key":"value"}
 ```
-* Use value of the `"name"` attribute of a button with ID `"btnOrder"`.
+* ID`" btnOrder"`であるボタンの属性`"名前"`の値を使用。
 ```json
 {"source":"#btnOrder", "css_key":"name"}
 ```
-* Use value of the value of the second radio with name `"gender"`.
+* `"性別"`名である2番目のラジオの値を使用。
 ```json
 {"source":"input[name='gender']", "css_key":"value", "css_index":2}
 ```

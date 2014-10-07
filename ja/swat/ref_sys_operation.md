@@ -1,317 +1,317 @@
-System Operation
+システムオペレーション
 ===
 
-System operation is a set of pre-defined operation offering support for handling browser or scenarios.
+システムオペレーションは、ブラウザやシナリオの取扱いをサポートする予め定義されたオペレーションです。
 
-How to Use System Operations?
+システムオペレーションの使い方
 ---
 
-The usage of system operation is much alike to the [Web Operation](ref_web_operation.md#How_to_Use_Web_Operations?). You just need to drag & drop a system operation onto a scenario flow or flow, and fill the parameters for the operation. However, there are still several differences between system operation and web operation that you need to know:
+システムオペレーションの使用は [Web Operation](ref_web_operation.md#How_to_Use_Web_Operations?)に非常に似ています。 シナリオのフローまたはフローにシステムオペレーションを drag & dropし、オペレーションのためのパラメータを入力します。 しかしながら、これらは、システムオペレーションとWebオペレーション間でいくつかの違いがあることを知る必要があります。:
 
-#### Parameters
+#### パラメータ
 
-Unlike those in web operation, the parameters in system operation do not have the following features:
+Webオペレーションとは異なり、, システムオペレーションのパラメータは、以下のような特徴を持っていません。:
 
-* Using parameter option to ignore or not to ignore the parameter.
-* Parameter input mode to switch among different querying mode.
-* Alert options to handle alert dialog.
+* 無視するパラメータオプションを使用するか、パラメータを無視する。
+* パラメータ入力モードが異なる照会モードで切り替える。
+* アラートのオプションは、アラート用のダイアログを処理する。
 
-#### Errors and evidences
+#### エラーとエビデンス
 
-Each system operation has its own pre-defined errors and evidences. Please refer to the specification of all system operations below.
+各システムオペレーションは、独自に予め定義されたエラーやエビデンスを有しています。以下の全てのシステムオペレーションの仕様を参照してください。
 
-#### Using Variable
+#### 変数の使用
 
-* You cannot set a variables in **Variable Name** parameter. These parameters exist in **Set Value** and **API Call** operation.
-* As you cannot switch the select typed parameter to query mode in system operations, you cannot set a variable in such kind of fields such as **Action** in **Navigation Control** operation.
+* **変数名**パラメータで変数を設定することができません。 これらのパラメータは**設定値**や **APIコール**オペレーションにあります。
+* システムオペレーションでセレクトタイプのパラメータをクエリーモードへ切り換えることができないように、**ナビゲーションコントロール**オペレーションで**アクション**のようにフィールドのような種類の変数を設定することはできません。
 
-#### Ignoring Parameter and Operation
+#### パラメータと操作を無視
 
-* You cannot ignore parameters of system operation by ignoring variables, but you can ignore the operation by ignoring all the variables used in the operation. 
-* As you cannot use variables in system operations such as **Navigation Control**, **Additional Information** operation, you cannot ignore those operation too.
+* 変数を無視することでシステムオペレーションのパラメータを無視することはできません、しかし but オペレーションで使用されているすべての変数を無視してオペレーション自身を無視することはできます。 
+* **ナビゲーションコントロール**や**追加情報**オペレーションのようなシステムオペレーションで変数を使用することができないように、それらの操作を無視することはできません。
 
-Operation - Go to URL
+オペレーション - URL遷移へ
 ---
 
-Go to a specific URL in the current browser session and window. 
+現在のブラウザセッションおよびウィンドウ内の特定のURLに移動します。 
 
-##### Parameters
+##### パラメータ
 
-| Parameter  | Explanation
+| パラメータ | 説明
 | ---------- | -----------
-| Site       | Site managed in SWAT. SWAT will use the execution related settings of the site after this operation.
-| URL        | Relative URL to the target server URL of the **Site**. You can also use full URL starting with `http://`, `https://`, `file://` to ignore the target server URL. 
+| Site       | SWATで管理するサイト。SWATは SWATは、このオペレーションの後、サイトの実行に関する設定を使用します。
+| URL        | **Site**のターゲットサーバーURLへの相対URL. ターゲット·サーバーのURLを無視し、`http://`, `https://`, `file://`でから始まる完全なURLを使用することができます。 
 
-##### Notes
+##### ノート
 
-* A new default browser session and window will be created if there is no sessions.
+* これらにセッションがない場合は、新しいデフォルトのブラウザセッションウィンドウが作成されます。
 
-##### Errors
+##### エラー
 
-* The generated URL from **URL** and the target server URL of the **Site** is blank or invalid. (in execution)
+* ** URL**と**サイト**のターゲットサーバーURLから生成されたURLは、空白または無効です。 (実行中)
 
-##### Evidences
+##### エビデンス
 
-* Screenshot
+* スクリーンショット
 * HTML
 
-Operation - Wait in Browser 
+オペレーション - ブラウザで待つ 
 ---
 
-Wait a short period of time in the current browser session and window. You usually need this operation when you want to wait for updates triggered by javascript.
+現在のブラウザセッションやウィンドウ内で短期間待ちます。 javascriptによってトリガアップデートを待ちたいときに、通常はこの操作を必要としています。
 
-##### Parameters
+##### パラメータ
 
-| Parameter  | Explanation
+| パラメータ | 説目
 | ---------- | -----------
-| Duration   | Seconds to wait in the current browser session and window.
+| Duration   | 数秒現在のブラウザセッションおよびウィンドウ内で待機します。
 
-##### Notes
+##### ノート
 
-* You should take care of session timeout when you wait for a long period of time.
-* There is an idle timeout (about 90 seconds) in cloud execution service. If the wait period exceeds the timeout, the execution will be interrupted.
+* 長時間待つときには、セッションタイムアウトをケアする必要があります。
+* クラウド実行サービスでのアイドルタイムアウトは(約90秒)です。 待機時間がタイムアウト時間を超えた場合、実行が中断されます。
 
-##### Errors
+##### エラー
 
-* The value of **Duration** is blank or is not a natural number. (in validation and execution)
+* **収録時間**の値は空白か自然数でない値。 (検証と実行中)
 
-##### Evidences
+##### エビデンス
 
-* Screenshot
+* スクリーンショット
 * HTML
 
-Operation - Navigation Control 
+オペレーション - ナビゲーション制御 
 ---
 
-Simulate the navigation control function of browser.
+ブラウザのナビゲーション制御機能をシミュレートします。
 
-##### Parameters
+##### パラメータ
 
-| Parameter  | Explanation
+| パラメータ | 説明
 | ---------- | -----------
-| Action     | browsers' navigation control function: `Forward`, `Back`, `Reload`.
+| Action     | ブラウザのナビゲーション制御機能: `Forward`, `Back`, `Reload`.
 
-##### Notes
+##### ノート
 
-* This system operation currently does not work on *Safari*.
-* Browsers may not ensure the `Back` and `Reload` actions work after a form submission.
+* このシステムオペレーションは現在*Safari*上では動きません。
+* ブラウザはフォーム送信後の `Back` や `Reload`のアクション動作を保証していない場合があります。
 
-##### Errors
+##### エラー
 
-* Execute this system operation on *Safari*. (in execution)
+*  *Safari*でこのシステムオペレーションは実行します。 (実行中)
 
-##### Evidences
+##### エビデンス
 
-* Screenshot
+* スクリーンショット
 * HTML
 
-Operation - Obtain Download
+オペレーション - ダウンロード入手
 ---
 
-Obtain the downloaded file in the last operation and save it as an evidence. It is a little tricky to use this system operation, please read the *Notes* part carefully.
+最後のオペレーションでダウンロードしたファイルを入手し、エビデンスとして保存します。これはシステムオペレーションを使用する際に少し注意が必要ですので、注意深く*Notes*のパートを読んでください。
 
-Note: To simulate a actual download and upload action may be not a good practice because it involves OS function and causes scenario unstable.
+Note: シミュレートするための実際のダウンロードやアップロードのアクションは良い方法ではありません。なぜなら、それはOSの機能を伴い不安定なシナリオの原因となります。
 
-##### Parameters
+##### パラメータ
 
-| Parameter     | Explanation
+| パラメータ    | 説明
 | ------------- | -----------
-| Wait Duration | Seconds to wait for finishing downloading the file.
+| 収録時間待ち　| ダウンロードファイルが完了するまでの待ち時間
 
-##### Notes
+##### ノート
 
-* This system operation only works in local execution service.
-* You should ensure that the file started downloading to a specific local directory in the previous operation. We offer configuration for auto downloading on Chrome and Firefox. However, you need to config browsers to bypass save file dialog and not to open file directly in other browsers.
-* You need to set *DownloadDir* with the path of download directory in your local execution service. Please refer to [Execution Services](setup_execservices.md#Configuration_File) for the configuration.
+* このシステムオペレーションはローカル実行サービスでしか利用できません。
+* ファイルが前の操作で、特定のローカルディレクトリにダウンロードし始めたことを確認する必要があります。 ChromeとFirefoxの上で自動ダウンロードのコンフィギュレーションを提供します。 ただし、ファイルダイアログを保存しバイパスするブラウザの設定を必要とし、、他のブラウザで直接ファイルを開くことがないようにする必要があります。
+* ローカル実行サービスでダウンロードディレクトリのパスを*ダウンロードDir*にセットする必要があります。 コンフィグレーションを参照ください。[Execution Services](setup_execservices.md#Configuration_File) 
 
-##### Errors
+##### エラー
 
-* The value of **Wait Duration** is blank or is not a natural number. (in validation and execution)
-* Execute this system operation in cloud execution service. (in execution)
-* The downloaded file cannot be found because of download failure or invalid download directory. (in execution)
+* **収録時間待ち**の値は、ブランクか自然数でない値。(検証と実行中)
+* クラウド実行サービスでこのシステムオペレーションは実行します。(実行中)
+* ダウンロードファイルは見つけることができません、ダウンロードしたファイルは、、ダウンロードに失敗または無効ダウンロードディレクトリを見つけることができません。(実行中)
 
-##### Evidences
+##### エビデンス
 
-* Downloaded file
+* ダウンロードファイル
 
-Operation - Window Control
+オペレーション - ウィンドゥコントロール
 ---
 
-Find the target window and manipulate it.
+ターゲットウィンドゥを見つけそれを操作します。
 
-##### Parameters
+##### パラメータ
 
-| Parameter      | Explanation
+| パラメータ     | 説明
 | -----------    | -----------
-| Window Name    | The window name of the target window. Leave it blank to bypass this condition.
-| Matching Rules | The matching rules of the target window. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL) for the details of matching rule. Leave it blank to bypass this condition.
-| Action         | `Activate` for switching the target window to the current window. `Close` for closing the target window.
+| Window Name    | ターゲットウィンドゥのウインドゥ名。この条件でバイパスするためにブランクのままにします。
+| Matching Rules | ターゲットウィンドゥのマッチングルールです。マッチングルールの詳細はここを参照ください。 [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL) この条件でバイパスするためにブランクのままにします。
+| Action         | `Activate`は現在のウィンドゥにターゲットウィンドゥを切り替えます。 `Close`はターゲットウィンドゥを閉じます。
 
-##### Notes
+##### ノート
 
-* If both **Window Name** and **Matching Rules** are designated, they should both be satisfied. 
-* If both **Window Name** and **Matching Rules** are blank, the current window will be the target window.
+* もし、**ウィンドゥ名**と**マッチングルール**の両方が指定されたら、両方ともに満足すべきです。 
+* もし、**ウィンドゥ名**と**マッチングルール**がブランクなら、現在のウィンドゥがターゲットウィンドゥです。
 
-##### Errors
+##### エラー
 
-* **Matching Rules** do not conform to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
-* Target window cannot be found. (in execution)
+* **マッチングルール**はこれに準じません。 [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (検証と実行中) 
+* ターゲットウィンドゥは見つけることができません。 (実行中)
 
-##### Evidences
+##### エビデンス
 
-* Screenshot
+* スクリーンショット
 * HTML
 
-Operation - Assertion
+オペレーション - アサーション
 ---
 
-Assert whether the page in current window is the page you expected.
+現在のウィンドゥ画面は予想される画面がかどうかをアサートします。
 
-##### Parameters
+##### パラメータ
 
-| Parameter      | Explanation
+| パラメータ     | 説明
 | -----------    | -----------
-| Matching Rules | Expectation in format of matching rules. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL) for the details of matching rule. Leave it blank to bypass the assertion.
+| Matching Rules | マッチングルールのファーマットで予想。マッチングルールの詳細はこちらを参照ください。 [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL) アサーションでバイパスするためにブランクのままにします。 
 
-##### Notes
+##### ノート
 
-* Only evidence of assertion operation will be included in normal mode evidence export. So, you can use it with blank **Matching Rules** as a checkpoint of your scenario.
+* アサーションオペレーションの唯一のエビデンスは、通常モードでエビデンスのエクスポートに含まれます。よって、シナリオのチェックポイントとして**マッチングルール**をブランクでそれを使用することができます。
 
-##### Errors
+##### エラー
 
-* **Matching Rules** do not conform to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
-* Assertion failed. (in execution)
+* **マッチングルール**はこれに準じません。 [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
+* アサーションの失敗 (実行中)
 
-##### Evidences
+##### エビデンス
 
-* Screenshot
+* スクリーンショット
 * HTML
-* Operation result in JSON text format
+* JSONテキストフォーマットのオペレーション結果
 
-Operation - Set Value
+オペレーション - 設定値
 ---
 
-Set a value from the page in current window to a variable, which you can use as parameters for the following operations.
+変数に現在のウィンドゥ画面からの値を設定してください。以下のオペレーションでパラメータとして使うことができます。
 
-##### Parameters
+##### パラメータ
 
-| Parameter     | Explanation
+| パラメータ    | 説明
 | ------------- | -----------
-| Querying Rule | Definition of the target value in format of querying rule. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL) for the details of querying rule. 
-| Variable Name | Variable Name to store the value.
+| Querying Rule | 問い合せルールのフォーマットで目標値を定義します。問い合わせルールの詳細はこちらを参照ください。 [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL) 
+| Variable Name | 変数名を格納します。.
 
 
-##### Errors
+##### エラー
 
-* **Query Rule** is blank or does not conform to [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL). (in validation and execution) 
-* **Variable Name** is blank or does not conform to rules of variable name. (in validation)
-* **Variable Name** has been referenced in the previous operations. (in validation)
-* Querying target cannot be found. (in execution)
+* **問い合わせルール**はブランクかこれに準じます。 [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL). (検証と実行中) 
+* **変数名**はブランクか変数名のルールに準じません。 (検証中)
+* **変数名**は前のオペレーションを参照されます。(検証中)
+* 問い合わせのターゲットを見つけることができません。 (実行中)
 
-##### Evidences
+##### エビデンス
 
-* Operation result in JSON text format
+* JSONテキストフォーマットのオペレーション結果
 
-Operation - Additional Information
+オペレーション - 追加情報
 ---
 
-Obtain additional information from the page in current window, including URL and option lists of all selects on the page.
+現在のウィンドゥから追加情報を取得します。画面上のすべて選択可能なオプションリストやURLを含みます。
 
-##### Parameters
+##### パラメータ
 
-* None
+* なし
 
-##### Errors
+##### エラー
 
-* None
+* なし
 
-##### Evidences
+##### エビデンス
 
-* Additional information in JSON text format
+* JSONテキストフォーマットの追加情報
 
-Operation - API Call
+オペレーション - APIコール
 ---
 
-During a scenario you can call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming to the [Agent API specification](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
+シナリオ中に、ファイル操作やDBアクセスのような拡張オペレーションを実行するために、Webサービスを呼び出すことができます。仕様に適合する拡張オペレーションとしてエージェントサーバーの構築が必要です。 [Agent API specification](ref_agent_api.md) 詳細はこちらを参照ください。 [DB Access and File Manipulation](article_api_call.md)
 
-##### Parameters
+##### パラメータ
 
-| Parameter     | Explanation
+| パラメータ    | 説明
 | ------------- | -----------
-| API URL       | URL of the API
-| API Params    | Parameter  for the API, using request query string format such as `Key1=Value1&Key2=Value2`.
-| Variable Name | Variable name to store the result in API return. Leave it blank if you do not need to set the value.
+| API URL       | APIのURL
+| API Params    | APIのパラメータ、`Key1=Value1&Key2=Value2`のような要求の問合せ文字列フォーマットを使用します。
+| Variable Name | 変数名は、APIの戻り値を結果に格納。 値を設定する必要がない場合は空白のままにしておきます。
 
-##### Notes
+##### ノート
 
-* This system operation only works in local execution service.
-* The **API URL** can be displayed as a selectable list, if you have setup the integration. Please refer to [Setup Tools and Integrations](setup_tools.md#Agent_Server_API_Integration) for details.
-* The API of your agent server should conform to the [Agent API specification](ref_agent_api.md) specification.
+* このシステムオペレーションはローカル実行サービス上でしか利用できません。
+* **API URL**は統合のセットアップを選択可能なリストとして表示することができます。詳細はこちらを参照ください。 [Setup Tools and Integrations](setup_tools.md#Agent_Server_API_Integration) 
+* ターゲットサーバーのAPIはこちらの仕様に準じます。 [Agent API specification](ref_agent_api.md) 
 
-##### Errors
+##### エラー
 
-* **Variable Name** does not conform to rules of variable name. (in validation)
-* API return does not contain `result` key when you need to set the value. (in execution)
-* **API Params** does not conform to request query string format. (in validation and execution)
-* Execute this system operation in cloud execution service. (in execution)
-* Cannot communicate correctly with the API by using **API URL** and **API Params**. (in execution) 
+* **変数名**は変数名のルールに準じていません。 (検証中)
+* APIリターンは、値を設定する必要があるとき、 `結果`キーに準じていません。 (実行中)
+* **API Params**は、問い合わせ文字列フォーマットの要求に準じていません。 (検証と実行中)
+* ラウド実行サービスにこのシステムオペレーションを実行する。 (実行中)
+* **API URL** と **API Params**を使うことで、APIと正しく通信できません。 (実行中) 
 
-##### Evidences
+##### エビデンス
 
-* Returned data in JSON text format
+* JSONテキストフォーマットの戻り値
 
-Operation - Pause Scenario
+オペレーション - シナリオの一時停止
 ---
 
-Pause the scenario and resume on a certain condition. All browser sessions will be closed and freed when the scenario is paused.
+シナリオを一時停止し、一定の条件で再開。すべてのブラウザセッションを閉じ、シナリオが一時停止されたときに解放されます。
 
-##### Parameters
+##### パラメータ
 
-| Parameter      | Explanation
+| パラメータ     | 説明
 | -------------  | -----------
-| Pause Type     | `Sleep` for pausing a specific time, and `Wake Up` for waking up at a specific date time.
-| Pause Duration | Minutes to pause. Works under `Sleep` type.
-| Wake Up Date   | Date (`Today`, `Tomorrow`) to resume the paused scenario. Works under `Wake Up` type with **Wake Up Time**.
-| Wake Up Time   | Time (by hour) to resume the paused scenario. Works under `Wake Up` type with **Wake Up Date**.
+| Pause Type     | 特定の時間を一時停止するための`Sleep`、特定の日付時刻に起床するための`Wake Up`
+| Pause Duration | 一時停止は分単位。`Sleep`タイプの下で動作します。
+| Wake Up Date   | 一時停止したシナリオを再開するための日付 (`今日`、 `明日`)。`Wake Up`タイプの下で**Wake Up Time**と一緒に動作します。
+| Wake Up Time   | 一時停止したシナリオを再開するための時間 (時間単位)。. Works under `Wake Up`タイプの下で**Wake Up Date**問いっしょに動作します。
 
-##### Notes
+##### ノート
 
-* If the Wake up date time has already been passed when executing this operation, the pause will be bypassed.
-* You need to create a new session after resume by using **Go to URL* or **Session Control** operation.
+* この操作を実行するときにウェイクアップする日付時刻が既に過ぎている場合は、一時停止はバイパスされます。
+* *URLへ*か、**セッション制御**オペレーションを使用して、再開した後、新しいセッションを作成する必要があります。
 
-##### Errors
+##### エラー
 
-* The value of **Pause Duration** is blank or not a natural number under `Sleep` type. (in validation and execution)
+* **一時停止期間**の値は、`Sleep`タイプの下のブランクか自然数ではありません。 (検証と実行中)
 
-##### Evidences
+##### エビデンス
 
 * None
 
-Operation - Session Control
+オペレーション - セッションコントロール
 ---
 
-Manipulate multiple browser sessions in scenario. You usually use one session (maybe with multiple windows) in one scenario. However, you need multiple sessions if you want to simulate several users interacting with each other in different browsers.
+シナリオでは複数のブラウザセッションを操作します。 1シナリオで1セッションを普通使います。(複数ウィンドゥを持つ) しかしながら、別のブラウザで互いに対話する、複数のユーザーをシミュレートしたい場合、複数セッションが必要です。
 
-##### Parameters
+##### パラメータ
 
-| Parameter    | Explanation
+| パラメータ   | 説明
 | ------------ | -----------
-| Action       | `Create` for creating a new browser session, `Activate` for switching a browser session to the current session.
-| Session Name | The name of a new session or target session for activating. The session name of the default session is `default`.
+| Action       | 新しいブラウザセッションを作成するための`Create`、現在のセッションにブラウザセッションを切り替える`Activate`
+| Session Name | 新しいセッションまたはターゲット·セッションの名前をアクティベート。デフォルトセッションのセッション名は、`default`
 
-##### Notes
+##### ノート
 
-* As a scenario executes operations one by one, you can only have one activated session at a time. You need to switch to other sessions before executing operations on it.
-* You should take care of session timeout of unactivated sessions.
-* There is a maximum parallel sessions defined in both local and cloud execution service. Scenarios with sessions more than the maximum will not be accepted by the execution service.
+* シナリオは一つづつオペレーションを実行し、一度に一つのアクティベートされたセッションを持つことができますます。それに対してのオペレーションを実行する前に他のセッションに切り替える必要があります。
+* アクティベートされていないセッションのセッションタイムアウトに注意する必要があります。
+* ローカルとクラウドの実行サービスで定義された最大並列セッションがあります。最大値よりも更にあるセッションのシナリオは、実行サービスによって受け入れられません。
 
-##### Errors
+##### エラー
 
-* **Session Name** is blank. (in validation and execution)
-* Create a new session with an existing **Session Name**. (in execution)
-* Activate a session with an non-existed **Session Name**. (in execution)
+* **Session Name**はブランク (検証と実行中)
+* 既存**セッション名**で新しいセッションを作成します。 (実行中)
+* 非存在**セッション名**のセッションをアクティブにします。 (実行中)
 
-##### Evidences
+##### エビデンス
 
-* None
+* なし
 

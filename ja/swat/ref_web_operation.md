@@ -1,26 +1,26 @@
-Web Operation
+Webオペレーション
 ===
 
-Web operation is an interactive operation model on a page. SWAT knowledge engine analyses the page, extract the web operation according to knowledge rules. Please refer to [Knowledge Rule DSL](ref_knowledge_rule.md) for details of how to obtain appropriate operations for you page implementation. You can also edit and customize the operation. You can obtain the related information from [Importing Pages](guide_knowledge.md).
+Webオペレーションは、ページ上のインタラクティブなオペレーションモデルです。SWATナレッジエンジンで画面を解析し、ナレッジルールによるWebオペレーションを抜粋します。画面実装に適したオペレーションを取得する方法の詳細はこちらを参照ください。 [Knowledge Rule DSL](ref_knowledge_rule.md)　また、編集やオペレーションのカスタマイズすることができます。また、こちらから関連情報の取得が可能です。 [Importing Pages](guide_knowledge.md).
 
-How to Use Web Operations?
+Webオペレーションの使い方
 ---
 
-To use web operation in scenario/flow builder is simple and straightforward. You just need to drag & drop a web operation onto a scenario flow or flow, and fill the parameters for the operation. A parameter may consist of five parts: **Parameter Title**, **Using Parameter Option**, **Parameter Data**, **Querying Mode Switch** and **Alert Options**.
+シナリオ/フローの作成でWebオペレーションはシンプルでわかりやすいです。 シナリオフロー/ フローの上にWebオペレーションをdrag & dropし、オペレーションのパラメータを入力するだけです。パラメータは5つのパートで成り立っています。: **パラメータ タイトル **、**パラメータオプション使用**、 **パラメータデータ**、 **問い合わせモードスイッチ**、**アラートオプション**。
 
-#### Parameter Title
+#### パラメータ タイトル
 
-The title of parameter is usually extracted by SWAT knowledge engine automatically. You can also edit the title manually on **Operation Customization** page.
+パラメータのタイトルは通常、SWATのナレッジエンジンによって自動的に抽出されます。**オペレーションカスタマイゼイション**画面で手動によるタイトル編集が可能です。
 
-#### Using Parameter Option
+### パラメータオプションの使用
 
-The option is a checkbox next to the **Parameter Title**. It is checked by default, which means that the parameter will be used in execution. If you uncheck the node, there will not be any interaction on the node when executing the operation. Please refer to [Ignoring Parameter](#Ignoring_Parameter) for details.
+オプションは、**パラメータタイトル**の隣にあるチェックボックスです。これはデフォルトでチェックされ、パラメータは実行時に使用されることを意味します。ノードをオフにした場合、オペレーションを実行する際、ノード上の任意のインタラクションは生じません。詳細はこちらを参照ください。[Ignoring Parameter](#Ignoring_Parameter) 
 
-Hint: You will find a checkbox to toggle all ** Using Parameter Option** on the bottom if there are more than five parameters in the operation.
+Hint: もしオペレーション中に5つ以上のパラメータががある場合、一番下の**パラメータオプション**を使用しすべて切り替えるチェックボックスを利用します。
 
-#### Parameter Data & Querying Mode Switch
+#### パラメータ データ＆問合せm-度スイッチ
 
-There are four types of **Parameter Data**: `Text`, `Select`, `Multi-select`, `Execute` for different types of node. 
+これら**パラメータデータ**には４つのタイプがあります。: ノードの種類毎に`Text`, `Select`, `Multi-select`, `Execute`  
 
 * `Text`: The actual text inputed in text typed node such as text-box, text area etc.
 * `Select`: Options selected in select typed node such as select. Collection with mutually exclusive entries such as radio group, or a group of link/button also belongs to this type.
