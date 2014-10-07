@@ -62,7 +62,7 @@ SWATはより効率的にシナリオを作成できるだけでなく、様々�
 * 最新バージョンのローカル実行サーバーをアップデートし、ローカル実行サーバにおける実行の問題に関する解決がなされてます。
 * Selenium Web Driverの情報をインターネットで探します。これは現在SWATのメインの実行エンジンだからです。
 
-BrowserStackサービスの設定
+BrowserStackサービスのセットアップ
 ---
 
 クラウドサービスで、SWATはパブリック実行サービスとして[BrowserStack](http://www.browserstack.com)をサポートします。 BrowserStackサービスを使うには、BrowserStackアカウントを取得し、最初の自動化プランを購入する必要があります。 (BrowserStackのパートナーとして、弊社は支払い代行と一時サポート窓口を提供しています。) その後、サービスを利用する前にSWAT上にBrowserStackアカウントを設定します。 

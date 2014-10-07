@@ -34,7 +34,7 @@ It seems that the pull-down list is implemented by a `ul#sa_ul` list with a grou
 The SWAT knowledge rule is a JSON formatted string following [Knowledge Rule DSL](ref_knowledge_rule.md). We need to know the following basic components of the rule.
 
 * `singleNodes`: The definition of single interactive DOM nodes such as button, input.
-* `collectionNode`: The definition of collection of DOM nodes such as list, table, select.
+* `collectionNodes`: The definition of collection of DOM nodes such as list, table, select.
 * `operations`: The definition of how to extract the collectionNode to be an operation.
 
 You can view the default rule in following steps:
@@ -45,15 +45,15 @@ You can view the default rule in following steps:
 
 To make the suggestion list as an operation, we need to
 
-* define a clickable node for `div.sa_s` like `link` does. you will need to append the following entry to singleNodes.
+* define a clickable node for `div.sa_s` like `link` does. you will need to append the following entry to `singleNodes`.
 ```json
 "sa_link":{"selectors":["div.sa_s"], "decisive":true, "action":"click", "label":"link", "locator":"link"}, 
 ```
-* define a collection node for `ul#sa_ul` with `sa_link` as its children like `buttonGroup` does. you will need to append the following entry to collectionNodes.
+* define a collection node for `ul#sa_ul` with `sa_link` as its children like `buttonGroup` does. you will need to append the following entry to `collectionNodes`.
 ```json
 "sa_list":{"selectors":["ul#sa_ul"], "children":["sa_link"], "action":"or"},
 ```
-* define an operation for `sa_list`. you will need to append the following entry to collectionNodes.
+* define an operation for `sa_list`. you will need to append the following entry to `operations`.
 ```json
 {"selectors": ["ul#sa_ul"], "collectionNode":"sa_list", "nesting":"outer"},
 ```

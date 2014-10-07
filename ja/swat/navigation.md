@@ -6,9 +6,9 @@
 
 * [SWATサービス利用開始](guide_start.md)
 * [画面インポート](guide_knowledge.md)
-* [画面ナレッジ変更](guide_tuning.md)
+* [画面ナレッジカスタマイズ](guide_tuning.md)
 * [シナリオ作成](guide_scenarios.md)
-* [テスト実行](guide_execution.md)
+* [テストケース実行](guide_execution.md)
  
 [セットアップ]()
 
@@ -20,7 +20,7 @@
 
 * [フローの活用](article_flow.md)
 * [自動テストのメンテナンス](article_maintenance.md)
-* [ウィンドウ、フレーム、ダイアログ、AJAX](article_scenes.md)
+* [ウインドウ、フレーム、ダイアログ、AJAX](article_scenes.md)
 * [データベース、ファイル操作](article_api_call.md)
 
 [レファレンス]()
@@ -28,7 +28,7 @@
 * [画面オペレーション](ref_web_operation.md)
 * [システムオペレーション](ref_sys_operation.md)
 * [マッチング・クエリルール](ref_mq_rule.md)
-* [ナレッジルール](ref_knowledge_rule.md)
+* [画面ナレッジルール](ref_knowledge_rule.md)
 * [エージェントAPI仕様](ref_agent_api.md)
 
 [English](/swat/)

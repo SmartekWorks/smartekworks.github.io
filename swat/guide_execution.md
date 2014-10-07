@@ -14,7 +14,9 @@ If there is no execution service connected to SWAT, please setup a local executi
 
 If you have an BrowserStack account, you can also setup a cloud execution service on SWAT according to [Execution Services Setup](setup_execservices.md#Setup_BrowserStack_Service)
 
-Hint: The BrowserStack Service has already been configured for you if you are using trial account or you purchase the BrowserStack Subscription with SWAT.
+Hint: You can apply for a trial account from [BrowserStack](http://www.browserstack.com) and setup it as your public cloud execution service.
+
+Note: The BrowserStack Service has already been configured for you if you purchase the BrowserStack Subscription with SWAT.
 
 ### Settings of execution
 
@@ -46,7 +48,7 @@ You have more detailed settings when you create a new execution. However, it is 
 
 Every web application has its own type of implementation such as frame, alert, and its own test requirements. We designed a extendable execution parameters for each site in order to change the detailed execution behaviour. A default set of parameters will be set when you create a new site. You don't need to change the parameters in most situations including the site `Bing`. 
 
-Please refer to chapter [Window, Frame, Alert, AJAX](guide_scenes.md) for how to use the parameters in different scenes.
+Please refer to chapter [Window, Frame, Alert, AJAX](article_scenes.md) for how to use the parameters in different scenes.
 
 Executing Selected Cases
 ---
