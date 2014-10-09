@@ -50,8 +50,10 @@ Configuration
 
 As most of the settings can be set from SWAT UI, you only need to config the IP in configuration file through which you can access to SWAT server.
 
+Note: You do not need to do the following configuration if you plan to use SWAT server standalone.
+
 1. Open `<installation directory>/bin/setenv.bat` or `<installation directory>/bin/setenv.sh` in text editor.
-2. Locate the part `-DswatServer=‘http://IP_ADDRESS:8080’` and change the `IP_ADDRESS` to the actual server address. You should not use local `127.0.0.1` or `localhost` unless you plan to use SWAT server standalone.
+2. Locate the part `-DswatServer=‘http://127.0.0.1:8080’` and change the `127.0.0.1` to the actual server address. 
 
 #### Account Configuration
 

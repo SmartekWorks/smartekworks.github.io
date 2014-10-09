@@ -19,13 +19,15 @@ Setup Local Execution Server
 #### Installation Instructions
 
 1. Visit **Execution Service Monitor** page through menu *Management > Execution Services* in SWAT service.
-2. Click <span class="glyphicon download-alt"></span> button and select **Download Install Package**.
+2. Click <span class="glyphicon glyphicon-download-alt"></span> button and select **Download Install Package**.
 3. Confirm the setup information and click "Download", a zip file named `waas-xxx.zip` will be downloaded to your local computer.
 4. Extract the zip file to the installation directory on your target computer.
 6. Modify the configuration file, `account.ini` under the installation directory according the following section.
 7. Execute `startup.bat` (`startup.sh` on Mac or Linux) under the installation directory to start the local execution server.
 8. Visit **Execution Service Monitor** page through menu *Management > Execution Services* again, and you can find the entry of your local execution server.
 9. Execute `shutdown.bat` (`shutdown.sh` on Mac or Linux) under the installation directory to stop the local execution server.
+
+Note: When you start local execution server on Windows 8, you may find a warning message showing "Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.". You can ignore this message, as it will not influence the execution. You can also remove this message by adding the key `HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs` to registry.
 
 #### Configuration File
 
@@ -48,19 +50,14 @@ The Configuration file, `account.ini` is a JAVA property file with following key
 * `downloadDir`: The default download directory of your browser. You cannot use **Obtain Download** system operation if you do not set the value. Please add double backslash on Windows, such as `C:\\Downloads`.
 * `firefoxProfile`: The path of Firefox profile which your want to start the testing browser with. This is useful when you want to test on Firefox with special settings or addons. Please add double backslash on Windows, such as `C:\\MyProfile`.
 
-#### Notes
-
-* When you start local execution server on Windows 8, you may find a warning message showing "Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.". You can ignore this message, as it will not influence the execution. You can also remove this message by adding the key `HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs` to registry.
-
-
 #### Next Steps
 
 To enable execution on various types, versions of OS and Browsers are not a easy task, because there are a lot of settings of you OSes and browsers may influence the execution. We offer several suggestions to made the process easier.
 
-* Use cloud execution service, since the provider will handle most of the settings of OSes and browsers.
 * Check [Configure Local Environment](#Configure_Local_Environment) section frequently, as we will update the information on how to config the local environment.
 * Update your local execution server to the latest version, as we will include some of the solution to execution problems in our local execution server.
 * Search the internet for information on Selenium Web Driver, which is currently our main execution engine.
+* Use cloud execution service, since the provider will handle most of the settings of OSes and browsers.
 
 Setup BrowserStack Service
 ---

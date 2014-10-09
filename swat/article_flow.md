@@ -21,6 +21,9 @@ You do not need to know how to interact with the internet banking site because f
 
 Hint: It is a best practice that you make flows with business meaning.
 
+Why Using Flow?
+---
+
 Let's summarise the benefits by using flows.
 
 * Scenario is simpler and easier to understand.

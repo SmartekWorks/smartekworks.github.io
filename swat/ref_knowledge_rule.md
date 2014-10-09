@@ -161,7 +161,7 @@ The definition of an operation is a JSON map containing values for following key
 
 * `"selectors"`: **(Required)** A JSON list of CSS selectors defining the operation search area in the HTML DOM.
 * `"collectionNode"`: **(Required)** The Collection node to be extracted as an operation in the operation search area.
-* `"nesting"`: **(Required)** `outer` or `inner` indicating the search sequence in the area. `inner` means to search the operation from bottom of the DOM tree while `outer` means to search from the top of the DOM tree. For example, if the selectors contains a nested `"div"`, the result will be influenced by the value.
+* `"nesting"`: **(Required)** `outer` or `inner` indicating the search sequence in the area. `inner` means to search the operation from bottom of the DOM tree while `outer` means to search from the top of the DOM tree. For example, if the `"selectors"` contains a nested `"div"`, the result will be influenced by the value.
 
 
 Syntax of Supportive Components
@@ -185,14 +185,14 @@ Each label policy consists of a series of atomic labelling mechanisms in order. 
 
 | Mechanism    				| Explanation
 | --------- 				| -----------
-| `"label"` 				| The text of the ```<label>``` node corresponding to the target node. The `id` value of the target node should be the same as the `for` value of the ```<label>``` node.
+| `"label"` 				| The text of the `<label>` node corresponding to the target node. The `id` value of the target node should be the same as the `for` value of the `<label>` node.
 | `"text"` 					| Get the text owned by the target node only, otherwise get the combined text of all children.
 | `"prevSibling"`   		| The text of the previous sibling node in DOM tree.
 | `"nextSibling"`   		| The text of the next sibling node in DOM tree.
 | `"parentPrevSibling"`   	| The text of the previous sibling node of the target's parent node in DOM tree.
 | `"parentNextSibling"`  	| The text of the next sibling node of the target's parent node in DOM tree.
-| `"parentTdPrevSibling"`   | The text of the previous ```<td>``` node corresponding to the nearest ```<td>``` containing the target's parent node in DOM tree.
-| `"imgChild"` 				| The `id`, `alt` or `title` value of the ```<img>``` child node.
+| `"parentTdPrevSibling"`   | The text of the previous `<td>` node corresponding to the nearest `<td>` containing the target's parent node in DOM tree.
+| `"imgChild"` 				| The `alt` or `title` or `id` value of the `<img>` child node.
 | `"firstChild"`   			| The text of the first child node.
 | `"alt"`   				| The value of the target node's attribute `alt`.
 | `"title"`   				| The value of the target node's attribute `title`.
@@ -230,7 +230,7 @@ Each locator policy consists of a series of atomic locating mechanisms in order.
 Case Studies
 ---
 
-### Extend existing default rules
+### jQuery UI dialog
 
 The default knowledge rule leverages the standard HTML specification, and sometimes need to be extended especially when some UI library is introduced into the web site. Here is the sample code snippet of a jQuery UI dialog:
 
@@ -265,9 +265,7 @@ In regards to the above HTML, the default rule will extract the `<form>` block a
 }
 ```
 
-Hint: Please be noted that "div.ui-dialog" must stands before "form" so that all the child elements could be absorbed.
-
-### Create new rules
+Note: Please be noted that "div.ui-dialog" must stands before "form" so that all the child elements could be absorbed.
 
 As a further step to the case above, now the dialog is treated as a `form`, but this is not enough as we want to create a much more personalized rule towards such kind of dialogs. Thus, we need to create an operation rule, a collection node rule and a label policy respectively.
 

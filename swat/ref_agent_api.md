@@ -88,7 +88,7 @@ You need to implement an agent server to accept the above request, do the SQL qu
 * Body:
 ```json
 {
-	"result":"file0513",
+	"result":"123",
 	"extraEvidences":[
 		{
 			"name":"file0513.pdf",
@@ -99,4 +99,4 @@ You need to implement an agent server to accept the above request, do the SQL qu
 }
 ```
 
-In this way, the uploaded file named `file0513.pdf` will be save as an evidence for the system operation. And, then the test will use `file0513` to search the file`s detail.
+In this way, the uploaded file named `file0513.pdf` will be save as an evidence for the system operation. And, then the test will use `123` to search the file`s detail.

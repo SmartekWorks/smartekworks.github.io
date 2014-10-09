@@ -1,4 +1,4 @@
-DB Access and File Manipulation
+データベース、ファイル操作
 ===
 
-Note: This page is currently under construction. We will complete the documentation as soon as possible.
+Note: このページは現在作成中です。

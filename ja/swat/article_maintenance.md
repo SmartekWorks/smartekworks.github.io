@@ -1,4 +1,4 @@
-Automated Test Maintenance
+自動テストのメンテナンス
 ===
 
-Note: This page is currently under construction. We will complete the documentation as soon as possible.
+Note: このページは現在作成中です。

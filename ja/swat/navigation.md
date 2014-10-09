@@ -14,7 +14,7 @@
 
 * [SWATサーバー](setup_swat.md)
 * [実行サービス](setup_execservices.md)
-* [ツールおよび他システム連携](setup_tools.md)
+* [ツールと外部連携](setup_tools.md)
 
 [ノウハウ集]()
 
@@ -27,7 +27,7 @@
 
 * [画面オペレーション](ref_web_operation.md)
 * [システムオペレーション](ref_sys_operation.md)
-* [マッチング・クエリルール](ref_mq_rule.md)
+* [マッチング、クエリルール](ref_mq_rule.md)
 * [画面ナレッジルール](ref_knowledge_rule.md)
 * [エージェントAPI仕様](ref_agent_api.md)
 

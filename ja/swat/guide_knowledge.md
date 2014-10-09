@@ -8,12 +8,12 @@ SWATキャプチャーのインストール
 
 **SWATキャプチャー**はSWAT画面ナレッジのインポートで使用されるWebアプリのHTMLをキャプチャするためのブラウザ拡張機能です。 SWATはまたブラウザ機能による`HTMLとして保存`で保存したHTMLをサポートしています。 WebアプリでリアルタイムレンダリングされたHTMLやフレーム構造を扱うには、**SWATキャプチャー**でWebアプリをキャプチャする必要があります。
 
-**SWATキャプチャー**は現在Google Chrome、Mozilla FirefoxとInternet Explorerで提供されています。このガイドではchromeを使います。セットアップの詳細は、[ツールおよび他システム連携のセットアップ](setup_tools.md#SWATキャプチャー)を参照ください。 
+**SWATキャプチャー**は現在Google Chrome、Mozilla FirefoxとInternet Explorerで提供されています。このガイドではchromeを使います。セットアップの詳細は、[ツールと外部連携のセットアップ](setup_tools.md#SWATキャプチャー)を参照ください。 
 
 Chrome拡張機能のインストールと使用は簡単です。以下の手順に従ってください。
 
 1. Chromeブラウザを開き、Chrome Webストアの[SWATキャプチャー画面](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie)へ。 
-2. **＋無料**ボタンで拡張機能をインストールします。 インストール完了後は、Chromeのツールバーに![SWAT icon](/swat/assets/images/extension.png)が表示されます。
+2. <span class="glyphicon glyphicon-plus"></span> **無料**ボタンで拡張機能をインストールします。 インストール完了後は、Chromeのツールバーに![SWAT icon](/swat/assets/images/extension.png)が表示されます。
 3. 任意のWeb画面を開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
 4. SHTMLタイプのファイルは、デフォルトでは自動的にダウンロードフォルダーに保存されます。
 

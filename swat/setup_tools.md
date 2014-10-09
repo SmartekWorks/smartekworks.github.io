@@ -178,4 +178,3 @@ The configuration string is a JSON map with following rules:
 
 * Use the key `"agent_api"` and an API map.
 * The key of the API map is the name and the value is the URL.
-* The configuration string can also contain the key `"jira"` if you are using JIRA integration.
