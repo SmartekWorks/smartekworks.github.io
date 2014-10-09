@@ -1,7 +1,7 @@
 Webオペレーション
 ===
 
-Webオペレーションは、ページ上のインタラクティブなオペレーションモデルです。SWATナレッジエンジンで画面を解析し、ナレッジルールによるWebオペレーションを抜粋します。画面実装に適したオペレーションを取得する方法の詳細はこちらを参照ください。 [Knowledge Rule DSL](ref_knowledge_rule.md)　また、編集やオペレーションのカスタマイズすることができます。また、こちらから関連情報の取得が可能です。 [Importing Pages](guide_knowledge.md).
+Webオペレーションは、画面上のインタラクティブなオペレーションモデルです。SWATナレッジエンジンで画面を解析し、ナレッジルールによるWebオペレーションを抜粋します。画面実装に適したオペレーションを取得する方法の詳細はこちらを参照ください。 [Knowledge Rule DSL](ref_knowledge_rule.md)　また、編集やオペレーションのカスタマイズすることができます。また、こちらから関連情報の取得が可能です。 [Importing Pages](guide_knowledge.md).
 
 Webオペレーションの使い方
 ---
@@ -22,113 +22,113 @@ Hint: もしオペレーション中に5つ以上のパラメータががある�
 
 これら**パラメータデータ**には４つのタイプがあります。: ノードの種類毎に`Text`, `Select`, `Multi-select`, `Execute`  
 
-* `Text`: The actual text inputed in text typed node such as text-box, text area etc.
-* `Select`: Options selected in select typed node such as select. Collection with mutually exclusive entries such as radio group, or a group of link/button also belongs to this type.
-* `Multi-select`: Options selected in multi-select typed node such as multi-select. Collection with non-exclusive entry such as checkbox group is also included in this type.
-* `Execute`: Used for actions without parameter such as a single link. This type of parameter will be displayed as a text-box followed by <span class="glyphicon glyphicon-play"></span>. The text-box is used for setting variable so that you can ignore the parameter. Please refer to [Ignoring Parameter](#Ignoring_Parameter) for details.
+* `Text`: 実際のテキストは、テキスト領域やテキストボックスなどのようなテキストタイプノードで入力。
+* `Select`: SELECTなどセレクトタイプに指定されたノードで選択したオプション。 そのようなラジオグループとして相互に排他的な入力を持つコレクションや、このタイプに属するリンク・ボタンのグループ。
+* `Multi-select`: 複数選択などのマルチセレクトタイプに指定されたノードで選択したオプション。そのようなチェックボックスグループなどの非排他的な入力を持つコレクションもこのタイプに含まれています。
+* `Execute`: そのような単一のリンクとしてパラメータを指定せずにアクションに使用。このタイプのパラメータは、<span class="glyphicon glyphicon-play"></span>に続いてテキストボックスとして表示されます。テキストボックスは、パラメータを無視することができるように、変数を設定することができます。詳細はこちら参照ください。 [Ignoring Parameter](#Ignoring_Parameter)
 
-If cases of `Select` and `Multi-select` you can switch the querying mode by clicking **Querying Mode Switch**, the <span class="glyphicon glyphicon-refresh"></span> icon next to the **Parameter Data**. Please refer to [Querying Modes](#Querying_Modes) for details.
+`Select`と`Multi-select`のケースで**Querying Mode Switch**をクリックし問合せモードへ切り換えることができれば、次の**Parameter Data**　 <span class="glyphicon glyphicon-refresh"></span>アイコン。 詳細はこちらを参照ください。 [Querying Modes](#Querying_Modes)
 
-#### Alert Options
+#### アラート　オプション
 
-Alert options which are displayed under **Parameter Data** will only be available for a node with alert. You can define a node with alert and for how long should SWAT wait for the alert in **Operation Customization**. There are three options to handle the alert.
+**パラメータデータ**の下に表示されているアラートのオプションはアラートのノードのために使用できます。 SWATの**オペレーションカスタマイズ**でアラートを待機する時間のためのノードを定義することができます。アラートを処理するための3つのオプションがあります。
 
-* `Accept`: Accept the alert by clicking **OK**.
-* `Dismiss`: Dismiss the alert by clicking **Cancel**.
-* `No Alert`: Alert will not appear.
+* `Accept`: **OK**をクリックして、警告を受け入れます。
+* `Dismiss`: **Cancel**をクリックして、アラートを閉じます。
+* `No Alert`: アラートが表示されません。
 
-Please refer to [Window, Frame, Alert, AJAX](guide_scenes.md) for how to work with alert in your scenario.
+シナリオでアラートの利用方法はこちらを参照ください。 [Window, Frame, Alert, AJAX](guide_scenes.md) 
 
-Attention: An unexpected alert will cause error in execution, and the operation will also return error if an alert expected to handle doesn't appear. 
+Attention: 予想外のアラートは、実行中にエラーが発生しアラートが表示されない場合、オペレーションはエラーで返されます。
 
-#### Errors
+#### エラー
 
-Web operation may encounter various of error in validation and in execution. Most common errors a listed below:
+Webオペレーションは、検証中や実行中にさまざまなエラーが発生する場合があります。もっとも共通的なエラーを以下に記します。:
 
-* Parameter data is not valid. (in validation and execution)
-Value of parameter in `Text Query`, `Index Query` is not valid. Please refer to [Querying Modes](#Querying_Modes) for details. If you use variables in the parameter, the error will be detected in execution instead of in validation.
-* Cannot find target page. (in execution)
-This error occurs when no page is satisfied the matching rules defined in page identification of the target page.
-* Cannot find target operation. (in execution)
-The expected operation does not exist.
-* Cannot find target node. (in execution)
-The expected node does not exist.
-* Cannot find target sub-node. (in execution)
-Cannot find the matched result based on the input of parameter in querying mode.
+* パラメータデータが有効ではありません。 (検証中と実行中)
+`Text Query`のパラメータ値、`Index Query` は有効でありません。詳細はこちらを参照ください。 [Querying Modes](#Querying_Modes) パラメータで変数を使用する場合、エラーは実行時に検出されます。
+* 対象画面が見つかりません。(実行中)
+対象画面の画面識別で定義されているマッチングルールを満たしていない場合に発生するエラーです。
+* 対象オペレーションが見つかりません。(実行中)
+期待されたオペレーションが存在しません。
+* 対象ノードが見つかりません。(実行中)
+期待されたノードが存在しません。
+* 対象サブノードが見つかりません。(実行中)
+問い合せモードで、パラメータの入力に基づき一致した結果が見つかりません。
 
-#### Evidences
+#### エビデンス
 
-All web operation will take the following basic evidences for the activated window after execution, and if an operation contains several steps such as input and submission, an extra screenshot will be taken before the last step. Evidence for alert will also be avaialbe if there is any alert handling in the operation.
+すべてのWebオペレーションは、実行後に起動したウィンドゥ画面が以下のように基本的なエビデンスになります。もしオペレーションが、入力やサブミットなどのいくつかのステップが含まれている場合、余分なのスクリーンショットは最後のステップの前に取得されます。 オペレーションの中に任意のアラート処理があった場合アラートのためのエビデンスも利用可能になります。
 
-* Screenshot
+* スクリーンショット
 * HTML
-* Screenshot before submission
-* Alert information in JSON text format
+* サブミット前のスクリーンショット
+* JSONテキストフォーマットでアラート情報
 
-If you want to take evidence for another window, you just need to append a **Window Control** system operation to activate the target window.
+もし他のウィンドゥ画面でエビデンスを取得したい場合、対象ウィンドゥ画面で作動させるためにシステムオペレーションの**Window Control**を加える必要があります。
 
-Querying Modes
+問合せモード
 ---
 
-If the parameter is related to a collection node in which you should choose a sub-node, you will have three querying mode for the parameter: `Static Select`, `Text Query`, `Index Query`. You can switch the mode by clicking the <span class="glyphicon glyphicon-refresh"></span> icon next to the parameter data field.
+パラメーターは、サブノードを選択すべきでコレクションノードに関連している場合、パラメータは３つの問合せモードを持ちます。: `Static Select`, `Text Query`, `Index Query`　次のパラメータデータフィールドに <span class="glyphicon glyphicon-refresh"></span>アイコンをクリックし切りけることができます。 
 
-#### Static Select Mode
+#### 静的選択モード
 
-This is the default mode for parameters related to a collection node. The parameter data field is in form of a select or mulit-select. SWAT will search the sub-node by using properties of your selection defined in page knowledge.
+これはコレクションノードに関連するパラメータのデフォルトモードです。 パラメータデータフィールドはセレクトかマルチセレクトかのフォームです。SWATは画面ナレッジで定義されている選択プロパティを使用しサブノードを検索します。
 
-* In multi-select typed node, you can select several sub-nodes.
-* This mode is not available when the sub-node itself is a collection node. `Text Query Mode` will be de default mode in this case.
-* Variables cannot be used.
+* マルチセレクトタイプのノードでは、いくつかのサブのノードを選択することができます。
+* サブノード自身がコレクションノードがある場合、このモードは使用できません。 `テキスト問合せモード`はこのケースでデフォルトです。
+* 変数は使用でいません。
 
-#### Text Query Mode
+#### テキスト問合せモード
 
-The parameter data field will be displayed as a text-box followed by <span class="glyphicon glyphicon-font"></span>. SWAT will search the sub-node by using `equal`, `startWith`, `contain` policies in order until the first matched node is found.
+パラメータデータフィールドは、以下テキストボックスとして表示します。 <span class="glyphicon glyphicon-font"></span>　 SWATは順序の考えで、最初に一致したノードが見つかるまでこれらを使いサブノードを検索します。 `equal`, `startWith`, `contain` 
 
-* In multi-select typed node, use `,` to specify several sub-node querying text and use blank to select none. For example, `red, blue` will select the sub-node containing text `red` and the sub-node containing text `blue`.
-* In single select typed node, blank is not allowed.
+* マルチセレクトタイプのノードでは、いくつかのサブノード問合せテキストやセレクトモードの空白を指定するのに `,`　を使用します。 例えば、 `red,blue`は、テキスト` red`とテキスト`blue`を含むサブノードを選択します。
+* シングルセレクトタイプのノードでは、空白は許可されていません。
+* 変数は使用できません。
+
+#### インデックス問合せモード
+
+パラメータデータフィールドは、以下テキストボックスとして表示されます。 <span class="glyphicon glyphicon-th-list"></span>　 SWATは、位置によってサブノードを検索します。 インデックス`1`やそれ以上大きい数字は最初のサブノードを指定するために使用し、インデックス `-1`やそれより小さな数字は最後のサブノードやそれ以前を指定するために使用します。
+
+* マルチセレクトタイプのノードでは、いくつかのサブノード問合せインデックスや空白を指定するのに　`,` を使用します。例えば、 `1,2`は、`1`と`2`の位置でサブノードを選択します。 
+* シングルセレクトノードでは、`0` を除く整数のみ許可します。
 * Variables can be used.
 
-#### Index Query Mode
-
-The parameter data field will be displayed as a text-box followed by <span class="glyphicon glyphicon-th-list"></span>. SWAT will search the sub-node by the position. Use index `1` and bigger number to specify the first sub-node and after, and use index `-1` and smaller number to specify the last sub-node and before.
-
-* In multi-select typed node, use `,` to specify several sub-node querying index and use blank to select none. For example, `1, 2` will select the sub-node at position `1` and the sub-node at `2`.
-* In single select node, only integer except `0` is allowed.
-* Variables can be used.
-
-Using Variable
+変数の使用
 ---
 
-You can set a variable in format of `@{var}` in the parameter data field to separate the data and scenario. All variables in a scenario/flow except those set by **Set Value**, **API Call** operation will become parameters of the scenario/flow. The variable set by **Set Value**, **API Call** operation obtains the value from the system operation in execution, so it doest not need outside data source.
+データとシナリオを分離するために、パラメータデータフィールドに`@{VAR}`の形式で変数を設定することができます。 シナリオ/フローのすべての変数は**SetValue**によって設定されたものを除きます。 **API Call**オペレーションは、シナリオ/フローのパラメータからなっています。 The variable set by **Set Value**, **SetValue**によって設定された変数や、 ** API Call**オペレーションが、実行中のシステム操作から値を取得するには、 外部のデータソースを必要としません。
 
-Using variable should conform to the following rules:
+変数を使用するには、以下の規則に準拠します。:
 
-* The variable name should be a string with only digits, alphabets, Japanese Characters, Chinese Characters and `_`.
-* You can use several variables in one parameter data field such as `@{var1}abc@{var2}`.
-* Variable can only be used in a text typed parameter, so you have to switch a parameter with form of select or multi-select to other querying mode before you use variables.
-* Validation errors cannot not be detected until execution when you use variable.
+* 変数名は数字、アルファベット、日本語、漢字と `_`の文字列でなければなりません。
+* `@{VAR1}のABC@ {var2は}`のような1つのパラメータ·データ·フィールド内の複数の変数を使用することができます。
+* 変数は、テキスト入力したパラメータで使用することができます。 変数を使用する前に他のクエリモードに選択または複数選択の形でパラメータを切り替える必要があります。
+* 変数を使用する場合、検証エラーが実行されるまで検出されません。.
 
-Ignoring Parameter
+パラメータを無視
 ---
 
-Ignoring a parameter means that you do not want to interact with the node corresponding to the parameter in execution. Basically, you can do so by unchecking the **Using Parameter Option** of the parameter. 
+パラメータを無視するは、ノードが実行中のパラメータに対応すると対話したくないことを意味します。 基本的には、パラメータの**パラメータオプション使用**をオフにしておくことができます。 
 
-Actually, you have several ways to ignore a parameter in execution.
+実際には、実行中のパラメータを無視するには、いくつかの方法があります。
 
-1. Uncheck the **Using Parameter Option** of the parameter in scenario/flow builder.
-2. Uncheck the **Using Data Option** of all the variables related to the parameter in case data dialog. (You can also using case export/import function to do so.)
-3. Ignore the parameter of the parent node. For example, you may encounter a complex nested node operation such as a table operation with inputs in each row. If you ignore the parent node that selects a row, the child nodes (inputs in row) will be also ignored in execution.
+1. シナリオ/フロービルダーで、パラメータの**パラメータオプション使用**のチェックを外す。
+2. データダイアログケースでパラメータと関係あるすべての変数の**データオプション使用**のチェックを外す。 (それをするめ export/import機能のケースを使います。)
+3. 親ノードのパラメータを無視します。例えば、そのような各行に入力を持つテーブル操作などの複雑なネストされたノードの動作が発生する可能性があります。行を選択した親ノードを無視すると、子ノード（行の入力）も、実行時に無視されます。
 4. Ignore the operation. When an operation is ignored, all the parameters in the operation will be ignored too.
 
-Ignoring Operation
+オペレーションを無視
 ---
 
-It is meaningless that you try to ignore the operation in scenario/flow builder because you can simply not add it. However, sometimes you may need to ignore an operation in your case. 
+それは単にそれを追加できないので、シナリオ/フロー·ビルダーのオペレーションを無視しようとすることは無意味です。しかしながら、 時には、ケースによってはオペレーションを無視する必要があるかもしれません。 
 
-Like the policy in ignoring parameter by ignoring variables, you can ignore the entire operation when you uncheck the **Using Data Option** of all the variables related to the operation in case data dialog. (You can also do so by using case export/import function.) 
+変数無視することによって、パラメータを無視するポリシーと同様に, ケースデータダイアログでオペレーションに関連するすべての変数の**データオプション使用**のチェックを外したときに、全体の動作を無視することができます。 (それをするためEexport/import機能を使います。) 
+例えば、 *検索ボッス*、*検索ボタン*の*検索*オペレーションを持ち、*検索ボックス*のための変数1`@{SearchKey}`を使用します。この場合は変数 `SearchKey`の**データオプション使用**_をオフにして*検索*オペレーションをバイパスすることができます。
 
-For example, you may have a *Search* operation with a *Search Box* and a *Search Button*, and you use only one variable `@{SearchKey}` for the *Search Box*. You can bypass the *Search* operation by unchecking the **Using Data Option** of the variable `SearchKey` in this case.
 
-When an operation is ignored, you can not see the operation and evidence in your test result.
+オペレーションは無視されている場合、テスト結果のオペレーションとエビデンスを見ることができません。
 
-Note: If you ignore all the parameters in an operation, the operation will still be executed without any interaction. Though there is no interaction in execution, you can access the evidences of the operation in test result.
+Note: オペレーションのすべてのパラメータを無視した場合、操作は対話なしに実行されます。 実行中の会話がないにもかかわらず、テスト結果のオペレーションのエビデンスにアクセスすることができます。
