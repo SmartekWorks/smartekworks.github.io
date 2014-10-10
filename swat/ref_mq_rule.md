@@ -142,7 +142,7 @@ Querying rule is a JSON map string with a query condition.
 
 ### Syntax
 
-The JSON map contains three type of keys:
+The JSON map contains following keys:
 
 * `"frame"`: **(Optional)** The target frame's name or ID. SWAT will use the main HTML if the key is not defined. (You can ignore the key if your web application does not use frames.)
 ```json
@@ -156,15 +156,15 @@ The JSON map contains three type of keys:
  * `"title"`: Title of the page.
  * `"alert"`: Text of the last alert appeared in the previous operation.
  * *Selector String*: A visable node (that must be displayed) in the page (first matched frame if you have `"frame"` key) defined by CSS selector. You need to use `"css_key"` to retrieve the text or attribute of the node.
-* `"query_key"`: (Required when `"source"` is `"url"`) The parameter key of the query string.
+* `"query_key"`: **(Required when `"source"` is `"url"`)** The parameter key of the query string.
 ```json
 {"source":"url", "query_key":"orderNo"}
 ```
-* `"css_key"`: (Required when `"source"` is *Selector String*) The attribute name of the node. You can also use `text` to retrieve the text of the node.
+* `"css_key"`: **(Required when `"source"` is *Selector String*)** The attribute name of the node. You can also use `text` to retrieve the text of the node.
 ```json
 {"source":"#selectGender", "css_key":"value"}
 ```
-* `"css_index"`: (Optional, Only used when `"source"` is *Selector String*) If there are several nodes match the *Selector String*, you can use `"css_index"` to specify the node. SWAT will use `1` by default.
+* `"css_index"`: **(Optional, Only used when `"source"` is *Selector String*)** If there are several nodes match the *Selector String*, you can use `"css_index"` to specify the node. SWAT will use `1` by default.
 ```json
 {"source":"input[name='gender']", "css_key":"value", "css_index":2}
 ```
@@ -175,7 +175,7 @@ The JSON map contains three type of keys:
 ```json
 {"source":"url", "query_key":"orderNo"}
 ```
-* Use value of the text of a `span` with ID `"orderNo"` in the frame with name `"main"` of the page.
+* Use value of the text of node with ID `"orderNo"` in the frame with name `"main"` of the page.
 ```json
 {"frame":"main", "source":"#orderNo", "css_key":"text"}
 ```

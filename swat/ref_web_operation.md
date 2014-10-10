@@ -3,7 +3,7 @@ Web Operation
 
 Web operation is an interactive operation model on a page. SWAT knowledge engine analyses the page, extract the web operation according to knowledge rules. Please refer to [Knowledge Rule DSL](ref_knowledge_rule.md) for details of how to obtain appropriate operations for you page implementation. You can also edit and customize the operation. You can obtain the related information from [Importing Pages](guide_knowledge.md).
 
-How to Use Web Operations?
+Parameter
 ---
 
 To use web operation in scenario/flow builder is simple and straightforward. You just need to drag & drop a web operation onto a scenario flow or flow, and fill the parameters for the operation. A parameter may consist of five parts: **Parameter Title**, **Using Parameter Option**, **Parameter Data**, **Querying Mode Switch** and **Alert Options**.
@@ -25,9 +25,11 @@ There are four types of **Parameter Data**: `Text`, `Select`, `Multi-select`, `E
 * `Text`: The actual text inputed in text typed node such as text-box, text area etc.
 * `Select`: Options selected in select typed node such as select. Collection with mutually exclusive entries such as radio group, or a group of link/button also belongs to this type.
 * `Multi-select`: Options selected in multi-select typed node such as multi-select. Collection with non-exclusive entry such as checkbox group is also included in this type.
-* `Execute`: Used for actions without parameter such as a single link. This type of parameter will be displayed as a text-box followed by <span class="glyphicon glyphicon-play"></span>. The text-box is used for setting variable so that you can ignore the parameter. Please refer to [Ignoring Parameter](#Ignoring_Parameter) for details.
+* `Execute`: Used for actions without parameter such as a single link. 
 
 If cases of `Select` and `Multi-select` you can switch the querying mode by clicking **Querying Mode Switch**, the <span class="glyphicon glyphicon-refresh"></span> icon next to the **Parameter Data**. Please refer to [Querying Modes](#Querying_Modes) for details.
+
+In `Execute` type, you can also use **Querying Mode Switch** to input variable so that you can ignore the parameter. Please refer to [Ignoring Parameter](#Ignoring_Parameter) for details.
 
 #### Alert Options
 
@@ -37,35 +39,9 @@ Alert options which are displayed under **Parameter Data** will only be availabl
 * `Dismiss`: Dismiss the alert by clicking **Cancel**.
 * `No Alert`: Alert will not appear.
 
-Please refer to [Window, Frame, Alert, AJAX](guide_scenes.md) for how to work with alert in your scenario.
+Please refer to [Window, Frame, Alert, AJAX](article_scenes.md) for how to work with alert in your scenario.
 
 Attention: An unexpected alert will cause error in execution, and the operation will also return error if an alert expected to handle doesn't appear. 
-
-#### Errors
-
-Web operation may encounter various of error in validation and in execution. Most common errors a listed below:
-
-* Parameter data is not valid. (in validation and execution)
-Value of parameter in `Text Query`, `Index Query` is not valid. Please refer to [Querying Modes](#Querying_Modes) for details. If you use variables in the parameter, the error will be detected in execution instead of in validation.
-* Cannot find target page. (in execution)
-This error occurs when no page is satisfied the matching rules defined in page identification of the target page.
-* Cannot find target operation. (in execution)
-The expected operation does not exist.
-* Cannot find target node. (in execution)
-The expected node does not exist.
-* Cannot find target sub-node. (in execution)
-Cannot find the matched result based on the input of parameter in querying mode.
-
-#### Evidences
-
-All web operation will take the following basic evidences for the activated window after execution, and if an operation contains several steps such as input and submission, an extra screenshot will be taken before the last step. Evidence for alert will also be avaialbe if there is any alert handling in the operation.
-
-* Screenshot
-* HTML
-* Screenshot before submission
-* Alert information in JSON text format
-
-If you want to take evidence for another window, you just need to append a **Window Control** system operation to activate the target window.
 
 Querying Modes
 ---
@@ -95,6 +71,34 @@ The parameter data field will be displayed as a text-box followed by <span class
 * In multi-select typed node, use `,` to specify several sub-node querying index and use blank to select none. For example, `1, 2` will select the sub-node at position `1` and the sub-node at `2`.
 * In single select node, only integer except `0` is allowed.
 * Variables can be used.
+
+Errors
+---
+
+Web operation may encounter various of error in validation and in execution. Most common errors a listed below:
+
+* Parameter data is not valid. (in validation and execution)
+Value of parameter in `Text Query`, `Index Query` is not valid. Please refer to [Querying Modes](#Querying_Modes) for details. If you use variables in the parameter, the error will be detected in execution instead of in validation.
+* Cannot find target page. (in execution)
+This error occurs when no page is satisfied the matching rules defined in page identification of the target page.
+* Cannot find target operation. (in execution)
+The expected operation does not exist.
+* Cannot find target node. (in execution)
+The expected node does not exist.
+* Cannot find target sub-node. (in execution)
+Cannot find the matched result based on the input of parameter in querying mode.
+
+Evidences
+---
+
+All web operation will take the following basic evidences for the activated window after execution, and if an operation contains several steps such as input and submission, an extra screenshot will be taken before the last step. Evidence for alert will also be avaialbe if there is any alert handling in the operation.
+
+* Screenshot
+* HTML
+* Screenshot before submission
+* Alert information in JSON text format
+
+If you want to take evidence for another window, you just need to append a **Window Control** system operation to activate the target window.
 
 Using Variable
 ---

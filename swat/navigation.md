@@ -19,9 +19,6 @@
 [Articles]()
 
 * [Working with Flow](article_flow.md)
-* [Automated Test Maintenance*](article_maintenance.md)
-* [Window, Frame, Alert, AJAX*](article_scenes.md)
-* [DB Access and File Manipulation*](article_api_call.md)
 
 [Reference]()
 

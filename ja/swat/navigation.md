@@ -19,9 +19,6 @@
 [ノウハウ集]()
 
 * [フローの活用](article_flow.md)
-* [自動テストのメンテナンス](article_maintenance.md)
-* [ウインドウ、フレーム、ダイアログ、AJAX](article_scenes.md)
-* [データベース、ファイル操作](article_api_call.md)
 
 [レファレンス]()
 

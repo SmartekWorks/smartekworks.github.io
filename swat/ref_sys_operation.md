@@ -35,22 +35,22 @@ Operation - Go to URL
 
 Go to a specific URL in the current browser session and window. 
 
-##### Parameters
+#### Parameters
 
 | Parameter  | Explanation
 | ---------- | -----------
 | Site       | Site managed in SWAT. SWAT will use the execution related settings of the site after this operation.
 | URL        | Relative URL to the target server URL of the **Site**. You can also use full URL starting with `http://`, `https://`, `file://` to ignore the target server URL. 
 
-##### Notes
+#### Notes
 
 * A new default browser session and window will be created if there is no sessions.
 
-##### Errors
+#### Errors
 
 * The generated URL from **URL** and the target server URL of the **Site** is blank or invalid. (in execution)
 
-##### Evidences
+#### Evidences
 
 * Screenshot
 * HTML
@@ -60,22 +60,22 @@ Operation - Wait in Browser
 
 Wait a short period of time in the current browser session and window. You usually need this operation when you want to wait for updates triggered by javascript.
 
-##### Parameters
+#### Parameters
 
 | Parameter  | Explanation
 | ---------- | -----------
 | Duration   | Seconds to wait in the current browser session and window.
 
-##### Notes
+#### Notes
 
 * You should take care of session timeout when you wait for a long period of time.
 * There is an idle timeout (about 90 seconds) in cloud execution service. If the wait period exceeds the timeout, the execution will be interrupted.
 
-##### Errors
+#### Errors
 
 * The value of **Duration** is blank or is not a natural number. (in validation and execution)
 
-##### Evidences
+#### Evidences
 
 * Screenshot
 * HTML
@@ -85,22 +85,22 @@ Operation - Navigation Control
 
 Simulate the navigation control function of browser.
 
-##### Parameters
+#### Parameters
 
 | Parameter  | Explanation
 | ---------- | -----------
 | Action     | browsers' navigation control function: `Forward`, `Back`, `Reload`.
 
-##### Notes
+#### Notes
 
 * This system operation currently does not work on *Safari*.
 * Browsers may not ensure the `Back` and `Reload` actions work after a form submission.
 
-##### Errors
+#### Errors
 
 * Execute this system operation on *Safari*. (in execution)
 
-##### Evidences
+#### Evidences
 
 * Screenshot
 * HTML
@@ -112,25 +112,25 @@ Obtain the downloaded file in the last operation and save it as an evidence. It 
 
 Note: To simulate a actual download and upload action may be not a good practice because it involves OS function and causes scenario unstable.
 
-##### Parameters
+#### Parameters
 
 | Parameter     | Explanation
 | ------------- | -----------
 | Wait Duration | Seconds to wait for finishing downloading the file.
 
-##### Notes
+#### Notes
 
 * This system operation only works in local execution service.
 * You should ensure that the file started downloading to a specific local directory in the previous operation. We offer configuration for auto downloading on Chrome and Firefox. However, you need to config browsers to bypass save file dialog and not to open file directly in other browsers.
-* You need to set *DownloadDir* with the path of download directory in your local execution service. Please refer to [Execution Services](setup_execservices.md#Configuration_File) for the configuration.
+* You need to set `"downloadDir"` with the path of download directory in your local execution service. Please refer to [Execution Services](setup_execservices.md#Configuration_File) for the configuration.
 
-##### Errors
+#### Errors
 
 * The value of **Wait Duration** is blank or is not a natural number. (in validation and execution)
 * Execute this system operation in cloud execution service. (in execution)
 * The downloaded file cannot be found because of download failure or invalid download directory. (in execution)
 
-##### Evidences
+#### Evidences
 
 * Downloaded file
 
@@ -139,7 +139,7 @@ Operation - Window Control
 
 Find the target window and manipulate it.
 
-##### Parameters
+#### Parameters
 
 | Parameter      | Explanation
 | -----------    | -----------
@@ -147,17 +147,17 @@ Find the target window and manipulate it.
 | Matching Rules | The matching rules of the target window. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL) for the details of matching rule. Leave it blank to bypass this condition.
 | Action         | `Activate` for switching the target window to the current window. `Close` for closing the target window.
 
-##### Notes
+#### Notes
 
 * If both **Window Name** and **Matching Rules** are designated, they should both be satisfied. 
 * If both **Window Name** and **Matching Rules** are blank, the current window will be the target window.
 
-##### Errors
+#### Errors
 
 * **Matching Rules** do not conform to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
 * Target window cannot be found. (in execution)
 
-##### Evidences
+#### Evidences
 
 * Screenshot
 * HTML
@@ -167,22 +167,22 @@ Operation - Assertion
 
 Assert whether the page in current window is the page you expected.
 
-##### Parameters
+#### Parameters
 
 | Parameter      | Explanation
 | -----------    | -----------
 | Matching Rules | Expectation in format of matching rules. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL) for the details of matching rule. Leave it blank to bypass the assertion.
 
-##### Notes
+#### Notes
 
 * Only evidence of assertion operation will be included in normal mode evidence export. So, you can use it with blank **Matching Rules** as a checkpoint of your scenario.
 
-##### Errors
+#### Errors
 
 * **Matching Rules** do not conform to [Matching & Querying DSL](ref_mq_rule.md#Matching_Rule_DSL). (in validation and execution) 
 * Assertion failed. (in execution)
 
-##### Evidences
+#### Evidences
 
 * Screenshot
 * HTML
@@ -193,7 +193,7 @@ Operation - Set Value
 
 Set a value from the page in current window to a variable, which you can use as parameters for the following operations.
 
-##### Parameters
+#### Parameters
 
 | Parameter     | Explanation
 | ------------- | -----------
@@ -201,14 +201,14 @@ Set a value from the page in current window to a variable, which you can use as 
 | Variable Name | Variable Name to store the value.
 
 
-##### Errors
+#### Errors
 
 * **Query Rule** is blank or does not conform to [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL). (in validation and execution) 
 * **Variable Name** is blank or does not conform to rules of variable name. (in validation)
 * **Variable Name** has been referenced in the previous operations. (in validation)
 * Querying target cannot be found. (in execution)
 
-##### Evidences
+#### Evidences
 
 * Operation result in JSON text format
 
@@ -217,15 +217,15 @@ Operation - Additional Information
 
 Obtain additional information from the page in current window, including URL and option lists of all selects on the page.
 
-##### Parameters
+#### Parameters
 
 * None
 
-##### Errors
+#### Errors
 
 * None
 
-##### Evidences
+#### Evidences
 
 * Additional information in JSON text format
 
@@ -234,7 +234,7 @@ Operation - API Call
 
 During a scenario you can call a web service to execute an extended operation such as DB access and file manipulation. You need build an agent server with your extended operation conforming to the [Agent API specification](ref_agent_api.md) specification. Please refer to [DB Access and File Manipulation](article_api_call.md) for details.
 
-##### Parameters
+#### Parameters
 
 | Parameter     | Explanation
 | ------------- | -----------
@@ -242,13 +242,13 @@ During a scenario you can call a web service to execute an extended operation su
 | API Params    | Parameter  for the API, using request query string format such as `Key1=Value1&Key2=Value2`.
 | Variable Name | Variable name to store the result in API return. Leave it blank if you do not need to set the value.
 
-##### Notes
+#### Notes
 
 * This system operation only works in local execution service.
 * The **API URL** can be displayed as a selectable list, if you have setup the integration. Please refer to [Setup Tools and Integrations](setup_tools.md#Agent_Server_API_Integration) for details.
 * The API of your agent server should conform to the [Agent API specification](ref_agent_api.md) specification.
 
-##### Errors
+#### Errors
 
 * **Variable Name** does not conform to rules of variable name. (in validation)
 * API return does not contain `result` key when you need to set the value. (in execution)
@@ -256,7 +256,7 @@ During a scenario you can call a web service to execute an extended operation su
 * Execute this system operation in cloud execution service. (in execution)
 * Cannot communicate correctly with the API by using **API URL** and **API Params**. (in execution) 
 
-##### Evidences
+#### Evidences
 
 * Returned data in JSON text format
 
@@ -265,7 +265,7 @@ Operation - Pause Scenario
 
 Pause the scenario and resume on a certain condition. All browser sessions will be closed and freed when the scenario is paused.
 
-##### Parameters
+#### Parameters
 
 | Parameter      | Explanation
 | -------------  | -----------
@@ -274,16 +274,16 @@ Pause the scenario and resume on a certain condition. All browser sessions will 
 | Wake Up Date   | Date (`Today`, `Tomorrow`) to resume the paused scenario. Works under `Wake Up` type with **Wake Up Time**.
 | Wake Up Time   | Time (by hour) to resume the paused scenario. Works under `Wake Up` type with **Wake Up Date**.
 
-##### Notes
+#### Notes
 
 * If the Wake up date time has already been passed when executing this operation, the pause will be bypassed.
 * You need to create a new session after resume by using **Go to URL* or **Session Control** operation.
 
-##### Errors
+#### Errors
 
 * The value of **Pause Duration** is blank or not a natural number under `Sleep` type. (in validation and execution)
 
-##### Evidences
+#### Evidences
 
 * None
 
@@ -292,26 +292,26 @@ Operation - Session Control
 
 Manipulate multiple browser sessions in scenario. You usually use one session (maybe with multiple windows) in one scenario. However, you need multiple sessions if you want to simulate several users interacting with each other in different browsers.
 
-##### Parameters
+#### Parameters
 
 | Parameter    | Explanation
 | ------------ | -----------
 | Action       | `Create` for creating a new browser session, `Activate` for switching a browser session to the current session.
 | Session Name | The name of a new session or target session for activating. The session name of the default session is `default`.
 
-##### Notes
+#### Notes
 
 * As a scenario executes operations one by one, you can only have one activated session at a time. You need to switch to other sessions before executing operations on it.
 * You should take care of session timeout of unactivated sessions.
 * There is a maximum parallel sessions defined in both local and cloud execution service. Scenarios with sessions more than the maximum will not be accepted by the execution service.
 
-##### Errors
+#### Errors
 
 * **Session Name** is blank. (in validation and execution)
 * Create a new session with an existing **Session Name**. (in execution)
 * Activate a session with an non-existed **Session Name**. (in execution)
 
-##### Evidences
+#### Evidences
 
 * None
 
