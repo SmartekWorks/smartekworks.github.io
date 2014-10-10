@@ -6,7 +6,7 @@
 SWATキャプチャー
 ---
 
-**SWATキャプチャー**は、SWAT画面ナレッジのインポートで使用されるWebアプリをHTMLをキャプチャするブラウザ拡張機能です。ブラウザの機能で*HTMLとして保存*を使うことも可能ですが、Webアプリのフレーム構造を扱う場合や、HTMLがリアルタイムレンダリングされている場合に**SWATキャプチャー**を使用する必要があります。
+**SWATキャプチャー**は、SWAT画面ナレッジのインポートで使用されるWebアプリケーションのHTMLをキャプチャするブラウザ拡張機能です。ブラウザの機能で*HTMLとして保存*を使うことも可能ですが、Webアプリケーションのフレーム構造を扱う場合や、HTMLがリアルタイムレンダリングされている場合に**SWATキャプチャー**を使用する必要があります。
 
 **SWATキャプチャー**は、Google Chrome、Mozilla FirefoxとInternet Explorerで提供されます。
 
@@ -25,7 +25,7 @@ Attention: 一部拡張機能によって、WebページのDOMが変更される
 
 #### 拡張機能の利用
 
-1. 任意のWeb画面を開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
+1. 任意のWebページを開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
 2. SHTMLタイプ（SWATが使うHTMLコンテナの一種）のファイルは、デフォルトでは自動的にダウンロードフォルダーに保存されます。
 
 ### Mozilla Firefox
@@ -41,7 +41,7 @@ Attention: 一部拡張機能によって、WebページのDOMが変更される
 
 #### アドオンの利用
 
-1. 任意のWeb画面を開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
+1. 任意のWebページを開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
 2. **名前を付けて保存**ダイアログでターゲットフォルダーを選択し、保存します。
 3. SHTMLタイプとしてファイルはターゲットフォルダーに保存されます。
 
@@ -58,14 +58,14 @@ Attention: 一部拡張機能によって、WebページのDOMが変更される
 1. [ここ](http://www.smartekworks.com/tools/swat-ie-capture.zip)からインストール用zipをダウンロードします。
 2. zipをインストール先に解凍してください。
 3. cmd.exeを検索、それに対して右クリックで「管理者として実行」を選びます。
-4. 開いたコマンドウインドにインストールフォルダに入り、install.batを実行します。（アンインストールの場合uninstall.batを実行します）
+4. 開いたコマンドウィンドゥのインストールフォルダに入り、install.batを実行します。（アンインストールの場合uninstall.batを実行します）
 
-Note: 端末によって、「Could not load file or assembly or one of its dependencies. Operation is not supported. (Exception from HRESULT: 0x80131515)」のエラーが発生することがあります。その場合、フォルダにある二つのDLLファイルに右クリックし、プロパティに「ブロックの解除」ボタンをクリックし、再度インストールしてください。
+Note: 端末によって、「Could not load file or assembly or one of its dependencies. Operation is not supported. (Exception from HRESULT: 0x80131515)」のエラーが発生することがあります。その場合、フォルダにある二つのDLLファイルに対して右クリックで、プロパティの「ブロックの解除」ボタンをクリックし、再度インストールしてください。
 
 #### 拡張機能の利用
 
 1. 管理者モードでInternet Explorer 32bitを動かします。ブラウザのツールバーに![SWAT icon](/swat/assets/images/extension.png)が表示されます。
-2. 任意のWeb画面を開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
+2. 任意のWebページを開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
 3. **名前を付けて保存**ダイアログでターゲットフォルダーを選択し、保存します。
 4. SHTMLタイプとしてファイルはターゲットフォルダーに保存されます。
 
@@ -104,7 +104,7 @@ SWATサービスは受入テストとしてCIプロセスにJenkinsと下記の�
 4. **確定**ボタンをクリックする代わりに、 **確定**ボタンの次のプルアップリストの**ケース実行リクエスト生成（Jenkins）** か **テストセット実行リクエスト生成（Jenkins）**を選びます。
 5. **実行リクエスト情報（Jenkins）**ダイアログは、Jenkinsを設定するために必要な実行リクエスト文字列で表示されます。
 
-JIRAとの連携
+ATLASSIAN社のJIRAとの連携
 ---
 
 SWATは内部の課題管理システムをJIRAに置き換え使用することができます。 連携機能は以下の通りです。
@@ -117,7 +117,7 @@ Note: 連携のために、SWATサービスからJIRAサービスにアクセス
 
 #### JIRAの設定
 
-* 少なくとも一つのJIRAプロジェクトを必要とします。
+* 少なくとも１つのJIRAプロジェクトを必要とします。
 * SWATで使用される課題の種類に関する以下のコードは、プロジェクトに追加する必要があります。
  * `bug`, `duplicate`, `enhancement`, `question`, `others`
 
@@ -149,7 +149,7 @@ Note: 連携のために、SWATサービスからJIRAサービスにアクセス
 エージェントAPIの連携
 ---
 
-シナリオ中にデータベースへアクセスすることとか、ファイル操作をすることなどの拡張オペレーションを実行するために、シナリオに外部Webサービスを呼び出すことができます。 その場合、[エージェントAPI仕様](ref_agent_api.md)に準拠したエージェントサーバを構築する必要があります。 詳細は[データベース、ファイル操作](article_api_call.md)を参照ください。
+シナリオの中にデータベースへアクセスすることや、ファイル操作をすることなどの拡張オペレーションを実行するために、シナリオに外部Webサービスを呼び出すことができます。 その場合、[エージェントAPI仕様](ref_agent_api.md)に準拠したエージェントサーバを構築する必要があります。 詳細は[データベース、ファイル操作](article_api_call.md)を参照ください。
 
 **外部API呼び出し**システムオペレーションを使い直接APIのURLを入力することができますが、またAPI連携するための設定をすれば、**外部API呼び出し**システムオペレーションから、事前に定義されたAPIを選択することもできます。
 

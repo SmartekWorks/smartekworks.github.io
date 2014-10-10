@@ -29,7 +29,7 @@ Linuxでは、
 JAVA_HOME=/home/ubuntu/jdk1.7.0_45
 PATH=/home/ubuntu/jdk1.7.0_45/bin
 ```
-3. ターゲット端末上のインストールディレクトリにswat.xx.zipファイルを展開します
+3. ターゲット端末上のインストールディレクトリにswat.xx.zipファイルを展開します。
 4. Windows以外のプラットフォームでセットアップする場合、SWATを実行するユーザーが、サブディレクトリに対する書き込み権限を持っていることが必要です。
 5. 下記のサーバーの設定が完了後、サーバーの起動や停止については以下のコマンドを使用します。
 Windowsの場合
@@ -61,7 +61,7 @@ SWATのサーバを起動し、ブラウザでアカウントの設定を行い�
 
 Note: SWATサービスを参照するためにInternet Explorer 10以降か、最新版Chrome、最新版Firefox、最新版Safariを使ってください。
 
-1. `<installation directory>/bin/startup.bat` か `<installation directory>/bin/startup.sh`で実行し、 サーバーの起動完了するまで待ちます。
+1. `<installation directory>/bin/startup.bat` か `<installation directory>/bin/startup.sh`で実行し、 サーバーが起動完了するまで待ちます。
 2. ブラウザで`http://<IP_ADDRESS>:8080`へ接続します。
 3. 初期ユーザーID/パスワード (`manager`/`12345678`)でログインします。
 4. サービス設定メニューからアカウント設定を選び、**アカウント設定**画面を表示させます。ここでアカウント情報を参照します。
