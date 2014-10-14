@@ -10,8 +10,8 @@ SWATはクラウドサービスとパッケージ版の両方を提供してま�
 | ------- | -----------
 | CPU     | 2.2 GHz (Single Core) or above
 | Memory  | 3072 MB (Windows), 2048 MB (Linux)
-| OS      | Windows 7以降、Mac OS X 10.6以降、Ubuntu 10.4以降、Redhat 5以降（その他Linuxのディストリビューションでも動作する可能性がある）
-| Others  | Java SDK 7をターゲット端末かVMにインストール必要 
+| OS      | Windows 7以降、Mac OS X 10.6以降、Ubuntu 10.4以降、Redhat 5以降（その他Linuxのディストリビューションでも動作する可能性があります）
+| Others  | Java SDK 7をターゲット端末かVMにインストールが必要 
 
 
 インストール手順

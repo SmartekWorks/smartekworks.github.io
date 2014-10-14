@@ -12,22 +12,22 @@ SWATはより効率的にシナリオを作成できるだけでなく、ロー�
 | ------- | -----------
 | CPU     | 2.2 GHz (Single Core) or above
 | Memory  | 2048 MB
-| OS      | Windows XP以降, Mac OS X 10.6以降, Ubuntu 10.4以降（その他Linuxのディストリビューションでも動作する可能性がある）
+| OS      | Windows XP以降, Mac OS X 10.6以降, Ubuntu 10.4以降（その他Linuxのディストリビューションでも動作する可能性があります）
 | Browser | Internet Explorer 6以上, 最新版Firefox, 最新版Chrome, 最新版Safari
-| Others  | Java SDK 7をターゲット端末かVMにインストール必要
+| Others  | Java SDK 7をターゲット端末かVMにインストールが必要
 
 #### インストール手順
 
 1. SWATサービスのサービス設定メニューから**ローカル実行環境**を選び、**ローカル実行環境一覧**画面を表示させます。
 2. 右側の<span class="glyphicon glyphicon-download-alt"></span>ボタンをクリックし、**ローカル実行環境**を選択します。
 3. 設定情報を確認して、「ダウンロード」をクリックすると、zipファイル名`WAAS-xxx.zip`がローカルコンピュータにダウンロードされます。
-4. ターゲット端末上のインストールディレクトリにzipファイルを解凍します.
+4. ターゲット端末上のインストールディレクトリにzipファイルを解凍します。
 6. 下記に従ってインストールディレクトリの下の`account.ini`設定ファイルを変更します。
 7. ローカル実行サーバーを立ち上げるには、インストールディレクトリ下の`startup.bat`（MacもしくはLinuxの場合、`startup.sh`）を実行します。 
 8. **ローカル実行環境一覧**画面を再度表示させ、ローカル実行サーバーが登録されていることを確認できます。
 9. ローカル実行サーバーを停止させるには、インストールディレクトリ下の`shutdown.bat`（MacもしくはLinuxの場合、`shutdown.sh`）を実行します。
 
-Note: Windows 8でローカル実行サーバーを立ち上げるとき、"Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5."のワーニングメッセージが表示されます。 それが実行に影響を与えることはありませんので、このメッセージを無視ください。 また、レジストリに`HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs`を追加することにより、このメッセージを削除することができます。
+Note: Windows 8でローカル実行サーバーを立ち上げるとき、"Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5."のワーニングメッセージが表示されます。 これが実行に影響を与えることはありませんので、このメッセージを無視ください。 また、レジストリに`HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs`を追加することにより、このメッセージを削除することができます。
 
 #### 設定ファイル
 

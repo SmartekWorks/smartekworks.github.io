@@ -1,7 +1,7 @@
 ツールと外部連携のセットアップ
 ===
 
-より効率的にSWATを使用する際に役立ついくつかのツールや他のサービスとの連携機能を提供しています。
+SWATは、より効率的な使用に役立つためのいくつかのツールや他のサービスとの連携機能を提供しています。
 
 SWATキャプチャー
 ---
@@ -20,7 +20,7 @@ Attention: 一部拡張機能によって、WebページのDOMが変更される
 
 #### 拡張機能のインストール
 
-1. Chromeブラウザを開き、Chrome Webストアの[SWATキャプチャー画面](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie)へ。 
+1. Chromeブラウザを開き、Chrome Webストアの[SWATキャプチャー画面](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie)へ移動します。 
 2. <span class="glyphicon glyphicon-plus"></span> **無料**ボタンで拡張機能をインストールします。 インストール完了後は、Chromeのツールバーに![SWAT icon](/swat/assets/images/extension.png)が表示されます。
 
 #### 拡張機能の利用
@@ -36,7 +36,7 @@ Attention: 一部拡張機能によって、WebページのDOMが変更される
 
 #### アドオンのインストール
 
-1. Firefoxブラウザを開き、Firefoxアドアンのマーケットプレースの[SWATキャプチャー画面](https://addons.mozilla.org/firefox/addon/firefoxswatcapture/)へ。 
+1. Firefoxブラウザを開き、Firefoxアドアンのマーケットプレースの[SWATキャプチャー画面](https://addons.mozilla.org/firefox/addon/firefoxswatcapture/)へ移動します。 
 2. <span class="glyphicon glyphicon-plus"></span> **Firefoxに追加**ボタンでアドアンをインストールします。 インストール完了後は、Firefoxのツールバーに![SWAT icon](/swat/assets/images/extension.png)が表示されます。
 
 #### アドオンの利用
@@ -107,7 +107,7 @@ SWATサービスは受入テストとしてCIプロセスにJenkinsと下記の�
 ATLASSIAN社のJIRAとの連携
 ---
 
-SWATは内部の課題管理システムをJIRAに置き換え使用することができます。 連携機能は以下の通りです。
+SWATは内部の課題管理システムをATLASSIAN社のJIRAに置き換え使用することができます。 連携機能は以下の通りです。
 
 * SWATからJIRAプロジェクトへ課題を起票します。
 * 特定のテスト結果に関連する課題を検索します。
