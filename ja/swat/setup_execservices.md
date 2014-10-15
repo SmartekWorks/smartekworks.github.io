@@ -27,11 +27,11 @@ SWATはより効率的にシナリオを作成できるだけでなく、ロー�
 8. **ローカル実行環境一覧**画面を再度表示させ、ローカル実行サーバーが登録されていることを確認できます。
 9. ローカル実行サーバーを停止させるには、インストールディレクトリ下の`shutdown.bat`（MacもしくはLinuxの場合、`shutdown.sh`）を実行します。
 
-Note: Windows 8でローカル実行サーバーを立ち上げるとき、"Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5."のワーニングメッセージが表示されます。 これが実行に影響を与えることはありませんので、このメッセージを無視ください。 また、レジストリに`HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs`を追加することにより、このメッセージを削除することができます。
+Note: Windows 8でローカル実行サーバーを立ち上げるとき、"Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5."のwarning messageが表示されます。 これが実行に影響を与えることはありませんので、このメッセージを無視ください。 また、レジストリに`HKEY_LOCAL_MACHINE\Software\JavaSoft\Prefs`を追加することにより、このメッセージを削除することができます。
 
 #### 設定ファイル
 
-以下に従ってインストールディレクトリの下の`account.ini`の設定ファイルを変更
+以下に従ってインストールディレクトリの下の`account.ini`の設定ファイルを変更します。
 
 * `waasCode`: 実行サーバーのコードです。特定の実行サーバーでシナリオを実行するために実行の作成時にコードを指定することができます。アルファベットと数字の組合せで16文字以下で指定します。この機能がいらない場合は設定する必要はありません。 
 * `privateMode`: 不特定の**WaasCode**で実行タスクを受け入れるかどうかを決めるのに`true`か`false`を指定します。 デフォルト値`false`です。実行サーバーで `waasCode`を設定しない場合、この値は無視されます。

@@ -2,7 +2,7 @@
 
 [はじめに](index.md)
 
-[スタートガイド]()
+[利用ガイド]()
 
 * [SWATサービス利用開始](guide_start.md)
 * [画面インポート](guide_knowledge.md)
@@ -20,7 +20,7 @@
 
 * [フローの活用](article_flow.md)
 
-[レファレンス]()
+[参考資料]()
 
 * [画面オペレーション](ref_web_operation.md)
 * [システムオペレーション](ref_sys_operation.md)
