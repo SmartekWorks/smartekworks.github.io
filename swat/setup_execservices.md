@@ -33,22 +33,22 @@ Note: When you start local execution server on Windows 8, you may find a warning
 
 The Configuration file, `account.ini` is a JAVA property file with following keys:
 
-* `waasCode`: The code of the execution server. You can specify the code when you create execution in order to execute the scenario on a specific execution server. You can only use combination of alphabets and digits under 16 characters. You do not need to set it if you do not want this function.
-* `privateMode`: Use `true` or `false` to decide whether or not to accept execution tasks with unspecified `waasCode`. The default value is `false`. The value will be ignored if you do not set `waasCode` for the execution server.
-* `serverUrl`: The serverUrl of your SWAT account. You can get this information from **Account Settings** page.
-* `apiKey`: The apiKey of your SWAT account. You can get this information from **Account Settings** page.
-* `secretKey`: The secretKey of your SWAT account. You can get this information from **Account Settings** page.
-* `swatProxy.enable`: Use `true` or `false` to decide whether or not to use proxy to connect to SWAT service. The default value is `false`.
-* `swatProxy.host`: The host of the proxy. The value will be ignored if `swatProxy.enable` is `false`.
-* `swatProxy.port`: The port of the proxy. You must use number here. The value will be ignored if `swatProxy.enable` is `false`.
-* `swatProxy.username`: The username of the proxy. The value will be ignored if `swatProxy.enable` is `false`.
-* `swatProxy.password`: The password of the proxy. The value will be ignored if `swatProxy.enable` is `false`.
-* `execProxy.enable`: Use `true` or `false` to decide whether or not to use proxy in the execution browser. As SWAT cannot handle the authentication dialog of browser in execution. You can only use proxy without username and password. The default value is `false`.
-* `execProxy.host`: The host of the proxy. The value will be ignored if `execProxy.enable` is `false`.
-* `execProxy.port`: The port of the proxy. The value will be ignored if `execProxy.enable` is `false`.
-* `driverParallelization`: The maximum parallel sessions allowed in the local execution server. As you can only run one IE session on a computer, the value will be ignored in this case.
-* `downloadDir`: The default download directory of your browser. You cannot use **Obtain Download** system operation if you do not set the value. Please add double backslash on Windows, such as `C:\\Downloads`.
-* `firefoxProfile`: The path of Firefox profile which your want to start the testing browser with. This is useful when you want to test on Firefox with special settings or addons. Please add double backslash on Windows, such as `C:\\MyProfile`.
+* `waasCode`: **(Optional)** The code of the execution server. You can specify the code when you create execution in order to execute the scenario on a specific execution server. You can only use combination of alphabets and digits under 16 characters. You do not need to set it if you do not want this function.
+* `privateMode`: **(Optional)** Use `true` or `false` to decide whether or not to accept execution tasks with unspecified `waasCode`. The default value is `false`. The value will be ignored if you do not set `waasCode` for the execution server.
+* `serverUrl`: **(Required)** The serverUrl of your SWAT account. You can get this information from **Account Settings** page.
+* `apiKey`: **(Required)** The apiKey of your SWAT account. You can get this information from **Account Settings** page.
+* `secretKey`: **(Required)** The secretKey of your SWAT account. You can get this information from **Account Settings** page.
+* `swatProxy.enable`: **(Optional)** Use `true` or `false` to decide whether or not to use proxy to connect to SWAT service. The default value is `false`.
+* `swatProxy.host`: **(Optional)** The host of the proxy. The value will be ignored if `swatProxy.enable` is `false`.
+* `swatProxy.port`: **(Optional)** The port of the proxy. You must use number here. The value will be ignored if `swatProxy.enable` is `false`.
+* `swatProxy.username`: **(Optional)** The username of the proxy. The value will be ignored if `swatProxy.enable` is `false`.
+* `swatProxy.password`: **(Optional)** The password of the proxy. The value will be ignored if `swatProxy.enable` is `false`.
+* `execProxy.enable`: **(Optional)** Use `true` or `false` to decide whether or not to use proxy in the execution browser. As SWAT cannot handle the authentication dialog of browser in execution. You can only use proxy without username and password. The default value is `false`.
+* `execProxy.host`: **(Optional)** The host of the proxy. The value will be ignored if `execProxy.enable` is `false`.
+* `execProxy.port`: **(Optional)** The port of the proxy. The value will be ignored if `execProxy.enable` is `false`.
+* `driverParallelization`: **(Required)** The maximum parallel sessions allowed in the local execution server. As you can only run one IE session on a computer, the value will be ignored in this case.
+* `downloadDir`: **(Optional)** The default download directory of your browser. You cannot use **Obtain Download** system operation if you do not set the value. Please add double backslash on Windows, such as `C:\\Downloads`.
+* `firefoxProfile`: **(Optional)** The path of Firefox profile which your want to start the testing browser with. This is useful when you want to test on Firefox with special settings or addons. Please add double backslash on Windows, such as `C:\\MyProfile`.
 
 #### Next Steps
 
@@ -84,11 +84,11 @@ Hint: The BrowserStack Service has already been configured for you if you are us
 The configuration string is a JSON map with following rules:
 
 * Use the key of `"browserstack"`, and the configuration map with following keys as value.
- * `"enable"`: Use `true` or `false` to decide whether to use the service or not. The default value is `false`.
- * `"username"`: The username of BrowserStack account.
- * `"accesskey"`: The accesskey of BrowserStack account.
- * `"parallelization"`: The maximum parallel sessions allowed of BrowserStack subscription.
- * `"local"`: Use `true` or `false` to decide whether to use BrowserStack Local Testing or not. The default value is `false`.
+ * `"enable"`: **(Optional)** Use `true` or `false` to decide whether to use the service or not. The default value is `false`.
+ * `"username"`: **(Required)** The username of BrowserStack account.
+ * `"accesskey"`: **(Required)** The accesskey of BrowserStack account.
+ * `"parallelization"`: **(Required)** The maximum parallel sessions allowed of BrowserStack subscription.
+ * `"local"`: **(Optional)** Use `true` or `false` to decide whether to use BrowserStack Local Testing or not. The default value is `false`.
  
 Note: Please refer to the documentation of BrowserStack for how to get the account information and how to use Local Testing.
 

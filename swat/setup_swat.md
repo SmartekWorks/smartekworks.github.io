@@ -29,7 +29,7 @@ In Linux
 JAVA_HOME=/home/ubuntu/jdk1.7.0_45
 PATH=/home/ubuntu/jdk1.7.0_45/bin
 ```
-3. Extract the swat.xx.zip file to the installation directory on your target computer.
+3. Extract the swat_xxx.zip file to the installation directory on your target computer.
 4. If you setup SWAT on platforms other than Windows, you should ensure that the user account running the application must have write permission on the subdirectories.
 5. After server configuration, you can use following commands to start and stop SWAT server.
 In Windows

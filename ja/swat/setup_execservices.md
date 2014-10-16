@@ -33,22 +33,22 @@ Note: Windows 8でローカル実行サーバーを立ち上げるとき、"Coul
 
 以下に従ってインストールディレクトリの下の`account.ini`の設定ファイルを変更します。
 
-* `waasCode`: 実行サーバーのコードです。特定の実行サーバーでシナリオを実行するために実行の作成時にコードを指定することができます。アルファベットと数字の組合せで16文字以下で指定します。この機能がいらない場合は設定する必要はありません。 
+* `waasCode`: **（任意）** 実行サーバーのコードです。特定の実行サーバーでシナリオを実行するために実行の作成時にコードを指定することができます。アルファベットと数字の組合せで16文字以下で指定します。この機能がいらない場合は設定する必要はありません。 
 * `privateMode`: 不特定の**WaasCode**で実行タスクを受け入れるかどうかを決めるのに`true`か`false`を指定します。 デフォルト値`false`です。実行サーバーで `waasCode`を設定しない場合、この値は無視されます。
-* `serverUrl`: SWATアカウントのサーバーURLです。**アカウント設定**画面からこの情報を入手することができます。
-* `apiKey`: SWATアカウントのAPIキーです。 **アカウント設定**画面からこの情報を入手することができます。
-* `secretKey`: SWATアカウントの秘密キーです。**アカウント設定**画面からこの情報を入手することができます。
-* `swatProxy.enable`: SWATサービスへ接続するためにプロキシを使うかどうかを決定するのに`true`か`false`を指定します。デフォルト値は`false`です。
-* `swatProxy.host`: プロキシのホストです。`swatProxy.enable`が`false`の場合、無視されます。
-* `swatProxy.port`: プロキシのポートです。 数字を指定します。`swatProxy.enable`が`false`の場合、無視されます。
-* `swatProxy.username`: プロキシのusernameです。`swatProxy.enable` が`false`の場合、無視されます。
-* `swatProxy.password`: プロキシのpasswordです。`swatProxy.enable`が`false`の場合、無視されます。
-* `execProxy.enable`: ブラウザ実行時にプロキシを使うかどうかを決めるのに`true`か`false`で指定します。SWATは、実行中のブラウザ認証ダイアログを扱うことができません。ユーザネームとパスワードなしでプロキシを使うことができます。デフォルト値は`false`です。
-* `execProxy.host`: プロキシのホストです。`execProxy.enable`が`false`の場合、無視されます。
-* `execProxy.port`: プロキシのポートです。`execProxy.enable`が`false`の場合、無視されます。
-* `driverParallelization`:ローカル実行サーバーで許可される最大並列セッションです。IEの場合、サーバー毎に１セッションしかありません。
-* `downloadDir`: ブラウザのデフォルトダウンロードディレクトリーです。値を設定しないと、**ファイル保存**のシステムオペレーションを使うことができません。`C:\\Downloads`のようにWindowsでダブルバックスラッシュを加えてください。
-* `firefoxProfile`: 特定なFirefoxプロファイルをロードしてテストすることを望む際のFirefoxプロファイルのパスです。特別な設定やアドオンで、Firefox上でテストをしたい時に便利です。`C:\\MyProfile`のようにWindowsでダブルバックスラッシュを加えてください。
+* `serverUrl`: **（必須）** SWATアカウントのサーバーURLです。**アカウント設定**画面からこの情報を入手することができます。
+* `apiKey`: **（必須）** SWATアカウントのAPIキーです。 **アカウント設定**画面からこの情報を入手することができます。
+* `secretKey`: **（必須）** SWATアカウントの秘密キーです。**アカウント設定**画面からこの情報を入手することができます。
+* `swatProxy.enable`: **（任意）** SWATサービスへ接続するためにプロキシを使うかどうかを決定するのに`true`か`false`を指定します。デフォルト値は`false`です。
+* `swatProxy.host`: **（任意）** プロキシのホストです。`swatProxy.enable`が`false`の場合、無視されます。
+* `swatProxy.port`: **（任意）** プロキシのポートです。 数字を指定します。`swatProxy.enable`が`false`の場合、無視されます。
+* `swatProxy.username`: **（任意）** プロキシのusernameです。`swatProxy.enable` が`false`の場合、無視されます。
+* `swatProxy.password`: **（任意）** プロキシのpasswordです。`swatProxy.enable`が`false`の場合、無視されます。
+* `execProxy.enable`: **（任意）** ブラウザ実行時にプロキシを使うかどうかを決めるのに`true`か`false`で指定します。SWATは、実行中のブラウザ認証ダイアログを扱うことができません。ユーザネームとパスワードなしでプロキシを使うことができます。デフォルト値は`false`です。
+* `execProxy.host`: **（任意）** プロキシのホストです。`execProxy.enable`が`false`の場合、無視されます。
+* `execProxy.port`: **（任意）** プロキシのポートです。`execProxy.enable`が`false`の場合、無視されます。
+* `driverParallelization`: **（必須）** ローカル実行サーバーで許可される最大並列セッションです。IEの場合、サーバー毎に１セッションしかありません。
+* `downloadDir`: **（任意）** ブラウザのデフォルトダウンロードディレクトリーです。値を設定しないと、**ファイル保存**のシステムオペレーションを使うことができません。`C:\\Downloads`のようにWindowsでダブルバックスラッシュを加えてください。
+* `firefoxProfile`: **（任意）** 特定なFirefoxプロファイルをロードしてテストすることを望む際のFirefoxプロファイルのパスです。特別な設定やアドオンで、Firefox上でテストをしたい時に便利です。`C:\\MyProfile`のようにWindowsでダブルバックスラッシュを加えてください。
 
 #### ローカル実行環境について
 
@@ -84,11 +84,11 @@ Note: SWATのオプションサービスとしてBrowserStackサービスを購�
 設定文字列は下記ルールのJSONマップです。
 
 * `"browserstack"`のキーを使い、値として下記キーのJSONマップです。
- * `"enable"`: サービスを使うかどうかを決めるのに`true`か`false`を使います。 デフォルト値は`false`です。
- * `"username"`: BrowserStackアカウントのusernameです。
- * `"accesskey"`: BrowserStackアカウントのaccesskeyです。
- * `"parallelization"`: 最大平行セッションは、BrowserStackサブスクリプションで許可されたものです。
- * `"local"`: BrowserStackのLocal Testingを使うかどうかを決めるには`true`か`false`を使います。デフォルト値は`false`です。
+ * `"enable"`: **（任意）** サービスを使うかどうかを決めるのに`true`か`false`を使います。 デフォルト値は`false`です。
+ * `"username"`: **（必須）** BrowserStackアカウントのusernameです。
+ * `"accesskey"`: **（必須）** BrowserStackアカウントのaccesskeyです。
+ * `"parallelization"`: **（必須）** 最大平行セッションは、BrowserStackサブスクリプションで許可されたものです。
+ * `"local"`: **（任意）** BrowserStackのLocal Testingを使うかどうかを決めるには`true`か`false`を使います。デフォルト値は`false`です。
  
 Note: アカウント情報を取得する方法やLocal Testingの使用方法はBrowserStackのドキュメントを参照してください。
 
