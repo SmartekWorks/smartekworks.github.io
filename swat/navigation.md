@@ -28,4 +28,6 @@
 * [Knowledge Rule DSL](ref_knowledge_rule.md)
 * [Agent API specification](ref_agent_api.md)
 
+[日本語](/ja/swat/)
+
 [gimmick:theme (inverse: true)](bootstrap)

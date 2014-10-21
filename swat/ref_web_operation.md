@@ -112,6 +112,8 @@ Using variable should conform to the following rules:
 * Variable can only be used in a text typed parameter, so you have to switch a parameter with form of select or multi-select to other querying mode before you use variables.
 * Validation errors cannot not be detected until execution when you use variable.
 
+Hint: The scope of variables are local which means that in a flow you cannot access the variable defined in scenario or different flow. However you can define a global variable by adding `_` at the beginning of the variable name, such as `@{_var}`.
+
 Ignoring Parameter
 ---
 
