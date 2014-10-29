@@ -116,3 +116,7 @@ You should also take care of the following points in execution:
 #### Windows Firewall
 
 If you execute the scenario for the first on Windows with Windows Firewall enabled, there may be a dialog shown to ask whether allow the communication of `IEDriverServer.exe` or `chromedriver.exe`. Please permit the communication. You can also add the permission manually in your windows firewall settings.
+
+#### Windows IME
+
+If scenarios are executed on a non-English Windows, please make sure the default IME is English. Otherwise, non-English keyboard might be activated and wrong characters would be input.
