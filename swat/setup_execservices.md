@@ -104,14 +104,18 @@ You should use the following settings to ensure the execution:
 * On IE 7 or higher on Windows Vista or Windows 7, you must set the Protected Mode settings for each zone to be the same value. The value can be on or off, as long as it is the same for every zone. To set the Protected Mode settings, choose "Internet Options..." from the Tools menu, and click on the Security tab. For each zone, there will be a check box at the bottom of the tab labeled "Enable Protected Mode".
 * Additionally, "Enhanced Protected Mode" must be disabled for IE 10 and higher. This option is found in the Advanced tab of the Internet Options dialog.
 * The browser zoom level must be set to 100% so that the native mouse events can be set to the correct coordinates.
-* For IE 11 only, you will need to set a registry entry on the target computer so that the driver can maintain a connection to the instance of Internet Explorer it creates. You can download the reg file [here](http://www.smartekworks.com/tools/ie11-get-window-handles.zip).
-* If the website uses basic authentication, you can use the URL in the format like `http://<username>:<password>@yourdomain`. However, IE does not support this type of URL by default. You have to set a registry entry on the target computer. You can download the reg file [here](http://www.smartekworks.com/tools/ie-enable-basic-auth.zip)
+* For IE 11 only, you will need to set a registry entry on the target computer so that the driver can maintain a connection to the instance of Internet Explorer it creates. You can find the reg file in `tools` directory of your local execution server or download the reg file [here](http://www.smartekworks.com/tools/ie11-get-window-handles.zip).
+* If the website uses basic authentication, you can use the URL in the format like `http://<username>:<password>@yourdomain`. However, IE does not support this type of URL by default. You have to set a registry entry on the target computer. You can find the reg file in `tools` directory of your local execution server or download the reg file [here](http://www.smartekworks.com/tools/ie-enable-basic-auth.zip).
 
 You should also take care of the following points in execution:
 
 * As the InternetExplorerDriver uses so-called "native", or OS-level events to perform mouse and keyboard operations in the browser, you have to stop other tasks when using the IE driver for execution to ensure no to interfere the execution.
 * Screenshot cannot be captured normally in execution during the period that you use remote desktop (RDP) to connect execution environment, which is common when you use VM for execution. You also have to disconnect the RDP connect normally before execution.
-* InternetExplorerDriver uses current user's settings and data of IE, which means that cookies from one execution will remains in the next execution. You need to set IE to delete the context data when exit in *Internet Options > General* to ensure the execution starts with a clean context.
+* InternetExplorerDriver uses current user's settings and data of IE, which means that cookies from one execution will remains in the next execution. You need to set IE to delete the context data when exit in *Internet Options > General* to ensure the execution starts with a clean context. You can find the reg file in `tools` directory of your local execution server or download the reg file [here](http://www.smartekworks.com/tools/ie-enable-basic-auth.zip).
+
+#### Safari 10
+
+As the Safari driver cannot automatically install the extension which is needed to start automation under some latest version of Safari, such as Safari 10 on Yosemite, Safari 6.1 and Safari 7.2, you need to install the extenstion manually. You can find the latest extension file in `tools` directory of your local execution server or download the extension file [here](http://www.smartekworks.com/tools/SafariDriver.safariextz.zip). Please click the extracted file to install the extension. After installation, the installation file will be automatically deleted and you can find the extension in Safari extensions.
 
 #### Windows Firewall
 
