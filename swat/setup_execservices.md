@@ -117,9 +117,10 @@ You should also take care of the following points in execution:
 * Screenshot cannot be captured normally in execution during the period that you use remote desktop (RDP) to connect execution environment, which is common when you use VM for execution. You also have to disconnect the RDP connect normally before execution.
 * InternetExplorerDriver uses current user's settings and data of IE, which means that cookies from one execution will remains in the next execution. You need to set IE to delete the context data when exit in *Internet Options > General* to ensure the execution starts with a clean context. You can find the reg file in `tools` directory of your local execution server or download the reg file [here](http://www.smartekworks.com/tools/ie-enable-basic-auth.zip).
 
-#### Safari 10
+#### OS X Safari
 
-As the Safari driver cannot automatically install the extension which is needed to start automation under some latest version of Safari, such as Safari 10 on Yosemite, Safari 6.1 and Safari 7.2, you need to install the extenstion manually. You can find the latest extension file in `tools` directory of your local execution server or download the extension file [here](http://www.smartekworks.com/tools/SafariDriver.safariextz.zip). Please click the extracted file to install the extension. After installation, the installation file will be automatically deleted and you can find the extension in Safari extensions.
+* Due to the limitation of Safari Driver, scenario with alert handling and **Navigation Control** system operation cannot run properly under Safari.
+* As the Safari driver cannot automatically install the extension which is needed to start automation under some latest version of Safari, such as Safari 8 on Yosemite, Safari 6.1 and Safari 7.2, you need to install the extenstion manually. You can find the latest extension file in `tools` directory of your local execution server or download the extension file [here](http://www.smartekworks.com/tools/SafariDriver.safariextz.zip). Please click the extracted file to install the extension. After installation, the installation file will be automatically deleted and you can find the extension in Safari extensions.
 
 #### Windows Firewall
 
