@@ -72,6 +72,32 @@ Note: SWATサービスを参照するためにInternet Explorer 10以降か、�
 6. 画面右上にあるユーザーアイコンから**プロファイル編集**画面を開き、初期ユーザーのパスワードの変更をします。 
 7. 必要に応じて、サービス設定メニューから**ユーザー管理**画面を開き、新しいユーザーを登録します。
 
+アップグレード手順
+---
+
+Note: 現在アップグレードのみサポートしています。ダウングレードをサポートしません。
+
+1. 新しいバージョンのSWATのアップグレード用パッケージをダウンロードします。
+2. アップグレード用パッケージを解凍後、配下のファイルをSWATの`<installation directory>/update`に移動します。（`update`フォルダが存在しない場合、作成をお願いします。）
+3. アップグレード用スクリプを実行します。
+Windowsでは、
+```
+<installation directory>/update/update.bat
+```
+Linuxでは、
+```
+<installation directory>/update/update.sh
+```
+4. アップグレードが失敗した場合、ロールバックスクリプトで旧バージョンに戻すことが可能です。
+Windowsでは、
+```
+<installation directory>/update/rollback.bat
+```
+Linuxでは、
+```
+<installation directory>/update/rollback.sh
+```
+
 次へ
 ----
 

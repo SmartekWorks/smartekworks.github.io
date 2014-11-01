@@ -16,7 +16,7 @@ Setup Local Execution Server
 | Browser | Internet Explorer 6 or above, the latest Firefox, the latest Chrome, the latest Safari
 | Others  | You must have Java SDK 7 installed on your target desktop/VM. 
 
-#### Installation Instructions
+#### Installation
 
 1. Visit **Execution Service Monitor** page through menu *Management > Execution Services* in SWAT service.
 2. Click <span class="glyphicon glyphicon-download-alt"></span> button and select **Download Install Package**.
@@ -49,6 +49,10 @@ The Configuration file, `account.ini` is a JAVA property file with following key
 * `driverParallelization`: **(Required)** The maximum parallel sessions allowed in the local execution server. As you can only run one IE session on a computer, the value will be ignored in this case.
 * `downloadDir`: **(Optional)** The default download directory of your browser. You cannot use **Obtain Download** system operation if you do not set the value. Please add double backslash on Windows, such as `C:\\Downloads`.
 * `firefoxProfile`: **(Optional)** The path of Firefox profile which your want to start the testing browser with. This is useful when you want to test on Firefox with special settings or addons. Please add double backslash on Windows, such as `C:\\MyProfile`.
+
+#### Upgrade
+
+As the the only user data in local execution server is the configuration file, you normally do not need to upgrade, but install a new local execution server.
 
 #### Next Steps
 

@@ -14,6 +14,7 @@
 
 * [SWATサーバー](setup_swat.md)
 * [実行サービス](setup_execservices.md)
+* [リリースノート](setup_releases.md)
 * [ツールと外部連携](setup_tools.md)
 
 [ノウハウ集]()

@@ -98,8 +98,6 @@ In Linux
 <installation directory>/update/rollback.sh
 ```
 
-
-
 Next Steps
 ----
 
