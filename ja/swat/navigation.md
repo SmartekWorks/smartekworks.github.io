@@ -6,9 +6,9 @@
 
 * [SWATサービス利用開始](guide_start.md)
 * [画面インポート](guide_knowledge.md)
-* [画面ナレッジカスタマイズ](guide_tuning.md)
 * [シナリオ作成](guide_scenarios.md)
 * [テストケース実行](guide_execution.md)
+* [画面ナレッジカスタマイズ](guide_tuning.md)
  
 [セットアップ]()
 
