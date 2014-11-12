@@ -6,14 +6,15 @@
 
 * [SWATサービス利用開始](guide_start.md)
 * [画面インポート](guide_knowledge.md)
-* [画面ナレッジカスタマイズ](guide_tuning.md)
 * [シナリオ作成](guide_scenarios.md)
 * [テストケース実行](guide_execution.md)
+* [画面ナレッジカスタマイズ](guide_tuning.md)
  
 [セットアップ]()
 
 * [SWATサーバー](setup_swat.md)
 * [実行サービス](setup_execservices.md)
+* [リリースノート](setup_releases.md)
 * [ツールと外部連携](setup_tools.md)
 
 [ノウハウ集]()
@@ -27,6 +28,7 @@
 * [マッチング、クエリルール](ref_mq_rule.md)
 * [画面ナレッジルール](ref_knowledge_rule.md)
 * [エージェントAPI仕様](ref_agent_api.md)
+* [実行API仕様](ref_execution_api.md)
 
 [English](/swat/)
 

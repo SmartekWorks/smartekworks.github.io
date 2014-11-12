@@ -14,7 +14,7 @@ Requirements
 | Others  | You must have Java SDK 7 installed on your target desktop/VM. 
 
 
-Installation Instructions
+Installation
 ---
 
 1. Download a packaged release of the latest SWAT.
@@ -71,6 +71,32 @@ Note: Please use the Internet Explorer 10 or above, latest Chrome, latest Firefo
  * Change the **Timezone** and other settings if you need. (They are explained in [User Guide](guide_start.md), [Setup Execution Services](setup_execservices.md) and [Setup Tools and Integrations](setup_tools.md))
 6. Visit **User Profile** page through menu *manager > Edit Profile*, and change the password. 
 7. You may also setup a new user in **User Management** page through menu *Management > Users*.
+
+Upgrade
+---
+
+Note: SWAT support upward upgrade only, e.g., from v1.5.0 to v1.6.0. Downgrade is NOT allowed.
+
+1. Download the upgrade package for the specific SWAT version.
+2. Unzip the package and copy the contents inside to the `update` folder in the SWAT root directory. If the `update` folder does not exist, please create it manually.
+3. Run the update batch scripts to upgrade SWAT service.
+In Windows
+```
+<installation directory>/update/update.bat
+```
+In Linux
+```
+<installation directory>/update/update.sh
+```
+4. In case the update progress fails, you can run the rollback batch scripts to restore the SWAT service.
+In Windows
+```
+<installation directory>/update/rollback.bat
+```
+In Linux
+```
+<installation directory>/update/rollback.sh
+```
 
 Next Steps
 ----
