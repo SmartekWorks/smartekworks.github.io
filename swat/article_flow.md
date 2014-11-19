@@ -58,10 +58,40 @@ The parameters of a flow is from the variables you used in the flow, while those
 
 As you will often use flow's parameters as the scenario's parameters, when you drag & drop a flow, the parameters will be filled with variables using the parameter's name automatically.
 
-#### Errors and evidences
+#### Errors and Evidences
 
 As flow is just a container, it has no errors and evidences.
 
-#### Ignoring Flow
+#### Ignoring Flow,
 
 Like the policy in ignoring operation by ignoring all parameters, you can ignore the entire flow when you uncheck the **Using Data Option** of all the variables related to the flow in case data dialog. (You can also do so by using case export/import function.) 
+
+
+Before/After Filters
+---
+
+There're two special flows available in SWAT, the **Before Filter** and the **After Filter**. The former will be executed before every case, and the latter will be executed as a wrap-up procedure whenever the case is completed successfully or failed.
+
+#### Creating Filters
+
+To put a `before` tag onto a **Scenario Group** will make all the scenarios inside to be **Before Filters**, and vice versa, a `after` will also enable all the scenarios to be **After Filters**. The `before` and `after` tags are case insensitive, and the **Scenario Group** will get back to normal once these tags are removed.
+
+Hint: All these filter scenarnios are processed from top to bottom by its position in the page, and only the first case in one scenario will be executed.
+
+#### Override Filter Data
+
+The filters take effect in one **Test Set** but sometimes every case needs the personalized data applied to the filters. For example, there is a **User Login** before filter with `UserID` and `Password` as its parameters, however *Case A* and *Case B* require different login credentials. 
+
+Thus we could provide different filter data in JSON format for these two cases. Here's the data for *Case A*:
+
+```json
+{"UserID":"User A", "Password":"Password A"}
+```
+
+And here's the filter data for *Case B*:
+
+```json
+{"UserID":"User B", "Password":"Password B"}
+```
+
+Hint: If the parameter is not defined in the filter data, then the default parameter in the filter scenario will be used.

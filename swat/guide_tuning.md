@@ -94,6 +94,6 @@ Knowledge rule can help you a lot when you have a lot of pages with the similar 
 Next Steps
 ----
 
-You page knowledge is now ready to use. Next, you will learn how to use the web operation to build a scenario.
+You can try to import your own project and make it automatically tested on SWAT! 
 
-Go to [Building Scenarios](guide_scenarios.md).
+Go to [Preparing your own project](guide_final.md).

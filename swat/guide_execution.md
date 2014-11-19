@@ -91,4 +91,8 @@ After verification, you can change the test result status to `OK` or `NG`, and c
 Next Steps
 ----
 
-You can try to make your own test automation on SWAT! You are recommended to read articles from Article Section for the know-how from different cases. And you can refer to the Reference Section when you need to know the details of the specification.
+Now, you have your pages imported to SWAT's knowledge base, and cases running on SWAT. To improve your efficiency, you may need to make some adjustment towards the knowledge.
+
+Next, let's start learning how to create a customized knowledge rule and how to edit the pages and operations.
+
+Go to [Tuning Page Knowledge](guide_tuning.md).

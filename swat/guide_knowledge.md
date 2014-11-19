@@ -71,46 +71,18 @@ Importing Pages
 9. Select page `Bing`, and you will find two operations under it. 
 10. If you select the operation, you will find the nodes in the operation be highlighted. (one operation is for the menu and the other is for the search.)
 
-Configuring preview
+Editing Pages and Operations
 ---
 
-The operation preview is very useful in knowledge management and scenario building. However, the preview is usually without CSS because we only import the HTML source without any resource file (except that the HTML uses full URL for the resources). You can configure it to use the remote resources.
+Sometimes you need to change some properties such as title in individual knowledge components. You can do the modification on **Page Knowledge** page.
 
-Note: If you are using `https` to access SWAT service, you cannot access the resources with `http`. You can upload the needed resources to SWAT on **Site Management** page and configure them as the remote resources. 
-
-#### Analysing the Resource URL
-
-Use build-in development tools of the browser or extensions such as *Firebugs* to inspect the HTML source in the preview frame. You will find the following types of URL:
-
-* `http://www.bing.com/...`: This type of URL works in our preview, so we don't need to do any thing for it.
-* `/images/search...`: This type of URL uses SWAT service domain instead of *Bing* in preview, we have to add domain `http://www.bing.com/` for it.
-
-#### Changing Site Settings
-
-1. Visit **Site Management** page through menu *Management > Sites*, and select site `Bing` on the left.
-2. Input `http://www.bing.com/` to **Preview URL**, which will add `http://www.bing.com/` to URLs like `/images/search...`.
-3. Save the settings, and you will find images displayed in preview of **Page Knowledge**.
-
-#### Handling Relative URL
-
-Sometimes we may find relative URL such as `img/a.png`, `..img/a.css` in HTML. We have to replace the whole URL to a calculated absolute URL in this case.
-
-1. Visit **Site Management** page through menu *Management > Sites*,
-2. Click **Edit** button for **Preview Rules**, and an input dialog for replacing rule string will be displayed. 
-3. The rule are a JSON list of map. The key is the source text and the value is the destination text. For example:
-```json
-[
-	{"img/":"http://www.sample.com/a/img/"},
-	{"../img/":"http://www.sample.com/a/img/"}
-]
-```
-4. Do not forget saving the settings after you close the dialog.
+1. Visit **Page Knowledge** page through menu `Knowledge > Pages`.
+2. Select the `hp_table` under `Bing` and you can change the title to `Links`. After saving, you will find the title changed in the left tree.
+3. You can also change the title of `sb_form` to `Search` and `sa_ul` to `Suggestion List`. 
 
 Next Steps
 ----
 
-Now, you have your pages imported to SWAT's knowledge base. Before building scenarios with it, you still need to make some adjustment.
+Now, you have your pages imported to SWAT's knowledge base. Next, you will learn how to use the web operation to build a scenario.
 
-Next, let's start learning how to create a customized knowledge rule and how to edit the pages and operations.
-
-Go to [Tuning Page Knowledge](guide_tuning.md).
+Go to [Building Scenarios](guide_scenarios.md).
