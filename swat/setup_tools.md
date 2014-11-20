@@ -26,7 +26,7 @@ Attention: As some extensions will modify the DOM of you web pages, it is recomm
 #### Using the Extension
 
 1. Visit any web pages and click ![SWAT icon](/swat/assets/images/extension.png) icon. 
-2. An SHTML type file will be saved to your default download directory automatically.
+2. An SHTM type file will be saved to your default download directory automatically.
 
 ### Mozilla Firefox
 
@@ -43,7 +43,7 @@ Attention: As some extensions will modify the DOM of you web pages, it is recomm
 
 1. Visit any web pages and click ![SWAT icon](/swat/assets/images/extension.png) icon. 
 2. Select the target folder and change the filename as you wish in **Save As** dialog, and save.
-3. An SHTML type file will be saved to the target folder.
+3. An SHTM type file will be saved to the target folder.
 
 ### Internet Explorer
 
@@ -72,7 +72,7 @@ In some cases, an error message: *Could not load file or assembly or one of its 
 1. Run Internet Explorer 32bit as Administrator. Then you will find ![SWAT icon](/swat/assets/images/extension.png) icon on toolbar.
 2. Visit any web pages and click ![SWAT icon](/swat/assets/images/extension.png) icon. 
 3. Select the target folder and change the filename as you wish in **Save As** dialog, and save.
-4. An SHTML type file will be saved to the target folder.
+4. An SHTM type file will be saved to the target folder.
 
 Jenkins Integration
 ---

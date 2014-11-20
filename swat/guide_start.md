@@ -27,7 +27,7 @@ We will use a simple scenario on *Bing Search Assistant* in this guide to demons
 4. Select a keyword from the list.
 5. *Bing* returns a search result page with the selected keyword.
 
-There are some more you need to know when you deal with web application with frame, multi-window, alert and AJAX. Please refer to [Window, Frame, Alert, AJAX](article_scenes.md) for the know-how after completing this guide.
+There are some more you need to know when you deal with web application with frame, multi-window, alert and AJAX. Please refer to chapter [Window, Frame](article_window.md) and [Alert, AJAX](article_ajax.md) for the know-how after completing this guide.
 
 Preparing SWAT Service
 ---

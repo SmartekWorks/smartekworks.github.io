@@ -41,7 +41,7 @@ Alert options which are displayed under **Parameter Data** will only be availabl
 * `Dismiss`: Dismiss the alert by clicking **Cancel**.
 * `No Alert`: Alert will not appear.
 
-Please refer to [Window, Frame, Alert, AJAX](article_scenes.md) for how to work with alert in your scenario.
+Please refer to [Alert, AJAX](article_ajax.md) for how to work with alert in your scenario.
 
 Attention: An unexpected alert will cause error in execution, and the operation will also return error if an alert expected to handle doesn't appear. 
 

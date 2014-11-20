@@ -26,7 +26,7 @@ Attention: 一部拡張機能によって、WebページのDOMが変更される
 #### 拡張機能の利用
 
 1. 任意のWebページを開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
-2. SHTMLタイプ（SWATが使うHTMLコンテナの一種）のファイルは、デフォルトでは自動的にダウンロードフォルダーに保存されます。
+2. SHTMタイプ（SWATが使うHTMLコンテナの一種）のファイルは、デフォルトでは自動的にダウンロードフォルダーに保存されます。
 
 ### Mozilla Firefox
 
@@ -43,7 +43,7 @@ Attention: 一部拡張機能によって、WebページのDOMが変更される
 
 1. 任意のWebページを開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
 2. **名前を付けて保存**ダイアログでターゲットフォルダーを選択し、保存します。
-3. SHTMLタイプとしてファイルはターゲットフォルダーに保存されます。
+3. SHTMタイプとしてファイルはターゲットフォルダーに保存されます。
 
 ### Internet Explorer
 
@@ -67,7 +67,7 @@ Note: 端末によって、「Could not load file or assembly or one of its depe
 1. 管理者モードでInternet Explorer 32bitを動かします。ブラウザのツールバーに![SWAT icon](/swat/assets/images/extension.png)が表示されます。
 2. 任意のWebページを開き、![SWAT icon](/swat/assets/images/extension.png) をクリックします。 
 3. **名前を付けて保存**ダイアログでターゲットフォルダーを選択し、保存します。
-4. SHTMLタイプとしてファイルはターゲットフォルダーに保存されます。
+4. SHTMタイプとしてファイルはターゲットフォルダーに保存されます。
 
 Jenkinsとの連携
 ---

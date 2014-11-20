@@ -15,7 +15,7 @@ To install and use the extension in Chrome is simple. Just follow the steps belo
 1. Start Chrome browser and visit the [SWAT Capture Tool page](https://chrome.google.com/webstore/detail/lblhhpmbencpjckcgehlfndpibomonie) in Chrome Web Store.
 2. Click <span class="glyphicon glyphicon-plus"></span> **Free** button to install the extension. Then you will find ![SWAT icon](/swat/assets/images/extension.png) icon on toolbar.
 3. Visit any web pages and click ![SWAT icon](/swat/assets/images/extension.png) icon. 
-4. An SHTML type file will be saved to your default download directory automatically.
+4. An SHTM type file will be saved to your default download directory automatically.
 
 Preparing HTMLs for import
 ---
@@ -23,11 +23,11 @@ Preparing HTMLs for import
 In the *Bing Search Assistant* sample scenario, you need two HTMLs, one the search page and the search page with search assistant.
 
 1. Visit http://www.bing.com in your browser with **SWAT Capture Tool**.
-2. Click ![SWAT icon](/swat/assets/images/extension.png) icon after the search page is loaded. A file named `Bing.shtml` will be saved.
+2. Click ![SWAT icon](/swat/assets/images/extension.png) icon after the search page is loaded. A file named `Bing.shtm` will be saved.
 3. Input any keyword in the search box and wait until search assistant, the pull-down list with keyword suggestions is displayed.
 4. Click ![SWAT icon](/swat/assets/images/extension.png) icon again to save the search page with search assistant, and rename the file to `BingSA.shtm
 
-Hint: Actually, `BingSA.shtml` contains all the information in `Bing.shtml`. So it is possible that we use only the latter. We will use two pages in this guide for demonstration.
+Hint: Actually, `BingSA.shtm` contains all the information in `Bing.shtm`. So it is possible that we use only the latter. We will use two pages in this guide for demonstration.
 
 About SWAT Knowledge Base
 ---
@@ -61,7 +61,7 @@ Importing Pages
 1. Visit **Page Knowledge** page through menu `Knowledge > Pages`.
 2. Select the site `Bing` from the pull-down list of sites under the **Search** text-box. The page knowledge tree of site `Bing` will be displayed.
 3. Click <span class="glyphicon glyphicon-plus"></span> button and **Page Knowledge Updater** page will be displayed for construction.
-4. Make a zip file of `Bing.shtml` and `BingSA.shtml`. (You can also import the file one by one.)
+4. Make a zip file of `Bing.shtm` and `BingSA.shtm`. (You can also import the file one by one.)
 4. Make sure the **Target Site** is `Bing`, and choose the zip file for the **Source File**.
 5. **File Name Charset** refers to the encoding of file name in zip file. As we used English file name, we don't need to change this option.
 6. You can also select a customized **Parsing Rule** for import. We use the default one now since we do not have any customized one. 

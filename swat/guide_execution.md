@@ -48,7 +48,7 @@ You have more detailed settings when you create a new execution. However, it is 
 
 Every web application has its own type of implementation such as frame, alert, and its own test requirements. We designed a extendable execution parameters for each site in order to change the detailed execution behaviour. A default set of parameters will be set when you create a new site. You don't need to change the parameters in most situations including the site `Bing`. 
 
-Please refer to chapter [Window, Frame, Alert, AJAX](article_scenes.md) for how to use the parameters in different scenes.
+Please refer to chapter [Window, Frame](article_window.md) and [Alert, AJAX](article_ajax.md) for how to use the parameters in different scenes.
 
 Executing Selected Cases
 ---
