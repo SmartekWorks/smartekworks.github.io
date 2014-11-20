@@ -24,7 +24,7 @@ Hint: For web elements such as `select`, `checkbox`, `radio` and `button group`,
  * **Dismiss**: This will click the `Cancel` button on the pop boxes.
  * **No Alert**: Ignore any alert handling.
 
-If alert is defined but actually not pops up during execution, SWAT will throws a timeout exception which will stops the execution. To adapt to different situations, we provide one site level `ignoreAlertTimeout` parameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution) to define the default behaviour. 
+If alert is defined but actually does not pops up during execution, SWAT will throw a timeout exception which will stops the execution. To adapt to different situations, we provide one site level `ignoreAlertTimeout` parameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution) to define the default behaviour. 
 
 Here's the sample to ignore any timeout exception because of the lack of alert:
 
