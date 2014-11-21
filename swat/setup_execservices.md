@@ -129,3 +129,7 @@ If you execute the scenario for the first on Windows with Windows Firewall enabl
 #### Windows IME
 
 If scenarios are executed on a non-English Windows, please make sure the default IME is English. Otherwise, non-English keyboard might be activated and wrong characters would be input.
+
+Execution Parameters for Site
+---
+
