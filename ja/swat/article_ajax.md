@@ -24,7 +24,7 @@ Hint: For web elements such as `select`, `checkbox`, `radio` and `button group`,
  * **Dismiss**: This will click the `Cancel` button on the pop boxes.
  * **No Alert**: Ignore any alert handling.
 
-If alert is defined but actually does not pops up during execution, SWAT will throw a timeout exception which will stops the execution. To adapt to different situations, we provide one site level `ignoreAlertTimeout` parameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution) to define the default behaviour. 
+If alert is defined but actually does not pops up during execution, SWAT will throw a timeout exception which will stops the execution. To adapt to different situations, we provide one site level `ignoreAlertTimeout` parameter in the [Site Execution Settings](setup_execservices.md#Configure_Site_Execution_Parameters) to define the default behaviour. 
 
 Here's the sample to ignore any timeout exception because of the lack of alert:
 
@@ -43,7 +43,7 @@ In AJAX web sites, normally only part of the pages will refresh through AJAX cal
 
 #### Enable AJAX in Execution
 
-We provide one site level `enableAjaxWait` parameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution) to faciliate the AJAX execution. 
+We provide one site level `enableAjaxWait` parameter in the [Site Execution Settings](setup_execservices.md#Configure_Site_Execution_Parameters) to faciliate the AJAX execution. 
 
 Here's the sample to wait until all AJAX calls are completed before continuing to the next operation:
 
