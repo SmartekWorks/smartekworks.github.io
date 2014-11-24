@@ -48,7 +48,7 @@ You have more detailed settings when you create a new execution. However, it is 
 
 Every web application has its own type of implementation such as frame, alert, and its own test requirements. We designed a extendable execution parameters for each site in order to change the detailed execution behaviour. A default set of parameters will be set when you create a new site. You don't need to change the parameters in most situations including the site `Bing`. 
 
-Please refer to chapter [Window, Frame, Alert, AJAX](article_scenes.md) for how to use the parameters in different scenes.
+Please refer to chapter [Window, Frame](article_window.md) and [Alert, AJAX](article_ajax.md) for how to use the parameters in different scenes.
 
 Executing Selected Cases
 ---
@@ -91,4 +91,8 @@ After verification, you can change the test result status to `OK` or `NG`, and c
 Next Steps
 ----
 
-You can try to make your own test automation on SWAT! You are recommended to read articles from Article Section for the know-how from different cases. And you can refer to the Reference Section when you need to know the details of the specification.
+Now, you have your pages imported to SWAT's knowledge base, and cases running on SWAT. To improve your efficiency, you may need to make some adjustment towards the knowledge.
+
+Next, let's start learning how to create a customized knowledge rule and how to edit the pages and operations.
+
+Go to [Tuning Page Knowledge](guide_tuning.md).

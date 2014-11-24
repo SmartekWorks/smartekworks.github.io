@@ -6,10 +6,10 @@
 
 * [Getting Started with SWAT](guide_start.md)
 * [Importing Pages](guide_knowledge.md)
-* [Tuning Page Knowledge](guide_tuning.md)
 * [Building Scenarios](guide_scenarios.md)
 * [Executing Cases](guide_execution.md)
-* [Prepareing Your Own Project](guide_final.md)
+* [Tuning Page Knowledge](guide_tuning.md)
+* [Preparing Your Own Project](guide_final.md)
  
 [Setup]()
 
@@ -19,7 +19,10 @@
 
 [Articles]()
 
+* [Handling Window and Frame](article_window.md)
+* [Handling Alert and AJAX](article_ajax.md)
 * [Working with Flow](article_flow.md)
+* [Maintenance-friendly Test](article_maintenance.md)
 
 [Reference]()
 

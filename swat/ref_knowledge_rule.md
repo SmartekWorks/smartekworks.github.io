@@ -60,7 +60,7 @@ Single nodes are defined as a JSON map with keys for the node code of the nodes 
 ```json
 {
 	"singleNodes":{
-		"link":{"selectors":["a[href]", "area[href]"], "decisive":true, "action":"click", "label":"link", "locator":"link"}
+		"link":{"selectors":["a[href]", "area[href]"], "decisive":true, "action":"click", "label":"link", "locator":"link"},
 		"radio":{"selectors":["input[type=radio]"], "decisive":false, "action":"click", "label":"fieldRight", "locator":"field", "group":{"by":"name", "label":"group", "locator":"group"}},
 	}
 }

@@ -129,3 +129,39 @@ If you execute the scenario for the first on Windows with Windows Firewall enabl
 #### Windows IME
 
 If scenarios are executed on a non-English Windows, please make sure the default IME is English. Otherwise, non-English keyboard might be activated and wrong characters would be input.
+
+Configure Site Execution Parameters
+---
+
+We provide several execution parameters to suite different sites. The parameters are defined as a JSON string with the following rules:
+
+```json
+{
+	"webdriverTimeout": 60, 
+	"commandInterval": 500, 
+	"operationInterval": 500, 
+	"frameSearchDepth": 3, 
+	"scrollableFrames": ["name":"frame1", "id":"frame2"], 
+	"scrollableElements": ["div.main_menu", "table#shopping_cart"], 
+	"enableAjaxWait":"true",
+	"ignoreAlertTimeout":"true",
+	"evidenceLevel": 2, 
+	"matchingLevel": 1
+}
+```
+
+* `webdriverTimeout`: The timeout for any Selenium WebDriver command in seconds. The default value is `60`.
+* `commandInterval`: The time interval between two consecutive Selenium commands in milli-seconds. The default value is `500`.
+* `operationInterval`: The time interval between two consecutive SWAT operations in milli-seconds. The default value is `500`.
+* `frameSearchDepth`: The max search depth for HTML with nested frames. The default value is `3`, and `0` means no support for frame execution.
+* `scrollableFrames`: The list of frames to take individual screenshots. Each frame is identified by its `name` or `id`. The default is an empty array.
+* `scrollableElements`: The list of HTML DOM nodes to take individual screenshots. Each node is identified by a CSS selector. The default is an empty array.
+* `enableAjaxWait`: Whether wait until all AJAX calls are complete, and then proceed to the next operation. The default value is `false`.
+* `ignoreAlertTimeout`: Whether ignore the timeout exception if no alert pops up. The default value is `false`.
+* `evidenceLevel`: Different behaviours to take evidence for each operation. The default value is `2`.
+ * If level is `1`, we will not capture any HTML source nor screenshots, except for the [Assert](ref_sys_operation.md#Operation_-_Assertion) system operation and the operation with errors.
+ * If level is `2`, all HTML source and screenshots will be captured.
+* `matchingLevel`: Different web element locator policy during execution. The default value is `1`.
+ * If level is `1`, we will try to locate each element  with its DOM attributes directly inside the runtime HTML, which is faster in execution speed.
+ * If level is `2`, we will parse the runtime HTML, turn it into SWAT knowledge, match it with the exising knowledge base and then locate the element inside.
+

@@ -129,3 +129,38 @@ Windows Firewallが有効の場合、最初のシナリオを実行すると、`
 #### Windows IME
 
 Windows日本語版の実行端末で実行する場合、シナリオの日本語半角記入が文字化けする可能性があります。実行端末のIMEを英語にすればこの問題を回避することが可能です。
+
+実行パラメータの設定
+---
+
+フレームとか、AJAXなどWebアプリの実装によって実行の挙動を変えるために、SWATではサイトごとに実行パラメータの設定が可能です。設定文字列は下記ルールのJSONマップです。
+
+```json
+{
+	"webdriverTimeout": 60, 
+	"commandInterval": 500, 
+	"operationInterval": 500, 
+	"frameSearchDepth": 3, 
+	"scrollableFrames": ["name":"frame1", "id":"frame2"], 
+	"scrollableElements": ["div.main_menu", "table#shopping_cart"], 
+	"enableAjaxWait":"true",
+	"ignoreAlertTimeout":"true",
+	"evidenceLevel": 2, 
+	"matchingLevel": 1
+}
+```
+
+* `webdriverTimeout`: 実行エンジンの秒単位のタイムアウト時間（画面のロードとか）。デフォルト値は`60`秒。
+* `commandInterval`: オペレーションの中に複数操作の間の待ち時間（ms）。デフォルト値`500`（ms）。
+* `operationInterval`: オペレーションの間の待ち時間（ms）。デフォルト値`500`（ms）。
+* `frameSearchDepth`: 対象フレームを検索する際に最大の検索範囲の階層数。デフォルト値`3`階層。`0`の場合、フレームをサポートしません。
+* `scrollableFrames`: スクロールスクリーンショットを撮る対象となるフレーム。各フレームが`name`か`id`で指定する必要があります。デフォルト値は空の配列。
+* `scrollableElements`: スクロールスクリーンショットを撮る対象となる画面要素。各要素がCSSセレクトで指定する必要があります。デフォルト値は空の配列。
+* `enableAjaxWait`: 実行時に非同期なAJAXコールの完了を待つオプションです。デフォルト値は`false`。
+* `ignoreAlertTimeout`: アラートタイムアウト発生時にエラーにならないようにするオプションデス。デフォルト値は`false`。
+* `evidenceLevel`: エビデンスを撮るポリシーです。デフォルト値は`2`。
+ * `1`: 省略モードです。画面検証とエラーのエビデンス以外にすべてのエビデンスを取りません。
+ * `2`: 通常モードです。すべてのオペレーションのエビデンスを取ります。
+* `matchingLevel`: オペレーションローケーティングポリシーです。デフォルト値は`1`。
+ * `1`: 通常モードです。ルールに定義したローティングポリシーにしたがって、画面上のオペレーションを特定します。
+ * `2`: ファジーモードです（実験モード）。オペレーションの構造と内容をナレッジベースの内容とマッチして、オペレーションを識別します。
