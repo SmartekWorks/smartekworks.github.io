@@ -38,27 +38,25 @@ Note: ブラウザのセキュリティ仕組みのため、異なるドメイ�
 
 #### シナリオ対応
 
-ナレッジインポートが正しくできますと、フレームの構成情報もナレッジに含まれますので、シナリオ実行する際に、対象フレームの自動的に探すことができます。この機能を有効にするために、
+ナレッジインポートが正しくできますと、フレームの構成情報もナレッジに含まれますので、シナリオ実行する際に、対象フレームの自動的に探すことができます。この機能を有効にするために、該当サイトの[実行パラメータの設定](setup_execservices.md#実行パラメータの設定)の`frameSearchDepth`を設定する必要があります。
 
-When the `SHTM` file are imported into SWAT knowledge base, the frame hierachy are also stored. SWAT will take advantage of this hierachy information during execution, and automatically locate the    frame which the operation belongs to. Beforehand, you need to configurate the `frameSearchDepth` pamameter in the [Site Execution Settings](setup_execservices.md#Configure_Site_Execution_Parameters).
-
-If the frame nesting depth is less than `3`, please set the parameter as follows:
+３階層以下のフレームを利用する場合、下記のように`3`を設定すれば良いです。
 
 ```json
 {"frameSearchDepth": 3}
 ``` 
 
-If there's no frame in this site, please disable frame search to expedite the execution as follows:
+フレームを利用しない場合、下記のように`0`を設定する方が実行性能が上がります。
 
 ```json
 {"frameSearchDepth": 0}
 ``` 
 
-#### How to Take Frame Screenshot
+#### スクリーンショット対応
 
-SWAT takes screenshot evidence for the whole page by default, but sometimes part of one frame will be overlapped by the others if this frame is scrollable. We provide the capability to take screenshot for designated frames, based on the `name` or `id` attributes of the frame / iframe.
+フレームを利用しても、SWATが画面の全体のスクリーンショットをエビデンスとして撮れます。ただし、一部のフレームをスクロールして内容のスクリーンショットを撮るケースもよくあります。この場合、フレームの`name`もしくは`id`を指定し、特定なフレームの内容をスクロールで撮ることができます。
 
-Here's the sample for `scrollableFrames` parameter in the [Site Execution Settings](setup_execservices.md#Configure_Site_Execution_Parameters): 
+設定するために、該当サイトの[実行パラメータの設定](setup_execservices.md#実行パラメータの設定)の`scrollableFrames`を設定する必要があります。
 
 ```json
 {"scrollableFrames": ["name":"frame1", "id":"frame2"]}

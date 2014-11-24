@@ -14,7 +14,7 @@ JavaScript has three kinds of [Popup Boxes](http://www.w3schools.com/js/js_popup
 2. Select the page and operation where alert exists, and then click <span class="caret"></span> next to the **Save** button and select **Customize Operation** in the pull-down menu. **Operation Customization** page will be displayed.
 3. Click the element which will trigger the alert, and then select the alert timeout in the drop-down box. This timeout defines the interval from when the element is triggered until the alert pops up.
 
-Hint: For web elements such as `select`, `checkbox`, `radio` and `button group`, the alert timeout should be set at the parent level instead of the child level.
+Note: For web elements such as `select`, `checkbox`, `radio` and `button group`, the alert timeout should be set at the parent level instead of the child level.
 
 #### Configure Alert in Scenario Builder
 
