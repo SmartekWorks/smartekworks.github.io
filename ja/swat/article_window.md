@@ -40,7 +40,7 @@ Note: ブラウザのセキュリティ仕組みのため、異なるドメイ�
 
 ナレッジインポートが正しくできますと、フレームの構成情報もナレッジに含まれますので、シナリオ実行する際に、対象フレームの自動的に探すことができます。この機能を有効にするために、
 
-When the `SHTM` file are imported into SWAT knowledge base, the frame hierachy are also stored. SWAT will take advantage of this hierachy information during execution, and automatically locate the frame which the operation belongs to. Beforehand, you need to configurate the `frameSearchDepth` pamameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution).
+When the `SHTM` file are imported into SWAT knowledge base, the frame hierachy are also stored. SWAT will take advantage of this hierachy information during execution, and automatically locate the    frame which the operation belongs to. Beforehand, you need to configurate the `frameSearchDepth` pamameter in the [Site Execution Settings](setup_execservices.md#Configure_Site_Execution_Parameters).
 
 If the frame nesting depth is less than `3`, please set the parameter as follows:
 
@@ -58,7 +58,7 @@ If there's no frame in this site, please disable frame search to expedite the ex
 
 SWAT takes screenshot evidence for the whole page by default, but sometimes part of one frame will be overlapped by the others if this frame is scrollable. We provide the capability to take screenshot for designated frames, based on the `name` or `id` attributes of the frame / iframe.
 
-Here's the sample for `scrollableFrames` parameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution): 
+Here's the sample for `scrollableFrames` parameter in the [Site Execution Settings](setup_execservices.md#Configure_Site_Execution_Parameters): 
 
 ```json
 {"scrollableFrames": ["name":"frame1", "id":"frame2"]}
