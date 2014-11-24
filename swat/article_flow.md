@@ -66,7 +66,6 @@ As flow is just a container, it has no errors and evidences.
 
 Like the policy in ignoring operation by ignoring all parameters, you can ignore the entire flow when you uncheck the **Using Data Option** of all the variables related to the flow in case data dialog. (You can also do so by using case export/import function.) 
 
-
 Before/After Filters
 ---
 
@@ -76,7 +75,7 @@ There're two special flows available in SWAT, the **Before Filter** and the **Af
 
 To put a `before` tag onto a **Scenario Group** will make all the scenarios inside to be **Before Filters**, and vice versa, a `after` will also enable all the scenarios to be **After Filters**. The `before` and `after` tags are case insensitive, and the **Scenario Group** will get back to normal once these tags are removed.
 
-Hint: All these filter scenarnios are processed from top to bottom by its position in the page, and only the first case in one scenario will be executed.
+All these filter scenarnios are processed from top to bottom by its position in the page, and only the first case in one scenario will be executed.
 
 #### Override Filter Data
 
@@ -94,4 +93,4 @@ And here's the filter data for *Case B*:
 {"UserID":"User B", "Password":"Password B"}
 ```
 
-Hint: If the parameter is not defined in the filter data, then the default parameter in the filter scenario will be used.
+If the parameter is not defined in the filter data, then the default parameter in the filter scenario will be used.

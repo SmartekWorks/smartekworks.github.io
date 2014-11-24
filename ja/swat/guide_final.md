@@ -1,77 +1,81 @@
-Preparing Your Own Project
+実プロジェクトでの利用
 ===
 
-This page tells how to test your own project with SWAT.
+ここでは実プロジェクトでSWATを利用する際に知る必要なあることを述べます。
 
-Organizing Your Sites
+サイトの構築
 ---
 
-Normally only one site is necessary to place all of your HTML pages, but sometimes things are differenct:
+実プロジェクトを導入する際に、まずそれを対応するサイトを構築する必要があります。
 
-* There are more than one physical systems under test.
-* There are more than one logical systems hosted on one physical system, e.g., a universal portal to display different pages for users with different roles.
+通常のプロジェクトでは１サイトですべてのアプリの画面をまとめることができますが、下記の場合複数サイトを構築する必要があります。
 
-A decent site orgnization will help to manage the page knowledges in order and facilitates the case execution with discriminate settings.
+* 複数物理的なサイトを跨いてテストを行う場合。
+* 同じサイトの配下に複数実装が違う論理的なサイトが存在する場合、例えば、管理者エリアと利用者エリアがそれぞれ違う作りである場合。
 
-Configuring Page Preview
+サイトをうまく構築できると、画面ナレッジの管理や、シナリオ実行のセッティングなどが楽になります。
+
+画面ナレッジプレビューの設定
 ---
 
-The page preview is very useful in knowledge management and scenario building. However, the preview is usually without CSS because we only import the HTML source without any resource file (except that the HTML uses full URL for the resources). You can configure it to use the remote resources.
+画面ナレッジをサイトにインポートしますと、画面ナレッジ一覧とかで画面をプレビューすることができます。
 
-Note: If you are using `https` to access SWAT service, you cannot access the resources with `http`. You can upload the needed resources to SWAT on **Site Management** page and configure them as the remote resources. 
+画面ナレッジプレビューは、ナレッジ管理とシナリオ作成に非常に有効です。ただし、通常、プレビューではCSSが効きません。なぜならHTMLソースだけをインポートするからです。その場合、リモートリソースを使用するように設定をすることが必要です。
 
-#### Analysing the Resource URL
+Note: `https`を使ってSWATサーバーへアクセスする場合、`http`のリソースにアクセスできません。SWATのサービス設定メニューから**サイト設定**画面でSWATに必要なリソースをアップロードし、リモートリソースとして利用することが必要です。
 
-Use build-in development tools of the browser or extensions such as *Firebugs* to inspect the HTML source in the preview frame. You will find the following types of URL:
+#### リソースURLの分析
 
-* `http://www.bing.com/...`: This type of URL works in our preview, so we don't need to do any thing for it.
-* `/images/search...`: This type of URL uses SWAT service domain instead of *Bing* in preview, we have to add domain `http://www.bing.com/` for it.
+ブラウザの開発ツールや、*Firebugs*などの拡張機能でプレビューフレーム内のHTMLソースをチェックします。以下のようなURL記述があります。
 
-#### Changing Site Settings
+* `http://www.bing.com/...`: このタイプのURLは、SWATプレビューで動作するので、何か特別な処置は必要はありません.
+* `/images/search...`: このタイプのURLは、プレビューで`Bing`の代わりにSWATのサービスドメインを使い、 `http://www.bing.com/`をドメインに追加する必要があります。
 
-1. Visit **Site Management** page through menu *Management > Sites*, and select site `Bing` on the left.
-2. Input `http://www.bing.com/` to **Preview URL**, which will add `http://www.bing.com/` to URLs like `/images/search...`.
-3. Save the settings, and you will find images displayed in preview of **Page Knowledge**.
+#### サイト設定の変更
 
-#### Handling Relative URL
+1. SWATのサービス設定メニューから**サイト設定**画面を開き、左側に表示されている`Bing`サイトを選択します。
+2. **URLプレビュー**に`http://www.bing.com/`を入力すれば、`/images/search...`.を`http://www.bing.com/`に追加します。
+3. 設定を保存し、**画面ナレッジ**のプレビューで画面イメージを確認します。
 
-Sometimes we may find relative URL such as `img/a.png`, `..img/a.css` in HTML. We have to replace the whole URL to a calculated absolute URL in this case.
+#### 相対的URLの取扱
 
-1. Visit **Site Management** page through menu *Management > Sites*,
-2. Click **Edit** button for **Preview Rules**, and an input dialog for replacing rule string will be displayed. 
-3. The rule are a JSON list of map. The key is the source text and the value is the destination text. For example:
+HTMLの`img/a.png`, `..img/a.css`のような相対的なURLの記述方法があります。このような場合、算出された絶対URLにURL全体を変換しなければなりません。
+
+1. サービス設定メニューから**サイト設定**を開きます。
+2. **プレビュー用ルール**の**編集**ボタンをクリックし、プレビュー用置換ルール画面が表示されます。 
+3. ここでのルールは、JSONマップのリストです。キーは置換元文字列、バリューは置換先文字列です。例えば、
 ```json
 [
 	{"img/":"http://www.sample.com/a/img/"},
 	{"../img/":"http://www.sample.com/a/img/"}
 ]
 ```
-4. Do not forget saving the settings after you close the dialog.
+4. ダイアログを閉じた後は必ず設定の保存をしてください。
 
-Tuning Knowledge Rules
+画面ナレッジのチューニング
 ---
 
-As is known, operations are extracted from HTML pages based on the SWAT rule. The built-in default rule can recognize most of the web pages, but sometimes the results might be different from what you expected. Thus we offer the [Knowledge Tuning](guide_tuning.md) function to mitigate such discrepancy.
+SWATはナレッジルールを利用して、様々のオペレーションをHTMLから解析することになります。デフォルトルールでたくさんのHTMLページを対応できますが、実プロジェクトを導入する際に解析結果が期待と異なるケースがあります。
 
-Hereby we will provide several hints how to fine tune your knowledges:
+デフォルトルールで幾つか典型的な画面をインポートした後に、画面ナレッジチューニングを行うことお勧めします。
 
-* If your site is based on some JavaScript GUI framework, such as **jQuery UI**, **Kendo UI**, **ExtJS** and so on, please contact us and we will advise rules to handle those widgets.
-* Please lay more emphasis on the common parts across all web pages, such as header, footer, main menu and other global navigations. These parts should be deemed as seperate operations and not mixed with others. If not by default, please tune the rule.
-* The default rule leverages the semantics of the HTML tags to combine relative elements into an operation, and it also takes advantage of the visual effect so that the neighbour elements are tended to be made together. However, this principal is not always right, thus please review the operations in the business perspective and tune the rule if necessary.
+先ほどの[画面ナレッジカスタマイズ](guide_tuning.md)からすでにチューニングの仕方を分かった思います。ここで、実プロジェクトでのチューニングのヒントをまとめます。
 
-Designing Business Flows
+* 対象WebアプリがJavaScript GUIフレームワーク（例えば**jQuery UI**, **Kendo UI**, **ExtJS**など）ベースの場合、SWATサポートにコンタクトしてください。それらのフレームワークを対応するルールを提供します。
+* 画面の共通部（例えばヘッダー、フッター、メニュー）をまずチューニング対象として行うと、他のオペレーションと混ぜることをしないので、お勧めします。
+* デフォルトルールではHTMLタグのコンテキストを含めて解析を行っていることで、関連ノードをまとめることがよくあります。しかし、実装によって、このようなまとめ方が必ずしも期待しているわけではありません。この観点でデフォルトの解析結果ををレビューするのがよいです。
+
+フローを設計
 ---
 
-Before diving into the test scenarios and cases, it is better to [design your reusable business flows](article_flow.md). Here're some hints to build proper flows:
+実プロジェクトのサンプルシナリオできて、本格的にテスト設計に入るまでに、フローの設計をお勧めします。詳細については[フローの活用](article_flow.md)を参照してください。ここではいくつかのヒントを書きます。
 
-* Place the common procedures into flows, such as login, logout, menu navigation and so on.
-* Design a flow with business purpose instead of just operation combinations. For example, a **Fund Transfer** flow should have *from account*, *to account* and *amount* as input parameters, so that it could be reused in many scenarios.
-* Integrate similar business procedures and execute them by different parameters. For example, **Transfer from current account** and ** Transfer from saving account** could be integrated as one **Fund Transfer** flow and executed distingishedly with different *account type* parameter.
+* 共通的な画面の操作の流れ（例えばログイン、ログアウト、メニュー操作など）をフローにまとめます。
+* 単なる操作の流れよりは、業務意味を持つフロー、フローのパラメータを設計するのが効率的です。例えば、*振り込み元*、*振り込み先*、*金額*のパラメータを持つ*振り込み*フローがいろんなシナリオにわかりやすく呼び出せます。
 
-Enjoying Test Automation
+テスト自動化を楽しもう
 ---
 
-You are recommended to read articles from Article Section for the know-how from different cases. And you can refer to the Reference Section when you need to know the details of the specification.
+様々な状況でSWATを使いこなすにはノウハウ集を参照ください。また、仕様の詳細を知りたい場合は、リファレンスを参照ください。
 
-Have fun with your testing on SWAT! 
-
+テスト自動化を楽しもう。

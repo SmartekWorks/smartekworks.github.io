@@ -14,7 +14,7 @@ Each window should be regarded as a separate [Page](guide_knowledge.md#About_SWA
 
 Please import the `SHTM` files for all the windows into SWAT knowledge base.
 
-Hint: The browser toolbar might be disabled in some popup window, you can try right click on this window and click the capture button.
+Hint: The browser toolbar might be disabled in some popup window, you can try right click on this window and click the capture button (only for Chrome).
 
 #### How to Locate Window
 
@@ -25,7 +25,7 @@ However, if the open windows are similar and perhaps have some operations in com
 * We can leverage the [Window Control](ref_sys_operation.md#Operation_-_Window_Control) system operation to manually switch to that window.
 * [Page Identification](ref_mq_rule.md#Finding_Window_in_Scenario) can also be defined to locate window page during execution.
 
-Hint: Please be noted that the HTML source and screenshot are saved only for the current window. [Assertion](ref_sys_operation.md#Operation_-_Assertion), [Set Value](ref_sys_operation.md#Operation_-_Set_Value) and [Additional Information](ref_sys_operation.md#Operation_-_Additional_Information) system operations are available for the current window as well.
+Note: Please be noted that the HTML source and screenshot are saved only for the current window. [Assertion](ref_sys_operation.md#Operation_-_Assertion), [Set Value](ref_sys_operation.md#Operation_-_Set_Value) and [Additional Information](ref_sys_operation.md#Operation_-_Additional_Information) system operations are available for the current window as well.
 
 Handling Frames and iFrames
 ---
@@ -36,11 +36,11 @@ Compared to multi-window system, HTML pages with `frame` or `iframe` are much mo
 
 Please use [SWAT Capture Tool](setup_tools.md#SWAT_Capture_Tool) to save the web page as `SHTM` type file. All these physical HTMLs for each frame / iframe are consolidated into this single `SHTM` file, and treated as one logical page in SWAT knowledge base.
 
-Hint: If the frame source is from different domain, it can not be captured due to cross domain security limitation.
+Note: If the frame source is from different domain, it can not be captured due to cross domain security limitation.
 
 #### How to Locate Frame
 
-When the `SHTM` file are imported into SWAT knowledge base, the frame hierachy are also stored. SWAT will take advantage of this hierachy information during execution, and automatically locate the    frame which the operation belongs to. Beforehand, you need to configurate the `frameSearchDepth` pamameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution).
+When the `SHTM` file are imported into SWAT knowledge base, the frame hierachy are also stored. SWAT will take advantage of this hierachy information during execution, and automatically locate the frame which the operation belongs to. Beforehand, you need to configurate the `frameSearchDepth` pamameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution).
 
 If the frame nesting depth is less than `3`, please set the parameter as follows:
 

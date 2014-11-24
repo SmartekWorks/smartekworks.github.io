@@ -20,8 +20,8 @@
 
 [ノウハウ集]()
 
-* [ウィンドウとフレーム](article_window.md)
-* [アラートとAJAX](article_ajax.md)
+* [ウィンドウとフレーム対応](article_window.md)
+* [アラートとAJAX対応](article_ajax.md)
 * [フローの活用](article_flow.md)
 * [メンテしやすいテスト](article_maintenance.md)
 

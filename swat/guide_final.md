@@ -66,7 +66,6 @@ Before diving into the test scenarios and cases, it is better to [design your re
 
 * Place the common procedures into flows, such as login, logout, menu navigation and so on.
 * Design a flow with business purpose instead of just operation combinations. For example, a **Fund Transfer** flow should have *from account*, *to account* and *amount* as input parameters, so that it could be reused in many scenarios.
-* Integrate similar business procedures and execute them by different parameters. For example, **Transfer from current account** and ** Transfer from saving account** could be integrated as one **Fund Transfer** flow and executed distingishedly with different *account type* parameter.
 
 Enjoying Test Automation
 ---

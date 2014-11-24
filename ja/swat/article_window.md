@@ -1,46 +1,46 @@
-Handling Window and Frame
+ウィンドウとフレーム対応
 ===
 
-This page provides information how to test systems with multiple windows or frame / iframes.
+SWATでマルチウィンドウ、マルチフレーム構成のアプリを対応する仕方を説明します。
 
-Handling Multiple Windows
+マルチウィンドウ対応
 ---
 
-It is common that multiple windows exist for one web site, for instance, a brand new window to show detail information after you clicks a hyperlink, a mini popup window to provide help messages, or a modal dialog in the old-fashioned IE browser which is also a window indeed. Human being can easily tell the differences across mulitple windows and know which one to proceed, but it's a bit tricky in the world of test automation. We suggest the following guidelines to test such web site.
+複数ウィンドウを利用するWebアプリがよくあります。例えば、プロダクトリンクをクリックして、新しいウィンドウでプロダクトの詳細が表示されます。また、古いIE専用のモデルダイアログもウィンドウとして実装されています。複数ウィンドウを自動化シナリオで操作する際に通常のシナリオよりちょっとややこしいので、ここで対応方法を紹介します。
 
-#### How to Import Knowledge
+#### ナレッジ対応
 
-Each window should be regarded as a separate [Page](guide_knowledge.md#About_SWAT_Knowledge_Base), and saved as `SHTM` type file with [SWAT Capture Tool](setup_tools.md#SWAT_Capture_Tool).
+まず、ウィンドウごとに違う[画面ナレッジ](guide_knowledge.md#SWATナレッジベースについて)として、それぞれ[SWATキャプチャー](setup_tools.md#SWATキャプチャー)でHTMLをキャプチャーして、インポートする必要があります。
 
-Please import the `SHTM` files for all the windows into SWAT knowledge base.
+Hint: ブラウザツールバーが表示されない子ウィンドウの場合、ウィンドウで右クリックしてキャプチャーメニューを押すことが可能です（Chromeb版のみ）。
 
-Hint: The browser toolbar might be disabled in some popup window, you can try right click on this window and click the capture button.
+#### シナリオ対応
 
-#### How to Locate Window
+通常**シナリオビルダー**にウィンドウを指定する必要がありません。ある画面のあるオペレーションをドラッグ＆ドロップしてシナリオを作成します。実行する際に、SWATが複数ウィンドウの中で操作したい画面を自動的に探してオペレーションを実行することになります。
 
-Normally in **Test Scenario Builder**, we don't need to consider windows. For example, we can drag *Operation A* from **Window Page A** into the builder, and then *Operation B* from **Window  Page B**. During execution, SWAT will try to recognize the current operation from all the open windows, and automatically switch to that window and execute the operation.
+しかし、複数似たようなウィンドウの場合（例えば同じ対象オペレーションを持っている）、対象ウィンドウを探すために下記のように追加情報を定義する必要です。
 
-However, if the open windows are similar and perhaps have some operations in common, then additional information will be required to locate the window. 
+* [ウィンドウ制御](ref_sys_operation.md#オペレーション_-_ウィンドウ制御)システムオペレーションで明示的にウィンドウの切り替えを定義します。
+* 実行中に正しく対象画面を見つけるために、対象画面の[画面識別情報](ref_mq_rule.md#ブラウザウィンドウを特定)を定義します。
 
-* We can leverage the [Window Control](ref_sys_operation.md#Operation_-_Window_Control) system operation to manually switch to that window.
-* [Page Identification](ref_mq_rule.md#Finding_Window_in_Scenario) can also be defined to locate window page during execution.
+Hint: 画面エビデンスの取得及び一部ウィンドウと関係するシステムオペレーション（例えば**画面検証**、**画面変数設定**など）が現在一番トップであるウィンドウに対して実行することで、必要に応じて、対象ウィンドウに切り替える必要が有ります。
 
-Hint: Please be noted that the HTML source and screenshot are saved only for the current window. [Assertion](ref_sys_operation.md#Operation_-_Assertion), [Set Value](ref_sys_operation.md#Operation_-_Set_Value) and [Additional Information](ref_sys_operation.md#Operation_-_Additional_Information) system operations are available for the current window as well.
-
-Handling Frames and iFrames
+マルチフレーム対応
 ---
 
-Compared to multi-window system, HTML pages with `frame` or `iframe` are much more complicated because actually there's a physical HTML inside each frame and these frames are always nested each other. We suggest the following guidelines to test such web site.
+複数ウィンドウのWebアプリと比べて、`frame`もしくは`iframe`を利用する多フレームのWebアプリがもっと複雑です。なぜなら、複数物理的なHTMLが存在するほか、多階層の親子関係もケアしなければけません。ここでこのようなWebアプリの対応方法を紹介します。
 
-#### How to Import Knowledge
+#### ナレッジ対応
 
-Please use [SWAT Capture Tool](setup_tools.md#SWAT_Capture_Tool) to save the web page as `SHTM` type file. All these physical HTMLs for each frame / iframe are consolidated into this single `SHTM` file, and treated as one logical page in SWAT knowledge base.
+ブラウザのHTML保存機能を利用すると一番外枠のHTMLしか保存できないため、マルチフレームの場合、[SWATキャプチャー](setup_tools.md#SWATキャプチャー)を利用してキャプチャする必要があります。そうすると、すべてのフレームのHTMLがまとめて一つの`SHTM`ファイルに固められ、１画面としてインポートされることにあります。
 
-Hint: If the frame source is from different domain, it can not be captured due to cross domain security limitation.
+Note: ブラウザのセキュリティ仕組みのため、異なるドメインのフレーム内容がキャプチャすることができません。
 
-#### How to Locate Frame
+#### シナリオ対応
 
-When the `SHTM` file are imported into SWAT knowledge base, the frame hierachy are also stored. SWAT will take advantage of this hierachy information during execution, and automatically locate the    frame which the operation belongs to. Beforehand, you need to configurate the `frameSearchDepth` pamameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution).
+ナレッジインポートが正しくできますと、フレームの構成情報もナレッジに含まれますので、シナリオ実行する際に、対象フレームの自動的に探すことができます。この機能を有効にするために、
+
+When the `SHTM` file are imported into SWAT knowledge base, the frame hierachy are also stored. SWAT will take advantage of this hierachy information during execution, and automatically locate the frame which the operation belongs to. Beforehand, you need to configurate the `frameSearchDepth` pamameter in the [Site Execution Settings](guide_execution.md#Settings_of_execution).
 
 If the frame nesting depth is less than `3`, please set the parameter as follows:
 
