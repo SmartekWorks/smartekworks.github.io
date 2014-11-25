@@ -66,7 +66,7 @@ Note: Windows 8でローカル実行サーバーを立ち上げるとき、"Coul
 BrowserStackサービス
 ---
 
-SWATクラウドサービスがパブリック実行サービスとして[BrowserStack](http://www.browserstack.com)をサポートします。BrowserStackサービスを使うには、BrowserStackアカウントを取得し、最初の自動化プランを購入する必要があります。（BrowserStackのパートナーとして、弊社は支払い代行と一時サポート窓口を提供しています。）その後、サービスを利用する前にSWAT上にBrowserStackアカウントを設定します。 
+SWATクラウドサービスではパブリック実行サービスとして[BrowserStack](http://www.browserstack.com)のサービスをサポートします。BrowserStackサービスを使うには、BrowserStackアカウントを取得し、最初の自動化プランを購入する必要があります。（BrowserStackのパートナーとして、弊社は支払い代行と一時サポート窓口を提供しています。）その後、サービスを利用する前にSWAT上にBrowserStackアカウントを設定します。 
 
 Note: SWATのオプションサービスとしてBrowserStackサービスを購入している場合、SWATでBrowserStackサービスは既に設定されます。
 
@@ -133,7 +133,7 @@ Windows日本語版の実行端末で実行する場合、シナリオの日本�
 実行パラメータの設定
 ---
 
-フレームとか、AJAXなどWebアプリの実装によって実行の挙動を変えるために、SWATではサイトごとに実行パラメータの設定が可能です。設定文字列は下記ルールのJSONマップです。
+フレームや、AJAXなどWebアプリの実装によって実行の挙動を変えるために、SWATではサイトごとに実行パラメータの設定が可能です。設定文字列は下記ルールのJSONマップです。
 
 ```json
 {
