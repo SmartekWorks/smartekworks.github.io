@@ -118,6 +118,11 @@ Note: 同じ実装でも複数のルール定義の仕方があり、効率的�
 11. 上記手順を繰り返えしで、**Keyword**と**Index**に`test`と`-1`を設定します。このケースの中で候補リストの最後のものを選びます。
 12. 作成したシナリオとケースをそのまま実行し、結果を確認します。
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_4.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_4.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 次へ
 ----
 

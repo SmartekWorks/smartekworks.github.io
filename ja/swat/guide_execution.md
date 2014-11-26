@@ -50,6 +50,11 @@ Webアプリケーションには様々な実装の仕方があります。例�
 
 パラメータの使用方法については、別の章[ウインドゥ、フレーム、アラート、AJAX](article_scenes.md)を参照してください。
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_3_1.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_3_1.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 選択したテストケースの実行
 ---
 
@@ -62,6 +67,11 @@ Webアプリケーションには様々な実装の仕方があります。例�
 7. **実行一覧**画面では、実行の進行状況や実行中のテストケースが参照できます。
 
 Note: 複数プラットフォームを選択した場合、それぞれのプラットフォーム単位に実行が実施されます。
+
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_3_2.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_3_2.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
 
 テスト結果にアクセス
 ---
@@ -87,6 +97,11 @@ Excelにエビデンスを出力をするには、いくつかの方法があり
 Hint: Excelへ出力してるときに、通常モード（**画面検証**システムオペレーションをセットした所の画面だけをエビデンスとして出力されます）かフルモード（すべてのエビデンスを出力します）かを選ぶことができます。より速く出力させるには、検証ルールなしの**画面検証**システムオペレーションをシナリオの検証ポイントに組み込んで通常モードで出力させます。（今後自動検証を実装するときに画面検証が必要となります。）
 
 検証後は、テスト結果のステータスを`成功`か`失敗`かに変えることができ、**実行結果**ページで結果に対する課題を起票することができます。
+
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_3_3.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_3_3.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
 
 次へ
 ----

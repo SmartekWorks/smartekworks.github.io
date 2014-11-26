@@ -25,6 +25,11 @@ Chrome拡張機能のインストールと利用方法はとても簡単です�
 1. **SWATキャプチャー**がインストールされたブラウザで、 http://www.bing.com サイトを開きます。
 2. 検索画面がロードされたら、![SWAT icon](/swat/assets/images/extension.png)をクリックします。ファイル名は`Bing.shtm`で保存します。
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_1_1.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_1_1.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 SWATナレッジベースについて
 ---
 
@@ -51,6 +56,11 @@ Hint: 最初のナレッジベース構築は少し大変かもしれません�
 
 Note: SWATの契約でサイト作成の上限があります。これ以上にサイトが作成できない場合は、SWAT管理者（無償版の場合、[スマーテックワークス](mailto:sales@smartekworks.com)）へ連絡ください。
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_1_2.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_1_2.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 画面のインポート
 ---
 
@@ -66,6 +76,11 @@ Note: SWATの契約でサイト作成の上限があります。これ以上に�
 10. `Bing`画面を選択し、その下にリンクのグループと検索の2つのオペレーションを確認します。 
 11. どれかオペレーションを選択すると、ハイライト表示されたオペレーションのノードが確認できます。
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_1_3.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_1_3.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 画面とオペレーションの編集
 ---
 
@@ -74,6 +89,11 @@ HTMLの実装によって、抽出したオペレーションの名前がわか�
 1. ナレッジメニューから**画面ナレッジ**を選択します。
 2. `Bing`下の`hp_table`を選択、タイトルを`リンク`に変更します。保存後、左側ツリーでタイトルが変わったことを確認します。
 3. また、`sb_form`のタイトルを `検索`へ変更できます。
+
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_1_4.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_1_4.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
 
 次へ
 ----

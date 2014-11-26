@@ -31,6 +31,11 @@ SWATは、テストセットを管理するするためにプロジェクトを�
 
 Hint: AOPスタイルのインターセプタが動くシナリオグループを定義するために、`before`、`after`のような特別なタグを使うことができます。 
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_2_1.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_2_1.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 シナリオの作成
 ---
 
@@ -61,6 +66,11 @@ Hint: 検索ボックス横の<span class="glyphicon glyphicon-eye-open"></span>
 6. テキストボックスに直接キーワードを入力することができますが、ここでは変数を使用する方が良いでしょう。よって、**Enter your search ...**への入力は`@{Keyword}`このように指定ください。（変数の利用方法の詳細は[画面オペレーション](ref_web_operation.md#変数の使用) を参照ください。)
 7. これでサンプルシナリオの作成は終了です。
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_2_2.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_2_2.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 シナリオへケースを追加
 ---
 
@@ -72,6 +82,11 @@ Hint: 検索ボックス横の<span class="glyphicon glyphicon-eye-open"></span>
 4. 上記手順を繰り返えしで、**Keyword**に`test`を設定し、もう一ケースを作ります。
 
 Hint: Excelフォーマット（SWATが用意するテンプレート）でテストセットのケーステーブルの出力やインポートをすることができます。これを用いることで、Excel上で簡単にケースの追加、変更、削除ができます。
+
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_2_3.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_2_3.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
 
 次へ
 ----
