@@ -28,6 +28,11 @@ Note: このタスクを実施するにはHTMLやCSSの知識が必要ですが�
 
 インポートした後に`BingSA`の画面の配下に`Bing`と同じように2つのオペレーションが存在します。肝心な検索プルダウンリストが出ていません。その理由は*Bing検索アシスタント*がJS+普通の`div`タグから作られたもののため、デフォルトのナレッジルールではこれが操作できる要素だと解釈していません。
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_4_1.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_4_1.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 画面ナレッジのチューニング
 ---
 
@@ -102,6 +107,11 @@ Note: 同じ実装でも複数のルール定義の仕方があり、効率的�
 6. すべての画面を選択し、対象画面の適応を行い、SWATは画面の解析を実施します。
 7. しばらくしたら、左側に解析された画面リストを取得します。`Bing`は変更されてません。なぜなら検索アシスタントが含まれていないからです。`BingSA`は変更されたので、緑色に追加されたオペレーションが確認できます。
 
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_4_2.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_4_2.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
 シナリオの作成と実行
 ---
 
@@ -119,8 +129,8 @@ Note: 同じ実装でも複数のルール定義の仕方があり、効率的�
 12. 作成したシナリオとケースをそのまま実行し、結果を確認します。
 
 <video width="480" controls>
-	<source src="http://www.smartekworks.com/video/guide/guide_4.webm" type="video/webm">
-	<source src="http://www.smartekworks.com/video/guide/guide_4.mp4" type="video/mp4">
+	<source src="http://www.smartekworks.com/video/guide/guide_4_3.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_4_3.mp4" type="video/mp4">
 	ビデオの再生がサポートされていません。</video>
 
 次へ
