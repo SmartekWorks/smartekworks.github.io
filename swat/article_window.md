@@ -61,5 +61,5 @@ SWAT takes screenshot evidence for the whole page by default, but sometimes part
 Here's the sample for `scrollableFrames` parameter in the [Site Execution Settings](setup_execservices.md#Configure_Site_Execution_Parameters): 
 
 ```json
-{"scrollableFrames": ["name":"frame1", "id":"frame2"]}
+{"scrollableFrames": [{"name":"frame1"}, {"id":"frame2"}]}
 ``` 
