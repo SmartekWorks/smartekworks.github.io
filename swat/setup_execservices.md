@@ -141,7 +141,7 @@ We provide several execution parameters to suite different sites. The parameters
 	"commandInterval": 500, 
 	"operationInterval": 500, 
 	"frameSearchDepth": 3, 
-	"scrollableFrames": ["name":"frame1", "id":"frame2"], 
+	"scrollableFrames": [{"name":"frame1"}, {"id":"frame2"}], 
 	"scrollableElements": ["div.main_menu", "table#shopping_cart"], 
 	"enableAjaxWait":"true",
 	"ignoreAlertTimeout":"true",
