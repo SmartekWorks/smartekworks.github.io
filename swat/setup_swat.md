@@ -93,12 +93,12 @@ cd <installation directory>/update
 4. In case the update progress fails, you can run the rollback batch scripts to restore the SWAT service.
 In Windows
 ```
-<installation directory>/update
+cd <installation directory>/update
 ./rollback.bat
 ```
 In Linux
 ```
-<installation directory>/update
+cd <installation directory>/update
 ./rollback.sh
 ```
 
