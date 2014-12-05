@@ -82,20 +82,24 @@ Note: 現在アップグレードのみサポートしています。ダウン�
 3. アップグレード用スクリプを実行します。
 Windowsでは、
 ```
-<installation directory>/update/update.bat
+cd <installation directory>/update
+./update.bat
 ```
 Linuxでは、
 ```
-<installation directory>/update/update.sh
+cd <installation directory>/update
+./update.sh
 ```
 4. アップグレードが失敗した場合、ロールバックスクリプトで旧バージョンに戻すことが可能です。
 Windowsでは、
 ```
-<installation directory>/update/rollback.bat
+cd <installation directory>/update
+./rollback.bat
 ```
 Linuxでは、
 ```
-<installation directory>/update/rollback.sh
+cd <installation directory>/update
+./rollback.sh
 ```
 
 次へ

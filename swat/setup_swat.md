@@ -82,20 +82,24 @@ Note: SWAT support upward upgrade only, e.g., from v1.5.0 to v1.6.0. Downgrade i
 3. Run the update batch scripts to upgrade SWAT service.
 In Windows
 ```
-<installation directory>/update/update.bat
+cd <installation directory>/update
+./update.bat
 ```
 In Linux
 ```
-<installation directory>/update/update.sh
+cd <installation directory>/update
+./update.sh
 ```
 4. In case the update progress fails, you can run the rollback batch scripts to restore the SWAT service.
 In Windows
 ```
-<installation directory>/update/rollback.bat
+<installation directory>/update
+./rollback.bat
 ```
 In Linux
 ```
-<installation directory>/update/rollback.sh
+<installation directory>/update
+./rollback.sh
 ```
 
 Next Steps
