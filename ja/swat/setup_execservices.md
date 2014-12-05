@@ -143,8 +143,8 @@ Windows日本語版の実行端末で実行する場合、シナリオの日本�
 	"frameSearchDepth": 3, 
 	"scrollableFrames": [{"name":"frame1"}, {"id":"frame2"}], 
 	"scrollableElements": ["div.main_menu", "table#shopping_cart"], 
-	"enableAjaxWait":"true",
-	"ignoreAlertTimeout":"true",
+	"enableAjaxWait":true,
+	"ignoreAlertTimeout":true,
 	"evidenceLevel": 2, 
 	"matchingLevel": 1
 }
