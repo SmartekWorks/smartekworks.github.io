@@ -162,6 +162,29 @@ Find the target window and manipulate it.
 * Screenshot
 * HTML
 
+Operation - Execute Javascript
+---
+
+Execute JavaScript on the page in current window.
+
+#### Parameters
+
+| Parameter     | Explanation
+| ------------- | -----------
+| JavaScript | JavaScript code which you want to execute. 
+| Variable Name | Variable name to store the return value. Leave it blank if you do not need to set the value.
+
+
+#### Errors
+
+* **Variable Name** does not conform to rules of variable name. (in validation)
+* **Variable Name** has been referenced in the previous operations. (in validation)
+* JavaScript execution encounterd error. (in execution)
+
+#### Evidences
+
+* Operation result in JSON text format
+
 Operation - Assertion
 ---
 
@@ -198,7 +221,7 @@ Set a value from the page in current window to a variable, which you can use as 
 | Parameter     | Explanation
 | ------------- | -----------
 | Querying Rule | Definition of the target value in format of querying rule. Please refer to [Matching & Querying DSL](ref_mq_rule.md#Querying_Rule_DSL) for the details of querying rule. 
-| Variable Name | Variable Name to store the value.
+| Variable Name | Variable name to store the value.
 
 
 #### Errors
@@ -251,6 +274,7 @@ During a scenario you can call a web service to execute an extended operation su
 #### Errors
 
 * **Variable Name** does not conform to rules of variable name. (in validation)
+* **Variable Name** has been referenced in the previous operations. (in validation)
 * API return does not contain `result` key when you need to set the value. (in execution)
 * **API Params** does not conform to request query string format. (in validation and execution)
 * Execute this system operation in cloud execution service. (in execution)

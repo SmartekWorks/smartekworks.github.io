@@ -16,37 +16,15 @@ A decent site orgnization will help to manage the page knowledges in order and f
 Configuring Page Preview
 ---
 
-The page preview is very useful in knowledge management and scenario building. However, the preview is usually without CSS because we only import the HTML source without any resource file (except that the HTML uses full URL for the resources). You can configure it to use the remote resources.
+The page preview is very useful in knowledge management and scenario building. The preview needs correct remote URLs to access the correct resource files such as CSS files, because we only import the HTML source without any resource file. Though SWAT will set the URL according to your captureing enviroment if you use HTML files captued by our latest [SWAT Capture Tool](setup_tools.md#SWAT_Capture_Tool), you may want to configure it to use different remote resources.
 
-Note: If you are using `https` to access SWAT service, you cannot access the resources with `http`. You can upload the needed resources to SWAT on **Site Management** page and configure them as the remote resources. 
-
-#### Analysing the Resource URL
-
-Use build-in development tools of the browser or extensions such as *Firebugs* to inspect the HTML source in the preview frame. You will find the following types of URL:
-
-* `http://www.bing.com/...`: This type of URL works in our preview, so we don't need to do any thing for it.
-* `/images/search...`: This type of URL uses SWAT service domain instead of *Bing* in preview, we have to add domain `http://www.bing.com/` for it.
-
-#### Changing Site Settings
+#### Changing Base URL for Preview
 
 1. Visit **Site Management** page through menu *Management > Sites*, and select site `Bing` on the left.
-2. Input `http://www.bing.com/` to **Preview URL**, which will add `http://www.bing.com/` to URLs like `/images/search...`.
+2. Input `http://www.bing.com/` to **Preview URL**, which will add `http://www.bing.com/` as base URL to relative URLs like `/images/search...` or `..img/a.css`.
 3. Save the settings, and you will find images displayed in preview of **Page Knowledge**.
 
-#### Handling Relative URL
-
-Sometimes we may find relative URL such as `img/a.png`, `..img/a.css` in HTML. We have to replace the whole URL to a calculated absolute URL in this case.
-
-1. Visit **Site Management** page through menu *Management > Sites*,
-2. Click **Edit** button for **Preview Rules**, and an input dialog for replacing rule string will be displayed. 
-3. The rule are a JSON list of map. The key is the source text and the value is the destination text. For example:
-```json
-[
-	{"img/":"http://www.sample.com/a/img/"},
-	{"../img/":"http://www.sample.com/a/img/"}
-]
-```
-4. Do not forget saving the settings after you close the dialog.
+Note: If you are using `https` to access SWAT service, you need to set the browser to accept loading http contents if the resources are from `http`.
 
 Tuning Knowledge Rules
 ---
