@@ -38,12 +38,38 @@ How does SWAT work?
 
 SWAT adopts "Scenario-building & Replay" approach to do the automation of UI testing automation for web application. Instead of capturing your actual operations, modifying generated script and running the script, you just need the following steps in SWAT.
 
-1. Importing HTML captures to SWAT 
+1. **Importing HTML captures to SWAT**
 SWAT's knowledge engine analyses web pages and extracts all the interactive operation models.
-2. Building Scenario
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_1_1.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_1_1.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_1_3.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_1_3.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+
+2. **Building Scenario**
 Test designers connect different operation models to build a scenario.
-3. Executing Scenario
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_2_2.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_2_2.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>	
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_2_3.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_2_3.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+	
+3. **Executing Scenario**
 SWAT's knowledge engine explains and executes the scenarios on the real browser.
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_3_2.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_3_2.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
+<video width="480" controls>
+	<source src="http://www.smartekworks.com/video/guide/guide_3_3.webm" type="video/webm">
+	<source src="http://www.smartekworks.com/video/guide/guide_3_3.mp4" type="video/mp4">
+	ビデオの再生がサポートされていません。</video>
 
 Who should use SWAT?
 ---
