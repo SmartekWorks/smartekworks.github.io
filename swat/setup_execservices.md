@@ -142,7 +142,7 @@ We provide several execution parameters to suite different sites. The parameters
 	"operationInterval": 500, 
 	"frameSearchDepth": 3, 
 	"scrollableFrames": [{"name":"frame1"}, {"id":"frame2"}], 
-	"scrollableElements": ["div.main_menu", "table#shopping_cart"], 
+	"scrollableElements": [{"selector":"div.main_menu"}, {"id":"shopping_cart"}], 
 	"enableAjaxWait":true,
 	"ignoreAlertTimeout":true,
 	"evidenceLevel": 2, 
@@ -155,7 +155,7 @@ We provide several execution parameters to suite different sites. The parameters
 * `operationInterval`: The time interval between two consecutive SWAT operations in milli-seconds. The default value is `500`.
 * `frameSearchDepth`: The max search depth for HTML with nested frames. The default value is `3`, and `0` means no support for frame execution.
 * `scrollableFrames`: The list of frames to take individual screenshots. Each frame is identified by its `name` or `id`. The default is an empty array.
-* `scrollableElements`: The list of HTML DOM nodes to take individual screenshots. Each node is identified by a CSS selector. The default is an empty array.
+* `scrollableElements`: The list of HTML DOM nodes to take individual screenshots. Each node is identified by a CSS `selector` or `id`. The default is an empty array.
 * `enableAjaxWait`: Whether wait until all AJAX calls are complete, and then proceed to the next operation. The default value is `false`.
 * `ignoreAlertTimeout`: Whether ignore the timeout exception if no alert pops up. The default value is `false`.
 * `evidenceLevel`: Different behaviours to take evidence for each operation. The default value is `2`.

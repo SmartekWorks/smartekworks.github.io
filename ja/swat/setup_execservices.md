@@ -142,7 +142,7 @@ Windows日本語版の実行端末で実行する場合、シナリオの日本�
 	"operationInterval": 500, 
 	"frameSearchDepth": 3, 
 	"scrollableFrames": [{"name":"frame1"}, {"id":"frame2"}], 
-	"scrollableElements": ["div.main_menu", "table#shopping_cart"], 
+	"scrollableElements": [{"selector":"div.main_menu"}, {"id":"shopping_cart"}], 
 	"enableAjaxWait":true,
 	"ignoreAlertTimeout":true,
 	"evidenceLevel": 2, 
@@ -155,7 +155,7 @@ Windows日本語版の実行端末で実行する場合、シナリオの日本�
 * `operationInterval`: オペレーションの間の待ち時間（ms）。デフォルト値`500`（ms）。
 * `frameSearchDepth`: 対象フレームを検索する際に最大の検索範囲の階層数。デフォルト値`3`階層。`0`の場合、フレームをサポートしません。
 * `scrollableFrames`: スクロールスクリーンショットを撮る対象となるフレーム。各フレームが`name`か`id`で指定する必要があります。デフォルト値は空の配列。
-* `scrollableElements`: スクロールスクリーンショットを撮る対象となる画面要素。各要素がCSSセレクトで指定する必要があります。デフォルト値は空の配列。
+* `scrollableElements`: スクロールスクリーンショットを撮る対象となる画面要素。各要素がCSSセレクトか`id`で指定する必要があります。デフォルト値は空の配列。
 * `enableAjaxWait`: 実行時に非同期なAJAXコールの完了を待つオプションです。デフォルト値は`false`。
 * `ignoreAlertTimeout`: アラートタイムアウト発生時にエラーにならないようにするオプションデス。デフォルト値は`false`。
 * `evidenceLevel`: エビデンスを撮るポリシーです。デフォルト値は`2`。

@@ -146,10 +146,10 @@ Note: You should ensure that SWAT service can access JIRA service when using the
 The configuration string is a JSON map with following rules:
 
 * Use the key `"jira"`, and the configuration map with following keys as value.
- * `"url"`: The URL of JIRA service.
- * `"username"`: The username of JIRA account.
- * `"password"`: The password of JIRA account.
- * `"project"`: The project name for SWAT. The key is not required, SWAT will use the project code of SWAT for the project name in JIRA if you do not set the key. You should ensure that the target project in JIRA exists in both cases.
+ * `"url"`: **(Required)** The URL of JIRA service.
+ * `"username"`: **(Required)** The username of JIRA account.
+ * `"password"`: **(Required)** The password of JIRA account.
+ * `"project"`: **(Required)** The project name for SWAT. The key is not required, SWAT will use the project code of SWAT for the project name in JIRA if you do not set the key. You should ensure that the target project in JIRA exists in both cases.
  
 Agent API Integration
 ---
