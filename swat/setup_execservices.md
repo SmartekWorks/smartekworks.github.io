@@ -110,6 +110,7 @@ You should use the following settings to ensure the execution:
 * The browser zoom level must be set to 100% so that the native mouse events can be set to the correct coordinates.
 * For IE 11 only, you will need to set a registry entry on the target computer so that the driver can maintain a connection to the instance of Internet Explorer it creates. You can find the reg file in `tools` directory of your local execution server or download the reg file [here](http://www.smartekworks.com/tools/ie11-get-window-handles.zip).
 * If the website uses basic authentication, you can use the URL in the format like `http://<username>:<password>@yourdomain`. However, IE does not support this type of URL by default. You have to set a registry entry on the target computer. You can find the reg file in `tools` directory of your local execution server or download the reg file [here](http://www.smartekworks.com/tools/ie-enable-basic-auth.zip).
+* The Windows update `KB3025390` will break the IE WebDriver when using IE11, please make sure to uninstall this update in Windows Control Panel.
 
 You should also take care of the following points in execution:
 
