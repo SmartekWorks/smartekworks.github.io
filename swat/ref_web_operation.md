@@ -27,7 +27,7 @@ There are four types of **Parameter Data**: `Text`, `Select`, `Multi-select`, `E
 * `Multi-select`: Options selected in multi-select typed node such as multi-select. Collection with non-exclusive entry such as checkbox group is also included in this type.
 * `Execute`: Used for actions without parameter such as a single link. 
 
-You can not only input text in `Text` type, but also special keystroke by using `#{KEY}` format. `DOWN`, `LEFT`, `RIGHT`, `UP`, `TAB`, `ENTER`, `ESCAPE` are currently supported keys.
+You can not only input text in `Text` type, but also special keystroke by using `#{KEY}` format. `DOWN`, `LEFT`, `RIGHT`, `UP`, `TAB`, `ENTER`, `ESCAPE`, `BACK` are currently supported keys.
 
 In cases of `Select` and `Multi-select` you can switch the querying mode by clicking **Querying Mode Switch**, the <span class="glyphicon glyphicon-refresh"></span> icon next to the **Parameter Data**. Please refer to [Querying Modes](#Querying_Modes) for details.
 
