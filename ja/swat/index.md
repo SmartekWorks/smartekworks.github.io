@@ -59,10 +59,6 @@ SWATと他の自動化ツールとの間には大きな違いがあり、SWATは
 次へ
 ----
 
-#### SWAT無償版アカウントの取得
-
-[SWAT無償版ページ](http://www.smartekworks.com/free.html)で無償版をお申し込みしてください。
-
 #### SWATユーザガイド
 
 [SWATの利用を勉強](guide_start.md)。

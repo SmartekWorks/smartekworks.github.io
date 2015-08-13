@@ -85,10 +85,6 @@ In conclusion, you may assigning a test team with test designers and one test en
 Next Steps
 ----
 
-#### Obtaining SWAT Trial Account
-
-Visit [SWAT free plan page (Japanese only)](http://www.smartekworks.com/free.html) to apply for a free account. 
-
 #### The SWAT User Guide
 
 [Learn SWAT in depth](guide_start.md).
